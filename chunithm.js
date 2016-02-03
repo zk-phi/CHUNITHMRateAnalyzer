@@ -1,8 +1,5 @@
 /* CHUNITHM Rate Analyzer (C) zk_phi 2015- */
 
-/* BOOKMARKLET CONVERTER: http://mrcoles.com/bookmarklet/
- * (DO NOT forget to inclue jQuery in the distributed bookmarklet) */
-
 var cra_version = 160203;
 
 /* -----------------------------------------------------------------------------
