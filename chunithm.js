@@ -529,11 +529,11 @@ function rate_display()
         $("#cra_sort_base").click(function(){
             chart_list.sort(function(a, b){ return - (a.rate_base - b.rate_base); });
             var indices = { 0 : "LEVEL 13+" };
-            for(i = 0; chart_list[i].rate_base > 13.5; i++);
+            for(i = 0; chart_list[i].rate_base >= 13.7; i++);
             indices[i] = "LEVEL 13";
             for(i = 0; chart_list[i].rate_base >= 13; i++);
             indices[i] = "LEVEL 12+";
-            for(i = 0; chart_list[i].rate_base > 12.5; i++);
+            for(i = 0; chart_list[i].rate_base >= 12.7; i++);
             indices[i] = "LEVEL 12";
             for(i = 0; chart_list[i].rate_base >= 12; i++);
             indices[i] = "LEVEL 11";
