@@ -555,7 +555,9 @@ function rate_display()
 
         /* render chart list */
         var indices = {};
-        chart_list.sort(function(a, b){ return - (a.rate_diff - b.rate_diff || a.rate - b.rate); });
+        chart_list.sort(function(a, b){
+            return (a.rate_diff ? 0 : 1) + (b.rate_diff ? 0 : -1) || - (a.rate - b.rate);
+        });
         for(var i = 0; i < chart_list.length && chart_list[i].rate_diff != 0; i++);
         if(i) indices[0] = "最近レートを更新した曲";
         indices[i] = "曲別レート (高い順)";
