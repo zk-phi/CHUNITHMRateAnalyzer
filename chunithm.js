@@ -85,115 +85,115 @@ function object_to_css(obj)
  * (extracted from https://chunithm-net.com/mobile/MusicLevel.html)
  * (* DO NOT PREPEND ANY ITEMS TO THIS LIST -- `rate_diff' will be unable to calculate *) */
 var chart_list = [
-     { id: 103, level: 2, rate_base: 11.7, name: "エンドマークに希望と涙を添えて 赤" }
-    ,{ id: 68,  level: 3, rate_base: 11.7, name: "乗り切れ受験ウォーズ" }
-    ,{ id: 146, level: 3, rate_base: 11.7, name: "夕暮れワンルーム" }
-    ,{ id: 69,  level: 2, rate_base: 11.9, name: "The wheel to the right 赤" }
-    ,{ id: 63,  level: 2, rate_base: 11.7, name: "Gate of Fate 赤" }
-    /* */ ,{ id: 76,  level: 2, rate_base: 11.8, name: "luna blu 赤" }
-    ,{ id: 140, level: 3, rate_base: 11.9, name: "Guilty" }
-    /* radio613 */ ,{ id: 75,  level: 3, rate_base: 11.7, name: "Counselor" }
-    ,{ id: 99,  level: 3, rate_base: 11.7, name: "言ノ葉カルマ" }
-    ,{ id: 145, level: 3, rate_base: 11.8, name: "Change Our MIRAI！" }
-    /* */ ,{ id: 134, level: 2, rate_base: 11.8, name: "HAELEQUIN (Original Remaster) 赤" }
-    ,{ id: 3,   level: 3, rate_base: 11.8, name: "B.B.K.K.B.K.K." }
-    ,{ id: 149, level: 3, rate_base: 11.7, name: "緋色のDance" }
-    ,{ id: 48,  level: 3, rate_base: 11.9, name: "Unlimited Spark!" }
-    ,{ id: 96,  level: 3, rate_base: 11.9, name: "チルノのパーフェクトさんすう教室" }
-    /* */ ,{ id: 94,  level: 3, rate_base: 12.2, name: "セツナトリップ" }
-    ,{ id: 47,  level: 3, rate_base: 11.7, name: "六兆年と一夜物語" }
-    ,{ id: 152, level: 2, rate_base: 11.5, name: "Gustav Battle 赤" }
-    /* */ ,{ id: 141, level: 2, rate_base: 11.5, name: "閃鋼のブリューナク 赤" }
-    ,{ id: 67,  level: 3, rate_base: 11.0, name: "昵懇レファレンス" }
-    ,{ id: 65,  level: 3, rate_base: 11.2, name: "Anemone" }
-    ,{ id: 163, level: 3, rate_base: 11.3, name: "幾四音-Ixion-" }
-    /* */ ,{ id: 148, level: 3, rate_base: 11.0, name: "Theme of SeelischTact" }
-    /* */ ,{ id: 79,  level: 3, rate_base: 11.0, name: "ＧＯ！ＧＯ！ラブリズム♥" }
-    ,{ id: 158, level: 3, rate_base: 11.0, name: "フォルテシモBELL" }
-    ,{ id: 130, level: 3, rate_base: 11.4, name: "スカイクラッドの観測者" }
-    ,{ id: 129, level: 3, rate_base: 11.2, name: "Hacking to the Gate" }
-    ,{ id: 176, level: 3, rate_base: 11.3, name: "Dance!" }
-    ,{ id: 207, level: 3, rate_base: 11.5, name: "Your Affection (Daisuke Asakura Remix)" }
-    /* */ ,{ id: 206, level: 3, rate_base: 11.4, name: "Signs Of Love (“Never More” ver.)" }
-    /* radio613 */ ,{ id: 10,  level: 3, rate_base: 11.7, name: "All I Want" }
-    ,{ id: 204, level: 3, rate_base: 11.0, name: "ちくわパフェだよ☆CKP" }
-    /* */ ,{ id: 203, level: 3, rate_base: 12.0, name: "FLOWER" }
-    ,{ id: 91,  level: 3, rate_base: 11.2, name: "Yet Another ”drizzly rain”" }
-    ,{ id: 115, level: 3, rate_base: 11.5, name: "Dreaming" }
-    ,{ id: 41,  level: 3, rate_base: 11.6, name: "sweet little sister" }
-    ,{ id: 98,  level: 3, rate_base: 11.4, name: "魔理沙は大変なものを盗んでいきました" }
-    ,{ id: 156, level: 3, rate_base: 11.5, name: "FREELY TOMORROW" }
-    ,{ id: 117, level: 3, rate_base: 11.2, name: "M.S.S.Planet" }
-    /* */ ,{ id: 118, level: 3, rate_base: 12.0, name: "腐れ外道とチョコレゐト" }
-    ,{ id: 18,  level: 3, rate_base: 11.2, name: "千本桜" }
-    ,{ id: 113, level: 3, rate_base: 11.4, name: "ストリーミングハート" }
-    ,{ id: 38,  level: 3, rate_base: 11.0, name: "天ノ弱" }
-    ,{ id: 114, level: 3, rate_base: 11.4, name: "Sweet Devil" }
-    ,{ id: 111, level: 3, rate_base: 11.3, name: "staple stable" }
-    ,{ id: 110, level: 3, rate_base: 11.3, name: "Magia" }
-    ,{ id: 5,   level: 3, rate_base: 11.3, name: "Scatman (Ski Ba Bop Ba Dop Bop)" }
-    ,{ id: 60,  level: 3, rate_base: 11.3, name: "only my railgun" }
-    ,{ id: 17,  level: 3, rate_base: 11.0, name: "空色デイズ" }
-    /* */ ,{ id: 104, level: 3, rate_base: 12.7, name: "とーきょー全域★アキハバラ？" }
-    /* */ ,{ id: 178, level: 3, rate_base: 12.7, name: "stella=steLLa" }
-    /* */ ,{ id: 101, level: 3, rate_base: 12.8, name: "Tango Rouge" }
-    /* */ ,{ id: 64,  level: 3, rate_base: 12.7, name: "今ぞ♡崇め奉れ☆オマエらよ！！～姫の秘メタル渇望～" }
-    /* */ ,{ id: 144, level: 3, rate_base: 13.2, name: "Aragami" }
-    /* */ ,{ id: 142, level: 3, rate_base: 12.6, name: "Altale" }
-    /* */ ,{ id: 157, level: 3, rate_base: 12.8, name: "ギガンティック O.T.N" }
-    /* */ ,{ id: 154, level: 3, rate_base: 12.7, name: "SAVIOR OF SONG" }
-    /* */ ,{ id: 180, level: 2, rate_base: 12.4, name: "怒槌 赤" }
-    /* */ ,{ id: 70,  level: 3, rate_base: 12.4, name: "STAR" }
-    /* */ ,{ id: 151, level: 3, rate_base: 12.4, name: "Alma" }
-    /* */ ,{ id: 82,  level: 3, rate_base: 12.3, name: "Memories of Sun and Moon" }
-    /* */ ,{ id: 108, level: 3, rate_base: 12.0, name: "The ether" }
-    /* */ ,{ id: 53,  level: 3, rate_base: 12.3, name: "Teriqma" }
-    /* */ ,{ id: 95,  level: 3, rate_base: 12.1, name: "砂漠のハンティングガール♡" }
-    /* */ ,{ id: 51,  level: 3, rate_base: 12.6, name: "My First Phone" }
-    /* */ ,{ id: 71,  level: 3, rate_base: 12.3, name: "Infantoon Fantasy" }
-    /* */ ,{ id: 161, level: 3, rate_base: 12.4, name: "私の中の幻想的世界観及びその顕現を想起させたある現実での出来事に関する一考察" }
-    ,{ id: 150, level: 3, rate_base: 12.1, name: "brilliant better" }
-    /* */ ,{ id: 88,  level: 3, rate_base: 12.1, name: "The Concept of Love" }
-    /* */ ,{ id: 6,   level: 3, rate_base: 12.5, name: "Reach for the Stars" }
-    /* */ ,{ id: 136, level: 3, rate_base: 12.5, name: "Äventyr" }
-    /* */ ,{ id: 128, level: 3, rate_base: 12.7, name: "The Formula" }
-    /* */ ,{ id: 45,  level: 3, rate_base: 12.2, name: "L9" }
-    /* */ ,{ id: 33,  level: 3, rate_base: 12.7, name: "Blue Noise" }
-    /* */ ,{ id: 120, level: 3, rate_base: 12.3, name: "四次元跳躍機関" }
-    /* radio613 */ ,{ id: 21,  level: 3, rate_base: 11.9, name: "ナイト・オブ・ナイツ" }
-    /* */ ,{ id: 132, level: 3, rate_base: 12.2, name: "イカサマライフゲイム" }
-    /* */ ,{ id: 83,  level: 3, rate_base: 12.2, name: "ロストワンの号哭" }
-    /* */ ,{ id: 27,  level: 3, rate_base: 12.4, name: "タイガーランペイジ" }
-    /* */ ,{ id: 23,  level: 3, rate_base: 12.1, name: "一触即発☆禅ガール" }
-    /* */ ,{ id: 180, level: 3, rate_base: 13.9, name: "怒槌" }
-    /* */ ,{ id: 103, level: 3, rate_base: 13.7, name: "エンドマークに希望と涙を添えて" }
-    /* */ ,{ id: 152, level: 3, rate_base: 12.9, name: "Gustav Battle" }
-    /* */ ,{ id: 69,  level: 3, rate_base: 13.4, name: "The wheel to the right" }
-    /* */ ,{ id: 63,  level: 3, rate_base: 13.0, name: "Gate of Fate" }
-    /* */ ,{ id: 141, level: 3, rate_base: 13.1, name: "閃鋼のブリューナク" }
-    /* */ ,{ id: 76,  level: 3, rate_base: 13.2, name: "luna blu" }
-    /* */ ,{ id: 107, level: 3, rate_base: 13.0, name: "We Gonna Journey" }
-    /* */ ,{ id: 138, level: 3, rate_base: 13.0, name: "conflict"}
-    /* */ ,{ id: 135, level: 3, rate_base: 13.1, name: "Vallista" }
-    /* */ ,{ id: 134, level: 3, rate_base: 13.7, name: "HAELEQUIN (Original Remaster)" }
-    /* */ ,{ id: 92,  level: 3, rate_base: 13.0, name: "最終鬼畜妹・一部声" }
-    /* */ ,{ id: 159, level: 3, rate_base: 13.4, name: "ジングルベル" }
-    /* */ ,{ id: 165, level: 3, rate_base: 12.9, name: "ぼくらの16bit戦争" }
-    ,{ id: 179, level: 3, rate_base: 11.1, name: "すろぉもぉしょん" }
-    ,{ id: 166, level: 3, rate_base: 11.8, name: "裏表ラバーズ" }
-    ,{ id: 168, level: 3, rate_base: 11.9, name: "ネトゲ廃人シュプレヒコール" }
-    /* */ ,{ id: 167, level: 3, rate_base: 12.7, name: "脳漿炸裂ガール" }
-    ,{ id: 169, level: 3, rate_base: 11.4, name: "elegante" }
-    /* radio613 */ ,{ id: 14,  level: 3, rate_base: 11.0, name: "コネクト" }
-    /* */ ,{ id: 235, level: 3, rate_base: 12.5, name: "ファッとして桃源郷" }
-    /* */ ,{ id: 232, level: 3, rate_base: 13.3, name: "Elemental Creation" }
-    /* */ ,{ id: 205, level: 3, rate_base: 12.7, name: "SNIPE WHOLE" }
-    /* */ ,{ id: 73,  level: 3, rate_base: 12.5, name: "MUSIC PЯAYER" }
-    /* */ ,{ id: 52,  level: 3, rate_base: 13.4, name: "Cyberozar" }
-    /* */ ,{ id: 244, level: 3, rate_base: 12.0, name: "回レ！雪月花" }
-    /* */ ,{ id: 243, level: 3, rate_base: 12.2, name: "シュガーソングとビターステップ" }
-    /* */ ,{ id: 171, level: 3, rate_base: 12.1, name: "XL TECHNO" }
-    /* */ ,{ id: 232, level: 2, rate_base: 11.3, name: "Elemental Creation 赤" }
+    /* 未検証 */  { id: 103, level: 2, rate_base: 11.7, name: "エンドマークに希望と涙を添えて 赤" }
+    /* 未検証 */ ,{ id: 68,  level: 3, rate_base: 11.7, name: "乗り切れ受験ウォーズ" }
+    /* 未検証 */ ,{ id: 146, level: 3, rate_base: 11.7, name: "夕暮れワンルーム" }
+    /* 未検証 */ ,{ id: 69,  level: 2, rate_base: 11.9, name: "The wheel to the right 赤" }
+    /* 未検証 */ ,{ id: 63,  level: 2, rate_base: 11.7, name: "Gate of Fate 赤" }
+    ,{ id: 76,  level: 2, rate_base: 11.8, name: "luna blu 赤" }
+    /* 未検証 */ ,{ id: 140, level: 3, rate_base: 11.9, name: "Guilty" }
+    /* ロケテ情報 */ ,{ id: 75,  level: 3, rate_base: 11.7, name: "Counselor" }
+    /* 未検証 */ ,{ id: 99,  level: 3, rate_base: 11.7, name: "言ノ葉カルマ" }
+    /* 未検証 */ ,{ id: 145, level: 3, rate_base: 11.8, name: "Change Our MIRAI！" }
+    ,{ id: 134, level: 2, rate_base: 11.8, name: "HAELEQUIN (Original Remaster) 赤" }
+    /* 未検証 */ ,{ id: 3,   level: 3, rate_base: 11.8, name: "B.B.K.K.B.K.K." }
+    /* 未検証 */ ,{ id: 149, level: 3, rate_base: 11.7, name: "緋色のDance" }
+    /* 未検証 */ ,{ id: 48,  level: 3, rate_base: 11.9, name: "Unlimited Spark!" }
+    /* 未検証 */ ,{ id: 96,  level: 3, rate_base: 11.9, name: "チルノのパーフェクトさんすう教室" }
+    ,{ id: 94,  level: 3, rate_base: 12.2, name: "セツナトリップ" }
+    /* 未検証 */ ,{ id: 47,  level: 3, rate_base: 11.7, name: "六兆年と一夜物語" }
+    /* 未検証 */ ,{ id: 152, level: 2, rate_base: 11.5, name: "Gustav Battle 赤" }
+    ,{ id: 141, level: 2, rate_base: 11.5, name: "閃鋼のブリューナク 赤" }
+    /* 未検証 */ ,{ id: 67,  level: 3, rate_base: 11.0, name: "昵懇レファレンス" }
+    /* 未検証 */ ,{ id: 65,  level: 3, rate_base: 11.2, name: "Anemone" }
+    /* 未検証 */ ,{ id: 163, level: 3, rate_base: 11.3, name: "幾四音-Ixion-" }
+    ,{ id: 148, level: 3, rate_base: 11.0, name: "Theme of SeelischTact" }
+    ,{ id: 79,  level: 3, rate_base: 11.0, name: "ＧＯ！ＧＯ！ラブリズム♥" }
+    /* 未検証 */ ,{ id: 158, level: 3, rate_base: 11.0, name: "フォルテシモBELL" }
+    /* 未検証 */ ,{ id: 130, level: 3, rate_base: 11.4, name: "スカイクラッドの観測者" }
+    /* 未検証 */ ,{ id: 129, level: 3, rate_base: 11.2, name: "Hacking to the Gate" }
+    /* 未検証 */ ,{ id: 176, level: 3, rate_base: 11.3, name: "Dance!" }
+    /* 未検証 */ ,{ id: 207, level: 3, rate_base: 11.5, name: "Your Affection (Daisuke Asakura Remix)" }
+    ,{ id: 206, level: 3, rate_base: 11.4, name: "Signs Of Love (“Never More” ver.)" }
+    /* ロケテ情報 */ ,{ id: 10,  level: 3, rate_base: 11.7, name: "All I Want" }
+    /* 未検証 */ ,{ id: 204, level: 3, rate_base: 11.0, name: "ちくわパフェだよ☆CKP" }
+    ,{ id: 203, level: 3, rate_base: 12.0, name: "FLOWER" }
+    /* 未検証 */ ,{ id: 91,  level: 3, rate_base: 11.2, name: "Yet Another ”drizzly rain”" }
+    /* 未検証 */ ,{ id: 115, level: 3, rate_base: 11.5, name: "Dreaming" }
+    /* 未検証 */ ,{ id: 41,  level: 3, rate_base: 11.6, name: "sweet little sister" }
+    /* 未検証 */ ,{ id: 98,  level: 3, rate_base: 11.4, name: "魔理沙は大変なものを盗んでいきました" }
+    /* 未検証 */ ,{ id: 156, level: 3, rate_base: 11.5, name: "FREELY TOMORROW" }
+    /* 未検証 */ ,{ id: 117, level: 3, rate_base: 11.2, name: "M.S.S.Planet" }
+    ,{ id: 118, level: 3, rate_base: 12.0, name: "腐れ外道とチョコレゐト" }
+    /* 未検証 */ ,{ id: 18,  level: 3, rate_base: 11.2, name: "千本桜" }
+    /* 未検証 */ ,{ id: 113, level: 3, rate_base: 11.4, name: "ストリーミングハート" }
+    /* 未検証 */ ,{ id: 38,  level: 3, rate_base: 11.0, name: "天ノ弱" }
+    /* 未検証 */ ,{ id: 114, level: 3, rate_base: 11.4, name: "Sweet Devil" }
+    /* 未検証 */ ,{ id: 111, level: 3, rate_base: 11.3, name: "staple stable" }
+    /* 未検証 */ ,{ id: 110, level: 3, rate_base: 11.3, name: "Magia" }
+    /* 未検証 */ ,{ id: 5,   level: 3, rate_base: 11.3, name: "Scatman (Ski Ba Bop Ba Dop Bop)" }
+    /* 未検証 */ ,{ id: 60,  level: 3, rate_base: 11.3, name: "only my railgun" }
+    /* 未検証 */ ,{ id: 17,  level: 3, rate_base: 11.0, name: "空色デイズ" }
+    ,{ id: 104, level: 3, rate_base: 12.7, name: "とーきょー全域★アキハバラ？" }
+    ,{ id: 178, level: 3, rate_base: 12.7, name: "stella=steLLa" }
+    ,{ id: 101, level: 3, rate_base: 12.8, name: "Tango Rouge" }
+    ,{ id: 64,  level: 3, rate_base: 12.7, name: "今ぞ♡崇め奉れ☆オマエらよ！！～姫の秘メタル渇望～" }
+    ,{ id: 144, level: 3, rate_base: 13.2, name: "Aragami" }
+    ,{ id: 142, level: 3, rate_base: 12.6, name: "Altale" }
+    ,{ id: 157, level: 3, rate_base: 12.8, name: "ギガンティック O.T.N" }
+    ,{ id: 154, level: 3, rate_base: 12.7, name: "SAVIOR OF SONG" }
+    ,{ id: 180, level: 2, rate_base: 12.4, name: "怒槌 赤" }
+    ,{ id: 70,  level: 3, rate_base: 12.4, name: "STAR" }
+    ,{ id: 151, level: 3, rate_base: 12.4, name: "Alma" }
+    ,{ id: 82,  level: 3, rate_base: 12.3, name: "Memories of Sun and Moon" }
+    ,{ id: 108, level: 3, rate_base: 12.0, name: "The ether" }
+    ,{ id: 53,  level: 3, rate_base: 12.3, name: "Teriqma" }
+    ,{ id: 95,  level: 3, rate_base: 12.1, name: "砂漠のハンティングガール♡" }
+    ,{ id: 51,  level: 3, rate_base: 12.6, name: "My First Phone" }
+    ,{ id: 71,  level: 3, rate_base: 12.3, name: "Infantoon Fantasy" }
+    ,{ id: 161, level: 3, rate_base: 12.4, name: "私の中の幻想的世界観及びその顕現を想起させたある現実での出来事に関する一考察" }
+    /* 未検証 */ ,{ id: 150, level: 3, rate_base: 12.1, name: "brilliant better" }
+    ,{ id: 88,  level: 3, rate_base: 12.1, name: "The Concept of Love" }
+    ,{ id: 6,   level: 3, rate_base: 12.5, name: "Reach for the Stars" }
+    ,{ id: 136, level: 3, rate_base: 12.5, name: "Äventyr" }
+    ,{ id: 128, level: 3, rate_base: 12.7, name: "The Formula" }
+    ,{ id: 45,  level: 3, rate_base: 12.2, name: "L9" }
+    ,{ id: 33,  level: 3, rate_base: 12.7, name: "Blue Noise" }
+    ,{ id: 120, level: 3, rate_base: 12.3, name: "四次元跳躍機関" }
+    /* ロケテ情報 */ ,{ id: 21,  level: 3, rate_base: 11.9, name: "ナイト・オブ・ナイツ" }
+    ,{ id: 132, level: 3, rate_base: 12.2, name: "イカサマライフゲイム" }
+    ,{ id: 83,  level: 3, rate_base: 12.2, name: "ロストワンの号哭" }
+    ,{ id: 27,  level: 3, rate_base: 12.4, name: "タイガーランペイジ" }
+    ,{ id: 23,  level: 3, rate_base: 12.1, name: "一触即発☆禅ガール" }
+    ,{ id: 180, level: 3, rate_base: 13.9, name: "怒槌" }
+    ,{ id: 103, level: 3, rate_base: 13.7, name: "エンドマークに希望と涙を添えて" }
+    ,{ id: 152, level: 3, rate_base: 12.9, name: "Gustav Battle" }
+    ,{ id: 69,  level: 3, rate_base: 13.4, name: "The wheel to the right" }
+    ,{ id: 63,  level: 3, rate_base: 13.0, name: "Gate of Fate" }
+    ,{ id: 141, level: 3, rate_base: 13.1, name: "閃鋼のブリューナク" }
+    ,{ id: 76,  level: 3, rate_base: 13.2, name: "luna blu" }
+    ,{ id: 107, level: 3, rate_base: 13.0, name: "We Gonna Journey" }
+    ,{ id: 138, level: 3, rate_base: 13.0, name: "conflict"}
+    ,{ id: 135, level: 3, rate_base: 13.1, name: "Vallista" }
+    ,{ id: 134, level: 3, rate_base: 13.7, name: "HAELEQUIN (Original Remaster)" }
+    ,{ id: 92,  level: 3, rate_base: 13.0, name: "最終鬼畜妹・一部声" }
+    ,{ id: 159, level: 3, rate_base: 13.4, name: "ジングルベル" }
+    ,{ id: 165, level: 3, rate_base: 12.9, name: "ぼくらの16bit戦争" }
+    /* 未検証 */ ,{ id: 179, level: 3, rate_base: 11.1, name: "すろぉもぉしょん" }
+    /* 未検証 */ ,{ id: 166, level: 3, rate_base: 11.8, name: "裏表ラバーズ" }
+    /* 未検証 */ ,{ id: 168, level: 3, rate_base: 11.9, name: "ネトゲ廃人シュプレヒコール" }
+    ,{ id: 167, level: 3, rate_base: 12.7, name: "脳漿炸裂ガール" }
+    /* 未検証 */ ,{ id: 169, level: 3, rate_base: 11.4, name: "elegante" }
+    /* ロケテ情報 */ ,{ id: 14,  level: 3, rate_base: 11.0, name: "コネクト" }
+    ,{ id: 235, level: 3, rate_base: 12.5, name: "ファッとして桃源郷" }
+    ,{ id: 232, level: 3, rate_base: 13.3, name: "Elemental Creation" }
+    ,{ id: 205, level: 3, rate_base: 12.7, name: "SNIPE WHOLE" }
+    ,{ id: 73,  level: 3, rate_base: 12.5, name: "MUSIC PЯAYER" }
+    ,{ id: 52,  level: 3, rate_base: 13.4, name: "Cyberozar" }
+    ,{ id: 244, level: 3, rate_base: 12.0, name: "回レ！雪月花" }
+    ,{ id: 243, level: 3, rate_base: 12.2, name: "シュガーソングとビターステップ" }
+    ,{ id: 171, level: 3, rate_base: 12.1, name: "XL TECHNO" }
+    ,{ id: 232, level: 2, rate_base: 11.3, name: "Elemental Creation 赤" }
 ];
 
 /* latest rate */
