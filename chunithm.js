@@ -437,10 +437,11 @@ function rate_display()
     $("#cra_window_inner").html("<p>calculating rate ...</p>");
 
     /* calculate score improvement */
-    for(i = 0; i < chart_list.length; i++)
+    for(i = 0; i < chart_list.length; i++){
         chart_list[i].rate_diff =
-        last_chart_list && last_chart_list[i].rate ?
-        chart_list[i].rate - last_chart_list[i].rate : 0;
+            !last_chart_list ? 0
+            : chart_list[i].rate - (last_chart_list[i] && last_chart_list[i].rate || 0);
+    }
 
     /* calculate and save rate */
     chart_list.sort(function(a, b){ return - (a.rate - b.rate); });
