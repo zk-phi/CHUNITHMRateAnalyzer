@@ -1,6 +1,7 @@
 /* CHUNITHM Rate Analyzer (C) zk_phi 2015- */
+/* *FIXME* NO CHARTS CAN BE REMOVED FROM chart_list */
 
-var cra_version = 160203;
+var cra_version = 160210;
 
 /* -----------------------------------------------------------------------------
  * utilities
