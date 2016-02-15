@@ -87,7 +87,7 @@ function object_to_css(obj)
 var chart_list = [
     /* 未検証 */  { id: 103, level: 2, rate_base: 11.7, name: "エンドマークに希望と涙を添えて 赤" }
     /* 未検証 */ ,{ id: 68,  level: 3, rate_base: 11.7, name: "乗り切れ受験ウォーズ" }
-    /* 未検証 */ ,{ id: 146, level: 3, rate_base: 11.7, name: "夕暮れワンルーム" }
+    ,{ id: 146, level: 3, rate_base: 11.7, name: "夕暮れワンルーム" }
     /* 未検証 */ ,{ id: 69,  level: 2, rate_base: 11.9, name: "The wheel to the right 赤" }
     /* 未検証 */ ,{ id: 63,  level: 2, rate_base: 11.7, name: "Gate of Fate 赤" }
     ,{ id: 76,  level: 2, rate_base: 11.8, name: "luna blu 赤" }
@@ -96,7 +96,7 @@ var chart_list = [
     /* 未検証 */ ,{ id: 99,  level: 3, rate_base: 11.7, name: "言ノ葉カルマ" }
     /* 未検証 */ ,{ id: 145, level: 3, rate_base: 11.8, name: "Change Our MIRAI！" }
     ,{ id: 134, level: 2, rate_base: 11.8, name: "HAELEQUIN (Original Remaster) 赤" }
-    /* 未検証 */ ,{ id: 3,   level: 3, rate_base: 11.8, name: "B.B.K.K.B.K.K." }
+    ,{ id: 3,   level: 3, rate_base: 11.8, name: "B.B.K.K.B.K.K." }
     /* 未検証 */ ,{ id: 149, level: 3, rate_base: 11.7, name: "緋色のDance" }
     /* 未検証 */ ,{ id: 48,  level: 3, rate_base: 11.9, name: "Unlimited Spark!" }
     /* 未検証 */ ,{ id: 96,  level: 3, rate_base: 11.9, name: "チルノのパーフェクトさんすう教室" }
@@ -123,7 +123,7 @@ var chart_list = [
     /* 未検証 */ ,{ id: 41,  level: 3, rate_base: 11.6, name: "sweet little sister" }
     /* 未検証 */ ,{ id: 98,  level: 3, rate_base: 11.4, name: "魔理沙は大変なものを盗んでいきました" }
     /* 未検証 */ ,{ id: 156, level: 3, rate_base: 11.5, name: "FREELY TOMORROW" }
-    /* 未検証 */ ,{ id: 117, level: 3, rate_base: 11.2, name: "M.S.S.Planet" }
+    ,{ id: 117, level: 3, rate_base: 11.5, name: "M.S.S.Planet" }
     ,{ id: 118, level: 3, rate_base: 12.0, name: "腐れ外道とチョコレゐト" }
     /* 未検証 */ ,{ id: 18,  level: 3, rate_base: 11.2, name: "千本桜" }
     /* 未検証 */ ,{ id: 113, level: 3, rate_base: 11.4, name: "ストリーミングハート" }
@@ -152,7 +152,7 @@ var chart_list = [
     ,{ id: 51,  level: 3, rate_base: 12.6, name: "My First Phone" }
     ,{ id: 71,  level: 3, rate_base: 12.3, name: "Infantoon Fantasy" }
     ,{ id: 161, level: 3, rate_base: 12.4, name: "私の中の幻想的世界観及びその顕現を想起させたある現実での出来事に関する一考察" }
-    /* 未検証 */ ,{ id: 150, level: 3, rate_base: 12.1, name: "brilliant better" }
+    ,{ id: 150, level: 3, rate_base: 11.8, name: "brilliant better" }
     ,{ id: 88,  level: 3, rate_base: 12.1, name: "The Concept of Love" }
     ,{ id: 6,   level: 3, rate_base: 12.5, name: "Reach for the Stars" }
     ,{ id: 136, level: 3, rate_base: 12.5, name: "Äventyr" }
@@ -160,7 +160,7 @@ var chart_list = [
     ,{ id: 45,  level: 3, rate_base: 12.2, name: "L9" }
     ,{ id: 33,  level: 3, rate_base: 12.7, name: "Blue Noise" }
     ,{ id: 120, level: 3, rate_base: 12.3, name: "四次元跳躍機関" }
-    /* ロケテ情報 */ ,{ id: 21,  level: 3, rate_base: 11.9, name: "ナイト・オブ・ナイツ" }
+    ,{ id: 21,  level: 3, rate_base: 11.9, name: "ナイト・オブ・ナイツ" }
     ,{ id: 132, level: 3, rate_base: 12.2, name: "イカサマライフゲイム" }
     ,{ id: 83,  level: 3, rate_base: 12.2, name: "ロストワンの号哭" }
     ,{ id: 27,  level: 3, rate_base: 12.4, name: "タイガーランペイジ" }
@@ -180,8 +180,8 @@ var chart_list = [
     ,{ id: 159, level: 3, rate_base: 13.4, name: "ジングルベル" }
     ,{ id: 165, level: 3, rate_base: 12.9, name: "ぼくらの16bit戦争" }
     /* 未検証 */ ,{ id: 179, level: 3, rate_base: 11.1, name: "すろぉもぉしょん" }
-    /* 未検証 */ ,{ id: 166, level: 3, rate_base: 11.8, name: "裏表ラバーズ" }
-    /* 未検証 */ ,{ id: 168, level: 3, rate_base: 11.9, name: "ネトゲ廃人シュプレヒコール" }
+    ,{ id: 166, level: 3, rate_base: 11.8, name: "裏表ラバーズ" }
+    ,{ id: 168, level: 3, rate_base: 11.9, name: "ネトゲ廃人シュプレヒコール" }
     ,{ id: 167, level: 3, rate_base: 12.7, name: "脳漿炸裂ガール" }
     /* 未検証 */ ,{ id: 169, level: 3, rate_base: 11.4, name: "elegante" }
     /* ロケテ情報 */ ,{ id: 14,  level: 3, rate_base: 11.0, name: "コネクト" }
@@ -194,6 +194,7 @@ var chart_list = [
     ,{ id: 243, level: 3, rate_base: 12.2, name: "シュガーソングとビターステップ" }
     ,{ id: 171, level: 3, rate_base: 12.1, name: "XL TECHNO" }
     ,{ id: 232, level: 2, rate_base: 11.3, name: "Elemental Creation 赤" }
+    ,{ id: 52,  level: 2, rate_base: 11.1, name: "Cyberozar 赤" }
 ];
 
 /* latest rate */
