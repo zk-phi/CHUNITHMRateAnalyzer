@@ -86,7 +86,7 @@ function object_to_css(obj)
  * (* DO NOT PREPEND ANY ITEMS TO THIS LIST -- `rate_diff' will be unable to calculate *) */
 var chart_list = [
      { id: 103, level: 2, rate_base: 11.7, name: "エンドマークに希望と涙を添えて 赤" }
-    /* 未検証 */ ,{ id: 68,  level: 3, rate_base: 11.7, name: "乗り切れ受験ウォーズ" }
+    ,{ id: 68,  level: 3, rate_base: 11.7, name: "乗り切れ受験ウォーズ" }
     ,{ id: 146, level: 3, rate_base: 11.7, name: "夕暮れワンルーム" }
     ,{ id: 69,  level: 2, rate_base: 11.9, name: "The wheel to the right 赤" }
     ,{ id: 63,  level: 2, rate_base: 11.7, name: "Gate of Fate 赤" }
@@ -102,7 +102,7 @@ var chart_list = [
     ,{ id: 96,  level: 3, rate_base: 11.8, name: "チルノのパーフェクトさんすう教室" }
     ,{ id: 94,  level: 3, rate_base: 12.2, name: "セツナトリップ" }
     ,{ id: 47,  level: 3, rate_base: 11.7, name: "六兆年と一夜物語" }
-    /* 未検証 */ ,{ id: 152, level: 2, rate_base: 11.5, name: "Gustav Battle 赤" }
+    ,{ id: 152, level: 2, rate_base: 11.7, name: "Gustav Battle 赤" }
     ,{ id: 141, level: 2, rate_base: 11.5, name: "閃鋼のブリューナク 赤" }
     /* 未検証 */ ,{ id: 67,  level: 3, rate_base: 11.0, name: "昵懇レファレンス" }
     /* 未検証 */ ,{ id: 65,  level: 3, rate_base: 11.2, name: "Anemone" }
@@ -119,8 +119,8 @@ var chart_list = [
     /* 未検証 */ ,{ id: 204, level: 3, rate_base: 11.0, name: "ちくわパフェだよ☆CKP" }
     ,{ id: 203, level: 3, rate_base: 12.0, name: "FLOWER" }
     /* 未検証 */ ,{ id: 91,  level: 3, rate_base: 11.2, name: "Yet Another ”drizzly rain”" }
-    /* 未検証 */ ,{ id: 115, level: 3, rate_base: 11.5, name: "Dreaming" }
-    /* 未検証 */ ,{ id: 41,  level: 3, rate_base: 11.6, name: "sweet little sister" }
+    ,{ id: 115, level: 3, rate_base: 11.5, name: "Dreaming" }
+    ,{ id: 41,  level: 3, rate_base: 11.6, name: "sweet little sister" }
     /* 未検証 */ ,{ id: 98,  level: 3, rate_base: 11.4, name: "魔理沙は大変なものを盗んでいきました" }
     ,{ id: 156, level: 3, rate_base: 11.5, name: "FREELY TOMORROW" }
     ,{ id: 117, level: 3, rate_base: 11.5, name: "M.S.S.Planet" }
@@ -130,10 +130,10 @@ var chart_list = [
     /* 未検証 */ ,{ id: 38,  level: 3, rate_base: 11.0, name: "天ノ弱" }
     /* 未検証 */ ,{ id: 114, level: 3, rate_base: 11.4, name: "Sweet Devil" }
     /* 未検証 */ ,{ id: 111, level: 3, rate_base: 11.3, name: "staple stable" }
-    /* 未検証 */ ,{ id: 110, level: 3, rate_base: 11.3, name: "Magia" }
+    ,{ id: 110, level: 3, rate_base: 11.2, name: "Magia" }
     /* 未検証 */ ,{ id: 5,   level: 3, rate_base: 11.3, name: "Scatman (Ski Ba Bop Ba Dop Bop)" }
     /* 未検証 */ ,{ id: 60,  level: 3, rate_base: 11.3, name: "only my railgun" }
-    /* 未検証 */ ,{ id: 17,  level: 3, rate_base: 11.0, name: "空色デイズ" }
+    ,{ id: 17,  level: 3, rate_base: 11.1, name: "空色デイズ" }
     ,{ id: 104, level: 3, rate_base: 12.7, name: "とーきょー全域★アキハバラ？" }
     ,{ id: 178, level: 3, rate_base: 12.7, name: "stella=steLLa" }
     ,{ id: 101, level: 3, rate_base: 12.8, name: "Tango Rouge" }
@@ -201,10 +201,10 @@ var chart_list = [
     ,{ id: 173, level: 3, rate_base: 13.1, name: "Halcyon" }
     /* 未検証 */ ,{ id: 185, level: 3, rate_base: 11.0, name: "楽園の翼" }
     /* 未検証 */ ,{ id: 42,  level: 3, rate_base: 11.0, name: "oath sign" }
-    /* 未検証 */ ,{ id: 9,   level: 3, rate_base: 11.0, name: "情熱大陸" }
+    ,{ id: 9,   level: 3, rate_base: 11.3, name: "情熱大陸" }
     /* 未検証 */ ,{ id: 56,  level: 3, rate_base: 11.0, name: "そばかす" }
     /* 未検証 */ ,{ id: 112, level: 3, rate_base: 11.0, name: "マジLOVE100%" }
-    /* 未検証 */ ,{ id: 74,  level: 3, rate_base: 11.0, name: "リリーシア" }
+    ,{ id: 74,  level: 3, rate_base: 11.0, name: "リリーシア" }
 ];
 
 /* latest rate */
