@@ -205,6 +205,14 @@ var chart_list = [
     /* 未検証 */ ,{ id: 56,  level: 3, rate_base: 11.0, name: "そばかす" }
     /* 未検証 */ ,{ id: 112, level: 3, rate_base: 11.0, name: "マジLOVE100%" }
     ,{ id: 74,  level: 3, rate_base: 11.0, name: "リリーシア" }
+    ,{ id: 233, level: 3, rate_base: 12.2, name: "アルストロメリア" }
+    ,{ id: 197, level: 3, rate_base: 13.1, name: "Jack-the-Ripper◆" }
+    ,{ id: 226, level: 2, rate_base: 12.3, name: "Garakuta Doll Play 赤" }
+    ,{ id: 226, level: 3, rate_base: 13.8, name: "Garakuta Doll Play" }
+    ,{ id: 62,  level: 3, rate_base: 12.4, name: "名も無い鳥" }
+    /* 未検証 */ ,{ id: 90,  level: 2, rate_base: 11.0, name: "L'épisode 赤" }
+    ,{ id: 90,  level: 3, rate_base: 13.2, name: "L'épisode" }
+    /* 未検証 */ ,{ id: 72,  level: 3, rate_base: 13.0, name: "Genesis" }
 ];
 
 /* latest rate */
