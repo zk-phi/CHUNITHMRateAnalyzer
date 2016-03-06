@@ -1,7 +1,7 @@
 /* CHUNITHM Rate Analyzer (C) zk_phi 2015- */
 /* *FIXME* NO CHARTS CAN BE REMOVED FROM chart_list */
 
-var cra_version = 160304;
+var cra_version = 160306;
 
 /* -----------------------------------------------------------------------------
  * utilities
@@ -179,11 +179,11 @@ var chart_list = [
     ,{ id: 92,  level: 3, rate_base: 13.0, name: "最終鬼畜妹・一部声" }
     ,{ id: 159, level: 3, rate_base: 13.4, name: "ジングルベル" }
     ,{ id: 165, level: 3, rate_base: 12.9, name: "ぼくらの16bit戦争" }
-    /* 未検証 */ ,{ id: 179, level: 3, rate_base: 11.1, name: "すろぉもぉしょん" }
+    ,{ id: 179, level: 3, rate_base: 11.1, name: "すろぉもぉしょん" }
     ,{ id: 166, level: 3, rate_base: 11.8, name: "裏表ラバーズ" }
     ,{ id: 168, level: 3, rate_base: 11.9, name: "ネトゲ廃人シュプレヒコール" }
     ,{ id: 167, level: 3, rate_base: 12.7, name: "脳漿炸裂ガール" }
-    /* 未検証 */ ,{ id: 169, level: 3, rate_base: 11.4, name: "elegante" }
+    ,{ id: 169, level: 3, rate_base: 11.4, name: "elegante" }
     ,{ id: 14,  level: 3, rate_base: 11.0, name: "コネクト" }
     ,{ id: 235, level: 3, rate_base: 12.5, name: "ファッとして桃源郷" }
     ,{ id: 232, level: 3, rate_base: 13.3, name: "Elemental Creation" }
@@ -199,10 +199,10 @@ var chart_list = [
     ,{ id: 247, level: 3, rate_base: 11.9, name: "絶世スターゲイト" }
     ,{ id: 199, level: 3, rate_base: 12.3, name: "ハート・ビート" }
     ,{ id: 173, level: 3, rate_base: 13.1, name: "Halcyon" }
-    /* 未検証 */ ,{ id: 185, level: 3, rate_base: 11.0, name: "楽園の翼" }
+    ,{ id: 185, level: 3, rate_base: 11.2, name: "楽園の翼" }
     /* 未検証 */ ,{ id: 42,  level: 3, rate_base: 11.0, name: "oath sign" }
     ,{ id: 9,   level: 3, rate_base: 11.3, name: "情熱大陸" }
-    /* 未検証 */ ,{ id: 56,  level: 3, rate_base: 11.0, name: "そばかす" }
+    ,{ id: 56,  level: 3, rate_base: 11.0, name: "そばかす" }
     /* 未検証 */ ,{ id: 112, level: 3, rate_base: 11.0, name: "マジLOVE100%" }
     ,{ id: 74,  level: 3, rate_base: 11.0, name: "リリーシア" }
     ,{ id: 233, level: 3, rate_base: 12.2, name: "アルストロメリア" }
@@ -212,7 +212,8 @@ var chart_list = [
     ,{ id: 62,  level: 3, rate_base: 12.4, name: "名も無い鳥" }
     /* 未検証 */ ,{ id: 90,  level: 2, rate_base: 11.0, name: "L'épisode 赤" }
     ,{ id: 90,  level: 3, rate_base: 13.2, name: "L'épisode" }
-    /* 未検証 */ ,{ id: 72,  level: 3, rate_base: 13.0, name: "Genesis" }
+    ,{ id: 72,  level: 3, rate_base: 13.0, name: "Genesis" }
+    ,{ id: 197, level: 2, rate_base: 11.2, name: "Jack-the-Ripper◆ 赤" }
 ];
 
 /* latest rate */
