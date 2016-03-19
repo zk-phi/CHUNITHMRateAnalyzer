@@ -1,7 +1,7 @@
 /* CHUNITHM Rate Analyzer (C) zk_phi 2015- */
 /* *FIXME* NO CHARTS CAN BE REMOVED FROM chart_list */
 
-var cra_version = 160306;
+var cra_version = 160319;
 
 /* -----------------------------------------------------------------------------
  * utilities
@@ -104,35 +104,35 @@ var chart_list = [
     ,{ id: 47,  level: 3, rate_base: 11.7, name: "六兆年と一夜物語" }
     ,{ id: 152, level: 2, rate_base: 11.7, name: "Gustav Battle 赤" }
     ,{ id: 141, level: 2, rate_base: 11.5, name: "閃鋼のブリューナク 赤" }
-    /* 未検証 */ ,{ id: 67,  level: 3, rate_base: 11.0, name: "昵懇レファレンス" }
-    /* 未検証 */ ,{ id: 65,  level: 3, rate_base: 11.2, name: "Anemone" }
-    /* 未検証 */ ,{ id: 163, level: 3, rate_base: 11.3, name: "幾四音-Ixion-" }
+    ,{ id: 67,  level: 3, rate_base: 11.2, name: "昵懇レファレンス" }
+    ,{ id: 65,  level: 3, rate_base: 11.1, name: "Anemone" }
+    ,{ id: 163, level: 3, rate_base: 11.3, name: "幾四音-Ixion-" }
     ,{ id: 148, level: 3, rate_base: 11.0, name: "Theme of SeelischTact" }
     ,{ id: 79,  level: 3, rate_base: 11.0, name: "ＧＯ！ＧＯ！ラブリズム♥" }
-    /* 未検証 */ ,{ id: 158, level: 3, rate_base: 11.0, name: "フォルテシモBELL" }
+    ,{ id: 158, level: 3, rate_base: 11.0, name: "フォルテシモBELL" }
     ,{ id: 130, level: 3, rate_base: 11.7, name: "スカイクラッドの観測者" }
-    /* 未検証 */ ,{ id: 129, level: 3, rate_base: 11.2, name: "Hacking to the Gate" }
+    ,{ id: 129, level: 3, rate_base: 11.2, name: "Hacking to the Gate" }
     ,{ id: 176, level: 3, rate_base: 11.3, name: "Dance!" }
     ,{ id: 207, level: 3, rate_base: 11.7, name: "Your Affection (Daisuke Asakura Remix)" }
     ,{ id: 206, level: 3, rate_base: 11.4, name: "Signs Of Love (“Never More” ver.)" }
     ,{ id: 10,  level: 3, rate_base: 11.7, name: "All I Want" }
-    /* 未検証 */ ,{ id: 204, level: 3, rate_base: 11.0, name: "ちくわパフェだよ☆CKP" }
+    ,{ id: 204, level: 3, rate_base: 11.0, name: "ちくわパフェだよ☆CKP" }
     ,{ id: 203, level: 3, rate_base: 12.0, name: "FLOWER" }
-    /* 未検証 */ ,{ id: 91,  level: 3, rate_base: 11.2, name: "Yet Another ”drizzly rain”" }
+    ,{ id: 91,  level: 3, rate_base: 11.2, name: "Yet Another ”drizzly rain”" }
     ,{ id: 115, level: 3, rate_base: 11.5, name: "Dreaming" }
     ,{ id: 41,  level: 3, rate_base: 11.6, name: "sweet little sister" }
-    /* 未検証 */ ,{ id: 98,  level: 3, rate_base: 11.4, name: "魔理沙は大変なものを盗んでいきました" }
+    ,{ id: 98,  level: 3, rate_base: 11.4, name: "魔理沙は大変なものを盗んでいきました" }
     ,{ id: 156, level: 3, rate_base: 11.5, name: "FREELY TOMORROW" }
     ,{ id: 117, level: 3, rate_base: 11.5, name: "M.S.S.Planet" }
     ,{ id: 118, level: 3, rate_base: 12.0, name: "腐れ外道とチョコレゐト" }
-    /* 未検証 */ ,{ id: 18,  level: 3, rate_base: 11.2, name: "千本桜" }
-    /* 未検証 */ ,{ id: 113, level: 3, rate_base: 11.4, name: "ストリーミングハート" }
-    /* 未検証 */ ,{ id: 38,  level: 3, rate_base: 11.0, name: "天ノ弱" }
-    /* 未検証 */ ,{ id: 114, level: 3, rate_base: 11.4, name: "Sweet Devil" }
-    /* 未検証 */ ,{ id: 111, level: 3, rate_base: 11.3, name: "staple stable" }
+    ,{ id: 18,  level: 3, rate_base: 11.2, name: "千本桜" }
+    ,{ id: 113, level: 3, rate_base: 11.4, name: "ストリーミングハート" }
+    ,{ id: 38,  level: 3, rate_base: 11.0, name: "天ノ弱" }
+    ,{ id: 114, level: 3, rate_base: 11.4, name: "Sweet Devil" }
+    ,{ id: 111, level: 3, rate_base: 11.3, name: "staple stable" }
     ,{ id: 110, level: 3, rate_base: 11.2, name: "Magia" }
-    /* 未検証 */ ,{ id: 5,   level: 3, rate_base: 11.3, name: "Scatman (Ski Ba Bop Ba Dop Bop)" }
-    /* 未検証 */ ,{ id: 60,  level: 3, rate_base: 11.3, name: "only my railgun" }
+    ,{ id: 5,   level: 3, rate_base: 11.3, name: "Scatman (Ski Ba Bop Ba Dop Bop)" }
+    ,{ id: 60,  level: 3, rate_base: 11.3, name: "only my railgun" }
     ,{ id: 17,  level: 3, rate_base: 11.1, name: "空色デイズ" }
     ,{ id: 104, level: 3, rate_base: 12.7, name: "とーきょー全域★アキハバラ？" }
     ,{ id: 178, level: 3, rate_base: 12.7, name: "stella=steLLa" }
@@ -200,7 +200,7 @@ var chart_list = [
     ,{ id: 199, level: 3, rate_base: 12.3, name: "ハート・ビート" }
     ,{ id: 173, level: 3, rate_base: 13.1, name: "Halcyon" }
     ,{ id: 185, level: 3, rate_base: 11.2, name: "楽園の翼" }
-    /* 未検証 */ ,{ id: 42,  level: 3, rate_base: 11.0, name: "oath sign" }
+    ,{ id: 42,  level: 3, rate_base: 11.6, name: "oath sign" }
     ,{ id: 9,   level: 3, rate_base: 11.3, name: "情熱大陸" }
     ,{ id: 56,  level: 3, rate_base: 11.0, name: "そばかす" }
     /* 未検証 */ ,{ id: 112, level: 3, rate_base: 11.0, name: "マジLOVE100%" }
@@ -210,10 +210,16 @@ var chart_list = [
     ,{ id: 226, level: 2, rate_base: 12.3, name: "Garakuta Doll Play 赤" }
     ,{ id: 226, level: 3, rate_base: 13.8, name: "Garakuta Doll Play" }
     ,{ id: 62,  level: 3, rate_base: 12.4, name: "名も無い鳥" }
-    /* 未検証 */ ,{ id: 90,  level: 2, rate_base: 11.0, name: "L'épisode 赤" }
+    ,{ id: 90,  level: 2, rate_base: 11.6, name: "L'épisode 赤" }
     ,{ id: 90,  level: 3, rate_base: 13.2, name: "L'épisode" }
     ,{ id: 72,  level: 3, rate_base: 13.0, name: "Genesis" }
     ,{ id: 197, level: 2, rate_base: 11.2, name: "Jack-the-Ripper◆ 赤" }
+    // ,{ id: xxx, level: 3, rate_base: 11.1, name: "激情！ミルキィ大作戦" }
+    // ,{ id: xxx, level: 3, rate_base: 11.9, name: "青春はNon-Stop!" }
+    // ,{ id: xxx, level: 3, rate_base: 12.4, name: "Falling Roses" }
+    // ,{ id: xxx, level: 3, rate_base: 12.1, name: "無敵We are one!!" }
+    // ,{ id: xxx, level: 2, rate_base: 11.2, name: "GEMINI -C- 赤" }
+    // ,{ id: xxx, level: 3, rate_base: 13.1, name: "GEMINI -C-" }
 ];
 
 /* latest rate */
