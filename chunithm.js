@@ -1,7 +1,7 @@
 /* CHUNITHM Rate Analyzer (C) zk_phi 2015- */
 /* *FIXME* NO CHARTS CAN BE REMOVED FROM chart_list */
 
-var cra_version = 160319;
+var cra_version = 160320;
 
 /* -----------------------------------------------------------------------------
  * utilities
@@ -214,12 +214,12 @@ var chart_list = [
     ,{ id: 90,  level: 3, rate_base: 13.2, name: "L'épisode" }
     ,{ id: 72,  level: 3, rate_base: 13.0, name: "Genesis" }
     ,{ id: 197, level: 2, rate_base: 11.2, name: "Jack-the-Ripper◆ 赤" }
-    // ,{ id: xxx, level: 3, rate_base: 11.1, name: "激情！ミルキィ大作戦" }
-    // ,{ id: xxx, level: 3, rate_base: 11.9, name: "青春はNon-Stop!" }
-    // ,{ id: xxx, level: 3, rate_base: 12.4, name: "Falling Roses" }
-    // ,{ id: xxx, level: 3, rate_base: 12.1, name: "無敵We are one!!" }
-    // ,{ id: xxx, level: 2, rate_base: 11.2, name: "GEMINI -C- 赤" }
-    // ,{ id: xxx, level: 3, rate_base: 13.1, name: "GEMINI -C-" }
+    ,{ id: 255, level: 3, rate_base: 11.1, name: "激情！ミルキィ大作戦" }
+    ,{ id: 214, level: 3, rate_base: 11.9, name: "青春はNon-Stop!" }
+    ,{ id: 215, level: 3, rate_base: 12.4, name: "Falling Roses" }
+    ,{ id: 200, level: 3, rate_base: 12.1, name: "無敵We are one!!" }
+    ,{ id: 202, level: 2, rate_base: 11.2, name: "GEMINI -C- 赤" }
+    ,{ id: 202, level: 3, rate_base: 13.1, name: "GEMINI -C-" }
 ];
 
 /* latest rate */
