@@ -1,6 +1,7 @@
 /* CHUNITHM Rate Analyzer (C) zk_phi 2015- */
+/* *FIXME* NO CHARTS CAN BE REMOVED FROM chart_list */
 
-var cra_version = 160203;
+var cra_version = 160321;
 
 /* -----------------------------------------------------------------------------
  * utilities
@@ -94,95 +95,131 @@ var chart_list = [
     ,{ id: 75,  level: 3, rate_base: 11.7, name: "Counselor" }
     ,{ id: 99,  level: 3, rate_base: 11.7, name: "言ノ葉カルマ" }
     ,{ id: 145, level: 3, rate_base: 11.8, name: "Change Our MIRAI！" }
-    ,{ id: 134, level: 2, rate_base: 11.9, name: "HAELEQUIN (Original Remaster) 赤" }
+    ,{ id: 134, level: 2, rate_base: 11.8, name: "HAELEQUIN (Original Remaster) 赤" }
     ,{ id: 3,   level: 3, rate_base: 11.8, name: "B.B.K.K.B.K.K." }
     ,{ id: 149, level: 3, rate_base: 11.7, name: "緋色のDance" }
-    ,{ id: 48,  level: 3, rate_base: 11.9, name: "Unlimited Spark!" }
-    ,{ id: 96,  level: 3, rate_base: 11.9, name: "チルノのパーフェクトさんすう教室" }
-    ,{ id: 94,  level: 3, rate_base: 11.8, name: "セツナトリップ" }
+    ,{ id: 48,  level: 3, rate_base: 11.8, name: "Unlimited Spark!" }
+    ,{ id: 96,  level: 3, rate_base: 11.8, name: "チルノのパーフェクトさんすう教室" }
+    ,{ id: 94,  level: 3, rate_base: 12.2, name: "セツナトリップ" }
     ,{ id: 47,  level: 3, rate_base: 11.7, name: "六兆年と一夜物語" }
-    ,{ id: 152, level: 2, rate_base: 11.5, name: "Gustav Battle 赤" }
+    ,{ id: 152, level: 2, rate_base: 11.7, name: "Gustav Battle 赤" }
     ,{ id: 141, level: 2, rate_base: 11.5, name: "閃鋼のブリューナク 赤" }
-    ,{ id: 67,  level: 3, rate_base: 11.0, name: "昵懇レファレンス" }
-    ,{ id: 65,  level: 3, rate_base: 11.2, name: "Anemone" }
+    ,{ id: 67,  level: 3, rate_base: 11.2, name: "昵懇レファレンス" }
+    ,{ id: 65,  level: 3, rate_base: 11.1, name: "Anemone" }
     ,{ id: 163, level: 3, rate_base: 11.3, name: "幾四音-Ixion-" }
     ,{ id: 148, level: 3, rate_base: 11.0, name: "Theme of SeelischTact" }
     ,{ id: 79,  level: 3, rate_base: 11.0, name: "ＧＯ！ＧＯ！ラブリズム♥" }
     ,{ id: 158, level: 3, rate_base: 11.0, name: "フォルテシモBELL" }
-    ,{ id: 130, level: 3, rate_base: 11.4, name: "スカイクラッドの観測者" }
+    ,{ id: 130, level: 3, rate_base: 11.7, name: "スカイクラッドの観測者" }
     ,{ id: 129, level: 3, rate_base: 11.2, name: "Hacking to the Gate" }
     ,{ id: 176, level: 3, rate_base: 11.3, name: "Dance!" }
-    ,{ id: 207, level: 3, rate_base: 11.5, name: "Your Affection (Daisuke Asakura Remix)" }
-    ,{ id: 206, level: 3, rate_base: 11.2, name: "Signs Of Love (“Never More” ver.)" }
-    ,{ id: 10,  level: 3, rate_base: 11.1, name: "All I Want" }
+    ,{ id: 207, level: 3, rate_base: 11.7, name: "Your Affection (Daisuke Asakura Remix)" }
+    ,{ id: 206, level: 3, rate_base: 11.4, name: "Signs Of Love (“Never More” ver.)" }
+    ,{ id: 10,  level: 3, rate_base: 11.7, name: "All I Want" }
     ,{ id: 204, level: 3, rate_base: 11.0, name: "ちくわパフェだよ☆CKP" }
-    ,{ id: 203, level: 3, rate_base: 11.6, name: "FLOWER" }
+    ,{ id: 203, level: 3, rate_base: 12.0, name: "FLOWER" }
     ,{ id: 91,  level: 3, rate_base: 11.2, name: "Yet Another ”drizzly rain”" }
     ,{ id: 115, level: 3, rate_base: 11.5, name: "Dreaming" }
     ,{ id: 41,  level: 3, rate_base: 11.6, name: "sweet little sister" }
     ,{ id: 98,  level: 3, rate_base: 11.4, name: "魔理沙は大変なものを盗んでいきました" }
     ,{ id: 156, level: 3, rate_base: 11.5, name: "FREELY TOMORROW" }
-    ,{ id: 117, level: 3, rate_base: 11.2, name: "M.S.S.Planet" }
-    ,{ id: 118, level: 3, rate_base: 11.1, name: "腐れ外道とチョコレゐト" }
+    ,{ id: 117, level: 3, rate_base: 11.5, name: "M.S.S.Planet" }
+    ,{ id: 118, level: 3, rate_base: 12.0, name: "腐れ外道とチョコレゐト" }
     ,{ id: 18,  level: 3, rate_base: 11.2, name: "千本桜" }
     ,{ id: 113, level: 3, rate_base: 11.4, name: "ストリーミングハート" }
     ,{ id: 38,  level: 3, rate_base: 11.0, name: "天ノ弱" }
     ,{ id: 114, level: 3, rate_base: 11.4, name: "Sweet Devil" }
     ,{ id: 111, level: 3, rate_base: 11.3, name: "staple stable" }
-    ,{ id: 110, level: 3, rate_base: 11.3, name: "Magia" }
+    ,{ id: 110, level: 3, rate_base: 11.2, name: "Magia" }
     ,{ id: 5,   level: 3, rate_base: 11.3, name: "Scatman (Ski Ba Bop Ba Dop Bop)" }
     ,{ id: 60,  level: 3, rate_base: 11.3, name: "only my railgun" }
-    ,{ id: 17,  level: 3, rate_base: 11.0, name: "空色デイズ" }
+    ,{ id: 17,  level: 3, rate_base: 11.1, name: "空色デイズ" }
     ,{ id: 104, level: 3, rate_base: 12.7, name: "とーきょー全域★アキハバラ？" }
     ,{ id: 178, level: 3, rate_base: 12.7, name: "stella=steLLa" }
-    ,{ id: 101, level: 3, rate_base: 12.7, name: "Tango Rouge" }
+    ,{ id: 101, level: 3, rate_base: 12.8, name: "Tango Rouge" }
     ,{ id: 64,  level: 3, rate_base: 12.7, name: "今ぞ♡崇め奉れ☆オマエらよ！！～姫の秘メタル渇望～" }
-    ,{ id: 144, level: 3, rate_base: 12.9, name: "Aragami" }
-    ,{ id: 142, level: 3, rate_base: 12.7, name: "Altale" }
+    ,{ id: 144, level: 3, rate_base: 13.2, name: "Aragami" }
+    ,{ id: 142, level: 3, rate_base: 12.6, name: "Altale" }
     ,{ id: 157, level: 3, rate_base: 12.8, name: "ギガンティック O.T.N" }
     ,{ id: 154, level: 3, rate_base: 12.7, name: "SAVIOR OF SONG" }
     ,{ id: 180, level: 2, rate_base: 12.4, name: "怒槌 赤" }
     ,{ id: 70,  level: 3, rate_base: 12.4, name: "STAR" }
-    ,{ id: 151, level: 3, rate_base: 12.0, name: "Alma" }
+    ,{ id: 151, level: 3, rate_base: 12.4, name: "Alma" }
     ,{ id: 82,  level: 3, rate_base: 12.3, name: "Memories of Sun and Moon" }
     ,{ id: 108, level: 3, rate_base: 12.0, name: "The ether" }
     ,{ id: 53,  level: 3, rate_base: 12.3, name: "Teriqma" }
     ,{ id: 95,  level: 3, rate_base: 12.1, name: "砂漠のハンティングガール♡" }
-    ,{ id: 51,  level: 3, rate_base: 12.3, name: "My First Phone" }
-    ,{ id: 71,  level: 3, rate_base: 12.4, name: "Infantoon Fantasy" }
+    ,{ id: 51,  level: 3, rate_base: 12.6, name: "My First Phone" }
+    ,{ id: 71,  level: 3, rate_base: 12.3, name: "Infantoon Fantasy" }
     ,{ id: 161, level: 3, rate_base: 12.4, name: "私の中の幻想的世界観及びその顕現を想起させたある現実での出来事に関する一考察" }
-    ,{ id: 150, level: 3, rate_base: 12.1, name: "brilliant better" }
+    ,{ id: 150, level: 3, rate_base: 11.8, name: "brilliant better" }
     ,{ id: 88,  level: 3, rate_base: 12.1, name: "The Concept of Love" }
     ,{ id: 6,   level: 3, rate_base: 12.5, name: "Reach for the Stars" }
     ,{ id: 136, level: 3, rate_base: 12.5, name: "Äventyr" }
-    ,{ id: 128, level: 3, rate_base: 12.5, name: "The Formula" }
-    ,{ id: 45,  level: 3, rate_base: 12.1, name: "L9" }
-    ,{ id: 33,  level: 3, rate_base: 12.4, name: "Blue Noise" }
+    ,{ id: 128, level: 3, rate_base: 12.7, name: "The Formula" }
+    ,{ id: 45,  level: 3, rate_base: 12.2, name: "L9" }
+    ,{ id: 33,  level: 3, rate_base: 12.7, name: "Blue Noise" }
     ,{ id: 120, level: 3, rate_base: 12.3, name: "四次元跳躍機関" }
-    ,{ id: 21,  level: 3, rate_base: 12.0, name: "ナイト・オブ・ナイツ" }
-    ,{ id: 132, level: 3, rate_base: 12.4, name: "イカサマライフゲイム" }
+    ,{ id: 21,  level: 3, rate_base: 11.9, name: "ナイト・オブ・ナイツ" }
+    ,{ id: 132, level: 3, rate_base: 12.2, name: "イカサマライフゲイム" }
     ,{ id: 83,  level: 3, rate_base: 12.2, name: "ロストワンの号哭" }
-    ,{ id: 27,  level: 3, rate_base: 12.3, name: "タイガーランペイジ" }
-    ,{ id: 23,  level: 3, rate_base: 12.2, name: "一触即発☆禅ガール" }
-    ,{ id: 180, level: 3, rate_base: 13.7, name: "怒槌" }
-    ,{ id: 103, level: 3, rate_base: 13.5, name: "エンドマークに希望と涙を添えて" }
-    ,{ id: 152, level: 3, rate_base: 13.0, name: "Gustav Battle" }
+    ,{ id: 27,  level: 3, rate_base: 12.4, name: "タイガーランペイジ" }
+    ,{ id: 23,  level: 3, rate_base: 12.1, name: "一触即発☆禅ガール" }
+    ,{ id: 180, level: 3, rate_base: 13.9, name: "怒槌" }
+    ,{ id: 103, level: 3, rate_base: 13.7, name: "エンドマークに希望と涙を添えて" }
+    ,{ id: 152, level: 3, rate_base: 12.9, name: "Gustav Battle" }
     ,{ id: 69,  level: 3, rate_base: 13.4, name: "The wheel to the right" }
     ,{ id: 63,  level: 3, rate_base: 13.0, name: "Gate of Fate" }
     ,{ id: 141, level: 3, rate_base: 13.1, name: "閃鋼のブリューナク" }
-    ,{ id: 76,  level: 3, rate_base: 13.1, name: "luna blu" }
+    ,{ id: 76,  level: 3, rate_base: 13.2, name: "luna blu" }
     ,{ id: 107, level: 3, rate_base: 13.0, name: "We Gonna Journey" }
     ,{ id: 138, level: 3, rate_base: 13.0, name: "conflict"}
     ,{ id: 135, level: 3, rate_base: 13.1, name: "Vallista" }
-    ,{ id: 134, level: 3, rate_base: 13.4, name: "HAELEQUIN (Original Remaster)" }
+    ,{ id: 134, level: 3, rate_base: 13.7, name: "HAELEQUIN (Original Remaster)" }
     ,{ id: 92,  level: 3, rate_base: 13.0, name: "最終鬼畜妹・一部声" }
-    ,{ id: 159, level: 3, rate_base: 13.1, name: "ジングルベル" }
+    ,{ id: 159, level: 3, rate_base: 13.4, name: "ジングルベル" }
     ,{ id: 165, level: 3, rate_base: 12.9, name: "ぼくらの16bit戦争" }
     ,{ id: 179, level: 3, rate_base: 11.1, name: "すろぉもぉしょん" }
     ,{ id: 166, level: 3, rate_base: 11.8, name: "裏表ラバーズ" }
     ,{ id: 168, level: 3, rate_base: 11.9, name: "ネトゲ廃人シュプレヒコール" }
     ,{ id: 167, level: 3, rate_base: 12.7, name: "脳漿炸裂ガール" }
     ,{ id: 169, level: 3, rate_base: 11.4, name: "elegante" }
+    ,{ id: 14,  level: 3, rate_base: 11.0, name: "コネクト" }
+    ,{ id: 235, level: 3, rate_base: 12.5, name: "ファッとして桃源郷" }
+    ,{ id: 232, level: 3, rate_base: 13.3, name: "Elemental Creation" }
+    ,{ id: 205, level: 3, rate_base: 12.7, name: "SNIPE WHOLE" }
+    ,{ id: 73,  level: 3, rate_base: 12.5, name: "MUSIC PЯAYER" }
+    ,{ id: 52,  level: 3, rate_base: 13.4, name: "Cyberozar" }
+    ,{ id: 244, level: 3, rate_base: 12.0, name: "回レ！雪月花" }
+    ,{ id: 243, level: 3, rate_base: 12.2, name: "シュガーソングとビターステップ" }
+    ,{ id: 171, level: 3, rate_base: 12.1, name: "XL TECHNO" }
+    ,{ id: 232, level: 2, rate_base: 11.3, name: "Elemental Creation 赤" }
+    ,{ id: 52,  level: 2, rate_base: 11.1, name: "Cyberozar 赤" }
+    ,{ id: 209, level: 3, rate_base: 11.7, name: "君色シグナル" }
+    ,{ id: 247, level: 3, rate_base: 11.9, name: "絶世スターゲイト" }
+    ,{ id: 199, level: 3, rate_base: 12.3, name: "ハート・ビート" }
+    ,{ id: 173, level: 3, rate_base: 13.1, name: "Halcyon" }
+    ,{ id: 185, level: 3, rate_base: 11.2, name: "楽園の翼" }
+    ,{ id: 42,  level: 3, rate_base: 11.6, name: "oath sign" }
+    ,{ id: 9,   level: 3, rate_base: 11.3, name: "情熱大陸" }
+    ,{ id: 56,  level: 3, rate_base: 11.0, name: "そばかす" }
+    ,{ id: 112, level: 3, rate_base: 11.0, name: "マジLOVE100%" }
+    ,{ id: 74,  level: 3, rate_base: 11.0, name: "リリーシア" }
+    ,{ id: 233, level: 3, rate_base: 12.2, name: "アルストロメリア" }
+    ,{ id: 197, level: 3, rate_base: 13.1, name: "Jack-the-Ripper◆" }
+    ,{ id: 226, level: 2, rate_base: 12.3, name: "Garakuta Doll Play 赤" }
+    ,{ id: 226, level: 3, rate_base: 13.8, name: "Garakuta Doll Play" }
+    ,{ id: 62,  level: 3, rate_base: 12.4, name: "名も無い鳥" }
+    ,{ id: 90,  level: 2, rate_base: 11.6, name: "L'épisode 赤" }
+    ,{ id: 90,  level: 3, rate_base: 13.2, name: "L'épisode" }
+    ,{ id: 72,  level: 3, rate_base: 13.0, name: "Genesis" }
+    ,{ id: 197, level: 2, rate_base: 11.2, name: "Jack-the-Ripper◆ 赤" }
+    ,{ id: 255, level: 3, rate_base: 11.1, name: "激情！ミルキィ大作戦" }
+    ,{ id: 214, level: 3, rate_base: 11.9, name: "青春はNon-Stop!" }
+    ,{ id: 215, level: 3, rate_base: 12.4, name: "Falling Roses" }
+    ,{ id: 200, level: 3, rate_base: 12.1, name: "無敵We are one!!" }
+    ,{ id: 202, level: 2, rate_base: 11.2, name: "GEMINI -C- 赤" }
+    ,{ id: 202, level: 3, rate_base: 13.1, name: "GEMINI -C-" }
 ];
 
 /* latest rate */
@@ -437,10 +474,11 @@ function rate_display()
     $("#cra_window_inner").html("<p>calculating rate ...</p>");
 
     /* calculate score improvement */
-    for(i = 0; i < chart_list.length; i++)
+    for(i = 0; i < chart_list.length; i++){
         chart_list[i].rate_diff =
-        last_chart_list && last_chart_list[i].rate ?
-        chart_list[i].rate - last_chart_list[i].rate : 0;
+            !last_chart_list ? 0
+            : chart_list[i].rate - (last_chart_list[i] && last_chart_list[i].rate || 0);
+    }
 
     /* calculate and save rate */
     chart_list.sort(function(a, b){ return - (a.rate - b.rate); });
@@ -529,11 +567,11 @@ function rate_display()
         $("#cra_sort_base").click(function(){
             chart_list.sort(function(a, b){ return - (a.rate_base - b.rate_base); });
             var indices = { 0 : "LEVEL 13+" };
-            for(i = 0; chart_list[i].rate_base > 13.5; i++);
+            for(i = 0; chart_list[i].rate_base >= 13.7; i++);
             indices[i] = "LEVEL 13";
             for(i = 0; chart_list[i].rate_base >= 13; i++);
             indices[i] = "LEVEL 12+";
-            for(i = 0; chart_list[i].rate_base > 12.5; i++);
+            for(i = 0; chart_list[i].rate_base >= 12.7; i++);
             indices[i] = "LEVEL 12";
             for(i = 0; chart_list[i].rate_base >= 12; i++);
             indices[i] = "LEVEL 11";
@@ -554,7 +592,9 @@ function rate_display()
 
         /* render chart list */
         var indices = {};
-        chart_list.sort(function(a, b){ return - (a.rate_diff - b.rate_diff || a.rate - b.rate); });
+        chart_list.sort(function(a, b){
+            return (a.rate_diff ? 0 : 1) + (b.rate_diff ? 0 : -1) || - (a.rate - b.rate);
+        });
         for(var i = 0; i < chart_list.length && chart_list[i].rate_diff != 0; i++);
         if(i) indices[0] = "最近レートを更新した曲";
         indices[i] = "曲別レート (高い順)";
