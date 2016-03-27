@@ -1,7 +1,7 @@
 /* CHUNITHM Rate Analyzer (C) zk_phi 2015- */
 /* *FIXME* NO CHARTS CAN BE REMOVED FROM chart_list */
 
-var cra_version = 160321;
+var cra_version = 160328;
 
 /* -----------------------------------------------------------------------------
  * utilities
@@ -549,7 +549,8 @@ function rate_display()
         $("#cra_sort_menu")
             .html("<div id='cra_sort_rate' class='ticket_hold cra_sort_button'>レート順</div>" +
                   "<div id='cra_sort_base' class='ticket_hold cra_sort_button'>難易度順</div>" +
-                  "<div id='cra_sort_score' class='ticket_hold cra_sort_button'>必要スコア順</div>");
+                  "<div id='cra_sort_score' class='ticket_hold cra_sort_button'>スコア順</div>" +
+                  "<div id='cra_sort_score_req' class='ticket_hold cra_sort_button'>必要スコア順</div>");
 
         $("#cra_footer")
             .html("CHUNITHM Rate Analyzer by zk_phi " +
@@ -579,6 +580,24 @@ function rate_display()
         });
 
         $("#cra_sort_score").click(function(){
+            chart_list.sort(function(a, b){ return - (a.score - b.score) });
+            var indices = { 0 : "SSS" };
+            for(i = 0; chart_list[i].score >= 1007500; i++);
+            indices[i] = "SS";
+            for(i = 0; chart_list[i].score >= 1000000; i++);
+            indices[i] = "S";
+            for(i = 0; chart_list[i].score >=  975000; i++);
+            indices[i] = "AAA";
+            for(i = 0; chart_list[i].score >=  950000; i++);
+            indices[i] = "AA";
+            for(i = 0; chart_list[i].score >=  925000; i++);
+            indices[i] = "A";
+            for(i = 0; chart_list[i].score >=  900000; i++);
+            indices[i] = "A未満"
+            render_chart_list(indices);
+        });
+
+        $("#cra_sort_score_req").click(function(){
             chart_list.sort(function(a, b){
                 return (isNaN(b.req_diff) ? -1 : 0) + (isNaN(b.req_diff) ? 1 : 0)
                     || a.req_diff - b.req_diff
