@@ -1,4 +1,5 @@
-* CHUNITHM Rate Analyzer
+#+TITLE: CHUNITHM Rate Analyzer
+#+STYLE: <link rel='stylesheet' href='http://thomasf.github.io/solarized-css/solarized-dark.min.css'>
 
 CHUNITHM のレート上げのお供に！
 
@@ -66,12 +67,21 @@ _ツールの性質を理解したうえで、各自の判断でご利用くだ�
 
 0. (GitHub のアカウントを取得)
 
-1. CHUNITHM Rate Analyzer を fork (自分のアカウントにコピー) する
+1. このページ上部の Fork ボタンを押す (→ 自分のアカウントにコピーされる)
 
-2. =chunithm.js= を開いて、曲リストの入っている場所を探す (100 行目あた
-   り)
+   [[file:imgs/1_fork.png]]
 
-3. 曲リストの *一番後ろに* 新しい曲を追加する
+2. =gh-pages= ブランチに切り替える
+
+   [[file:imgs/2_branch.png]]
+
+2. =chunithm.js= を開いて、右上の鉛筆マークを押す (→ 編集できるようになる)
+
+   [[file:imgs/3_edit.png]]
+
+3. 曲リストの場所を探して (100 行目あたり)、 *一番後ろに* 新しい曲を追加する
+
+   [[file:imgs/4_add_entry.png]]
 
    - 適当な曲データをコピペして、
    - =id= を新曲の ID に変更 (調べ方は後述)
@@ -79,13 +89,19 @@ _ツールの性質を理解したうえで、各自の判断でご利用くだ�
    - =rate_base= を新曲の譜面定数に変更
    - =name= を新曲の曲名 (赤譜面なら 曲名＋「赤」) に変更
 
-4. =chunithm.js= を commit (保存) する
+4. ページ下部の Commit Changes ボタンを押す (→ 保存される)
 
-   - 「○○を追加」など、どこを変えたかわかるようなメモを残してください
+   [[file:imgs/5_commit.png]]
 
-5. pull request を送る
+   - 「○○を追加」など、どこを変えたかわかるメモを書いてください
 
-   - メッセージは適当（「追加しといたのでアプデよろしく」とか）で OK
+5. レートアナライザのトップに戻って、New Pull Request を押す
+
+   [[file:imgs/6_pr.png]]
+
+6. 適当にメッセージを入れて送信
+
+   [[file:imgs/7_send.png]]
 
 僕に pull request が届いたら、大丈夫そうか簡単にチェックして、アップデー
 トを配信します。
@@ -94,11 +110,16 @@ _ツールの性質を理解したうえで、各自の判断でご利用くだ�
 
 1. CHUNITHM NET にログイン
 
-2. レコードを開いて、調べたい曲がリストに表示されている状態にする
+2. レコードを開いて、絞り込みなどをうまく使って調べたい曲がリストに表示
+   されている状態にする
 
-3. 右クリック → 要素の検証
+3. 調べたい曲を右クリック → 要素を検証
 
-4. 調べたい曲のある場所を探す
+   [[file:imgs/a1_rightclick.png]]
+
+4. 曲名の左に書いてある =sendUserMusicDetail(???)= の =???= が ID
+
+   [[file:imgs/a2_id.png]]
 
 ** Q&A
 
