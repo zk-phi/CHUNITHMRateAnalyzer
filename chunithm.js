@@ -225,6 +225,8 @@ var chart_list = [
     ,{ id: 200, level: 3, rate_base: 12.1, name: "無敵We are one!!" }
     ,{ id: 202, level: 2, rate_base: 11.2, name: "GEMINI -C- 赤" }
     ,{ id: 202, level: 3, rate_base: 13.1, name: "GEMINI -C-" }
+    ,{ id: 222, level: 3, rate_base: 12.9, name: "Mr.Wonderland" }
+    ,{ id: 252, level: 3, rate_base: 12.3, name: "愛迷エレジー" }
 ];
 
 /* latest rate */
