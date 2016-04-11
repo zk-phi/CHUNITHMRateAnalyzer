@@ -227,6 +227,10 @@ var chart_list = [
     ,{ id: 202, level: 3, rate_base: 13.1, name: "GEMINI -C-" }
     ,{ id: 222, level: 3, rate_base: 12.9, name: "Mr.Wonderland" }
     ,{ id: 252, level: 3, rate_base: 12.3, name: "愛迷エレジー" }
+    ,{ id: 224, level: 3, rate_base: 11.1, name: "恋愛裁判" }
+    ,{ id: 228, level: 3, rate_base: 12.0, name: "このふざけた素晴らしき世界は、僕の為にある" }
+    ,{ id: 213, level: 3, rate_base: 12.1, name: "星屑ユートピア" }
+    ,{ id: 212, level: 3, rate_base: 11.8, name: "いろは唄" }
 ];
 
 /* latest rate */
