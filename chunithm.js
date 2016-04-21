@@ -231,8 +231,8 @@ var chart_list = [
     ,{ id: 228, level: 3, rate_base: 12.0, name: "このふざけた素晴らしき世界は、僕の為にある" }
     ,{ id: 213, level: 3, rate_base: 12.1, name: "星屑ユートピア" }
     ,{ id: 212, level: 3, rate_base: 11.8, name: "いろは唄" }
-    ,{ id: 131, level: 3, rate_base: 12.7, name: "チルドレンレコード" }
-    ,{ id: 220, level: 3, rate_base: 12.0, name: "如月アテンション" }
+    ,{ id: 131, level: 3, rate_base: 12.8, name: "チルドレンレコード" }
+    ,{ id: 220, level: 3, rate_base: 12.3, name: "如月アテンション" }
     ,{ id: 240, level: 3, rate_base: 12.7, name: "夜咄ディセイブ" }
     ,{ id: 19, level: 3, rate_base: 13.0, name: "DRAGONLADY" }
 ];
