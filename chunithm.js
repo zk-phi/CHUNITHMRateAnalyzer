@@ -230,7 +230,7 @@ var chart_list = [
     ,{ id: 220, level: 3, rate_base: 12.3, name: "如月アテンション" }
     ,{ id: 240, level: 3, rate_base: 12.7, name: "夜咄ディセイブ" }
     ,{ id: 131, level: 3, rate_base: 12.8, name: "チルドレンレコード" }
-    ,{ id: 19, level: 3, rate_base: 13.2, name: "DRAGONLADY" 
+    ,{ id: 19, level: 3, rate_base: 13.2, name: "DRAGONLADY" }
 ];
 
 /* latest rate */
