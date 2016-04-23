@@ -234,7 +234,7 @@ var chart_list = [
     ,{ id: 131, level: 3, rate_base: 12.8, name: "チルドレンレコード" }
     ,{ id: 220, level: 3, rate_base: 12.3, name: "如月アテンション" }
     ,{ id: 240, level: 3, rate_base: 12.7, name: "夜咄ディセイブ" }
-    ,{ id: 19, level: 3, rate_base: 13.2, name: "DRAGONLADY" }
+    ,{ id: 19,  level: 3, rate_base: 13.2, name: "DRAGONLADY" }
 ];
 
 /* latest rate */
@@ -340,7 +340,7 @@ var the_css = {
 
     ".cra_chart_list_item" : {
         "text-align" : "center",
-        "margin" : "20px auto"
+        // "margin" : "20px auto"
     },
 
     ".cra_thumb" : { "float" : "left" },
@@ -514,8 +514,8 @@ function rate_display()
     worst_chart_rate = chart_list[29].rate;
     for(i = 0; i < chart_list.length; i++)
     {
-        chart_list[i].req_score = rate_to_score(chart_list[i].rate_base, worst_chart_rate);
-        chart_list[i].req_diff = Math.max(chart_list[i].req_score - chart_list[i].score, 0);
+        var req_score = rate_to_score(chart_list[i].rate_base, worst_chart_rate);
+        chart_list[i].req_diff = Math.max(req_score - chart_list[i].score, 0);
     }
 
     /* remove window and show the result */
@@ -617,7 +617,7 @@ function rate_display()
                     || a.req_diff - b.req_diff
                     || - (a.rate_base - b.rate_base);
             });
-            render_chart_list({ 0: "レート上げに必要なスコア (少ない順)", 30: "BEST 枠ここまで" });
+            render_chart_list({ 0: "レート上げに必要なスコア順", 30: "BEST 枠ここまで" });
         });
 
         /* load twitter buttons */
@@ -647,7 +647,8 @@ function render_chart_list(msgs)
     for(var i = 0; i < chart_list.length; i++)
     {
         if(msgs[i])
-            $("#cra_chart_list").append("<hr><h2>" + msgs[i] + "</h2>");
+            $("#cra_chart_list")
+            .append("<hr><div class='mt_15'><h2 id='page_title'>" + msgs[i] + "</h2></div>");
 
         if(isNaN(chart_list[i].req_diff))
             continue;
@@ -660,21 +661,55 @@ function render_chart_list(msgs)
             : chart_list[i].score >=  900000 ? "common/images/icon_a.png"
             : "";
 
-        var $list_item = $("<div class='w460 cra_chart_list_item'>").appendTo("#cra_chart_list");
+        var difficulty_icon = chart_list[i].level == 2 ? "common/images/icon_expert.png"
+            : "common/images/icon_master.png";
+
+        var $list_item = $("<div class='frame02 w400 cra_chart_list_item'>")
+            .appendTo("#cra_chart_list");
 
         $list_item
-            .addClass(chart_list[i].level == 2 ? "musiclist_expart" : "musiclist_master")
-            .attr("chart_id", i)
-            .html("<img class='cra_thumb' src='" + chart_list[i].image + "'>" +
-                  "<h3>" + chart_list[i].rate_base + " " + chart_list[i].name + "</h3>" +
-                  "<p>" + "レート: " + rate_str(chart_list[i].rate) +
-                  rate_diff_str(chart_list[i].rate_diff) + " / " +
-                  chart_list[i].score + " <img src='" + rank_icon + "'>" + "</p>");
+            .html(`
+<div class="play_jacket_side">
+  <div class="play_jacket_area">
+    <div id="Jacket" class="play_jacket_img">
+      <img src=${chart_list[i].image}>
+    </div>
+  </div>
+</div>
+<div class="play_data_side01">
+  <div class="box02 play_track_block">
+    <div id="TrackLevel" class="play_track_result">
+      <img src="${difficulty_icon}">
+    </div>
+    <div id="Track" class="play_track_text">
+      ${rate_str(chart_list[i].rate_base)}
+    </div>
+  </div>
+  <div class="box02 play_musicdata_block">
+    <div id="MusicTitle" class="play_musicdata_title">
+      ${chart_list[i].name}
+    </div>
+    <div class="play_musicdata_score clearfix">
+      <div class="play_musicdata_score_text">
+        Score：<span id="Score">${chart_list[i].score}</span>
+      </div>
+      <br>
+      <div class="play_musicdata_score_text">
+        Rate：
+        <span id="Rate">
+          ${rate_str(chart_list[i].rate)}${rate_diff_str(chart_list[i].rate_diff)}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>`);
 
-        if(chart_list[i].req_diff != 0){
-            $list_item
-                .append("<p>BEST 枠入りまで: " + chart_list[i].req_diff + " " +
-                        "(" + chart_list[i].req_score + "～)</p>");
+        if(chart_list[i].req_diff != 0) {
+            $list_item.children(".play_data_side01")
+                .append(`
+<div id="IconBatch" class="play_musicdata_icon clearfix">
+  BEST枠入りまで：${chart_list[i].req_diff}
+</div>`);
         }
     }
 
