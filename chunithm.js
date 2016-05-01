@@ -460,9 +460,8 @@ $("body")
     .append("<div id='cra_wrapper'></div>");
 
 $("#cra_wrapper")
-    .html("<div id='cra_window_wrapper'></div>"//  +
-          // "<div id='cra_close_button' class='cra_button'>x</div>"
-         );
+    .html("<div id='cra_window_wrapper'></div>" +
+          "<div id='cra_close_button' class='cra_button'>x</div>");
 
 $("#cra_window_wrapper")
     .html("<div id='cra_window_helper'></div>" +
