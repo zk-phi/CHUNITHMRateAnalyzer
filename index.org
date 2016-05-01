@@ -9,10 +9,10 @@ CHUNITHM のレート上げのお供に！
 
 などを簡単に調べられるツールです。
 
-(計算方法は [[http://twitter.com/capue][@capue]] さんほかの調査によります)
+最新情報やバグ報告・リクエストなどは [[twitter.com/zk_phi][作者 Twitter]] で！
 
-** 注意
-*** 対象譜面
+* 注意
+** 対象譜面
 
 レベル１１～１３＋で、ランクＡ以上が出ているもの (ランクＡを達成してい
 ない譜面は未プレイ扱い)。
@@ -20,7 +20,7 @@ CHUNITHM のレート上げのお供に！
 ※レベル１１未満の曲がレートの対象に入っている方 (BEST レート 13 未満)
 は正しく計算することができません。
 
-*** スコア情報の取得について
+** スコア情報の取得について
 
 このツールは CHUNITHM NET の内部で使われている URL に直接アクセスするこ
 とでスコア情報を収集します。これが「通常想定し得ない方法」による、ある
@@ -30,8 +30,8 @@ CHUNITHM のレート上げのお供に！
 _ツールの性質を理解したうえで、各自の判断でご利用ください。このツールを
 使用したことで起こったトラブルに作者は対応しません。_
 
-** 使い方
-*** インストール
+* 使い方
+** インストール
 
 #+HTML: <a href="javascript:(function()%7Bfunction%20callback()%7B(function(%24)%7Bvar%20jQuery%3D%24%3B%24(%22head%22).append(%22%3Cscript%20src%3D'https%3A%2F%2Fzk-phi.github.io%2FCHUNITHMRateAnalyzer%2Fchunithm.js'%3E%22)%7D)(jQuery.noConflict(true))%7Dvar%20s%3Ddocument.createElement(%22script%22)%3Bs.src%3D%22https%3A%2F%2Fajax.googleapis.com%2Fajax%2Flibs%2Fjquery%2F1.7.1%2Fjquery.min.js%22%3Bif(s.addEventListener)%7Bs.addEventListener(%22load%22%2Ccallback%2Cfalse)%7Delse%20if(s.readyState)%7Bs.onreadystatechange%3Dcallback%7Ddocument.body.appendChild(s)%3B%7D)()">このリンク</a>
 
@@ -43,7 +43,7 @@ _ツールの性質を理解したうえで、各自の判断でご利用くだ�
 
 ※ IE 系のブラウザでは動作チェックをしていません
 
-*** 起動
+** 起動
 
 1. CHUNITHM NET にログイン
 
@@ -51,7 +51,7 @@ _ツールの性質を理解したうえで、各自の判断でご利用くだ�
 
 3. *CHUNITHM NET の画面を出したまま* 、保存しておいたリンクを開く
 
-** 協力者求む！ (2016/04/09～)
+* 協力者求む！ (2016/04/09～)
 
 *CHUNITHM Rate Analyzer は誰でも開発に参加できます* 。
 
@@ -62,7 +62,7 @@ _ツールの性質を理解したうえで、各自の判断でご利用くだ�
 協力してくれている方には、僕のチェックなしで即配信できる権限を渡す可能
 性もあります)。
 
-*** 曲データの追加方法
+** 曲データの追加方法
 
 0. (GitHub のアカウントを取得)
 
@@ -107,7 +107,7 @@ _ツールの性質を理解したうえで、各自の判断でご利用くだ�
 僕に pull request が届いたら、大丈夫そうか簡単にチェックして、アップデー
 トを配信します。
 
-*** 曲 ID の確認方法
+** 曲 ID の確認方法
 
 1. CHUNITHM NET にログイン
 
@@ -122,7 +122,7 @@ _ツールの性質を理解したうえで、各自の判断でご利用くだ�
 
    [[file:imgs/a2_id.png]]
 
-** Q&A
+* Q&A
 
 - で、結局どうしたらレート上がるの？ ::
      BEST 枠 (上位３０曲) のスコアを伸ばすか、BEST 枠に入っていない曲を
@@ -187,7 +187,7 @@ _ツールの性質を理解したうえで、各自の判断でご利用くだ�
 #
 # - 2016.05.01 デザイン変更
 
-** リンク
+* リンク
 
 - [[http://d.hatena.ne.jp/risette14/][リゼット(14新)推奨日記]] ::
      このツールのもとになっている、レートのシステムや計算式、譜面定数の
