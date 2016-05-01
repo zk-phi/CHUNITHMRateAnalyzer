@@ -795,6 +795,9 @@ function render_chart_list(msgs)
       </div>
     </div>
   </div>
+  <div id="IconBatch" class="play_musicdata_icon clearfix">
+    BEST枠入りまで: ${chart_list[i].req_diff}
+  </div>
 </div>`);
 
         // $("#cra_chart_list").append(list_item_template, {
