@@ -345,25 +345,12 @@ var the_css = {
 
     "#logo": { "max-width": "100%" },
 
-    // "#cra_title": {
-    //     "position": "relative",
-    //     "width": "100%",
-    //     "margin-top": "30px",
-    //     "font-size": "30px", "text-align": "center"
-    // },
-
     "#cra_chart_list": {
         "position": "relative",
         "width": "100%"
     },
 
     "#cra_footer": { "margin-bottom": "30px" },
-
-    // ".cra_sort_button": {
-    //     "margin": "0px 10px", "padding": "initial",
-    //     "width": "120px",
-    //     "text-align": "center", "cursor": "pointer"
-    // },
 
     ".cra_sort_button": {
         "display": "inline-block",
@@ -400,8 +387,7 @@ var the_css = {
 //      ["div#cra_close_button", {class: "cra_button"}, "x"]];
 
 // var main_screen_doms = [
-//     ["div#cra_title", "CHUNITHM Rate Analyzer"],
-//     ["h3#cra_version"],
+//     ["img#logo", {src: "https://zk-phi.github.io/CHUNITHMRateAnalyzer/logo.png"}],
 //     ["h2#cra_rate",
 //      ["p#cra_best_rate",
 //       "BEST枠平均: ", ["span#rate_best"], " / ", "達成可能: ", ["span#rate_opt"], " ",
@@ -414,10 +400,10 @@ var the_css = {
 //      ["p#cra_disp_rate",
 //       "(RECENT枠平均: ", ["span#rate_recent"], "表示レート: ", ["span#rate_disp"], ")"]],
 //     ["div#cra_sort_menu", {class: "cra_button"},
-//      ["div#cra_sort_rate", {class: "ticket_hold cra_sort_button"}, "レート順"],
-//      ["div#cra_sort_base", {class: "ticket_hold cra_sort_button"}, "難易度順"],
-//      ["div#cra_sort_score", {class: "ticket_hold cra_sort_button"}, "スコア順"],
-//      ["div#cra_sort_score_req", {class: "ticket_hold cra_sort_button"}, "必要スコア順"]],
+//      ["div#cra_sort_rate", {class: "cra_sort_button"}, "レート順"],
+//      ["div#cra_sort_base", {class: "cra_sort_button"}, "難易度順"],
+//      ["div#cra_sort_score", {class: "cra_sort_button"}, "スコア順"],
+//      ["div#cra_sort_score_req", {class: "cra_sort_button"}, "必要スコア順"]],
 //     ["div#cra_chart_list"],
 //     "<hr>",
 //     ["div#cra_footer",
@@ -458,18 +444,14 @@ $("head").append("<style>" + css(the_css) + "</style>");
 
 $("body")
     .append("<div id='cra_wrapper'></div>");
-
 $("#cra_wrapper")
     .html("<div id='cra_window_wrapper'></div>" +
           "<div id='cra_close_button' class='cra_button'>x</div>");
-
 $("#cra_window_wrapper")
     .html("<div id='cra_window_helper'></div>" +
           "<div id='cra_window_outer' class='frame01 w460'></div>");
-
 $("#cra_window_outer")
     .html("<div id='cra_window_inner' class='frame01_inside w450'></div>");
-
 $("#cra_window_inner")
     .html("<p class='cra_caution'>CAUTION</p>" +
           "<p>(05/01 スマホ対応のデザインに変更しました)</p>" +
@@ -621,9 +603,7 @@ function rate_display()
         $hidden_items.fadeTo(400, 0);
 
         $("#cra_wrapper")
-            .append(// "<div id='cra_title'>CHUNITHM Rate Analyzer</div>" +
-                "<img id='logo' src='https://zk-phi.github.io/CHUNITHMRateAnalyzer/logo.png' />" +
-                    // "<h3 id='cra_version'>version " + cra_version + "</h3>" +
+            .append("<img id='logo' src='https://zk-phi.github.io/CHUNITHMRateAnalyzer/logo.png' />" +
                     "<div id='cra_rate'></div>" +
                     "<div id='cra_sort_menu' class='cra_button'></div>" +
                     "<div id='cra_chart_list'></div>" +
