@@ -796,7 +796,7 @@ function render_chart_list(msgs)
     </div>
   </div>
   <div id="IconBatch" class="play_musicdata_icon clearfix">
-    BEST枠入りまで: ${chart_list[i].req_diff}
+    ${chart_list[i].req_diff > 0 ? "BEST枠入りまで: " + chart_list[i].req_diff : ""}
   </div>
 </div>`);
 
