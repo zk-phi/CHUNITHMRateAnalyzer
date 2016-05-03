@@ -247,7 +247,7 @@ var chart_list = [
     ,{ id: 42,  level: 3, rate_base: 11.6, name: "oath sign" }
     ,{ id: 9,   level: 3, rate_base: 11.3, name: "情熱大陸" }
     ,{ id: 56,  level: 3, rate_base: 11.0, name: "そばかす" }
-    ,{ id: 112, level: 3, rate_base: 11.0, name: "マジLOVE100%" }
+    ,{ id: 112, level: 3, rate_base: 11.0, name: "マジLOVE1000%" }
     ,{ id: 74,  level: 3, rate_base: 11.0, name: "リリーシア" }
     ,{ id: 233, level: 3, rate_base: 12.2, name: "アルストロメリア" }
     ,{ id: 197, level: 3, rate_base: 13.1, name: "Jack-the-Ripper◆" }
