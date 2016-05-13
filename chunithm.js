@@ -275,6 +275,7 @@ var chart_list = [
     ,{ id: 240, level: 3, rate_base: 12.7, name: "夜咄ディセイブ" }
     ,{ id: 19,  level: 3, rate_base: 13.2, name: "DRAGONLADY" }
     ,{ id: 106, level: 2, rate_base: 12.2, name: "宛城、炎上！！ 赤" }
+    ,{ id: 246, level: 3, rate_base: 12.3, name: "なるとなぎのパーフェクトロックンロール教室" }
 ];
 
 // latest rate
