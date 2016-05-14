@@ -278,6 +278,7 @@ var chart_list = [
     ,{ id: 246, level: 3, rate_base: 12.3, name: "なるとなぎのパーフェクトロックンロール教室" }
     ,{ id: 106, level: 3, rate_base: 13.8, name: "宛城、炎上！！" }
     ,{ id: 245, level: 3, rate_base: 11.4, name: "Help me, あーりん！" }
+    ,{ id: 61,  level: 3, rate_base: 13.6, name: "GOLDEN RULE" }
 ];
 
 // latest rate
