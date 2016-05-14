@@ -274,7 +274,7 @@ var chart_list = [
     ,{ id: 220, level: 3, rate_base: 12.3, name: "如月アテンション" }
     ,{ id: 240, level: 3, rate_base: 12.7, name: "夜咄ディセイブ" }
     ,{ id: 19,  level: 3, rate_base: 13.2, name: "DRAGONLADY" }
-    ,{ id: 61,  level: 3, rate_base: 13.0, name: "GOLDEN RULE" }
+    ,{ id: 61,  level: 3, rate_base: 13.6, name: "GOLDEN RULE" }
 ];
 
 // latest rate
