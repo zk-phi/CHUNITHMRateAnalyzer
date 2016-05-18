@@ -9,7 +9,7 @@ CHUNITHM のレート上げのお供に！
 
 などを簡単に調べられるツールです。
 
-最新情報やバグ報告・リクエストなどは [[twitter.com/zk_phi][作者 Twitter]] で！
+最新情報やバグ報告・リクエストなどは [[http://twitter.com/zk_phi][作者 Twitter]] で！
 
 * 注意
 ** 対象譜面
