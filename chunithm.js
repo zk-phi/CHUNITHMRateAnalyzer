@@ -231,6 +231,8 @@ var chart_list = [
     ,{ id: 240, level: 3, rate_base: 12.7, name: "夜咄ディセイブ" }
     ,{ id: 131, level: 3, rate_base: 12.8, name: "チルドレンレコード" }
     ,{ id: 19, level: 3, rate_base: 13.2, name: "DRAGONLADY" }
+    ,{ id: 61, level: 3, rate_base: 13.6, name: "GOLDEN RULE" }
+    ,{ id: 106, level: 3, rate_base: 13.8, name: "宛城、炎上！！" }
 ];
 
 /* latest rate */
