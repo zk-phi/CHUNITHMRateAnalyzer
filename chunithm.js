@@ -285,6 +285,7 @@ var chart_list = [
     ,{ id: 196, level: 2, rate_base: 12.0, name: "FREEDOM DiVE 赤" }
     ,{ id:121,  level: 3, rate_base: 12.5, name: "東方妖々夢 ～the maximum moving about～" }
     ,{ id: 93,  level: 3, rate_base: 12.0, name: "蒼空に舞え、墨染の桜" }
+    ,{ id:122,  level: 3, rate_base: 12.5, name: "少女幻葬戦慄曲　～　Necro Fantasia" }
 ];
 
 // latest rate
