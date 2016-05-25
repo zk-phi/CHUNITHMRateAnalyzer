@@ -283,6 +283,7 @@ var chart_list = [
     ,{ id: 61,  level: 2, rate_base: 11.0, name: "GOLDEN RULE 赤" }
     ,{ id: 196, level: 3, rate_base: 13.7, name: "FREEDOM DiVE" }
     ,{ id: 196, level: 2, rate_base: 12.0, name: "FREEDOM DiVE 赤" }
+    ,{ id:121,  level: 3, rate_base: 12.5, name: "東方妖々夢 ～the maximum moving about～" }
 ];
 
 // latest rate
