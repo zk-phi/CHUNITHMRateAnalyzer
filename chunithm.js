@@ -281,6 +281,7 @@ var chart_list = [
     ,{ id: 61,  level: 3, rate_base: 13.6, name: "GOLDEN RULE" }
     ,{ id: 160, level: 3, rate_base: 11.5, name: "言ノ葉遊戯" }
     ,{ id: 61,  level: 2, rate_base: 11.0, name: "GOLDEN RULE 赤" }
+    ,{ id: 196, level: 3, rate_base: 13.7, name: "FREEDOM DiVE" }
 ];
 
 // latest rate
