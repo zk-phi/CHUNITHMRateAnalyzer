@@ -888,8 +888,8 @@ function rate_display()
     worst_chart_rate = chart_list[29].rate;
     for(i = 0; i < chart_list.length; i++)
     {
-        var req_score = rate_to_score(chart_list[i].rate_base, worst_chart_rate);
-        chart_list[i].req_diff = Math.max(req_score - chart_list[i].score, 0);
+        chart_list[i].req_score = rate_to_score(chart_list[i].rate_base, worst_chart_rate);
+        chart_list[i].req_diff = Math.max(chart_list[i].req_score - chart_list[i].score, 0);
     }
 
     // calculate recommendability
@@ -1114,7 +1114,9 @@ function render_chart_list(msgs)
     </div>
   </div>
   <div id="IconBatch" class="play_musicdata_icon clearfix">
-    ${chart_list[i].req_diff > 0 ? "BEST枠入りまで: " + chart_list[i].req_diff : ""}
+    ${chart_list[i].req_diff > 0 ?
+      "BEST枠入りまで: " + chart_list[i].req_diff + " (" + chart_list[i].req_score + ")" :
+      ""}
   </div>
 </div>`);
 
