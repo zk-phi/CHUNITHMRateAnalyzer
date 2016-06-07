@@ -287,7 +287,7 @@ var chart_list = [
     ,{ id: 93,  level: 3, rate_base: 12.3, name: "蒼空に舞え、墨染の桜" }
     ,{ id: 122, level: 3, rate_base: 12.5, name: "少女幻葬戦慄曲　～　Necro Fantasia" }
     ,{ id: 177, level: 3, rate_base: 12.6, name: "Jimang Shot" }
-];
+    ,{ id: 999, level: 2, rate_base: 13.6, name: "魔剤ンゴ　赤"}
 
 // latest rate
 var best_rate = 0;
