@@ -288,6 +288,7 @@ var chart_list = [
     ,{ id: 122, level: 3, rate_base: 12.5, name: "少女幻葬戦慄曲　～　Necro Fantasia" }
     ,{ id: 177, level: 3, rate_base: 12.6, name: "Jimang Shot" }
     ,{ id: 36,  level: 3, rate_base: 11.0, name: "届かない恋 '13" }
+    ,{ id: 126, level: 3, rate_base: 11.3, name: "Heart To Heart" }
 ];
 
 // latest rate
