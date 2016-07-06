@@ -292,6 +292,7 @@ var chart_list = [
     ,{ id: 35,  level: 3, rate_base: 12.4, name: "Lapis" }
     ,{ id: 223, level: 3, rate_base: 13.0, name: "カミサマネジマキ" }
     ,{ id: 216, level: 3, rate_base: 12.0, name: "放課後革命" }
+    ,{ id: 225, level: 3, rate_base: 12.0, name: "ウミユリ海底譚" }
 ];
 
 // latest rate
