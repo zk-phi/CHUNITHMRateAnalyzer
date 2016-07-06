@@ -290,6 +290,7 @@ var chart_list = [
     ,{ id: 36,  level: 3, rate_base: 11.0, name: "届かない恋 '13" }
     ,{ id: 126, level: 3, rate_base: 11.3, name: "Heart To Heart" }
     ,{ id: 35,  level: 3, rate_base: 12.4, name: "Lapis" }
+    ,{ id: 223, level: 3, rate_base: 13.0, name: "カミサマネジマキ" }
 ];
 
 // latest rate
