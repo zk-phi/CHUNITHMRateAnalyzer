@@ -294,6 +294,7 @@ var chart_list = [
     ,{ id: 216, level: 3, rate_base: 12.0, name: "放課後革命" }
     ,{ id: 225, level: 3, rate_base: 12.0, name: "ウミユリ海底譚" }
     ,{ id: 210, level: 3, rate_base: 12.0, name: "アスノヨゾラ哨戒班" }
+    ,{ id: 211, level: 3, rate_base: 12.0, name: "天樂" }
 ];
 
 // latest rate
