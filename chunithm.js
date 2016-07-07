@@ -296,6 +296,7 @@ var chart_list = [
     ,{ id: 210, level: 3, rate_base: 12.4, name: "アスノヨゾラ哨戒班" }
     ,{ id: 211, level: 3, rate_base: 12.2, name: "天樂" }
     ,{ id: 251, level: 3, rate_base: 12.5, name: "Crazy ∞ nighT" }
+    ,{ id: 223, level: 2, rate_base: 11.0, name: "カミサマネジマキ 赤" }
 ];
 
 // latest rate
