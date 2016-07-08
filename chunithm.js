@@ -290,6 +290,13 @@ var chart_list = [
     ,{ id: 36,  level: 3, rate_base: 11.0, name: "届かない恋 '13" }
     ,{ id: 126, level: 3, rate_base: 11.3, name: "Heart To Heart" }
     ,{ id: 35,  level: 3, rate_base: 12.4, name: "Lapis" }
+    ,{ id: 223, level: 3, rate_base: 13.0, name: "カミサマネジマキ" }
+    ,{ id: 216, level: 3, rate_base: 12.3, name: "放課後革命" }
+    ,{ id: 225, level: 3, rate_base: 12.1, name: "ウミユリ海底譚" }
+    ,{ id: 210, level: 3, rate_base: 12.4, name: "アスノヨゾラ哨戒班" }
+    ,{ id: 211, level: 3, rate_base: 12.2, name: "天樂" }
+    ,{ id: 251, level: 3, rate_base: 12.5, name: "Crazy ∞ nighT" }
+    ,{ id: 223, level: 2, rate_base: 11.0, name: "カミサマネジマキ 赤" }
 ];
 
 // latest rate
