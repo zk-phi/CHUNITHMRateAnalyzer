@@ -297,6 +297,7 @@ var chart_list = [
     ,{ id: 211, level: 3, rate_base: 12.2, name: "天樂" }
     ,{ id: 251, level: 3, rate_base: 12.5, name: "Crazy ∞ nighT" }
     ,{ id: 223, level: 2, rate_base: 11.0, name: "カミサマネジマキ 赤" }
+    ,{ id: 217, level: 3, rate_base: 11.8, name: "楽園ファンファーレ" }
 ];
 
 // latest rate
