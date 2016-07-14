@@ -478,7 +478,6 @@ $("#cra_window_outer")
     .html("<div id='cra_window_inner' class='frame01_inside w450'></div>");
 $("#cra_window_inner")
     .html("<p class='cra_caution'>CAUTION</p>" +
-          "<p>(05/01 スマホ対応のデザインに変更しました)</p>" +
           "<p>ツールの性質を理解したうえで、<br>各自の判断でご利用ください。</p>" +
           "<p>ツールを閉じるには、<br>右上の×ボタンをクリックしてください。</p>");
 
