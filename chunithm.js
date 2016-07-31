@@ -298,6 +298,10 @@ var chart_list = [
     ,{ id: 251, level: 3, rate_base: 12.5, name: "Crazy ∞ nighT" }
     ,{ id: 223, level: 2, rate_base: 11.0, name: "カミサマネジマキ 赤" }
     ,{ id: 217, level: 3, rate_base: 11.8, name: "楽園ファンファーレ" }
+    ,{ id: 227, level: 3, rate_base: 11.5, name: "洗脳" }
+    ,{ id: 208, level: 3, rate_base: 12.7, name: "SAMBISTA" }
+    ,{ id: 201, level: 2, rate_base: 12.4, name: "Contrapasso -inferno- 赤" }
+    ,{ id: 201, level: 3, rate_base: 13.9, name: "Contrapasso -inferno-" }
 ];
 
 // latest rate
