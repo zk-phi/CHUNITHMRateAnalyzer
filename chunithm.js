@@ -6,6 +6,12 @@ var cra_version = 160503;
 if(!location.href.match(/^https:\/\/chunithm-net.com/)){
     alert("CHUNITHM NET を開いた状態で実行してください。");
     throw Error();
+} else if(location.href == "https://chunithm-net.com/mobile/" || location.href == "https://chunithm-net.com/mobile/index.html") {
+    alert("CHUNITHM NET にログインした状態で実行してください。");
+    throw Error();
+} else if(location.href == "https://chunithm-net.com/mobile/AimeList.html") {
+    alert("AIME を選択した状態で実行してください。");
+    throw Error();
 }
 
 // -----------------------------------------------------------------------------
