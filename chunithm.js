@@ -199,7 +199,7 @@ var chart_list = [
     ,{ id: 108, level: 3, rate_base: 12.0, name: "The ether" }
     ,{ id: 53,  level: 3, rate_base: 12.3, name: "Teriqma" }
     ,{ id: 95,  level: 3, rate_base: 12.1, name: "砂漠のハンティングガール♡" }
-    ,{ id: 51,  level: 3, rate_base: 12.6, name: "My First Phone" }
+    ,{ id: 51,  level: 3, rate_base: 12.7, name: "My First Phone" }
     ,{ id: 71,  level: 3, rate_base: 12.3, name: "Infantoon Fantasy" }
     ,{ id: 161, level: 3, rate_base: 12.4, name: "私の中の幻想的世界観及びその顕現を想起させたある現実での出来事に関する一考察" }
     ,{ id: 150, level: 3, rate_base: 11.8, name: "brilliant better" }
@@ -209,7 +209,7 @@ var chart_list = [
     ,{ id: 128, level: 3, rate_base: 12.7, name: "The Formula" }
     ,{ id: 45,  level: 3, rate_base: 12.2, name: "L9" }
     ,{ id: 33,  level: 3, rate_base: 12.7, name: "Blue Noise" }
-    ,{ id: 120, level: 3, rate_base: 13.0, name: "四次元跳躍機関" }
+    ,{ id: 120, level: 3, rate_base: 12.7, name: "四次元跳躍機関" }
     ,{ id: 21,  level: 3, rate_base: 11.9, name: "ナイト・オブ・ナイツ" }
     ,{ id: 132, level: 3, rate_base: 12.2, name: "イカサマライフゲイム" }
     ,{ id: 83,  level: 3, rate_base: 12.2, name: "ロストワンの号哭" }
@@ -220,13 +220,13 @@ var chart_list = [
     ,{ id: 152, level: 3, rate_base: 13.0, name: "Gustav Battle" }
     ,{ id: 69,  level: 3, rate_base: 13.3, name: "The wheel to the right" }
     ,{ id: 63,  level: 3, rate_base: 13.1, name: "Gate of Fate" }
-    ,{ id: 141, level: 3, rate_base: 13.1, name: "閃鋼のブリューナク" }
+    ,{ id: 141, level: 3, rate_base: 13.3, name: "閃鋼のブリューナク" }
     ,{ id: 76,  level: 3, rate_base: 13.4, name: "luna blu" }
     ,{ id: 107, level: 3, rate_base: 13.0, name: "We Gonna Journey" }
     ,{ id: 138, level: 3, rate_base: 13.0, name: "conflict"}
     ,{ id: 135, level: 3, rate_base: 13.5, name: "Vallista" }
     ,{ id: 134, level: 3, rate_base: 13.7, name: "HAELEQUIN (Original Remaster)" }
-    ,{ id: 92,  level: 3, rate_base: 13.0, name: "最終鬼畜妹・一部声" }
+    ,{ id: 92,  level: 3, rate_base: 12.8, name: "最終鬼畜妹・一部声" }
     ,{ id: 159, level: 3, rate_base: 13.3, name: "ジングルベル" }
     ,{ id: 165, level: 3, rate_base: 12.9, name: "ぼくらの16bit戦争" }
     ,{ id: 179, level: 3, rate_base: 11.1, name: "すろぉもぉしょん" }
@@ -236,10 +236,10 @@ var chart_list = [
     ,{ id: 169, level: 3, rate_base: 11.4, name: "elegante" }
     ,{ id: 14,  level: 3, rate_base: 11.0, name: "コネクト" }
     ,{ id: 235, level: 3, rate_base: 12.5, name: "ファッとして桃源郷" }
-    ,{ id: 232, level: 3, rate_base: 13.3, name: "Elemental Creation" }
+    ,{ id: 232, level: 3, rate_base: 13.4, name: "Elemental Creation" }
     ,{ id: 205, level: 3, rate_base: 12.7, name: "SNIPE WHOLE" }
     ,{ id: 73,  level: 3, rate_base: 12.5, name: "MUSIC PЯAYER" }
-    ,{ id: 52,  level: 3, rate_base: 13.4, name: "Cyberozar" }
+    ,{ id: 52,  level: 3, rate_base: 13.2, name: "Cyberozar" }
     ,{ id: 244, level: 3, rate_base: 12.0, name: "回レ！雪月花" }
     ,{ id: 243, level: 3, rate_base: 12.2, name: "シュガーソングとビターステップ" }
     ,{ id: 171, level: 3, rate_base: 12.1, name: "XL TECHNO" }
@@ -248,7 +248,7 @@ var chart_list = [
     ,{ id: 209, level: 3, rate_base: 11.7, name: "君色シグナル" }
     ,{ id: 247, level: 3, rate_base: 11.9, name: "絶世スターゲイト" }
     ,{ id: 199, level: 3, rate_base: 12.1, name: "ハート・ビート" }
-    ,{ id: 173, level: 3, rate_base: 13.3, name: "Halcyon" }
+    ,{ id: 173, level: 3, rate_base: 13.1, name: "Halcyon" }
     ,{ id: 185, level: 3, rate_base: 11.2, name: "楽園の翼" }
     ,{ id: 42,  level: 3, rate_base: 11.6, name: "oath sign" }
     ,{ id: 9,   level: 3, rate_base: 11.3, name: "情熱大陸" }
@@ -284,7 +284,7 @@ var chart_list = [
     ,{ id: 246, level: 3, rate_base: 12.7, name: "なるとなぎのパーフェクトロックンロール教室" }
     ,{ id: 106, level: 3, rate_base: 13.8, name: "宛城、炎上！！" }
     ,{ id: 245, level: 3, rate_base: 11.4, name: "Help me, あーりん！" }
-    ,{ id: 61,  level: 3, rate_base: 13.6, name: "GOLDEN RULE" }
+    ,{ id: 61,  level: 3, rate_base: 13.5, name: "GOLDEN RULE" }
     ,{ id: 160, level: 3, rate_base: 11.5, name: "言ノ葉遊戯" }
     ,{ id: 61,  level: 2, rate_base: 11.0, name: "GOLDEN RULE 赤" }
     ,{ id: 196, level: 3, rate_base: 13.7, name: "FREEDOM DiVE" }
