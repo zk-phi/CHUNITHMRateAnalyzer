@@ -188,7 +188,7 @@ var chart_list = [
     ,{ id: 178, level: 3, rate_base: 12.7, name: "stella=steLLa" }
     ,{ id: 101, level: 3, rate_base: 12.8, name: "Tango Rouge" }
     ,{ id: 64,  level: 3, rate_base: 12.7, name: "今ぞ♡崇め奉れ☆オマエらよ！！～姫の秘メタル渇望～" }
-    ,{ id: 144, level: 3, rate_base: 13.2, name: "Aragami" }
+    ,{ id: 144, level: 3, rate_base: 13.3, name: "Aragami" }
     ,{ id: 142, level: 3, rate_base: 12.6, name: "Altale" }
     ,{ id: 157, level: 3, rate_base: 12.8, name: "ギガンティック O.T.N" }
     ,{ id: 154, level: 3, rate_base: 12.7, name: "SAVIOR OF SONG" }
@@ -208,8 +208,8 @@ var chart_list = [
     ,{ id: 136, level: 3, rate_base: 12.5, name: "Äventyr" }
     ,{ id: 128, level: 3, rate_base: 12.7, name: "The Formula" }
     ,{ id: 45,  level: 3, rate_base: 12.2, name: "L9" }
-    ,{ id: 33,  level: 3, rate_base: 12.7, name: "Blue Noise" }
-    ,{ id: 120, level: 3, rate_base: 12.3, name: "四次元跳躍機関" }
+    ,{ id: 33,  level: 3, rate_base: 13.0, name: "Blue Noise" }
+    ,{ id: 120, level: 3, rate_base: 12.7, name: "四次元跳躍機関" }
     ,{ id: 21,  level: 3, rate_base: 11.9, name: "ナイト・オブ・ナイツ" }
     ,{ id: 132, level: 3, rate_base: 12.2, name: "イカサマライフゲイム" }
     ,{ id: 83,  level: 3, rate_base: 12.2, name: "ロストワンの号哭" }
@@ -217,17 +217,17 @@ var chart_list = [
     ,{ id: 23,  level: 3, rate_base: 12.1, name: "一触即発☆禅ガール" }
     ,{ id: 180, level: 3, rate_base: 13.9, name: "怒槌" }
     ,{ id: 103, level: 3, rate_base: 13.7, name: "エンドマークに希望と涙を添えて" }
-    ,{ id: 152, level: 3, rate_base: 12.9, name: "Gustav Battle" }
-    ,{ id: 69,  level: 3, rate_base: 13.4, name: "The wheel to the right" }
+    ,{ id: 152, level: 3, rate_base: 13.0, name: "Gustav Battle" }
+    ,{ id: 69,  level: 3, rate_base: 13.3, name: "The wheel to the right" }
     ,{ id: 63,  level: 3, rate_base: 13.0, name: "Gate of Fate" }
     ,{ id: 141, level: 3, rate_base: 13.1, name: "閃鋼のブリューナク" }
     ,{ id: 76,  level: 3, rate_base: 13.2, name: "luna blu" }
     ,{ id: 107, level: 3, rate_base: 13.0, name: "We Gonna Journey" }
     ,{ id: 138, level: 3, rate_base: 13.0, name: "conflict"}
-    ,{ id: 135, level: 3, rate_base: 13.1, name: "Vallista" }
+    ,{ id: 135, level: 3, rate_base: 13.5, name: "Vallista" }
     ,{ id: 134, level: 3, rate_base: 13.7, name: "HAELEQUIN (Original Remaster)" }
     ,{ id: 92,  level: 3, rate_base: 13.0, name: "最終鬼畜妹・一部声" }
-    ,{ id: 159, level: 3, rate_base: 13.4, name: "ジングルベル" }
+    ,{ id: 159, level: 3, rate_base: 13.3, name: "ジングルベル" }
     ,{ id: 165, level: 3, rate_base: 12.9, name: "ぼくらの16bit戦争" }
     ,{ id: 179, level: 3, rate_base: 11.1, name: "すろぉもぉしょん" }
     ,{ id: 166, level: 3, rate_base: 11.8, name: "裏表ラバーズ" }
@@ -247,7 +247,7 @@ var chart_list = [
     ,{ id: 52,  level: 2, rate_base: 11.1, name: "Cyberozar 赤" }
     ,{ id: 209, level: 3, rate_base: 11.7, name: "君色シグナル" }
     ,{ id: 247, level: 3, rate_base: 11.9, name: "絶世スターゲイト" }
-    ,{ id: 199, level: 3, rate_base: 12.3, name: "ハート・ビート" }
+    ,{ id: 199, level: 3, rate_base: 12.1, name: "ハート・ビート" }
     ,{ id: 173, level: 3, rate_base: 13.1, name: "Halcyon" }
     ,{ id: 185, level: 3, rate_base: 11.2, name: "楽園の翼" }
     ,{ id: 42,  level: 3, rate_base: 11.6, name: "oath sign" }
@@ -262,7 +262,7 @@ var chart_list = [
     ,{ id: 62,  level: 3, rate_base: 12.4, name: "名も無い鳥" }
     ,{ id: 90,  level: 2, rate_base: 11.6, name: "L'épisode 赤" }
     ,{ id: 90,  level: 3, rate_base: 13.2, name: "L'épisode" }
-    ,{ id: 72,  level: 3, rate_base: 13.0, name: "Genesis" }
+    ,{ id: 72,  level: 3, rate_base: 13.5, name: "Genesis" }
     ,{ id: 197, level: 2, rate_base: 11.2, name: "Jack-the-Ripper◆ 赤" }
     ,{ id: 255, level: 3, rate_base: 11.1, name: "激情！ミルキィ大作戦" }
     ,{ id: 214, level: 3, rate_base: 11.9, name: "青春はNon-Stop!" }
@@ -276,12 +276,12 @@ var chart_list = [
     ,{ id: 228, level: 3, rate_base: 12.0, name: "このふざけた素晴らしき世界は、僕の為にある" }
     ,{ id: 213, level: 3, rate_base: 12.1, name: "星屑ユートピア" }
     ,{ id: 212, level: 3, rate_base: 11.8, name: "いろは唄" }
-    ,{ id: 131, level: 3, rate_base: 12.8, name: "チルドレンレコード" }
+    ,{ id: 131, level: 3, rate_base: 12.6, name: "チルドレンレコード" }
     ,{ id: 220, level: 3, rate_base: 12.3, name: "如月アテンション" }
     ,{ id: 240, level: 3, rate_base: 12.7, name: "夜咄ディセイブ" }
     ,{ id: 19,  level: 3, rate_base: 13.2, name: "DRAGONLADY" }
     ,{ id: 106, level: 2, rate_base: 12.2, name: "宛城、炎上！！ 赤" }
-    ,{ id: 246, level: 3, rate_base: 12.3, name: "なるとなぎのパーフェクトロックンロール教室" }
+    ,{ id: 246, level: 3, rate_base: 12.7, name: "なるとなぎのパーフェクトロックンロール教室" }
     ,{ id: 106, level: 3, rate_base: 13.8, name: "宛城、炎上！！" }
     ,{ id: 245, level: 3, rate_base: 11.4, name: "Help me, あーりん！" }
     ,{ id: 61,  level: 3, rate_base: 13.6, name: "GOLDEN RULE" }
@@ -308,6 +308,11 @@ var chart_list = [
     ,{ id: 208, level: 3, rate_base: 12.7, name: "SAMBISTA" }
     ,{ id: 201, level: 2, rate_base: 12.4, name: "Contrapasso -inferno- 赤" }
     ,{ id: 201, level: 3, rate_base: 13.9, name: "Contrapasso -inferno-" }
+    ,{ id: 305, level: 3, rate_base: 13.3, name: "幻想のサテライト" }
+    ,{ id: 317, level: 3, rate_base: 13.4, name: "Air" }
+    ,{ id: 248, level: 3, rate_base: 13.9, name: "Schrecklicher Aufstand" }
+    ,{ id: 318, level: 3, rate_base: 13.1, name: "DataErr0r" }
+    ,{ id: 298, level: 3, rate_base: 12.6, name: "PRIVATE SERVICE" }
 ];
 
 // latest rate
