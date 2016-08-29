@@ -314,6 +314,7 @@ var chart_list = [
     ,{ id: 318, level: 3, rate_base: 13.1, name: "DataErr0r" }
     ,{ id: 298, level: 3, rate_base: 12.6, name: "PRIVATE SERVICE" }
     ,{ id: 250, level: 3, rate_base: 13.5, name: "Philosopher" }
+    ,{ id: 77,  level: 3, rate_base: 12.8, name: "ケモノガル" }
 ];
 
 // latest rate
