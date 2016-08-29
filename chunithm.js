@@ -316,6 +316,7 @@ var chart_list = [
     ,{ id: 250, level: 3, rate_base: 13.5, name: "Philosopher" }
     ,{ id: 77,  level: 3, rate_base: 12.8, name: "ケモノガル" }
     ,{ id: 330, level: 3, rate_base: 12.1, name: "ドキドキDREAM!!!" }
+    ,{ id: 292, level: 3, rate_base: 12.0, name: "月に叢雲華に風" }
 ];
 
 // latest rate
