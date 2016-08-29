@@ -184,7 +184,7 @@ var chart_list = [
     ,{ id: 5,   level: 3, rate_base: 11.3, name: "Scatman (Ski Ba Bop Ba Dop Bop)" }
     ,{ id: 60,  level: 3, rate_base: 11.3, name: "only my railgun" }
     ,{ id: 17,  level: 3, rate_base: 11.1, name: "空色デイズ" }
-    ,{ id: 104, level: 3, rate_base: 12.7, name: "とーきょー全域★アキハバラ？" }
+    ,{ id: 104, level: 3, rate_base: 12.5, name: "とーきょー全域★アキハバラ？" }
     ,{ id: 178, level: 3, rate_base: 12.7, name: "stella=steLLa" }
     ,{ id: 101, level: 3, rate_base: 12.8, name: "Tango Rouge" }
     ,{ id: 64,  level: 3, rate_base: 12.7, name: "今ぞ♡崇め奉れ☆オマエらよ！！～姫の秘メタル渇望～" }
