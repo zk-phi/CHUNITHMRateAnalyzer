@@ -199,7 +199,7 @@ var chart_list = [
     ,{ id: 108, level: 3, rate_base: 12.0, name: "The ether" }
     ,{ id: 53,  level: 3, rate_base: 12.3, name: "Teriqma" }
     ,{ id: 95,  level: 3, rate_base: 12.1, name: "砂漠のハンティングガール♡" }
-    ,{ id: 51,  level: 3, rate_base: 12.6, name: "My First Phone" }
+    ,{ id: 51,  level: 3, rate_base: 12.7, name: "My First Phone" }
     ,{ id: 71,  level: 3, rate_base: 12.3, name: "Infantoon Fantasy" }
     ,{ id: 161, level: 3, rate_base: 12.4, name: "私の中の幻想的世界観及びその顕現を想起させたある現実での出来事に関する一考察" }
     ,{ id: 150, level: 3, rate_base: 11.8, name: "brilliant better" }
@@ -219,14 +219,14 @@ var chart_list = [
     ,{ id: 103, level: 3, rate_base: 13.7, name: "エンドマークに希望と涙を添えて" }
     ,{ id: 152, level: 3, rate_base: 13.0, name: "Gustav Battle" }
     ,{ id: 69,  level: 3, rate_base: 13.3, name: "The wheel to the right" }
-    ,{ id: 63,  level: 3, rate_base: 13.0, name: "Gate of Fate" }
-    ,{ id: 141, level: 3, rate_base: 13.1, name: "閃鋼のブリューナク" }
-    ,{ id: 76,  level: 3, rate_base: 13.2, name: "luna blu" }
+    ,{ id: 63,  level: 3, rate_base: 13.1, name: "Gate of Fate" }
+    ,{ id: 141, level: 3, rate_base: 13.3, name: "閃鋼のブリューナク" }
+    ,{ id: 76,  level: 3, rate_base: 13.4, name: "luna blu" }
     ,{ id: 107, level: 3, rate_base: 13.0, name: "We Gonna Journey" }
     ,{ id: 138, level: 3, rate_base: 13.0, name: "conflict"}
     ,{ id: 135, level: 3, rate_base: 13.5, name: "Vallista" }
     ,{ id: 134, level: 3, rate_base: 13.7, name: "HAELEQUIN (Original Remaster)" }
-    ,{ id: 92,  level: 3, rate_base: 13.0, name: "最終鬼畜妹・一部声" }
+    ,{ id: 92,  level: 3, rate_base: 12.8, name: "最終鬼畜妹・一部声" }
     ,{ id: 159, level: 3, rate_base: 13.3, name: "ジングルベル" }
     ,{ id: 165, level: 3, rate_base: 12.9, name: "ぼくらの16bit戦争" }
     ,{ id: 179, level: 3, rate_base: 11.1, name: "すろぉもぉしょん" }
@@ -236,10 +236,10 @@ var chart_list = [
     ,{ id: 169, level: 3, rate_base: 11.4, name: "elegante" }
     ,{ id: 14,  level: 3, rate_base: 11.0, name: "コネクト" }
     ,{ id: 235, level: 3, rate_base: 12.5, name: "ファッとして桃源郷" }
-    ,{ id: 232, level: 3, rate_base: 13.3, name: "Elemental Creation" }
+    ,{ id: 232, level: 3, rate_base: 13.4, name: "Elemental Creation" }
     ,{ id: 205, level: 3, rate_base: 12.7, name: "SNIPE WHOLE" }
     ,{ id: 73,  level: 3, rate_base: 12.5, name: "MUSIC PЯAYER" }
-    ,{ id: 52,  level: 3, rate_base: 13.4, name: "Cyberozar" }
+    ,{ id: 52,  level: 3, rate_base: 13.2, name: "Cyberozar" }
     ,{ id: 244, level: 3, rate_base: 12.0, name: "回レ！雪月花" }
     ,{ id: 243, level: 3, rate_base: 12.2, name: "シュガーソングとビターステップ" }
     ,{ id: 171, level: 3, rate_base: 12.1, name: "XL TECHNO" }
@@ -284,7 +284,7 @@ var chart_list = [
     ,{ id: 246, level: 3, rate_base: 12.7, name: "なるとなぎのパーフェクトロックンロール教室" }
     ,{ id: 106, level: 3, rate_base: 13.8, name: "宛城、炎上！！" }
     ,{ id: 245, level: 3, rate_base: 11.4, name: "Help me, あーりん！" }
-    ,{ id: 61,  level: 3, rate_base: 13.6, name: "GOLDEN RULE" }
+    ,{ id: 61,  level: 3, rate_base: 13.5, name: "GOLDEN RULE" }
     ,{ id: 160, level: 3, rate_base: 11.5, name: "言ノ葉遊戯" }
     ,{ id: 61,  level: 2, rate_base: 11.0, name: "GOLDEN RULE 赤" }
     ,{ id: 196, level: 3, rate_base: 13.7, name: "FREEDOM DiVE" }
@@ -313,6 +313,7 @@ var chart_list = [
     ,{ id: 248, level: 3, rate_base: 13.9, name: "Schrecklicher Aufstand" }
     ,{ id: 318, level: 3, rate_base: 13.1, name: "DataErr0r" }
     ,{ id: 298, level: 3, rate_base: 12.6, name: "PRIVATE SERVICE" }
+    ,{ id: 250, level: 3, rate_base: 13.5, name: "Philosopher" }
 ];
 
 // latest rate
