@@ -498,8 +498,9 @@ $("#cra_window_outer")
     .html("<div id='cra_window_inner' class='frame01_inside w450'></div>");
 $("#cra_window_inner")
     .html("<p class='cra_caution'>CAUTION</p>" +
-          "<p>ツールの性質を理解したうえで、<br>各自の判断でご利用ください。</p>" +
-          "<p>ツールを閉じるには、<br>右上の×ボタンをクリックしてください。</p>");
+          "<p>8/29- 譜面定数の判明したものから更新しています (譜面定数の調査方法は<a href='http://d.hatena.ne.jp/risette14/20150924/1443064402'>こちら</a>)。</p>" +
+          "<p>ツールの性質を理解したうえで、各自の判断でご利用ください。</p>" +
+          "<p>ツールを閉じるには、右上の×ボタンをクリックしてください。</p>");
 
 // close button
 $("#cra_close_button")
