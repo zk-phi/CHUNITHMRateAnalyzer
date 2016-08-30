@@ -320,6 +320,7 @@ var chart_list = [
     ,{ id: 306, level: 3, rate_base: 12.2, name: "凛として咲く花の如く" }
     ,{ id: 124, level: 3, rate_base: 12.5, name: "夏影" }
     ,{ id: 309, level: 3, rate_base: 12.5, name: "Rising Hope" }
+    ,{ id: 238, level: 3, rate_base: 11.9, name: "フレンズ" }
 ];
 
 // latest rate
