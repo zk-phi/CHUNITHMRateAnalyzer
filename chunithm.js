@@ -184,7 +184,7 @@ var chart_list = [
     ,{ id: 5,   level: 3, rate_base: 11.3, name: "Scatman (Ski Ba Bop Ba Dop Bop)" }
     ,{ id: 60,  level: 3, rate_base: 11.3, name: "only my railgun" }
     ,{ id: 17,  level: 3, rate_base: 11.1, name: "空色デイズ" }
-    ,{ id: 104, level: 3, rate_base: 12.7, name: "とーきょー全域★アキハバラ？" }
+    ,{ id: 104, level: 3, rate_base: 12.5, name: "とーきょー全域★アキハバラ？" }
     ,{ id: 178, level: 3, rate_base: 12.7, name: "stella=steLLa" }
     ,{ id: 101, level: 3, rate_base: 12.8, name: "Tango Rouge" }
     ,{ id: 64,  level: 3, rate_base: 12.7, name: "今ぞ♡崇め奉れ☆オマエらよ！！～姫の秘メタル渇望～" }
@@ -194,7 +194,7 @@ var chart_list = [
     ,{ id: 154, level: 3, rate_base: 12.7, name: "SAVIOR OF SONG" }
     ,{ id: 180, level: 2, rate_base: 12.4, name: "怒槌 赤" }
     ,{ id: 70,  level: 3, rate_base: 12.4, name: "STAR" }
-    ,{ id: 151, level: 3, rate_base: 12.4, name: "Alma" }
+    ,{ id: 151, level: 3, rate_base: 12.5, name: "Alma" }
     ,{ id: 82,  level: 3, rate_base: 12.3, name: "Memories of Sun and Moon" }
     ,{ id: 108, level: 3, rate_base: 12.0, name: "The ether" }
     ,{ id: 53,  level: 3, rate_base: 12.3, name: "Teriqma" }
@@ -314,6 +314,10 @@ var chart_list = [
     ,{ id: 318, level: 3, rate_base: 13.1, name: "DataErr0r" }
     ,{ id: 298, level: 3, rate_base: 12.6, name: "PRIVATE SERVICE" }
     ,{ id: 250, level: 3, rate_base: 13.5, name: "Philosopher" }
+    ,{ id: 77,  level: 3, rate_base: 12.8, name: "ケモノガル" }
+    ,{ id: 330, level: 3, rate_base: 12.1, name: "ドキドキDREAM!!!" }
+    ,{ id: 292, level: 3, rate_base: 12.0, name: "月に叢雲華に風" }
+    ,{ id: 306, level: 3, rate_base: 12.2, name: "凛として咲く花の如く" }
 ];
 
 // latest rate
