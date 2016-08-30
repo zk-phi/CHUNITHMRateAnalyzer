@@ -151,7 +151,7 @@ var chart_list = [
     ,{ id: 48,  level: 3, rate_base: 11.8, name: "Unlimited Spark!" }
     ,{ id: 96,  level: 3, rate_base: 11.8, name: "チルノのパーフェクトさんすう教室" }
     ,{ id: 94,  level: 3, rate_base: 12.2, name: "セツナトリップ" }
-    ,{ id: 47,  level: 3, rate_base: 11.7, name: "六兆年と一夜物語" }
+    ,{ id: 47,  level: 3, rate_base: 12.0, name: "六兆年と一夜物語" }
     ,{ id: 152, level: 2, rate_base: 11.7, name: "Gustav Battle 赤" }
     ,{ id: 141, level: 2, rate_base: 11.5, name: "閃鋼のブリューナク 赤" }
     ,{ id: 67,  level: 3, rate_base: 11.2, name: "昵懇レファレンス" }
