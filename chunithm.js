@@ -322,6 +322,7 @@ var chart_list = [
     ,{ id: 309, level: 3, rate_base: 12.5, name: "Rising Hope" }
     ,{ id: 238, level: 3, rate_base: 11.9, name: "フレンズ" }
     ,{ id: 308, level: 3, rate_base: 11.9, name: "fake!fake!" }
+    ,{ id: 55,  level: 3, rate_base: 11.2, name: "夏祭り" }
 ];
 
 // latest rate
