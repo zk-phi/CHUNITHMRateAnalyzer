@@ -204,7 +204,7 @@ var chart_list = [
     ,{ id: 161, level: 3, rate_base: 12.4, name: "私の中の幻想的世界観及びその顕現を想起させたある現実での出来事に関する一考察" }
     ,{ id: 150, level: 3, rate_base: 11.8, name: "brilliant better" }
     ,{ id: 88,  level: 3, rate_base: 12.1, name: "The Concept of Love" }
-    ,{ id: 6,   level: 3, rate_base: 12.5, name: "Reach for the Stars" }
+    ,{ id: 6,   level: 3, rate_base: 12.3, name: "Reach for the Stars" }
     ,{ id: 136, level: 3, rate_base: 12.5, name: "Äventyr" }
     ,{ id: 128, level: 3, rate_base: 12.7, name: "The Formula" }
     ,{ id: 45,  level: 3, rate_base: 12.2, name: "L9" }
