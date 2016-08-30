@@ -238,7 +238,7 @@ var chart_list = [
     ,{ id: 235, level: 3, rate_base: 12.5, name: "ファッとして桃源郷" }
     ,{ id: 232, level: 3, rate_base: 13.4, name: "Elemental Creation" }
     ,{ id: 205, level: 3, rate_base: 12.7, name: "SNIPE WHOLE" }
-    ,{ id: 73,  level: 3, rate_base: 12.5, name: "MUSIC PЯAYER" }
+    ,{ id: 73,  level: 3, rate_base: 12.6, name: "MUSIC PЯAYER" }
     ,{ id: 52,  level: 3, rate_base: 13.2, name: "Cyberozar" }
     ,{ id: 244, level: 3, rate_base: 12.0, name: "回レ！雪月花" }
     ,{ id: 243, level: 3, rate_base: 12.2, name: "シュガーソングとビターステップ" }
