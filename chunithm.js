@@ -278,7 +278,7 @@ var chart_list = [
     ,{ id: 212, level: 3, rate_base: 12.1, name: "いろは唄" }
     ,{ id: 131, level: 3, rate_base: 12.6, name: "チルドレンレコード" }
     ,{ id: 220, level: 3, rate_base: 12.3, name: "如月アテンション" }
-    ,{ id: 240, level: 3, rate_base: 12.7, name: "夜咄ディセイブ" }
+    ,{ id: 240, level: 3, rate_base: 12.6, name: "夜咄ディセイブ" }
     ,{ id: 19,  level: 3, rate_base: 13.2, name: "DRAGONLADY" }
     ,{ id: 106, level: 2, rate_base: 12.2, name: "宛城、炎上！！ 赤" }
     ,{ id: 246, level: 3, rate_base: 12.7, name: "なるとなぎのパーフェクトロックンロール教室" }
