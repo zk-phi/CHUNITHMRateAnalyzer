@@ -186,7 +186,7 @@ var chart_list = [
     ,{ id: 17,  level: 3, rate_base: 11.1, name: "空色デイズ" }
     ,{ id: 104, level: 3, rate_base: 12.5, name: "とーきょー全域★アキハバラ？" }
     ,{ id: 178, level: 3, rate_base: 12.7, name: "stella=steLLa" }
-    ,{ id: 101, level: 3, rate_base: 12.8, name: "Tango Rouge" }
+    ,{ id: 101, level: 3, rate_base: 12.9, name: "Tango Rouge" }
     ,{ id: 64,  level: 3, rate_base: 12.7, name: "今ぞ♡崇め奉れ☆オマエらよ！！～姫の秘メタル渇望～" }
     ,{ id: 144, level: 3, rate_base: 13.3, name: "Aragami" }
     ,{ id: 142, level: 3, rate_base: 12.6, name: "Altale" }
