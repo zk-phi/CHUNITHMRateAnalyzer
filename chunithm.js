@@ -318,6 +318,7 @@ var chart_list = [
     ,{ id: 330, level: 3, rate_base: 12.1, name: "ドキドキDREAM!!!" }
     ,{ id: 292, level: 3, rate_base: 12.0, name: "月に叢雲華に風" }
     ,{ id: 306, level: 3, rate_base: 12.2, name: "凛として咲く花の如く" }
+    ,{ id: 124, level: 3, rate_base: 12.5, name: "夏影" }
 ];
 
 // latest rate
