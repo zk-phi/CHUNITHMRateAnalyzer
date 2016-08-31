@@ -151,7 +151,7 @@ var chart_list = [
     ,{ id: 48,  level: 3, rate_base: 11.8, name: "Unlimited Spark!" }
     ,{ id: 96,  level: 3, rate_base: 11.8, name: "チルノのパーフェクトさんすう教室" }
     ,{ id: 94,  level: 3, rate_base: 12.2, name: "セツナトリップ" }
-    ,{ id: 47,  level: 3, rate_base: 11.7, name: "六兆年と一夜物語" }
+    ,{ id: 47,  level: 3, rate_base: 12.0, name: "六兆年と一夜物語" }
     ,{ id: 152, level: 2, rate_base: 11.7, name: "Gustav Battle 赤" }
     ,{ id: 141, level: 2, rate_base: 11.5, name: "閃鋼のブリューナク 赤" }
     ,{ id: 67,  level: 3, rate_base: 11.2, name: "昵懇レファレンス" }
@@ -186,7 +186,7 @@ var chart_list = [
     ,{ id: 17,  level: 3, rate_base: 11.1, name: "空色デイズ" }
     ,{ id: 104, level: 3, rate_base: 12.5, name: "とーきょー全域★アキハバラ？" }
     ,{ id: 178, level: 3, rate_base: 12.7, name: "stella=steLLa" }
-    ,{ id: 101, level: 3, rate_base: 12.8, name: "Tango Rouge" }
+    ,{ id: 101, level: 3, rate_base: 12.9, name: "Tango Rouge" }
     ,{ id: 64,  level: 3, rate_base: 12.7, name: "今ぞ♡崇め奉れ☆オマエらよ！！～姫の秘メタル渇望～" }
     ,{ id: 144, level: 3, rate_base: 13.3, name: "Aragami" }
     ,{ id: 142, level: 3, rate_base: 12.6, name: "Altale" }
@@ -204,7 +204,7 @@ var chart_list = [
     ,{ id: 161, level: 3, rate_base: 12.4, name: "私の中の幻想的世界観及びその顕現を想起させたある現実での出来事に関する一考察" }
     ,{ id: 150, level: 3, rate_base: 11.8, name: "brilliant better" }
     ,{ id: 88,  level: 3, rate_base: 12.1, name: "The Concept of Love" }
-    ,{ id: 6,   level: 3, rate_base: 12.5, name: "Reach for the Stars" }
+    ,{ id: 6,   level: 3, rate_base: 12.3, name: "Reach for the Stars" }
     ,{ id: 136, level: 3, rate_base: 12.5, name: "Äventyr" }
     ,{ id: 128, level: 3, rate_base: 12.7, name: "The Formula" }
     ,{ id: 45,  level: 3, rate_base: 12.2, name: "L9" }
@@ -238,7 +238,7 @@ var chart_list = [
     ,{ id: 235, level: 3, rate_base: 12.5, name: "ファッとして桃源郷" }
     ,{ id: 232, level: 3, rate_base: 13.4, name: "Elemental Creation" }
     ,{ id: 205, level: 3, rate_base: 12.7, name: "SNIPE WHOLE" }
-    ,{ id: 73,  level: 3, rate_base: 12.5, name: "MUSIC PЯAYER" }
+    ,{ id: 73,  level: 3, rate_base: 12.6, name: "MUSIC PЯAYER" }
     ,{ id: 52,  level: 3, rate_base: 13.2, name: "Cyberozar" }
     ,{ id: 244, level: 3, rate_base: 12.0, name: "回レ！雪月花" }
     ,{ id: 243, level: 3, rate_base: 12.2, name: "シュガーソングとビターステップ" }
@@ -275,10 +275,10 @@ var chart_list = [
     ,{ id: 224, level: 3, rate_base: 11.1, name: "恋愛裁判" }
     ,{ id: 228, level: 3, rate_base: 12.0, name: "このふざけた素晴らしき世界は、僕の為にある" }
     ,{ id: 213, level: 3, rate_base: 12.1, name: "星屑ユートピア" }
-    ,{ id: 212, level: 3, rate_base: 11.8, name: "いろは唄" }
+    ,{ id: 212, level: 3, rate_base: 12.1, name: "いろは唄" }
     ,{ id: 131, level: 3, rate_base: 12.6, name: "チルドレンレコード" }
     ,{ id: 220, level: 3, rate_base: 12.3, name: "如月アテンション" }
-    ,{ id: 240, level: 3, rate_base: 12.7, name: "夜咄ディセイブ" }
+    ,{ id: 240, level: 3, rate_base: 12.6, name: "夜咄ディセイブ" }
     ,{ id: 19,  level: 3, rate_base: 13.2, name: "DRAGONLADY" }
     ,{ id: 106, level: 2, rate_base: 12.2, name: "宛城、炎上！！ 赤" }
     ,{ id: 246, level: 3, rate_base: 12.7, name: "なるとなぎのパーフェクトロックンロール教室" }
@@ -288,7 +288,7 @@ var chart_list = [
     ,{ id: 160, level: 3, rate_base: 11.5, name: "言ノ葉遊戯" }
     ,{ id: 61,  level: 2, rate_base: 11.0, name: "GOLDEN RULE 赤" }
     ,{ id: 196, level: 3, rate_base: 13.7, name: "FREEDOM DiVE" }
-    ,{ id: 196, level: 2, rate_base: 12.0, name: "FREEDOM DiVE 赤" }
+    ,{ id: 196, level: 2, rate_base: 11.9, name: "FREEDOM DiVE 赤" }
     ,{ id: 121, level: 3, rate_base: 12.5, name: "東方妖々夢 ～the maximum moving about～" }
     ,{ id: 93,  level: 3, rate_base: 12.3, name: "蒼空に舞え、墨染の桜" }
     ,{ id: 122, level: 3, rate_base: 12.5, name: "少女幻葬戦慄曲　～　Necro Fantasia" }
@@ -318,6 +318,12 @@ var chart_list = [
     ,{ id: 330, level: 3, rate_base: 12.1, name: "ドキドキDREAM!!!" }
     ,{ id: 292, level: 3, rate_base: 12.0, name: "月に叢雲華に風" }
     ,{ id: 306, level: 3, rate_base: 12.2, name: "凛として咲く花の如く" }
+    ,{ id: 124, level: 3, rate_base: 12.5, name: "夏影" }
+    ,{ id: 309, level: 3, rate_base: 12.5, name: "Rising Hope" }
+    ,{ id: 238, level: 3, rate_base: 11.9, name: "フレンズ" }
+    ,{ id: 308, level: 3, rate_base: 11.9, name: "fake!fake!" }
+    ,{ id: 55,  level: 3, rate_base: 11.2, name: "夏祭り" }
+    ,{ id: 66,  level: 3, rate_base: 12.3, name: "明るい未来" }
 ];
 
 // latest rate
