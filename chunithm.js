@@ -325,6 +325,7 @@ var chart_list = [
     ,{ id: 55,  level: 3, rate_base: 11.2, name: "夏祭り" }
     ,{ id: 66,  level: 3, rate_base: 12.3, name: "明るい未来" }
     ,{ id: 261, level: 3, rate_base: 12.3, name: "ロボットプラネットユートピア" }
+    ,{ id: 102, level: 3, rate_base: 12.5, name: "Tuning Rangers" }
 ];
 
 // latest rate
