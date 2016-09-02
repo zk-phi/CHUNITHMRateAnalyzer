@@ -228,7 +228,7 @@ var chart_list = [
     ,{ id: 134, level: 3, rate_base: 13.7, name: "HAELEQUIN (Original Remaster)" }
     ,{ id: 92,  level: 3, rate_base: 12.8, name: "最終鬼畜妹・一部声" }
     ,{ id: 159, level: 3, rate_base: 13.3, name: "ジングルベル" }
-    ,{ id: 165, level: 3, rate_base: 12.9, name: "ぼくらの16bit戦争" }
+    ,{ id: 165, level: 3, rate_base: 12.8, name: "ぼくらの16bit戦争" }
     ,{ id: 179, level: 3, rate_base: 11.1, name: "すろぉもぉしょん" }
     ,{ id: 166, level: 3, rate_base: 11.8, name: "裏表ラバーズ" }
     ,{ id: 168, level: 3, rate_base: 11.9, name: "ネトゲ廃人シュプレヒコール" }
@@ -324,6 +324,8 @@ var chart_list = [
     ,{ id: 308, level: 3, rate_base: 11.9, name: "fake!fake!" }
     ,{ id: 55,  level: 3, rate_base: 11.2, name: "夏祭り" }
     ,{ id: 66,  level: 3, rate_base: 12.3, name: "明るい未来" }
+    ,{ id: 261, level: 3, rate_base: 12.3, name: "ロボットプラネットユートピア" }
+    ,{ id: 102, level: 3, rate_base: 12.5, name: "Tuning Rangers" }
 ];
 
 // latest rate
