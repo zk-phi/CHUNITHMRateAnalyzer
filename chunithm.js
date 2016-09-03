@@ -213,7 +213,7 @@ var chart_list = [
     ,{ id: 21,  level: 3, rate_base: 11.9, name: "ナイト・オブ・ナイツ" }
     ,{ id: 132, level: 3, rate_base: 12.2, name: "イカサマライフゲイム" }
     ,{ id: 83,  level: 3, rate_base: 12.2, name: "ロストワンの号哭" }
-    ,{ id: 27,  level: 3, rate_base: 12.4, name: "タイガーランペイジ" }
+    ,{ id: 27,  level: 3, rate_base: 12.5, name: "タイガーランペイジ" }
     ,{ id: 23,  level: 3, rate_base: 12.1, name: "一触即発☆禅ガール" }
     ,{ id: 180, level: 3, rate_base: 13.9, name: "怒槌" }
     ,{ id: 103, level: 3, rate_base: 13.7, name: "エンドマークに希望と涙を添えて" }
