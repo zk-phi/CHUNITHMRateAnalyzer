@@ -328,6 +328,7 @@ var chart_list = [
     ,{ id: 102, level: 3, rate_base: 12.5, name: "Tuning Rangers" }
     ,{ id: 276, level: 3, rate_base: 12.5, name: "後夜祭" }
     ,{ id: 263, level: 3, rate_base: 11.7, name: "Hand in Hand" }
+    ,{ id: 37,  level: 3, rate_base: 11.3, name: "鳥の詩" }
 ];
 
 // latest rate
