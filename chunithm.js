@@ -326,7 +326,7 @@ var chart_list = [
     ,{ id: 66,  level: 3, rate_base: 12.3, name: "明るい未来" }
     ,{ id: 261, level: 3, rate_base: 12.3, name: "ロボットプラネットユートピア" }
     ,{ id: 102, level: 3, rate_base: 12.5, name: "Tuning Rangers" }
-    ,{ id: 276, level: 3, rate_base: 12.5, name: "後夜祭" }
+    ,{ id: 276, level: 3, rate_base: 12.4, name: "後夜祭" }
     ,{ id: 263, level: 3, rate_base: 11.7, name: "Hand in Hand" }
     ,{ id: 37,  level: 3, rate_base: 11.3, name: "鳥の詩" }
     ,{ id: 299, level: 3, rate_base: 11.4, name: "secret base ～君がくれたもの～ (10 years after Ver.)" }
