@@ -333,6 +333,7 @@ var chart_list = [
     ,{ id: 305, level: 2, rate_base: 11.0, name: "幻想のサテライト 赤" }
     ,{ id: 254, level: 3, rate_base: 11.7, name: "その群青が愛しかったようだった" }
     ,{ id: 267, level: 3, rate_base: 11.5, name: "心象蜃気楼" }
+    ,{ id: 248, level: 2, rate_base: 12.3, name: "Schrecklicher Aufstand 赤" }
 ];
 
 // latest rate
