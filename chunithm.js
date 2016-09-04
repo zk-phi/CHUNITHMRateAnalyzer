@@ -240,7 +240,7 @@ var chart_list = [
     ,{ id: 205, level: 3, rate_base: 12.7, name: "SNIPE WHOLE" }
     ,{ id: 73,  level: 3, rate_base: 12.6, name: "MUSIC PЯAYER" }
     ,{ id: 52,  level: 3, rate_base: 13.2, name: "Cyberozar" }
-    ,{ id: 244, level: 3, rate_base: 12.0, name: "回レ！雪月花" }
+    ,{ id: 244, level: 3, rate_base: 12.3, name: "回レ！雪月花" }
     ,{ id: 243, level: 3, rate_base: 12.2, name: "シュガーソングとビターステップ" }
     ,{ id: 171, level: 3, rate_base: 12.1, name: "XL TECHNO" }
     ,{ id: 232, level: 2, rate_base: 11.3, name: "Elemental Creation 赤" }
