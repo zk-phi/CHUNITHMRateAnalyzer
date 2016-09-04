@@ -195,7 +195,7 @@ var chart_list = [
     ,{ id: 180, level: 2, rate_base: 12.4, name: "怒槌 赤" }
     ,{ id: 70,  level: 3, rate_base: 12.4, name: "STAR" }
     ,{ id: 151, level: 3, rate_base: 12.5, name: "Alma" }
-    ,{ id: 82,  level: 3, rate_base: 12.3, name: "Memories of Sun and Moon" }
+    ,{ id: 82,  level: 3, rate_base: 12.5, name: "Memories of Sun and Moon" }
     ,{ id: 108, level: 3, rate_base: 12.0, name: "The ether" }
     ,{ id: 53,  level: 3, rate_base: 12.3, name: "Teriqma" }
     ,{ id: 95,  level: 3, rate_base: 12.1, name: "砂漠のハンティングガール♡" }
