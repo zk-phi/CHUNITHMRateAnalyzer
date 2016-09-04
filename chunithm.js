@@ -332,6 +332,7 @@ var chart_list = [
     ,{ id: 299, level: 3, rate_base: 11.4, name: "secret base ～君がくれたもの～ (10 years after Ver.)" }
     ,{ id: 305, level: 2, rate_base: 11.0, name: "幻想のサテライト 赤" }
     ,{ id: 254, level: 3, rate_base: 11.7, name: "その群青が愛しかったようだった" }
+    ,{ id: 267, level: 3, rate_base: 11.5, name: "心象蜃気楼" }
 ];
 
 // latest rate
