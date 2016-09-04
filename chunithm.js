@@ -150,7 +150,7 @@ var chart_list = [
     ,{ id: 149, level: 3, rate_base: 11.7, name: "緋色のDance" }
     ,{ id: 48,  level: 3, rate_base: 11.8, name: "Unlimited Spark!" }
     ,{ id: 96,  level: 3, rate_base: 11.8, name: "チルノのパーフェクトさんすう教室" }
-    ,{ id: 94,  level: 3, rate_base: 12.2, name: "セツナトリップ" }
+    ,{ id: 94,  level: 3, rate_base: 12.3, name: "セツナトリップ" }
     ,{ id: 47,  level: 3, rate_base: 12.0, name: "六兆年と一夜物語" }
     ,{ id: 152, level: 2, rate_base: 11.7, name: "Gustav Battle 赤" }
     ,{ id: 141, level: 2, rate_base: 11.5, name: "閃鋼のブリューナク 赤" }
@@ -195,7 +195,7 @@ var chart_list = [
     ,{ id: 180, level: 2, rate_base: 12.4, name: "怒槌 赤" }
     ,{ id: 70,  level: 3, rate_base: 12.4, name: "STAR" }
     ,{ id: 151, level: 3, rate_base: 12.5, name: "Alma" }
-    ,{ id: 82,  level: 3, rate_base: 12.3, name: "Memories of Sun and Moon" }
+    ,{ id: 82,  level: 3, rate_base: 12.5, name: "Memories of Sun and Moon" }
     ,{ id: 108, level: 3, rate_base: 12.0, name: "The ether" }
     ,{ id: 53,  level: 3, rate_base: 12.3, name: "Teriqma" }
     ,{ id: 95,  level: 3, rate_base: 12.1, name: "砂漠のハンティングガール♡" }
@@ -213,7 +213,7 @@ var chart_list = [
     ,{ id: 21,  level: 3, rate_base: 11.9, name: "ナイト・オブ・ナイツ" }
     ,{ id: 132, level: 3, rate_base: 12.2, name: "イカサマライフゲイム" }
     ,{ id: 83,  level: 3, rate_base: 12.2, name: "ロストワンの号哭" }
-    ,{ id: 27,  level: 3, rate_base: 12.4, name: "タイガーランペイジ" }
+    ,{ id: 27,  level: 3, rate_base: 12.5, name: "タイガーランペイジ" }
     ,{ id: 23,  level: 3, rate_base: 12.1, name: "一触即発☆禅ガール" }
     ,{ id: 180, level: 3, rate_base: 13.9, name: "怒槌" }
     ,{ id: 103, level: 3, rate_base: 13.7, name: "エンドマークに希望と涙を添えて" }
@@ -240,7 +240,7 @@ var chart_list = [
     ,{ id: 205, level: 3, rate_base: 12.7, name: "SNIPE WHOLE" }
     ,{ id: 73,  level: 3, rate_base: 12.6, name: "MUSIC PЯAYER" }
     ,{ id: 52,  level: 3, rate_base: 13.2, name: "Cyberozar" }
-    ,{ id: 244, level: 3, rate_base: 12.0, name: "回レ！雪月花" }
+    ,{ id: 244, level: 3, rate_base: 12.3, name: "回レ！雪月花" }
     ,{ id: 243, level: 3, rate_base: 12.2, name: "シュガーソングとビターステップ" }
     ,{ id: 171, level: 3, rate_base: 12.1, name: "XL TECHNO" }
     ,{ id: 232, level: 2, rate_base: 11.3, name: "Elemental Creation 赤" }
@@ -326,6 +326,11 @@ var chart_list = [
     ,{ id: 66,  level: 3, rate_base: 12.3, name: "明るい未来" }
     ,{ id: 261, level: 3, rate_base: 12.3, name: "ロボットプラネットユートピア" }
     ,{ id: 102, level: 3, rate_base: 12.5, name: "Tuning Rangers" }
+    ,{ id: 276, level: 3, rate_base: 12.5, name: "後夜祭" }
+    ,{ id: 263, level: 3, rate_base: 11.7, name: "Hand in Hand" }
+    ,{ id: 37,  level: 3, rate_base: 11.3, name: "鳥の詩" }
+    ,{ id: 299, level: 3, rate_base: 11.4, name: "secret base ～君がくれたもの～ (10 years after Ver.)" }
+    ,{ id: 305, level: 2, rate_base: 11.0, name: "幻想のサテライト 赤" }
 ];
 
 // latest rate
