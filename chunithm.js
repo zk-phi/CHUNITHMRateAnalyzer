@@ -274,7 +274,7 @@ var chart_list = [
     ,{ id: 252, level: 3, rate_base: 12.3, name: "愛迷エレジー" }
     ,{ id: 224, level: 3, rate_base: 11.1, name: "恋愛裁判" }
     ,{ id: 228, level: 3, rate_base: 12.0, name: "このふざけた素晴らしき世界は、僕の為にある" }
-    ,{ id: 213, level: 3, rate_base: 12.1, name: "星屑ユートピア" }
+    ,{ id: 213, level: 3, rate_base: 11.9, name: "星屑ユートピア" }
     ,{ id: 212, level: 3, rate_base: 12.1, name: "いろは唄" }
     ,{ id: 131, level: 3, rate_base: 12.6, name: "チルドレンレコード" }
     ,{ id: 220, level: 3, rate_base: 12.3, name: "如月アテンション" }
