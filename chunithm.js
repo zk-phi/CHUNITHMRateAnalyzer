@@ -334,6 +334,8 @@ var chart_list = [
     ,{ id: 254, level: 3, rate_base: 11.7, name: "その群青が愛しかったようだった" }
     ,{ id: 267, level: 3, rate_base: 11.5, name: "心象蜃気楼" }
     ,{ id: 248, level: 2, rate_base: 12.3, name: "Schrecklicher Aufstand 赤" }
+    ,{ id: 7, level: 3, rate_base: 13.6, name: "初音ミクの消失" }
+    ,{ id: 7, level: 2, rate_base: 12.0, name: "初音ミクの消失　赤" }
 ];
 
 // latest rate
