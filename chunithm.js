@@ -37,7 +37,7 @@ function request_api(api_name, req_data, callback /* optional */, errorback /* o
 // http://d.hatena.ne.jp/risette14/20150913/1442160273)
 function score_to_rate(rate_base, score)
 {
-    return score >= 1007500 ? rate_base + 2.0
+    var rate = score >= 1007500 ? rate_base + 2.0
         :  score >= 1005000 ? rate_base + 1.5 + (score - 1005000) * 10 / 50000
         :  score >= 1000000 ? rate_base + 1.0 + (score - 1000000) *  5 / 50000
         :  score >=  975000 ? rate_base + 0.0 + (score -  975000) *  2 / 50000
@@ -45,6 +45,7 @@ function score_to_rate(rate_base, score)
         :  score >=  925000 ? rate_base - 3.0 + (score -  925000) *  3 / 50000
         :  score >=  900000 ? rate_base - 5.0 + (score -  900000) *  4 / 50000
         :  0;
+    return Math.floor(rate * 100) / 100;
 }
 
 // Calculate score required to achieve given rate. This function may
