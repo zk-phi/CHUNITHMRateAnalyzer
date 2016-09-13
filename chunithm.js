@@ -534,8 +534,8 @@ $("#cra_window_inner")
             .click(function(){
                 $("#cra_close_button").hide(400);
                 fetch_user_data(function(){
-                    fetch_score_data2(2, function(){
-                        fetch_score_data2(3, function(){
+                    fetch_score_data(2, function(){
+                        fetch_score_data(3, function(){
                             localStorage.setItem("cra_chart_list", JSON.stringify(chart_list));
                             localStorage.setItem("cra_version", JSON.stringify(cra_version));
                             $("#cra_close_button").show(400);
@@ -563,11 +563,8 @@ $("#cra_wrapper").delay(400).fadeIn(400);
 // fetch music / user data
 // -----------------------------------------------------------------------------
 
-// internal vars for AJAX reconnection
-var failure_count = 0;
-
 // use GetUserMusicApi to fetch all scores, and update chart_list
-function fetch_score_data2(level, callback) {
+function fetch_score_data(level, callback) {
     $("#cra_window_inner").html("<p>loading ...</p>");
     request_api("GetUserMusicApi", { level: "1990" + level },
                 function(d) {
@@ -585,40 +582,6 @@ function fetch_score_data2(level, callback) {
                 function() {
                     $("#cra_window_inner").html("<p>CHUNITHM NET との通信に失敗しました。</p>");
                 });
-}
-
-// fetch all score data with ID >= i and update `chart_list[i]`
-function fetch_score_data(i, callback)
-{
-    if(i < chart_list.length) {
-        $("#cra_window_inner").html("<p>loading '" + chart_list[i].name + "' ...</p>");
-        request_api("GetUserMusicDetailApi", { musicId: chart_list[i].id },
-                    function(d){
-                        chart_list[i].image = d.musicFileName;
-                        chart_list[i].score = 0;
-                        for(j = 0; j < d.length; j++)
-                            if(d.userMusicList[j].level == chart_list[i].level)
-                                chart_list[i].score = d.userMusicList[j].scoreMax;
-                        chart_list[i].rate =
-                            score_to_rate(chart_list[i].rate_base, chart_list[i].score);
-                        // wait 180ms to (slightly) reduce server load
-                        setTimeout(function(){ fetch_score_data(i + 1, callback); }, 180);
-                    },
-                    function(id){ failure_count++; });
-    }
-
-    else if(failure_count > 0) {
-        $("#cra_window_inner")
-            .html("<p>取得に失敗したスコアがあります</p>" +
-                  "<h2 id='page_title' class='cra_button'>再読み込み</h2>");
-        $("#page_title")
-            .click(function(){ fetch_score_data(0, callback); });
-    }
-
-    else {
-        localStorage.setItem("cra_chart_list", JSON.stringify(chart_list));
-        callback();
-    }
 }
 
 // fetch user data and update `disp_rate`
