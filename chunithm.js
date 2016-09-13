@@ -29,8 +29,12 @@ function request_api(api_name, req_data, callback /* optional */, errorback /* o
              dataType: "json",
              scriptCharset: "UTF-8",
              timeout: 5000 })
-        .done(function(data){ setCookie("userId", data.userId); callback && callback(data); })
-        .fail(function(){ errorback && errorback(id); });
+        .done(function(data) {
+            if (!data) return errorback && errorback(id);
+            setCookie("userId", data.userId);
+            callback && callback(data);
+        })
+        .fail(function(id){ errorback && errorback(id); });
 }
 
 // Calculate rate from given score and rate_base. (reference :
