@@ -533,11 +533,14 @@ $("#cra_window_inner")
     .append($("<h2 id='page_title' class='cra_button cra_fetch_score'>スコアを解析する</h2>")
             .click(function(){
                 $("#cra_close_button").hide(400);
-                fetch_score_data(0, function(){
-                    fetch_user_data(function(){
-                        localStorage.setItem("cra_version", JSON.stringify(cra_version));
-                        $("#cra_close_button").show(400);
-                        rate_display();
+                fetch_user_data(function(){
+                    fetch_score_data2(2, function(){
+                        fetch_score_data2(3, function(){
+                            localStorage.setItem("cra_chart_list", JSON.stringify(chart_list));
+                            localStorage.setItem("cra_version", JSON.stringify(cra_version));
+                            $("#cra_close_button").show(400);
+                            rate_display();
+                        });
                     });
                });
            }));
@@ -562,6 +565,27 @@ $("#cra_wrapper").delay(400).fadeIn(400);
 
 // internal vars for AJAX reconnection
 var failure_count = 0;
+
+// use GetUserMusicApi to fetch all scores, and update chart_list
+function fetch_score_data2(level, callback) {
+    $("#cra_window_inner").html("<p>loading ...</p>");
+    request_api("GetUserMusicApi", { level: "1990" + level },
+                function(d) {
+                    var map = {};
+                    for (var i = 0; i < d.userMusicList.length; i++)
+                        map[d.userMusicList[i].musicId] = d.userMusicList[i].scoreMax;
+                    for (var i = 0; i < chart_list.length; i++) {
+                        if (chart_list[i].level == level) {
+                            chart_list[i].score = map[chart_list[i].id] || 0;
+                            chart_list[i].rate  = score_to_rate(chart_list[i].rate_base, chart_list[i].score);
+                        }
+                    }
+                    callback();
+                },
+                function() {
+                    $("#cra_window_inner").html("<p>CHUNITHM NET との通信に失敗しました。</p>");
+                });
+}
 
 // fetch all score data with ID >= i and update `chart_list[i]`
 function fetch_score_data(i, callback)
