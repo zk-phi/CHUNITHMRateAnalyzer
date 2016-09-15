@@ -341,6 +341,7 @@ var chart_list = [
     ,{ id: 248, level: 2, rate_base: 12.3, image: "img/a2fdef9e4b278a51.jpg", name: "Schrecklicher Aufstand 赤" }
     ,{ id: 7,   level: 3, rate_base: 13.6, image: "img/b602913a68fca621.jpg", name: "初音ミクの消失" }
     ,{ id: 7,   level: 2, rate_base: 12.0, image: "img/b602913a68fca621.jpg", name: "初音ミクの消失　赤" }
+    ,{ id: 287, level: 3, rate_base: 11.9, image: "img/5febf5df2b5094f3.jpg", name: "ロミオとシンデレラ" }
 ];
 
 // latest rate
