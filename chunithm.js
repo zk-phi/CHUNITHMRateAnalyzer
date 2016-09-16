@@ -247,7 +247,7 @@ var chart_list = [
     ,{ id: 52,  level: 3, rate_base: 13.2, image: "img/a62f975edc860e34.jpg", name: "Cyberozar" }
     ,{ id: 244, level: 3, rate_base: 12.3, image: "img/e0a700914896ea4a.jpg", name: "回レ！雪月花" }
     ,{ id: 243, level: 3, rate_base: 12.2, image: "img/8872c759bea3bd9f.jpg", name: "シュガーソングとビターステップ" }
-    ,{ id: 171, level: 3, rate_base: 12.1, image: "img/25abef88cb12af3e.jpg", name: "XL TECHNO" }
+    ,{ id: 171, level: 3, rate_base: 12.3, image: "img/25abef88cb12af3e.jpg", name: "XL TECHNO" }
     ,{ id: 232, level: 2, rate_base: 11.3, image: "img/a2069fdb9d860d36.jpg", name: "Elemental Creation 赤" }
     ,{ id: 52,  level: 2, rate_base: 11.1, image: "img/a62f975edc860e34.jpg", name: "Cyberozar 赤" }
     ,{ id: 209, level: 3, rate_base: 11.7, image: "img/5744f4cf66710a56.jpg", name: "君色シグナル" }
@@ -343,7 +343,12 @@ var chart_list = [
     ,{ id: 7,   level: 2, rate_base: 12.0, image: "img/b602913a68fca621.jpg", name: "初音ミクの消失　赤" }
     ,{ id: 287, level: 3, rate_base: 11.9, image: "img/5febf5df2b5094f3.jpg", name: "ロミオとシンデレラ" }
     ,{ id: 279, level: 3, rate_base: 11.7, image: "img/84ecaebe6bce2a58.jpg", name: "深海少女" }
-
+    ,{ id: 278, level: 3, rate_base: 11.4, image: "img/5f1d7a520a2735d4.jpg", name: "からくりピエロ" }
+    ,{ id: 286, level: 3, rate_base: 11.5, image: "img/afcce0c85c1f8610.jpg", name: "Tell Your World" }
+    ,{ id: 316, level: 3, rate_base: 11.5, image: "img/88f9536c08cb4e3f.jpg", name: "みくみくにしてあげる♪【してやんよ" }
+    ,{ id: 288, level: 3, rate_base: 11.6, image: "img/f29f10a963df60cf.jpg", name: "First Twinkle" }
+    ,{ id: 273, level: 3, rate_base: 11.8, image: "img/604157e2c49d91d7.jpg", name: "ビバハピ" }
+    ,{ id: 250, level: 2, rate_base: 11.8, image: "img/989f4458fb34aa9d.jpg", name: "Philosopher 赤" }
 ];
 
 // latest rate
