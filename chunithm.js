@@ -345,7 +345,7 @@ var chart_list = [
     ,{ id: 279, level: 3, rate_base: 11.7, image: "img/84ecaebe6bce2a58.jpg", name: "深海少女" }
     ,{ id: 278, level: 3, rate_base: 11.4, image: "img/5f1d7a520a2735d4.jpg", name: "からくりピエロ" }
     ,{ id: 286, level: 3, rate_base: 11.5, image: "img/afcce0c85c1f8610.jpg", name: "Tell Your World" }
-    ,{ id: 316, level: 3, rate_base: 11.5, image: "img/88f9536c08cb4e3f.jpg", name: "みくみくにしてあげる♪【してやんよ" }
+    ,{ id: 316, level: 3, rate_base: 11.5, image: "img/88f9536c08cb4e3f.jpg", name: "みくみくにしてあげる♪【してやんよ】" }
     ,{ id: 288, level: 3, rate_base: 11.6, image: "img/f29f10a963df60cf.jpg", name: "First Twinkle" }
     ,{ id: 273, level: 3, rate_base: 11.8, image: "img/604157e2c49d91d7.jpg", name: "ビバハピ" }
     ,{ id: 250, level: 2, rate_base: 11.8, image: "img/989f4458fb34aa9d.jpg", name: "Philosopher 赤" }
