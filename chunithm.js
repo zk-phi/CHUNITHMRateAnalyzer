@@ -349,6 +349,11 @@ var chart_list = [
     ,{ id: 288, level: 3, rate_base: 11.6, image: "img/f29f10a963df60cf.jpg", name: "First Twinkle" }
     ,{ id: 273, level: 3, rate_base: 11.8, image: "img/604157e2c49d91d7.jpg", name: "ビバハピ" }
     ,{ id: 250, level: 2, rate_base: 11.8, image: "img/989f4458fb34aa9d.jpg", name: "Philosopher 赤" }
+    ,{ id: 336, level: 3, rate_base: 12.0, image: "img/e40fceaa1bb587b7.jpg", name: "シジョウノコエ VOCALO ver." }
+    ,{ id: 319, level: 3, rate_base: 12.6, image: "img/e9eeb98572b140bc.jpg", name: "Say A Vengeance" }
+    ,{ id: 320, level: 3, rate_base: 12.6, image: "img/6b33d4fa539d5adb.jpg", name: "010" }
+    ,{ id: 321, level: 3, rate_base: 12.5, image: "img/40cc7a6a264f88c1.jpg", name: "ERIS -Legend of Gaidelia-" }
+    ,{ id: 137, level: 3, rate_base: 13.6, image: "img/13a5a9ca35a9b71b.jpg", name: "Angel dust" }
 ];
 
 // latest rate
