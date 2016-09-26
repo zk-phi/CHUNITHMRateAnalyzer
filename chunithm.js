@@ -1,43 +1,53 @@
 // CHUNITHM Rate Analyzer (C) zk_phi 2015-
-// *FIXME* NO CHARTS CAN BE REMOVED FROM chart_list
 
 var cra_version = 160503;
 
-if(!location.href.match(/^https:\/\/chunithm-net.com/)){
+if (!location.href.match(/^https:\/\/chunithm-net.com/)) {
     alert("CHUNITHM NET を開いた状態で実行してください。");
     throw Error();
-} else if(location.href == "https://chunithm-net.com/mobile/" || location.href == "https://chunithm-net.com/mobile/index.html") {
+} else if (location.href.match(/\/mobile\/(index\.html)?$/)) {
     alert("CHUNITHM NET にログインした状態で実行してください。");
     throw Error();
-} else if(location.href == "https://chunithm-net.com/mobile/AimeList.html") {
+} else if (location.href.match(/AimeList\.html$/)) {
     alert("AIME を選択した状態で実行してください。");
     throw Error();
 }
+
+// list of resources required to execute this script (note that all
+// resources must be provided via HTTPS)
+var dependencies = [
+    "https://platform.twitter.com/widgets.js" // Twitter tweet/follow button
+];
 
 // -----------------------------------------------------------------------------
 // utilities
 // -----------------------------------------------------------------------------
 
+// ---- API wrappers
+
 // Request CHUNITHM Net API API_NAME with REQ_DATA, and call CALLBACK
-// on success. (reference : http://www.ginjake.net/score/readme.php)
-function request_api(api_name, req_data, callback /* optional */, errorback /* optional */)
+// on success when given. (reference : http://www.ginjake.net/score/readme.php)
+function request_api(api_name, req_data, callback, errorback)
 {
     req_data.userId = parseInt(getCookie()["userId"]);
-    $.ajax(REQUEST_URL + api_name,
-           { type: "post",
-             data: JSON.stringify(req_data),
-             dataType: "json",
-             scriptCharset: "UTF-8",
-             timeout: 5000 })
-        .done(function(data) {
-            if (!data) return errorback && errorback(id);
-            setCookie("userId", data.userId);
-            callback && callback(data);
-        })
-        .fail(function(id){ errorback && errorback(id); });
+    $.ajax(REQUEST_URL + api_name, {
+        type: "post",
+        data: JSON.stringify(req_data),
+        dataType: "json",
+        scriptCharset: "UTF-8",
+        timeout: 5000
+    }).done(function(data) {
+        if (!data) return errorback && errorback(id);
+        setCookie("userId", data.userId);
+        callback && callback(data);
+    }).fail(function(id) {
+        errorback && errorback(id);
+    });
 }
 
-// Calculate rate from given score and rate_base. (reference :
+// ---- rate <-> score
+
+// Calculate rate from given SCORE and RATE_BASE. (reference :
 // http://d.hatena.ne.jp/risette14/20150913/1442160273)
 function score_to_rate(rate_base, score)
 {
@@ -52,9 +62,9 @@ function score_to_rate(rate_base, score)
     return Math.floor(rate * 100) / 100;
 }
 
-// Calculate score required to achieve given rate. This function may
-// return NaN to indicate that the rate is NOT achievable wrt
-// rate_base.
+// Calculate score required to achieve given RATE wrt RATE_BASE. This
+// function may return NaN to indicate that the rate is NOT achievable
+// wrt RATE_BASE.
 function rate_to_score(rate_base, target_rate)
 {
     var diff = target_rate - rate_base;
@@ -69,32 +79,54 @@ function rate_to_score(rate_base, target_rate)
         :  900000;
 }
 
-// Stringify a floating number to a string of the form `xx.xx'.
-function rate_str(rate)
+// ---- unparsers
+
+// Format a positive floating number NUM to a string of the form
+// `xx.xx'.
+function rate_str(num)
 {
-    return rate.toString().substring(0, rate >= 10 ? 5 : 4);
+    return num.toString().substring(0, num >= 10 ? 5 : 4);
 }
 
-// Stringify a floating number to a string of the form `[+x.xx]'.
-function rate_diff_str(diff)
+// Stringify an arbitrary floating number NUM to a string of the form
+// `[+x.xx]'. Result may be an empty string '' if abs(NUM) < 0.01.
+function rate_diff_str(num)
 {
-    return diff <= -10.0 ? "[" + diff.toString().substring(0, 6) + "]"
-        :  diff <= -0.01 ? "[" + diff.toString().substring(0, 5) + "]"
-        :  diff >=  10.0 ? "[+" + diff.toString().substring(0, 5) + "]"
-        :  diff >=  0.01 ? "[+" + diff.toString().substring(0, 4) + "]"
+    return num <= -10.0 ? "[" + num.toString().substring(0, 6) + "]"
+        :  num <= -0.01 ? "[" + num.toString().substring(0, 5) + "]"
+        :  num >=  10.0 ? "[+" + num.toString().substring(0, 5) + "]"
+        :  num >=  0.01 ? "[+" + num.toString().substring(0, 4) + "]"
         : "";
 }
+
+// (unused)
+function rank_icon (score)
+{
+    return score >= 1007500 ? "common/images/icon_sss.png"
+        : score >= 1000000 ? "common/images/icon_ss.png"
+        : score >=  975000 ? "common/images/icon_s.png"
+        : score >=  950000 ? "common/images/icon_aaa.png"
+        : score >=  925000 ? "common/images/icon_aa.png"
+        : score >=  900000 ? "common/images/icon_a.png"
+        : "";
+}
+
+// ---- obj -> dom
 
 // Stringify a JS object OBJ in the CSS format.
 function css(obj)
 {
-    return Object.keys(obj).reduce(function(acc, x){
-        return acc + x + "{" + Object.keys(obj[x]).reduce(function(acc, y){
+    return Object.keys(obj).reduce(function(acc, x) {
+        return acc + x + "{" + Object.keys(obj[x]).reduce(function(acc, y) {
             return acc + y + ":" + obj[x][y] + ";";
         }, "") + "}";
     }, "")
 }
 
+// TODO: Bug fix.
+// TODO: Implement on_create, on_delete hooks, click handlers.
+// TODO: It maybe okay to use functions to instantiate vars.
+//
 // Stringify TEMPLATE in the HTML format. TEMPLATE can be either a
 // string or a JS array of the form [TAG, ATTRS, CHILDREN ...]. TAG is
 // the tag name optionally followed by "#<id>". ATTRS is optional and
@@ -102,20 +134,20 @@ function css(obj)
 // and values are strings. CHILDREN are templates respectively.
 //
 // Optional arg PARAMS can be an object, whose values are either
-// string or an object of the same form as ATTRS. If TEMPLATE has a
+// string, or an object of the same form as ATTRS. If TEMPLATE has a
 // DOM whose id matches a key in PARAMS, its content or attributes are
 // replaced by the value associated to the key.
 function dom(template, params)
 {
-    if(!template) return "";
-    else if(typeof template == "string") return template;
+    if (!template) return "";
+    else if (typeof template == "string") return template;
 
     var elem = template[0].split("#"); // [ELEM_TYPE, ID]
     var attrs = typeof template[1] == "object" && !Array.isArray(template[1]) && template[1];
     var contents = template.slice(attrs ? 2 : 1);
 
-    if(params && params[elem[1]]) {
-        if(typeof params[elem[1]] == "string")
+    if (params && params[elem[1]]) {
+        if (typeof params[elem[1]] == "string")
             contents = [params[elem[1]]];
         else
             Object.keys(params[elem[1]]).map(function(k) { attrs[k] = params[elem[1]][k]; });
@@ -137,8 +169,9 @@ function dom(template, params)
 // global vars
 // -----------------------------------------------------------------------------
 
-// list of chart ID vs its rate, leveled 11 or more
-// (* DO NOT PREPEND ANY ITEMS TO THIS LIST -- `rate_diff' will be unable to calculate *)
+// TODO: No items can be removed from this list. We'd better use hash.
+//
+// List of chart ID vs rate_base, leveled 11 or more
 var chart_list = [
      { id: 103, level: 2, rate_base: 11.7, image: "img/3210d321c2700a57.jpg", name: "エンドマークに希望と涙を添えて 赤" }
     ,{ id: 68,  level: 3, rate_base: 11.7, image: "img/145b9b6f4c27d78e.jpg", name: "乗り切れ受験ウォーズ" }
@@ -228,7 +261,7 @@ var chart_list = [
     ,{ id: 141, level: 3, rate_base: 13.3, image: "img/2e6c11edba79d997.jpg", name: "閃鋼のブリューナク" }
     ,{ id: 76,  level: 3, rate_base: 13.4, image: "img/93abb77776c70b47.jpg", name: "luna blu" }
     ,{ id: 107, level: 3, rate_base: 13.0, image: "img/b43fef626f5b88cd.jpg", name: "We Gonna Journey" }
-    ,{ id: 138, level: 3, rate_base: 13.0, image: "img/478e8835e382f740.jpg", name: "conflict"}
+    ,{ id: 138, level: 3, rate_base: 13.0, image: "img/478e8835e382f740.jpg", name: "conflict" }
     ,{ id: 135, level: 3, rate_base: 13.5, image: "img/e7ee14d9fe63d072.jpg", name: "Vallista" }
     ,{ id: 134, level: 3, rate_base: 13.7, image: "img/08a24ed249ed2eec.jpg", name: "HAELEQUIN (Original Remaster)" }
     ,{ id: 92,  level: 3, rate_base: 12.8, image: "img/17315fb464f265bd.jpg", name: "最終鬼畜妹・一部声" }
@@ -357,18 +390,18 @@ var chart_list = [
 ];
 
 // latest rate
-var best_rate = 0;
-var opt_rate = 0;
-var disp_rate = 0;
+var best_rate   = 0;
+var opt_rate    = 0;
+var disp_rate   = 0;
 var recent_rate = 0;
 var worst_chart_rate;
 
 // load the last data from localStorage (if exists)
 var last_cra_version = JSON.parse(localStorage.getItem("cra_version"));
-var last_chart_list = JSON.parse(localStorage.getItem("cra_chart_list"));
-var last_best_rate = JSON.parse(localStorage.getItem("cra_best_rate"));
-var last_opt_rate = JSON.parse(localStorage.getItem("cra_opt_rate"));
-var last_disp_rate = JSON.parse(localStorage.getItem("cra_disp_rate"));
+var last_chart_list  = JSON.parse(localStorage.getItem("cra_chart_list"));
+var last_best_rate   = JSON.parse(localStorage.getItem("cra_best_rate"));
+var last_opt_rate    = JSON.parse(localStorage.getItem("cra_opt_rate"));
+var last_disp_rate   = JSON.parse(localStorage.getItem("cra_disp_rate"));
 var last_recent_rate = JSON.parse(localStorage.getItem("cra_recent_rate"));
 
 // diff between the latest rate and the last rate
@@ -377,18 +410,11 @@ var opt_rate_diff;
 var recent_rate_diff;
 var disp_rate_diff;
 
-// hide all that chunithm-net things
-var $hidden_items = $("body *").fadeTo(400, 0.75);
-
 // -----------------------------------------------------------------------------
-// prepare UI
+// UI
 // -----------------------------------------------------------------------------
 
-// list of resources required to execute this script (note that all
-// resources must be provided via HTTPS)
-var dependencies = [
-    "https://platform.twitter.com/widgets.js" // Twitter tweet/follow button
-];
+var $chunithm_net = $("body *");
 
 // CSS applied to the HTML
 var the_css = {
@@ -442,7 +468,6 @@ var the_css = {
         "text-align": "center",
     },
 
-    ".cra_thumb": { "float": "left" },
     ".cra_button": { "cursor": "pointer" }
 }
 
@@ -517,8 +542,11 @@ var the_css = {
 
 // ---- load the dependencies and the CSS
 
-dependencies.map(function(x){ $("head").append("<script src='" + x + "'>")});
+dependencies.map(function(x) { $("head").append("<script src='" + x + "'>"); });
+$chunithm_net.fadeTo(400, 0.75);
 $("head").append("<style>" + css(the_css) + "</style>");
+
+// ---- render the initial screen
 
 // $("body").append(dom(initial_screen));
 
@@ -542,20 +570,20 @@ $("#cra_window_inner")
 
 // close button
 $("#cra_close_button")
-    .click(function(){
+    .click(function() {
         $("html, body").animate({ scrollTop: 0 }, 400);
-        $("#cra_wrapper").fadeOut(400, function(){ $(this).remove(); });
-        $hidden_items.delay(400).fadeTo(400, 1);
+        $("#cra_wrapper").fadeOut(400, function() { $(this).remove(); });
+        $chunithm_net.delay(400).fadeTo(400, 1);
     });
 
 // fetch button
 $("#cra_window_inner")
     .append($("<h2 id='page_title' class='cra_button cra_fetch_score'>スコアを解析する</h2>")
-            .click(function(){
+            .click(function() {
                 $("#cra_close_button").hide(400);
-                fetch_user_data(function(){
-                    fetch_score_data(2, function(){
-                        fetch_score_data(3, function(){
+                fetch_user_data(function() {
+                    fetch_score_data(2, function() {
+                        fetch_score_data(3, function() {
                             localStorage.setItem("cra_chart_list", JSON.stringify(chart_list));
                             localStorage.setItem("cra_version", JSON.stringify(cra_version));
                             $("#cra_close_button").show(400);
@@ -569,7 +597,7 @@ $("#cra_window_inner")
 if(cra_version == last_cra_version) {
     $("#cra_window_inner")
         .append($("<h2 id='page_title' class='cra_button cra_view_last'>前回のデータを見る</h2>")
-               .click(function(){
+               .click(function() {
                    chart_list = last_chart_list;
                    disp_rate = last_disp_rate;
                    rate_display();
@@ -584,43 +612,44 @@ $("#cra_wrapper").delay(400).fadeIn(400);
 // -----------------------------------------------------------------------------
 
 // use GetUserMusicApi to fetch all scores, and update chart_list
-function fetch_score_data(level, callback) {
+function fetch_score_data(level, callback)
+{
     $("#cra_window_inner").html("<p>loading ...</p>");
-    request_api("GetUserMusicApi", { level: "1990" + level },
-                function(d) {
-                    var map = {};
-                    for (var i = 0; i < d.userMusicList.length; i++)
-                        map[d.userMusicList[i].musicId] = d.userMusicList[i].scoreMax;
-                    for (var i = 0; i < chart_list.length; i++) {
-                        if (chart_list[i].level == level) {
-                            chart_list[i].score = map[chart_list[i].id] || 0;
-                            chart_list[i].rate  = score_to_rate(chart_list[i].rate_base, chart_list[i].score);
-                        }
-                    }
-                    callback();
-                },
-                function() {
-                    $("#cra_window_inner").html("<p>CHUNITHM NET との通信に失敗しました。</p>");
-                });
+    request_api("GetUserMusicApi", {
+        level: "1990" + level
+    }, function(d) {
+        var map = {};
+        for (var i = 0; i < d.userMusicList.length; i++)
+            map[d.userMusicList[i].musicId] = d.userMusicList[i].scoreMax;
+        for (var i = 0; i < chart_list.length; i++) {
+            if (chart_list[i].level == level) {
+                chart_list[i].score = map[chart_list[i].id] || 0;
+                chart_list[i].rate  = score_to_rate(chart_list[i].rate_base, chart_list[i].score);
+            }
+        }
+        callback();
+    }, function() {
+        $("#cra_window_inner").html("<p>CHUNITHM NET との通信に失敗しました。</p>");
+    });
 }
 
 // fetch user data and update `disp_rate`
 function fetch_user_data(callback)
 {
     $("#cra_window_inner").html("<p>loading user data ...</p>");
-    request_api("GetUserInfoApi", { friendCode: 0, fileLevel: 1 },
-                function(d){
-                    disp_rate = d.userInfo.playerRating / 100.0;
-                    localStorage.setItem("cra_disp_rate", JSON.stringify(disp_rate));
-                    callback();
-                },
-                function(){
-                    $("#cra_window_inner")
-                        .html("<p>ユーザー情報が取得できませんでした</p>" +
-                              "<h2 id='page_title' class='cra_button'>再読み込み</h2>");
-                    $("#page_title")
-                        .click(function(){ fetch_user_data(callback); });
-                });
+    request_api("GetUserInfoApi", {
+        friendCode: 0, fileLevel: 1
+    }, function(d) {
+        disp_rate = d.userInfo.playerRating / 100.0;
+        localStorage.setItem("cra_disp_rate", JSON.stringify(disp_rate));
+        callback();
+    }, function() {
+        $("#cra_window_inner")
+            .html("<p>ユーザー情報が取得できませんでした</p>" +
+                  "<h2 id='page_title' class='cra_button'>再読み込み</h2>");
+        $("#page_title")
+            .click(function() { fetch_user_data(callback); });
+    });
 }
 
 // -----------------------------------------------------------------------------
@@ -916,7 +945,7 @@ var expected_rate = [
      14.10, 13.20, 15.10, 14.90, 14.30, 13.10, 14.00, 14.10, 13.80, 14.80, 14.30, 14.70, 15.20]
 ];
 
-// hide window, compute and display the rate from fetched data
+// Hide window, compute and display the rate from fetched data.
 function rate_display()
 {
     var i;
@@ -924,15 +953,15 @@ function rate_display()
     $("#cra_window_inner").html("<p>calculating rate ...</p>");
 
     // calculate score improvement
-    for(i = 0; i < chart_list.length; i++){
+    for (i = 0; i < chart_list.length; i++) {
         chart_list[i].rate_diff =
             !last_chart_list ? 0
             : chart_list[i].rate - (last_chart_list[i] && last_chart_list[i].rate || 0);
     }
 
     // calculate rate and their diff
-    chart_list.sort(function(a, b){ return - (a.rate - b.rate); });
-    for(i = 0; i < 30; i++) best_rate += chart_list[i].rate;
+    chart_list.sort(function(a, b) { return - (a.rate - b.rate); });
+    for (i = 0; i < 30; i++) best_rate += chart_list[i].rate;
     opt_rate = ((best_rate + chart_list[0].rate * 10) / 40);
     best_rate = (best_rate / 30);
     recent_rate = disp_rate * 4 - best_rate * 3;
@@ -948,7 +977,7 @@ function rate_display()
 
     // calculate required score to improve the rate
     worst_chart_rate = chart_list[29].rate;
-    for(i = 0; i < chart_list.length; i++)
+    for (i = 0; i < chart_list.length; i++)
     {
         chart_list[i].req_score = rate_to_score(chart_list[i].rate_base, worst_chart_rate);
         chart_list[i].req_diff = Math.max(chart_list[i].req_score - chart_list[i].score, 0);
@@ -956,7 +985,7 @@ function rate_display()
 
     // calculate recommendability
     var block_ix = Math.max(0, Math.min(21, Math.ceil(best_rate * 10 - 130)));
-    for(i = 0; i < chart_list.length; i++) {
+    for (i = 0; i < chart_list.length; i++) {
         var rate = expected_rate[block_ix][i];
         chart_list[i].expected_improvement =
               chart_list[i].rate >= rate || rate <= worst_chart_rate ? 0
@@ -965,10 +994,10 @@ function rate_display()
     }
 
     // remove window and show the result
-    $("#cra_window_wrapper").fadeOut(300, function(){
+    $("#cra_window_wrapper").fadeOut(300, function() {
 
         $(this).remove();
-        $hidden_items.fadeTo(400, 0);
+        $chunithm_net.fadeTo(400, 0);
 
         $("#cra_wrapper")
             .append("<img id='logo' src='https://zk-phi.github.io/CHUNITHMRateAnalyzer/logo.png' />" +
@@ -992,19 +1021,6 @@ function rate_display()
   </div>
   <a id="cra_share_button" class="twitter-share-button"></a>
 </div>`);
-
-        // $("#cra_rate")
-        //     .html("<h2><p id='cra_best_rate'>" +
-        //           "<a id='cra_share_button' class='twitter-share-button'></a></p>" +
-        //           "<p id='cra_disp_rate'></p></h2>");
-
-        // $("#cra_best_rate")
-        //     .prepend("BEST枠平均: " + rate_str(best_rate) + rate_diff_str(best_rate_diff) + " / " +
-        //              "最大レート: " + rate_str(opt_rate) + rate_diff_str(opt_rate_diff) + " ");
-        //
-        // $("#cra_disp_rate")
-        //     .html("(RECENT枠平均: " + rate_str(recent_rate) + rate_diff_str(recent_rate_diff) + " / " +
-        //           "表示レート: " + rate_str(disp_rate) +  rate_diff_str(disp_rate_diff) + ")");
 
         $("#cra_share_button")
             .attr("href", "https://twitter.com/share")
@@ -1035,45 +1051,45 @@ function rate_display()
             .attr("href", "https://twitter.com/zk_phi")
             .html("Follow");
 
-        $("#cra_sort_rate").click(function(){
-            chart_list.sort(function(a, b){ return - (a.rate - b.rate); });
+        $("#cra_sort_rate").click(function() {
+            chart_list.sort(function(a, b) { return - (a.rate - b.rate); });
             render_chart_list({ 0: "曲別レート (高い順)", 30: "BEST 枠ここまで" });
         });
 
-        $("#cra_sort_base").click(function(){
-            chart_list.sort(function(a, b){ return - (a.rate_base - b.rate_base); });
+        $("#cra_sort_base").click(function() {
+            chart_list.sort(function(a, b) { return - (a.rate_base - b.rate_base); });
             var indices = { 0 : "LEVEL 13+" };
-            for(i = 0; chart_list[i].rate_base >= 13.7; i++);
+            for (i = 0; chart_list[i].rate_base >= 13.7; i++) ;
             indices[i] = "LEVEL 13";
-            for(i = 0; chart_list[i].rate_base >= 13; i++);
+            for (i = 0; chart_list[i].rate_base >= 13; i++) ;
             indices[i] = "LEVEL 12+";
-            for(i = 0; chart_list[i].rate_base >= 12.7; i++);
+            for (i = 0; chart_list[i].rate_base >= 12.7; i++) ;
             indices[i] = "LEVEL 12";
-            for(i = 0; chart_list[i].rate_base >= 12; i++);
+            for (i = 0; chart_list[i].rate_base >= 12; i++) ;
             indices[i] = "LEVEL 11";
             render_chart_list(indices);
         });
 
-        $("#cra_sort_score").click(function(){
-            chart_list.sort(function(a, b){ return - (a.score - b.score) });
+        $("#cra_sort_score").click(function() {
+            chart_list.sort(function(a, b) { return - (a.score - b.score) });
             var indices = { 0 : "SSS" };
-            for(i = 0; chart_list[i].score >= 1007500; i++);
+            for (i = 0; chart_list[i].score >= 1007500; i++) ;
             indices[i] = "SS";
-            for(i = 0; chart_list[i].score >= 1000000; i++);
+            for (i = 0; chart_list[i].score >= 1000000; i++) ;
             indices[i] = "S";
-            for(i = 0; chart_list[i].score >=  975000; i++);
+            for (i = 0; chart_list[i].score >=  975000; i++) ;
             indices[i] = "AAA";
-            for(i = 0; chart_list[i].score >=  950000; i++);
+            for (i = 0; chart_list[i].score >=  950000; i++) ;
             indices[i] = "AA";
-            for(i = 0; chart_list[i].score >=  925000; i++);
+            for (i = 0; chart_list[i].score >=  925000; i++) ;
             indices[i] = "A";
-            for(i = 0; chart_list[i].score >=  900000; i++);
+            for (i = 0; chart_list[i].score >=  900000; i++) ;
             indices[i] = "A未満"
             render_chart_list(indices);
         });
 
-        $("#cra_sort_score_req").click(function(){
-            chart_list.sort(function(a, b){
+        $("#cra_sort_score_req").click(function() {
+            chart_list.sort(function(a, b) {
                 return (isNaN(b.req_diff) ? -1 : 0) + (isNaN(b.req_diff) ? 1 : 0)
                     || a.req_diff - b.req_diff
                     || - (a.rate_base - b.rate_base);
@@ -1081,29 +1097,29 @@ function rate_display()
             render_chart_list({ 0: "レート上げに必要なスコア順", 30: "BEST 枠ここまで" });
         });
 
-        $("#cra_sort_score_ave").click(function(){
+        $("#cra_sort_score_ave").click(function() {
             var indices = { };
-            chart_list.sort(function(a, b){
+            chart_list.sort(function(a, b) {
                     return - (a.expected_improvement - b.expected_improvement)
             });
-            for(var i = 0; i < chart_list.length && chart_list[i].expected_improvement > 0; i++);
+            for (var i = 0; i < chart_list.length && chart_list[i].expected_improvement > 0; i++) ;
             indices[0] = "おすすめ"
             indices[i] = "おすすめここまで"
             render_chart_list(indices);
         });
 
         // load twitter buttons
-        if(typeof twttr != "undefined") twttr.widgets.load();
+        if (typeof twttr != "undefined") twttr.widgets.load();
 
         // render chart list
         var indices = {};
-        chart_list.sort(function(a, b){
+        chart_list.sort(function(a, b) {
             return (a.rate_diff ? 0 : 1) + (b.rate_diff ? 0 : -1) || - (a.rate - b.rate);
         });
-        for(var i = 0; i < chart_list.length && chart_list[i].rate_diff != 0; i++);
-        if(i) indices[0] = "最近レートを更新した曲";
+        for (var i = 0; i < chart_list.length && chart_list[i].rate_diff != 0; i++) ;
+        if (i) indices[0] = "最近レートを更新した曲";
         indices[i] = "曲別レート (高い順)";
-        for(; i < chart_list.length && chart_list[i].req_diff <= 0; i++);
+        for (; i < chart_list.length && chart_list[i].req_diff <= 0; i++) ;
         indices[i] = "BEST 枠ここまで";
         render_chart_list(indices);
     });
@@ -1116,23 +1132,15 @@ function render_chart_list(msgs)
     $("#cra_chart_list *").remove();
     $("#cra_chart_list").css({ display: "none" });
 
-    for(var i = 0; i < chart_list.length; i++)
+    for (var i = 0; i < chart_list.length; i++)
     {
-        if(msgs[i])
+        if (msgs[i])
             $("#cra_chart_list")
             .append("<hr>")
             .append(dom(["div", {class: "mt_15"}, ["h2#page_title", msgs[i]]]));
 
-        if(isNaN(chart_list[i].req_diff))
+        if (isNaN(chart_list[i].req_diff))
             continue;
-
-        // var rank_icon = chart_list[i].score >= 1007500 ? "common/images/icon_sss.png"
-        //     : chart_list[i].score >= 1000000 ? "common/images/icon_ss.png"
-        //     : chart_list[i].score >=  975000 ? "common/images/icon_s.png"
-        //     : chart_list[i].score >=  950000 ? "common/images/icon_aaa.png"
-        //     : chart_list[i].score >=  925000 ? "common/images/icon_aa.png"
-        //     : chart_list[i].score >=  900000 ? "common/images/icon_a.png"
-        //     : "";
 
         var difficulty_icon = chart_list[i].level == 2 ? "common/images/icon_expert.png"
             : "common/images/icon_master.png";
@@ -1182,7 +1190,7 @@ function render_chart_list(msgs)
   </div>
 </div>`);
 
-        // $("#cra_chart_list").append(list_item_template, {
+        // $("#cra_chart_list").append(dom(list_item_template, {
         //     jacket_img: {src: chart_list[i].image},
         //     difficulty_icon: difficulty_icon,
         //     Track: rate_str(chart_list[i].rate_base),
@@ -1190,7 +1198,7 @@ function render_chart_list(msgs)
         //     Score: chart_list[i].score,
         //     Rate: rate_str(chart_list[i].rate) + rate_diff_str(chart_list[i].rate_diff),
         //     IconBatch: chart_list[i].req_diff ? "BEST枠入りまで：" + chart_list[i].req_diff : ""
-        // });
+        // }));
     }
 
     // $("#cra_chart_list").show(400);
