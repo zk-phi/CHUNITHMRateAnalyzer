@@ -113,14 +113,15 @@ function rank_icon (score)
 
 // ---- obj -> dom
 
-// Stringify a JS object OBJ in the CSS format.
+// Stringify a js object in the CSS format.
 function css(obj)
 {
     return Object.keys(obj).reduce(function(acc, x) {
-        return acc + x + "{" + Object.keys(obj[x]).reduce(function(acc, y) {
-            return acc + y + ":" + obj[x][y] + ";";
-        }, "") + "}";
-    }, "")
+        return acc + x + "{" + (
+            x.charAt(0) == '@' ? css(obj[x]) : Object.keys(obj[x]).reduce(function(acc, y) {
+                return acc + y + ":" + obj[x][y] + ";";
+        }, "")) + "}";
+    }, "");
 }
 
 // TODO: Bug fix.
