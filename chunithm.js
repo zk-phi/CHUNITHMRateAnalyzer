@@ -3,7 +3,7 @@
 var cra_version = 160503;
 
 if (!location.href.match(/^https:\/\/chunithm-net.com/)) {
-    alert("CHUNITHM NET を開いた状態で実行してください。");
+    alert("CHUNITHM NET を開いているタブで実行してください。");
     throw Error();
 } else if (location.href.match(/\/mobile\/(index\.html)?$/)) {
     alert("CHUNITHM NET にログインした状態で実行してください。");
