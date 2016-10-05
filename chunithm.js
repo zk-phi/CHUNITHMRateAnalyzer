@@ -114,18 +114,18 @@ function rank_icon (score)
 // ---- obj -> dom
 
 // Stringify a js object in the CSS format.
-function css(obj)
+function _css(obj)
 {
     return Object.keys(obj).reduce(function(acc, x) {
         return acc + x + "{" + (
-            x.charAt(0) == '@' ? css(obj[x]) : Object.keys(obj[x]).reduce(function(acc, y) {
+            x.charAt(0) == '@' ? _css(obj[x]) : Object.keys(obj[x]).reduce(function(acc, y) {
                 return acc + y + ":" + obj[x][y] + ";";
         }, "")) + "}";
     }, "");
 }
 
 // TODO: Bug fix.
-// TODO: Implement on_create, on_delete hooks, click handlers.
+// TODO: Implement on_create hooks, click handlers.
 // TODO: It maybe okay to use functions to instantiate vars.
 //
 // Stringify TEMPLATE in the HTML format. TEMPLATE can be either a
@@ -419,7 +419,6 @@ var $chunithm_net = $("body *");
 
 // CSS applied to the HTML
 var the_css = {
-
     "#cra_wrapper": {
         "position": "absolute", "top": "0px", "left": "0px",
         "min-height": "100%", "width": "100%",
@@ -545,7 +544,7 @@ var the_css = {
 
 dependencies.map(function(x) { $("head").append("<script src='" + x + "'>"); });
 $chunithm_net.fadeTo(400, 0.75);
-$("head").append("<style>" + css(the_css) + "</style>");
+$("head").append("<style>" + _css(the_css) + "</style>");
 
 // ---- render the initial screen
 
