@@ -1,4 +1,4 @@
-// CHUNITHM Rate Analyzer (C) zk_phi 2015-
+// CHUNITHM Rate Analyzer (C) zk_phi 201-
 
 var cra_version = 160503;
 
