@@ -391,7 +391,6 @@ var chart_list = [
     ,{ id: 187, level: 3, rate_base: 13.2, image: "img/e6642a96885723c1.jpg", name: "患部で止まってすぐ溶ける～狂気の優曇華院" }
     ,{ id: 322, level: 3, rate_base: 13.6, image: "img/8b145fe4cf0c01bb.jpg", name: "Imperishable Night 2006 (2016 Refine)" }
     ,{ id: 189, level: 3, rate_base: 12.7, image: "img/9310d07b7e02e73a.jpg", name: "ひれ伏せ愚民どもっ！" }
-    
 ];
 
 // latest rate
