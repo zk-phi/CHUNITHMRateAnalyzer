@@ -13,11 +13,15 @@ if (!location.href.match(/^https:\/\/chunithm-net.com/)) {
     throw Error();
 }
 
-// list of resources required to execute this script (note that all
-// resources must be provided via HTTPS)
-var dependencies = [
-    "https://platform.twitter.com/widgets.js" // Twitter tweet/follow button
-];
+// List of dependencies (note that all resources must be provided via
+// HTTPS).
+var dependencies = {
+    js: [
+        "https://platform.twitter.com/widgets.js" // Twitter tweet/follow button
+    ],
+    css: [
+    ],
+};
 
 // -----------------------------------------------------------------------------
 // utilities
@@ -45,7 +49,7 @@ function request_api(api_name, req_data, callback, errorback)
     });
 }
 
-// ---- rate <-> score
+// ---- Rate <-> Score
 
 // Calculate rate from given SCORE and RATE_BASE. (reference :
 // http://d.hatena.ne.jp/risette14/20150913/1442160273)
@@ -79,7 +83,7 @@ function rate_to_score(rate_base, target_rate)
         :  900000;
 }
 
-// ---- unparsers
+// ---- Unparsers
 
 // Format a positive floating number NUM to a string of the form
 // `xx.xx'.
@@ -99,7 +103,7 @@ function rate_diff_str(num)
         : "";
 }
 
-// (unused)
+// (unused) Get rank icon suitable for SCORE.
 function rank_icon (score)
 {
     return score >= 1007500 ? "common/images/icon_sss.png"
@@ -111,7 +115,7 @@ function rank_icon (score)
         : "";
 }
 
-// ---- obj -> dom
+// ---- JS Obj -> DOM
 
 // Stringify a js object in the CSS format.
 function _css(obj)
@@ -330,7 +334,7 @@ var chart_list = [
     ,{ id: 196, level: 2, rate_base: 11.9, image: "img/ed40032f25177518.jpg", name: "FREEDOM DiVE 赤" }
     ,{ id: 121, level: 3, rate_base: 12.5, image: "img/4196f71ce51620a0.jpg", name: "東方妖々夢 ～the maximum moving about～" }
     ,{ id: 93,  level: 3, rate_base: 12.3, image: "img/6b40809324937ec9.jpg", name: "蒼空に舞え、墨染の桜" }
-    ,{ id: 122, level: 3, rate_base: 12.5, image: "img/67418ba28151c3ff.jpg", name: "少女幻葬戦慄曲　～　Necro Fantasia" }
+    ,{ id: 122, level: 3, rate_base: 12.5, image: "img/67418ba28151c3ff.jpg", name: "少女幻葬戦慄曲 ～ Necro Fantasia" }
     ,{ id: 177, level: 3, rate_base: 12.6, image: "img/6e7843f9d831b0ac.jpg", name: "Jimang Shot" }
     ,{ id: 36,  level: 3, rate_base: 11.0, image: "img/e273c9d64170b575.jpg", name: "届かない恋 '13" }
     ,{ id: 126, level: 3, rate_base: 11.3, image: "img/547ba5407b6e7fa0.jpg", name: "Heart To Heart" }
@@ -374,7 +378,7 @@ var chart_list = [
     ,{ id: 267, level: 3, rate_base: 11.5, image: "img/a0d03551eb3930e9.jpg", name: "心象蜃気楼" }
     ,{ id: 248, level: 2, rate_base: 12.3, image: "img/a2fdef9e4b278a51.jpg", name: "Schrecklicher Aufstand 赤" }
     ,{ id: 7,   level: 3, rate_base: 13.6, image: "img/b602913a68fca621.jpg", name: "初音ミクの消失" }
-    ,{ id: 7,   level: 2, rate_base: 12.0, image: "img/b602913a68fca621.jpg", name: "初音ミクの消失　赤" }
+    ,{ id: 7,   level: 2, rate_base: 12.0, image: "img/b602913a68fca621.jpg", name: "初音ミクの消失 赤" }
     ,{ id: 287, level: 3, rate_base: 11.9, image: "img/5febf5df2b5094f3.jpg", name: "ロミオとシンデレラ" }
     ,{ id: 279, level: 3, rate_base: 11.7, image: "img/84ecaebe6bce2a58.jpg", name: "深海少女" }
     ,{ id: 278, level: 3, rate_base: 11.4, image: "img/5f1d7a520a2735d4.jpg", name: "からくりピエロ" }
@@ -540,13 +544,15 @@ var the_css = {
 //        "Rate: ", ["span#Rate"]]]],
 //      ["div#IconBatch", {class: "play_musicdata_icon clearfix"}]]];
 
-// ---- load the dependencies and the CSS
+// ---- load resources
 
-dependencies.map(function(x) { $("head").append("<script src='" + x + "'>"); });
-$chunithm_net.fadeTo(400, 0.75);
+dependencies.js.map(function(x) { $("head").append("<script src='" + x + "'>"); });
+dependencies.css.map(function(x) { $("head").append("<link rel='stylesheet' href='" + x + "'"); });
 $("head").append("<style>" + _css(the_css) + "</style>");
 
-// ---- render the initial screen
+// --- render the initial screen
+
+$chunithm_net.fadeTo(400, 0.75);
 
 // $("body").append(dom(initial_screen));
 
