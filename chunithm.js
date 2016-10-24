@@ -398,6 +398,7 @@ var chart_list = [
     ,{ id: 230, level: 3, rate_base: 12.4, image: "img/b59d2b2ab877a77d.jpg", name: "Hyperion" }
     ,{ id: 307, level: 3, rate_base: 12.7, image: "img/bbaa464731ab96a4.jpg", name: "Paqqin" }
     ,{ id: 229, level: 3, rate_base: 13.4, image: "img/73f86aec8d6c7c9b.jpg", name: "紅華刑" }
+    ,{ id: 262, level: 3, rate_base: 13.6, image: "img/676e59847912f5ca.jpg", name: "Tidal Wave" }
 ];
 
 // latest rate
