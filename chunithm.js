@@ -393,6 +393,7 @@ var chart_list = [
     ,{ id: 189, level: 3, rate_base: 12.7, image: "img/9310d07b7e02e73a.jpg", name: "ひれ伏せ愚民どもっ！" }
     ,{ id: 300, level: 3, rate_base: 12.2, image: "img/012eb1ed09577836.jpg", name: "No Routine" }
     ,{ id: 190, level: 3, rate_base: 12.6, image: "img/bbaa464731ab96a4.jpg", name: "エテルニタス・ルドロジー" }
+    ,{ id: 331, level: 3, rate_base: 12.2, image: "img/ec37e447b91995dd.jpg", name: "猛進ソリストライフ！" }
 ];
 
 // latest rate
