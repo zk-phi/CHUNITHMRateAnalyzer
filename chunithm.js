@@ -400,6 +400,7 @@ var chart_list = [
     ,{ id: 229, level: 3, rate_base: 13.4, image: "img/73f86aec8d6c7c9b.jpg", name: "紅華刑" }
     ,{ id: 262, level: 3, rate_base: 13.6, image: "img/676e59847912f5ca.jpg", name: "Tidal Wave" }
     ,{ id: 323, level: 3, rate_base: 13.5, image: "img/282cb1cacd4c1bb4.jpg", name: "Dreadnought" }
+    ,{ id: 324, level: 3, rate_base: 12.6, image: "img/d51d4ffba9f8d45e.jpg", name: "STAGER" }
 ];
 
 // latest rate
