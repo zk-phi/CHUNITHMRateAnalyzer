@@ -401,6 +401,7 @@ var chart_list = [
     ,{ id: 262, level: 3, rate_base: 13.6, image: "img/676e59847912f5ca.jpg", name: "Tidal Wave" }
     ,{ id: 323, level: 3, rate_base: 13.5, image: "img/282cb1cacd4c1bb4.jpg", name: "Dreadnought" }
     ,{ id: 324, level: 3, rate_base: 12.6, image: "img/d51d4ffba9f8d45e.jpg", name: "STAGER" }
+    ,{ id: 325, level: 3, rate_base: 12.6, image: "img/97eca622afca0f15.jpg", name: "Her Majesty" }
 ];
 
 // latest rate
