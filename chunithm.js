@@ -403,6 +403,7 @@ var chart_list = [
     ,{ id: 324, level: 3, rate_base: 12.6, image: "img/d51d4ffba9f8d45e.jpg", name: "STAGER" }
     ,{ id: 325, level: 3, rate_base: 12.6, image: "img/97eca622afca0f15.jpg", name: "Her Majesty" }
     ,{ id: 259, level: 2, rate_base: 11.3, image: "img/4d66e5d1669d79a2.jpg", name: "Oshama Scramble! (Cranky Remix) 赤" }
+    ,{ id: 229, level: 2, rate_base: 11.9, image: "img/73f86aec8d6c7c9b.jpg", name: "紅華刑 赤" }
 ];
 
 // latest rate
