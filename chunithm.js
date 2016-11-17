@@ -407,6 +407,7 @@ var chart_list = [
     ,{ id: 281, level: 3, rate_base: 13.9, image: "img/330e57eeeb0fb2cd.jpg", name: "ラクガキスト" }
     ,{ id: 293, level: 3, rate_base: 13.2, image: "img/c58227eb0d14938c.jpg", name: "インビジブル" }
     ,{ id: 270, level: 3, rate_base: 12.3, image: "img/21dfcd3ae2c5c370.jpg", name: "エンヴィキャットウォーク" }
+    ,{ id: 119, level: 3, rate_base: 12.3, image: "img/a7dd6716fcae0cb8.jpg", name: "アウターサイエンス" }
 ];
 
 // latest rate
