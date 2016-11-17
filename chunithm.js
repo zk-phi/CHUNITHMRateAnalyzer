@@ -406,6 +406,7 @@ var chart_list = [
     ,{ id: 229, level: 2, rate_base: 11.9, image: "img/73f86aec8d6c7c9b.jpg", name: "紅華刑 赤" }
     ,{ id: 281, level: 3, rate_base: 13.9, image: "img/330e57eeeb0fb2cd.jpg", name: "ラクガキスト" }
     ,{ id: 293, level: 3, rate_base: 13.2, image: "img/c58227eb0d14938c.jpg", name: "インビジブル" }
+    ,{ id: 270, level: 3, rate_base: 12.3, image: "img/21dfcd3ae2c5c370.jpg", name: "エンヴィキャットウォーク" }
 ];
 
 // latest rate
