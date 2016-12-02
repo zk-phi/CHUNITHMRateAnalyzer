@@ -1149,6 +1149,7 @@ function rate_display()
                   "<div id='cra_sort_score' class='cra_sort_button'>スコア順</div>" +
                   "<div id='cra_sort_score_req' class='cra_sort_button'>必要スコア順</div>" +
                   "<div id='cra_sort_score_ave' class='cra_sort_button'>おすすめ(β)</div>" +
+                  "<div id='cra_recent_list' class='cra_sort_button'>Recent枠(β)</div>" +
                   "<div id='cra_manage_play_data' class='cra_sort_button'>プレイデータ管理</div>");
 
         $("#cra_footer")
@@ -1214,6 +1215,14 @@ function rate_display()
             indices[0] = "おすすめ"
             indices[i] = "おすすめここまで"
             render_chart_list(indices);
+        });
+
+        $("#cra_recent_list").click(function () {
+            var indeices1 = { };
+            var indeices2 = { };
+            indeices1[0] = "Recent枠";
+            indeices2[0] = "Recent候補枠";
+            render_recent_list(indeices1, indeices2);
         });
 
         $("#cra_manage_play_data").click(function () {
@@ -1336,5 +1345,122 @@ function render_chart_list(msgs)
     }
 
     // $("#cra_chart_list").show(400);
+    $("#cra_chart_list").show();
+}
+
+// refresh the recent list display
+function render_recent_list(msgs1, msgs2)
+{
+    // hide old items
+    $("#cra_chart_list *").remove();
+    $("#cra_chart_list").css({ display: "none" });
+
+    for (var i = 0; i < recent_list.length; i++) {
+        if (msgs1[i])
+            $("#cra_chart_list")
+                .append("<hr>")
+                .append(dom(["div", { class: "mt_15" }, ["h2#page_title", msgs1[i]]]));
+
+        if (!recent_list[i].id || isNaN(recent_list[i].id))
+            continue;
+
+        var difficulty_icon = recent_list[i].level == 2 ? "common/images/icon_expert.png"
+            : "common/images/icon_master.png";
+
+        var $list_item = $("<div class='frame02 w400 cra_chart_list_item'>")
+            .appendTo("#cra_chart_list");
+
+        $list_item
+            .html(`
+<div class="play_jacket_side">
+  <div class="play_jacket_area">
+    <div id="Jacket" class="play_jacket_img">
+      <img src=${recent_list[i].image}>
+    </div>
+  </div>
+</div>
+<div class="play_data_side01">
+  <div class="box02 play_track_block">
+    <div id="TrackLevel" class="play_track_result">
+      <img src="${difficulty_icon}">
+    </div>
+    <div id="Track" class="play_track_text">
+      ${rate_str(recent_list[i].rate_base)}
+    </div>
+  </div>
+  <div class="box02 play_musicdata_block">
+    <div id="MusicTitle" class="play_musicdata_title">
+      ${recent_list[i].name}
+    </div>
+    <div class="play_musicdata_score clearfix">
+      <div class="play_musicdata_score_text">
+        Score：<span id="Score">${recent_list[i].score}</span>
+      </div>
+      <br>
+      <div class="play_musicdata_score_text">
+        Rate：
+        <span id="Rate">
+          ${rate_str(recent_list[i].rate)}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>`);
+    }
+
+    for (var i = 0; i < recent_candidate_list.length; i++) {
+        var index = recent_candidate_list.length - (i + 1);
+        if (msgs2[i])
+            $("#cra_chart_list")
+                .append("<hr>")
+                .append(dom(["div", { class: "mt_15" }, ["h2#page_title", msgs2[i]]]));
+
+        if (!recent_candidate_list[index].id || isNaN(recent_candidate_list[index].id))
+            continue;
+
+        var difficulty_icon = recent_candidate_list[index].level == 2 ? "common/images/icon_expert.png"
+            : "common/images/icon_master.png";
+
+        var $list_item = $("<div class='frame02 w400 cra_chart_list_item'>")
+            .appendTo("#cra_chart_list");
+
+        $list_item
+            .html(`
+<div class="play_jacket_side">
+  <div class="play_jacket_area">
+    <div id="Jacket" class="play_jacket_img">
+      <img src=${recent_candidate_list[index].image}>
+    </div>
+  </div>
+</div>
+<div class="play_data_side01">
+  <div class="box02 play_track_block">
+    <div id="TrackLevel" class="play_track_result">
+      <img src="${difficulty_icon}">
+    </div>
+    <div id="Track" class="play_track_text">
+      ${rate_str(recent_candidate_list[index].rate_base)}
+    </div>
+  </div>
+  <div class="box02 play_musicdata_block">
+    <div id="MusicTitle" class="play_musicdata_title">
+      ${recent_candidate_list[index].name}
+    </div>
+    <div class="play_musicdata_score clearfix">
+      <div class="play_musicdata_score_text">
+        Score：<span id="Score">${recent_candidate_list[index].score}</span>
+      </div>
+      <br>
+      <div class="play_musicdata_score_text">
+        Rate：
+        <span id="Rate">
+          ${rate_str(recent_candidate_list[index].rate)}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>`);
+    }
+
     $("#cra_chart_list").show();
 }
