@@ -416,6 +416,8 @@ var opt_rate    = 0;
 var disp_rate   = 0;
 var recent_rate = 0;
 var worst_chart_rate;
+var recent_candidate_list = new Array();
+var recent_list = new Array();
 
 // load the last data from localStorage (if exists)
 var last_cra_version = JSON.parse(localStorage.getItem("cra_version"));
@@ -424,6 +426,8 @@ var last_best_rate   = JSON.parse(localStorage.getItem("cra_best_rate"));
 var last_opt_rate    = JSON.parse(localStorage.getItem("cra_opt_rate"));
 var last_disp_rate   = JSON.parse(localStorage.getItem("cra_disp_rate"));
 var last_recent_rate = JSON.parse(localStorage.getItem("cra_recent_rate"));
+var last_recent_candidate_list = JSON.parse(localStorage.getItem("cra_recent_candidate_list"));
+var last_recent_list = JSON.parse(localStorage.getItem("cra_recent_list"));
 
 // diff between the latest rate and the last rate
 var best_rate_diff;
@@ -605,10 +609,14 @@ $("#cra_window_inner")
                 fetch_user_data(function() {
                     fetch_score_data(2, function() {
                         fetch_score_data(3, function() {
-                            localStorage.setItem("cra_chart_list", JSON.stringify(chart_list));
-                            localStorage.setItem("cra_version", JSON.stringify(cra_version));
-                            $("#cra_close_button").show(400);
-                            rate_display();
+                            fecth_playlog(function () {
+                                localStorage.setItem("cra_chart_list", JSON.stringify(chart_list));
+                                localStorage.setItem("cra_version", JSON.stringify(cra_version));
+                                localStorage.setItem("cra_recent_candidate_list", JSON.stringify(recent_candidate_list));
+                                localStorage.setItem("cra_recent_list", JSON.stringify(recent_list));
+                                $("#cra_close_button").show(400);
+                                rate_display();
+                            });
                         });
                     });
                });
@@ -621,6 +629,8 @@ if(cra_version == last_cra_version) {
                .click(function() {
                    chart_list = last_chart_list;
                    disp_rate = last_disp_rate;
+                   recent_candidate_list = last_recent_candidate_list;
+                   recent_list = last_recent_list;
                    rate_display();
                }));
 }
@@ -631,6 +641,82 @@ $("#cra_wrapper").delay(400).fadeIn(400);
 // -----------------------------------------------------------------------------
 // fetch music / user data
 // -----------------------------------------------------------------------------
+
+// use GetUserPlaylogApi to fetch playlog, and update recent_candidate_list and recent_list
+function fecth_playlog(callback)
+{
+    $("#cra_window_inner").html("<p>loading playlog ...</p>");
+    request_api("GetUserPlaylogApi", {}, function (d) {
+        var level_name_map = ["basic", "advance", "expert", "master", "worldsend"];
+        var last_play_date = last_recent_candidate_list ? last_recent_candidate_list[last_recent_candidate_list.length - 1].play_date : 0;
+
+        recent_candidate_list = last_recent_candidate_list;
+        if (!recent_candidate_list) {
+            recent_candidate_list = new Array();
+            for (var i = 0; i < 30; i++) {
+                recent_candidate_list.push({
+                    rate_base: 0,
+                    score: 0,
+                    rate: 0,
+                    play_date: 0,
+                });
+            }
+        }
+
+        for (var i = d.userPlaylogList.length - 1; i >= 0; i--) {
+            if (d.userPlaylogList[i].levelName != "expert" && d.userPlaylogList[i].levelName != "master")
+                continue;
+
+            var date_info = /(\d{4})-(\d{2})-(\d{2}) (\d{1,2}):(\d{2}):(\d{2}).\d*/.exec(d.userPlaylogList[i].userPlayDate);
+            var play_date = new Date(date_info[1], date_info[2], date_info[3], date_info[4], date_info[5], date_info[6]).getTime();
+            if (play_date <= last_play_date)
+                continue;
+
+            for (var j = 0; j < chart_list.length; j++) {
+                if (chart_list[j].name == d.userPlaylogList[i].musicName && level_name_map[chart_list[j].level] == d.userPlaylogList[i].levelName) {
+                    var playlog = {
+                        id: chart_list[j].id,
+                        level: chart_list[j].level,
+                        rate_base: chart_list[j].rate_base,
+                        image: chart_list[j].image,
+                        name: chart_list[j].name,
+                        score: d.userPlaylogList[i].score,
+                        rate: score_to_rate(chart_list[j].rate_base, d.userPlaylogList[i].score),
+                        play_date: play_date
+                    };
+
+                    recent_list = [].concat(recent_candidate_list).sort(function (p1, p2) {
+                        return (p1.rate !== p2.rate) ? (p2.rate - p1.rate) : (p1.play_date - p2.play_date);
+                    }).slice(0, 10);
+
+                    if (playlog.rate > Math.min.apply(null, recent_list.map(function (p) { return p.rate; }))) {
+                        for (var k = 0; k < recent_candidate_list.length; k++) {
+                            if (recent_candidate_list[k].rate < playlog.rate) {
+                                recent_candidate_list.splice(k, 1);
+                                recent_candidate_list.push(playlog);
+                                break;
+                            }
+                        }
+                    }
+                    else if (playlog.score >= 1007500 || playlog.score >= Math.min.apply(null, recent_list.map(function (p) { return p.score; }))) {
+                    }
+                    else {
+                        recent_candidate_list.shift();
+                        recent_candidate_list.push(playlog);
+                    }
+                }
+            }
+        }
+
+        recent_list = [].concat(recent_candidate_list).sort(function (p1, p2) {
+            return (p1.rate !== p2.rate) ? (p2.rate - p1.rate) : (p1.play_date - p2.play_date);
+        }).slice(0, 10);
+
+        callback();
+    }, function () {
+        $("#cra_window_inner").html("<p>CHUNITHM NET との通信に失敗しました。</p>");
+    });
+}
 
 // use GetUserMusicApi to fetch all scores, and update chart_list
 function fetch_score_data(level, callback)
