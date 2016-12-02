@@ -587,6 +587,7 @@ $("#cra_window_outer")
     .html("<div id='cra_window_inner' class='frame01_inside w450'></div>");
 $("#cra_window_inner")
     .html("<p class='cra_caution'>CAUTION</p>" +
+          "<p>12/3- Recent枠表示機能(β)とデータ提供機能の追加。</p>" +
           "<p>9/13- スコアの取得を高速化。</p>" +
           "<p>9/12- 単曲レートの切り捨て位置を修正。</p>" +
           "<p>8/29- 譜面定数の判明したものから更新しています (譜面定数の調査方法は<a href='http://d.hatena.ne.jp/risette14/20150924/1443064402'>こちら</a>)。</p>" +
