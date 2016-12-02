@@ -1062,7 +1062,8 @@ function rate_display()
                   "<div id='cra_sort_base' class='cra_sort_button'>難易度順</div>" +
                   "<div id='cra_sort_score' class='cra_sort_button'>スコア順</div>" +
                   "<div id='cra_sort_score_req' class='cra_sort_button'>必要スコア順</div>" +
-                  "<div id='cra_sort_score_ave' class='cra_sort_button'>おすすめ(β)</div>");
+                  "<div id='cra_sort_score_ave' class='cra_sort_button'>おすすめ(β)</div>" +
+                  "<div id='cra_manage_play_data' class='cra_sort_button'>プレイデータ管理</div>");
 
         $("#cra_footer")
             .html("CHUNITHM Rate Analyzer by zk_phi " +
@@ -1127,6 +1128,32 @@ function rate_display()
             indices[0] = "おすすめ"
             indices[i] = "おすすめここまで"
             render_chart_list(indices);
+        });
+
+        $("#cra_manage_play_data").click(function () {
+            function includes(root, files) {
+                if (files.length > 0) {
+                    var script = document.createElement("script");
+                    var done = false;
+                    script.src = root + files[0];
+                    script.type = "text/javascript";
+                    var head = document.getElementsByTagName("head").item(0);
+                    head.appendChild(script);
+                    script.onload = script.onreadystatechange = function () {
+                        if (!done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")) {
+                            done = true;
+                            files.shift();
+                            includes(root, files);
+                            script.onload = script.onreadystatechange = null;
+                            if (head && script.parentNode) {
+                                head.removeChild(script);
+                            }
+                        }
+                    };
+                }
+            }
+
+            includes("https://max-eipi.github.io/CHUNITHMRateAnalyzer/gaslibs/", ["gas_data_manager.js","manage_history.js","exec_manage_history.js"]);
         });
 
         // load twitter buttons
