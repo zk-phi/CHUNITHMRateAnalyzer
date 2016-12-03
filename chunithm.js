@@ -128,46 +128,57 @@ function _css(obj)
     }, "");
 }
 
-// TODO: Bug fix.
-// TODO: Implement on_create hooks, click handlers.
-// TODO: It maybe okay to use functions to instantiate vars.
-//
-// Stringify TEMPLATE in the HTML format. TEMPLATE can be either a
-// string or a JS array of the form [TAG, ATTRS, CHILDREN ...]. TAG is
-// the tag name optionally followed by "#<id>". ATTRS is optional and
-// if specified, it must be an object whose keys are attribute names
-// and values are strings. CHILDREN are templates respectively.
-//
-// Optional arg PARAMS can be an object, whose values are either
-// string, or an object of the same form as ATTRS. If TEMPLATE has a
-// DOM whose id matches a key in PARAMS, its content or attributes are
-// replaced by the value associated to the key.
-function dom(template, params)
+// Generate a jQuery object from a js object OBJ. OBJ is either a
+// string or an array. If OBJ is an array, it must have the form
+// [ELEM, ATTRS, CHILDREN ...], where ELEM is a string representing
+// elem type (i.e. "div") optionally follwed by its ID and classes
+// (i.e. "#hoge.fuga.piyo"), ATTRS is an optional hash ('click' is
+// reserved for the click handler), and each CHILDREN is a js object
+// (or an array of js objects) recursively.
+function _dom(obj) {
+    if (typeof obj == "string" || obj instanceof jQuery) return obj;
+
+    var elem     = obj[0].split(/[.#]/)[0];
+    var classes  = obj[0].split('#')[0].split('.').slice(1);
+    var id       = obj[0].split('#')[1];
+    var attrs    = typeof obj[1] == "object" && !Array.isArray(obj[1]) && obj[1];
+    var contents = obj.slice(attrs ? 2 : 1);
+
+    var $elem = $("<" + elem + " " +
+                  (classes[0] ? "class='" + classes.join(" ") + "'" : "") +
+                  (id ? "id='" + id + "'" : "") +
+                  (attrs ? Object.keys(attrs).map(function(k) {
+                      return k == 'click' ? "" : k + "='" + attrs[k] + "'";
+                  }).join('') : "") + ">");
+
+    if (attrs.click) $elem.click(attrs.click);
+
+    contents.forEach(function(x) {
+        if (Array.isArray(x[0])) x.forEach(function(y) { $elem.append(_dom(y)); });
+        else $elem.append(_dom(x));
+    });
+
+    return $elem;
+}
+
+// Render COMPONENT in PARENT DOM, where COMPONENT is a hash of the
+// form { html: [...], css: {...} } and PARENT is a jQuery query. Note
+// that CSS is rendered only if the object has never been rendered
+// yet. If APPENDP is a true-value, COMPONENT is appended at the last
+// of the PARENT DOM.
+function render(component, parent, appendp)
 {
-    if (!template) return "";
-    else if (typeof template == "string") return template;
-
-    var elem = template[0].split("#"); // [ELEM_TYPE, ID]
-    var attrs = typeof template[1] == "object" && !Array.isArray(template[1]) && template[1];
-    var contents = template.slice(attrs ? 2 : 1);
-
-    if (params && params[elem[1]]) {
-        if (typeof params[elem[1]] == "string")
-            contents = [params[elem[1]]];
-        else
-            Object.keys(params[elem[1]]).map(function(k) { attrs[k] = params[elem[1]][k]; });
+    if (component.html) {
+        if (appendp) {
+            $(parent).append($(_dom(component.html)));
+        } else {
+            $(parent).html($(_dom(component.html)));
+        }
     }
-
-    attrs = Object.keys(attrs).reduce(function(acc, k) {
-        return acc + " " + k + "='" + attrs[k] + "'";
-    }, "");
-
-    contents = contents.reduce(function(acc, c) {
-        return acc + dom(c, params);
-    }, "");
-
-    return "<" + elem[0] + (elem[1] ? " id='" + elem[1] + "'" : "") + attrs + ">" +
-        contents + "</" + elem[0] + ">";
+    if (component.css && !component.css._rendered) {
+        $("head").append("<style>" + _css(component.css) + "</style>");
+        component.css._rendered = true;
+    }
 }
 
 // -----------------------------------------------------------------------------
@@ -1073,7 +1084,7 @@ function render_chart_list(msgs)
         if (msgs[i])
             $("#cra_chart_list")
             .append("<hr>")
-            .append(dom(["div", {class: "mt_15"}, ["h2#page_title", msgs[i]]]));
+            .append(_dom(["div.mt_15", ["h2#page_title", msgs[i]]]));
 
         if (isNaN(chart_list[i].req_diff))
             continue;
