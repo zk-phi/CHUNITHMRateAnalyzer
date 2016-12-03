@@ -411,6 +411,7 @@ var chart_list = [
     ,{ id: 313, level: 3, rate_base: 11.4, image: "img/5ac018495d6f01a5.jpg", name: "ひだまりデイズ" }
     ,{ id: 296, level: 3, rate_base: 12.1, image: "img/76535cf4c728f2af.jpg", name: "かくしん的☆めたまるふぉ～ぜっ!" }
     ,{ id: 326, level: 3, rate_base: 12.5, image: "img/fd01fc38e38042e3.jpg", name: "Sakura Fubuki" }
+    ,{ id: 327, level: 3, rate_base: 12.7, image: "img/17c363c1fd2fa7d1.jpg", name: "JULIAN" }
 ];
 
 // latest rate
