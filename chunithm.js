@@ -409,6 +409,7 @@ var chart_list = [
     ,{ id: 270, level: 3, rate_base: 12.3, image: "img/21dfcd3ae2c5c370.jpg", name: "エンヴィキャットウォーク" }
     ,{ id: 119, level: 3, rate_base: 12.3, image: "img/a7dd6716fcae0cb8.jpg", name: "アウターサイエンス" }
     ,{ id: 313, level: 3, rate_base: 11.4, image: "img/5ac018495d6f01a5.jpg", name: "ひだまりデイズ" }
+    ,{ id: 296, level: 3, rate_base: 12.1, image: "img/76535cf4c728f2af.jpg", name: "かくしん的☆めたまるふぉ～ぜっ!" }
 ];
 
 // latest rate
