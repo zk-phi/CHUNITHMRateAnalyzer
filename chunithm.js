@@ -413,6 +413,7 @@ var chart_list = [
     ,{ id: 326, level: 3, rate_base: 12.5, image: "img/fd01fc38e38042e3.jpg", name: "Sakura Fubuki" }
     ,{ id: 327, level: 3, rate_base: 12.7, image: "img/17c363c1fd2fa7d1.jpg", name: "JULIAN" }
     ,{ id: 264, level: 3, rate_base: 12.2, image: "img/f44c6b628889f8ec.jpg", name: "My Dearest Song" }
+    ,{ id: 291, level: 3, rate_base: 12.4, image: "img/9c5e71b3588dbc70.jpg", name: "Kronos" }
 ];
 
 // latest rate
