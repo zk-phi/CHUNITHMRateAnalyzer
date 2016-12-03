@@ -475,75 +475,6 @@ var the_css = {
     ".cra_button": { "cursor": "pointer" }
 }
 
-// var initial_screen =
-//     ["div#cra_wrapper",
-//      ["div#cra_window_wrapper",
-//       ["div#cra_window_helper"],
-//       ["div#cra_window_outer", {class: "frame01 w460"},
-//        ["div#cra_window_inner",
-//         ["p", {class: "cra_caution"},
-//          "CAUTION"],
-//         ["p",
-//          "このツールは CHUNITHM NET の内部で使われている URLに直接アクセス" +
-//          "することでスコア情報を収集します。これが「通常想定し得ない方法」" +
-//          "による、あるいは「不正な」サービスの利用と解釈された場合、利用規約" +
-//          "によってアカウント停止等の処分が行われる可能性があります。"],
-//         ["p",
-//          "ツールの性質を理解したうえで、各自の判断でご利用ください。" +
-//          "このツールを使用したことで起こったトラブルに作者は対応しません。"],
-//         ["p",
-//          "ツールを閉じるには、右上の×ボタンをクリックしてください。"]]]],
-//      ["div#cra_close_button", {class: "cra_button"}, "x"]];
-
-// var main_screen_doms = [
-//     ["img#logo", {src: "https://zk-phi.github.io/CHUNITHMRateAnalyzer/logo.png"}],
-//     ["h2#cra_rate",
-//      ["p#cra_best_rate",
-//       "BEST枠平均: ", ["span#rate_best"], " / ", "達成可能: ", ["span#rate_opt"], " ",
-//       ["a#cra_share_button", {
-//           class: "twitter-share-button",
-//           href: "https://twitter.com/share",
-//           "data-url": " ",
-//           "data-lang": "ja"
-//       }]],
-//      ["p#cra_disp_rate",
-//       "(RECENT枠平均: ", ["span#rate_recent"], "表示レート: ", ["span#rate_disp"], ")"]],
-//     ["div#cra_sort_menu", {class: "cra_button"},
-//      ["div#cra_sort_rate", {class: "cra_sort_button"}, "レート順"],
-//      ["div#cra_sort_base", {class: "cra_sort_button"}, "難易度順"],
-//      ["div#cra_sort_score", {class: "cra_sort_button"}, "スコア順"],
-//      ["div#cra_sort_score_req", {class: "cra_sort_button"}, "必要スコア順"]],
-//     ["div#cra_chart_list"],
-//     "<hr>",
-//     ["div#cra_footer",
-//      "CHUNITHM Rate Analyzer by zk_phi ",
-//      ["a#cra_follow_button", {
-//          class: "twitter-follow-button",
-//          href: "https://twitter.com/zk_phi"
-//      }, "follow"]]
-// ];
-
-// var list_item_template =
-//     ["div", {class: "frame02 w400 cra_chart_list_item"},
-//      ["div", {class: "play_jacket_side"},
-//       ["div", {class: "play_jacket_area"},
-//        ["div#Jacket", {class: "play_jacket_img"},
-//         ["img#jacket_img"]]]],
-//     ["div", {class: "play_data_side01"},
-//      ["div", {class: "box02 play_track_block"},
-//       ["div#TrackLevel", {class: "play_track_result"},
-//        ["img#difficulty_icon"]],
-//       ["div#Track", {class: "play_track_text"}]],
-//     ["div", {class: "box02 play_musicdata_block"},
-//      ["div#MusicTitle", {class: "play_musicdata_title"}],
-//      ["div", {class: "play_musicdata_score clearfix"},
-//       ["div", {class: "play_musicdata_score_text"},
-//        "Score: ", ["span#Score"]],
-//       "<br>",
-//       ["div", {class: "play_musicdata_score_text"},
-//        "Rate: ", ["span#Rate"]]]],
-//      ["div#IconBatch", {class: "play_musicdata_icon clearfix"}]]];
-
 // ---- load resources
 
 dependencies.js.map(function(x) { $("head").append("<script src='" + x + "'>"); });
@@ -554,7 +485,6 @@ $("head").append("<style>" + _css(the_css) + "</style>");
 
 $chunithm_net.fadeTo(400, 0.75);
 
-// $("body").append(dom(initial_screen));
 
 $("body")
     .append("<div id='cra_wrapper'></div>");
@@ -1195,18 +1125,7 @@ function render_chart_list(msgs)
       ""}
   </div>
 </div>`);
-
-        // $("#cra_chart_list").append(dom(list_item_template, {
-        //     jacket_img: {src: chart_list[i].image},
-        //     difficulty_icon: difficulty_icon,
-        //     Track: rate_str(chart_list[i].rate_base),
-        //     MusicTitle: chart_list[i].name,
-        //     Score: chart_list[i].score,
-        //     Rate: rate_str(chart_list[i].rate) + rate_diff_str(chart_list[i].rate_diff),
-        //     IconBatch: chart_list[i].req_diff ? "BEST枠入りまで：" + chart_list[i].req_diff : ""
-        // }));
     }
 
-    // $("#cra_chart_list").show(400);
     $("#cra_chart_list").show();
 }
