@@ -430,40 +430,8 @@ var disp_rate_diff;
 // UI
 // -----------------------------------------------------------------------------
 
-var $chunithm_net = $("body *");
-
 // CSS applied to the HTML
 var the_css = {
-    "#cra_wrapper": {
-        "position": "absolute", "top": "0px", "left": "0px",
-        "min-height": "100%", "width": "100%",
-        "display": "none", "z-index": "10000",
-        "text-align": "center",
-    },
-
-    "#cra_window_wrapper": {
-        "position": "absolute", "top": "0px", "left": "0px",
-        "height": "100%", "width": "100%"
-    },
-
-    "#cra_window_helper": {
-        "display": "inline-block", "vertical-align": "middle",
-        "height": "100%"
-    },
-
-    "#cra_window_outer": {
-        "display": "inline-block", "vertical-align": "middle"
-    },
-
-    "#cra_window_inner p": { "margin": "20px" },
-    "#cra_window_inner .cra_caution": { "font-size": "25px" },
-
-    "#cra_close_button": {
-        "position": "fixed", "right": "20px", "top": "20px",
-        "z-index": "100",
-        "font-size": "30px",
-    },
-
     "#logo": { "max-width": "100%" },
 
     "#cra_chart_list": {
@@ -486,71 +454,107 @@ var the_css = {
     ".cra_button": { "cursor": "pointer" }
 }
 
-// ---- load resources
+// --- caution dialog
 
+var css_caution_dialog = {
+    "#cra_window_wrapper": {
+        "position": "absolute", "top": "0px", "left": "0px",
+        "height": "100%", "width": "100%"
+    },
+
+    "#cra_window_helper": {
+        "display": "inline-block", "vertical-align": "middle",
+        "height": "100%"
+    },
+
+    "#cra_window_outer": {
+        "display": "inline-block", "vertical-align": "middle"
+    },
+
+    "#cra_window_inner p": { "margin": "20px" },
+    "#cra_window_inner .cra_caution": { "font-size": "25px" }
+};
+
+function caution_dialog(content, buttons) {
+    return {
+        css: css_caution_dialog,
+        html:
+        ['div#cra_window_wrapper',
+         ['div#cra_window_helper'],
+         ['div#cra_window_outer.frame01.w460',
+          ['div#cra_window_inner.frame01_inside.w450',
+           content.map(function(x) { return ['p', x]; }),
+           buttons.map(function(x) {
+               return ['h2#page_title.cra_button', { click: x.action } x.label]; })]]]
+    };
+}
+
+// ---- render the initial screen
+
+// load dependencies
 dependencies.js.map(function(x) { $("head").append("<script src='" + x + "'>"); });
 dependencies.css.map(function(x) { $("head").append("<link rel='stylesheet' href='" + x + "'"); });
 $("head").append("<style>" + _css(the_css) + "</style>");
 
-// --- render the initial screen
-
+// hide chunithm_net
+var $chunithm_net = $("body *");
 $chunithm_net.fadeTo(400, 0.75);
 
-
-$("body")
-    .append("<div id='cra_wrapper'></div>");
-$("#cra_wrapper")
-    .html("<div id='cra_window_wrapper'></div>" +
-          "<div id='cra_close_button' class='cra_button'>x</div>");
-$("#cra_window_wrapper")
-    .html("<div id='cra_window_helper'></div>" +
-          "<div id='cra_window_outer' class='frame01 w460'></div>");
-$("#cra_window_outer")
-    .html("<div id='cra_window_inner' class='frame01_inside w450'></div>");
-$("#cra_window_inner")
-    .html("<p class='cra_caution'>CAUTION</p>" +
-          "<p>9/13- スコアの取得を高速化。</p>" +
-          "<p>9/12- 単曲レートの切り捨て位置を修正。</p>" +
-          "<p>8/29- 譜面定数の判明したものから更新しています (譜面定数の調査方法は<a href='http://d.hatena.ne.jp/risette14/20150924/1443064402'>こちら</a>)。</p>" +
-          "<p>ツールの性質を理解したうえで、各自の判断でご利用ください。</p>" +
-          "<p>ツールを閉じるには、右上の×ボタンをクリックしてください。</p>");
-
-// close button
-$("#cra_close_button")
-    .click(function() {
-        $("html, body").animate({ scrollTop: 0 }, 400);
-        $("#cra_wrapper").fadeOut(400, function() { $(this).remove(); });
-        $chunithm_net.delay(400).fadeTo(400, 1);
-    });
-
-// fetch button
-$("#cra_window_inner")
-    .append($("<h2 id='page_title' class='cra_button cra_fetch_score'>スコアを解析する</h2>")
-            .click(function() {
-                $("#cra_close_button").hide(400);
-                fetch_user_data(function() {
-                    fetch_score_data(2, function() {
-                        fetch_score_data(3, function() {
-                            localStorage.setItem("cra_chart_list", JSON.stringify(chart_list));
-                            localStorage.setItem("cra_version", JSON.stringify(cra_version));
-                            $("#cra_close_button").show(400);
-                            rate_display();
-                        });
-                    });
-               });
-           }));
-
-// view button
-if(cra_version == last_cra_version) {
-    $("#cra_window_inner")
-        .append($("<h2 id='page_title' class='cra_button cra_view_last'>前回のデータを見る</h2>")
-               .click(function() {
-                   chart_list = last_chart_list;
-                   disp_rate = last_disp_rate;
-                   rate_display();
-               }));
+function onclick_cra_close () {
+    $("html, body").animate({ scrollTop: 0 }, 400);
+    $("#cra_wrapper").fadeOut(400, function() { $(this).remove(); });
+    $chunithm_net.delay(400).fadeTo(400, 1);
 }
 
+function onclick_do_analyze () {
+    $("#cra_close_button").hide(400);
+    fetch_user_data(function() {
+        fetch_score_data(2, function() {
+            fetch_score_data(3, function() {
+                localStorage.setItem("cra_chart_list", JSON.stringify(chart_list));
+                localStorage.setItem("cra_version", JSON.stringify(cra_version));
+                $("#cra_close_button").show(400);
+                rate_display();
+            });
+        });
+    });
+}
+
+function onclick_see_last_analysis () {
+    chart_list = last_chart_list;
+    disp_rate = last_disp_rate;
+    rate_display();
+}
+
+var css_initial_screen = {
+    "#cra_wrapper": {
+        "position": "absolute", "top": "0px", "left": "0px",
+        "min-height": "100%", "width": "100%",
+        "display": "none", "z-index": "10000",
+        "text-align": "center",
+    },
+    "#cra_close_button": {
+        "position": "fixed", "right": "20px", "top": "20px",
+        "z-index": "100",
+        "font-size": "30px",
+    }
+};
+
+var initial_screen = {
+    css: css_initial_screen,
+    html:
+    ['div#cra_wrapper',
+     ["div#cra_close_button.cra_button", { click: onclick_cra_close }, "x"]
+     caution_dialog(
+         ['9/13- スコアの取得を高速化。',
+          '9/12- 単曲レートの切り捨て位置を修正。',
+          'ツールの性質を理解したうえで、各自の判断でご利用ください。',
+          'ツールを閉じるには、右上の×ボタンをクリックしてください。'],
+         [{ label: 'スコアを解析する', action: onclick_do_analyze },
+          { label: '前回のデータを見る', action: onclick_see_last_analysis }]), ]
+};
+
+render(initial_screen, 'body', true);
 $("html, body").animate({ scrollTop: 0 }, 400);
 $("#cra_wrapper").delay(400).fadeIn(400);
 
