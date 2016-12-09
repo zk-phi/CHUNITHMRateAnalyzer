@@ -3,7 +3,7 @@
 var cra_version = 160503;
 
 if (!location.href.match(/^https:\/\/chunithm-net.com/)) {
-    alert("CHUNITHM NET を開いた状態で実行してください。");
+    alert("CHUNITHM NET を開いているタブで実行してください。");
     throw Error();
 } else if (location.href.match(/\/mobile\/(index\.html)?$/)) {
     alert("CHUNITHM NET にログインした状態で実行してください。");
@@ -388,6 +388,32 @@ var chart_list = [
     ,{ id: 320, level: 3, rate_base: 12.6, image: "img/6b33d4fa539d5adb.jpg", name: "010" }
     ,{ id: 321, level: 3, rate_base: 12.5, image: "img/40cc7a6a264f88c1.jpg", name: "ERIS -Legend of Gaidelia-" }
     ,{ id: 137, level: 3, rate_base: 13.6, image: "img/13a5a9ca35a9b71b.jpg", name: "Angel dust" }
+    ,{ id: 187, level: 3, rate_base: 13.2, image: "img/e6642a96885723c1.jpg", name: "患部で止まってすぐ溶ける～狂気の優曇華院" }
+    ,{ id: 322, level: 3, rate_base: 13.6, image: "img/8b145fe4cf0c01bb.jpg", name: "Imperishable Night 2006 (2016 Refine)" }
+    ,{ id: 189, level: 3, rate_base: 12.7, image: "img/9310d07b7e02e73a.jpg", name: "ひれ伏せ愚民どもっ！" }
+    ,{ id: 300, level: 3, rate_base: 12.2, image: "img/012eb1ed09577836.jpg", name: "No Routine" }
+    ,{ id: 190, level: 3, rate_base: 12.6, image: "img/bbaa464731ab96a4.jpg", name: "エテルニタス・ルドロジー" }
+    ,{ id: 331, level: 3, rate_base: 12.2, image: "img/ec37e447b91995dd.jpg", name: "猛進ソリストライフ！" }
+    ,{ id: 259, level: 3, rate_base: 13.1, image: "img/4d66e5d1669d79a2.jpg", name: "Oshama Scramble! (Cranky Remix)" }
+    ,{ id: 230, level: 3, rate_base: 12.4, image: "img/b59d2b2ab877a77d.jpg", name: "Hyperion" }
+    ,{ id: 307, level: 3, rate_base: 12.7, image: "img/ff9f70c8c0d9f24e.jpg", name: "Paqqin" }
+    ,{ id: 229, level: 3, rate_base: 13.4, image: "img/73f86aec8d6c7c9b.jpg", name: "紅華刑" }
+    ,{ id: 262, level: 3, rate_base: 13.6, image: "img/676e59847912f5ca.jpg", name: "Tidal Wave" }
+    ,{ id: 323, level: 3, rate_base: 13.5, image: "img/282cb1cacd4c1bb4.jpg", name: "Dreadnought" }
+    ,{ id: 324, level: 3, rate_base: 12.6, image: "img/d51d4ffba9f8d45e.jpg", name: "STAGER" }
+    ,{ id: 325, level: 3, rate_base: 12.6, image: "img/97eca622afca0f15.jpg", name: "Her Majesty" }
+    ,{ id: 259, level: 2, rate_base: 11.3, image: "img/4d66e5d1669d79a2.jpg", name: "Oshama Scramble! (Cranky Remix) 赤" }
+    ,{ id: 229, level: 2, rate_base: 11.9, image: "img/73f86aec8d6c7c9b.jpg", name: "紅華刑 赤" }
+    ,{ id: 281, level: 3, rate_base: 13.4, image: "img/330e57eeeb0fb2cd.jpg", name: "ラクガキスト" }
+    ,{ id: 293, level: 3, rate_base: 13.2, image: "img/c58227eb0d14938c.jpg", name: "インビジブル" }
+    ,{ id: 270, level: 3, rate_base: 12.3, image: "img/21dfcd3ae2c5c370.jpg", name: "エンヴィキャットウォーク" }
+    ,{ id: 119, level: 3, rate_base: 12.3, image: "img/a7dd6716fcae0cb8.jpg", name: "アウターサイエンス" }
+    ,{ id: 313, level: 3, rate_base: 11.4, image: "img/5ac018495d6f01a5.jpg", name: "ひだまりデイズ" }
+    ,{ id: 296, level: 3, rate_base: 12.1, image: "img/76535cf4c728f2af.jpg", name: "かくしん的☆めたまるふぉ～ぜっ!" }
+    ,{ id: 326, level: 3, rate_base: 12.5, image: "img/fd01fc38e38042e3.jpg", name: "Sakura Fubuki" }
+    ,{ id: 327, level: 3, rate_base: 12.7, image: "img/17c363c1fd2fa7d1.jpg", name: "JULIAN" }
+    ,{ id: 264, level: 3, rate_base: 12.2, image: "img/f44c6b628889f8ec.jpg", name: "My Dearest Song" }
+    ,{ id: 291, level: 3, rate_base: 12.4, image: "img/9c5e71b3588dbc70.jpg", name: "Kronos" }
 ];
 
 // latest rate
