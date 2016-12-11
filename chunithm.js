@@ -676,7 +676,7 @@ function fetch_playlog(callback)
 
     $("#cra_window_inner").html("<p>loading playlog ...</p>");
     request_api("GetUserPlaylogApi", {}, function (d) {
-        recent_candidates = last_recent_candidates || Array.apply(null, new (array(30))).map(function (_) { return create_playlog(0, 0, ""); });
+        recent_candidates = last_recent_candidates || Array.apply(null, new Array(30)).map(function (_) { return create_playlog(0, 0, ""); });
         var level_name_map = ["basic", "advance", "expert", "master", "worldsend"];
         var last_play_date = recent_candidates[recent_candidates.length - 1].play_date;
         for (var i = d.userPlaylogList.length - 1; i >= 0; i--) {
