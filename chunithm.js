@@ -653,10 +653,9 @@ function fetch_playlog(callback)
 {
     function get_recent_list(recent_candidates) {
         return [].concat(recent_candidates).sort(function (p1, p2) {
-            if (p1.rate > p2.rate) return 1;
-            else if (p1.rate < p2.rate) return -1;
-            else if (p1.play_date > p2.play_date) return -1;
-            else if (p1.play_date < p2.play_date) return 1;
+            if (p1.rate !== p2.rate) return p2.rate - p1.rate;
+            else if (p1.play_date < p2.play_date) return -1;
+            else if (p1.play_date > p2.play_date) return 1;
             return 0;
         }).slice(0, 10);
     }
