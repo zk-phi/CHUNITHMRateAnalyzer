@@ -114,18 +114,18 @@ function rank_icon (score)
 // ---- obj -> dom
 
 // Stringify a js object in the CSS format.
-function css(obj)
+function _css(obj)
 {
     return Object.keys(obj).reduce(function(acc, x) {
         return acc + x + "{" + (
-            x.charAt(0) == '@' ? css(obj[x]) : Object.keys(obj[x]).reduce(function(acc, y) {
+            x.charAt(0) == '@' ? _css(obj[x]) : Object.keys(obj[x]).reduce(function(acc, y) {
                 return acc + y + ":" + obj[x][y] + ";";
         }, "")) + "}";
     }, "");
 }
 
 // TODO: Bug fix.
-// TODO: Implement on_create, on_delete hooks, click handlers.
+// TODO: Implement on_create hooks, click handlers.
 // TODO: It maybe okay to use functions to instantiate vars.
 //
 // Stringify TEMPLATE in the HTML format. TEMPLATE can be either a
@@ -408,6 +408,12 @@ var chart_list = [
     ,{ id: 293, level: 3, rate_base: 13.2, image: "img/c58227eb0d14938c.jpg", name: "インビジブル" }
     ,{ id: 270, level: 3, rate_base: 12.3, image: "img/21dfcd3ae2c5c370.jpg", name: "エンヴィキャットウォーク" }
     ,{ id: 119, level: 3, rate_base: 12.3, image: "img/a7dd6716fcae0cb8.jpg", name: "アウターサイエンス" }
+    ,{ id: 313, level: 3, rate_base: 11.4, image: "img/5ac018495d6f01a5.jpg", name: "ひだまりデイズ" }
+    ,{ id: 296, level: 3, rate_base: 12.1, image: "img/76535cf4c728f2af.jpg", name: "かくしん的☆めたまるふぉ～ぜっ!" }
+    ,{ id: 326, level: 3, rate_base: 12.5, image: "img/fd01fc38e38042e3.jpg", name: "Sakura Fubuki" }
+    ,{ id: 327, level: 3, rate_base: 12.7, image: "img/17c363c1fd2fa7d1.jpg", name: "JULIAN" }
+    ,{ id: 264, level: 3, rate_base: 12.2, image: "img/f44c6b628889f8ec.jpg", name: "My Dearest Song" }
+    ,{ id: 291, level: 3, rate_base: 12.4, image: "img/9c5e71b3588dbc70.jpg", name: "Kronos" }
 ];
 
 // latest rate
@@ -443,7 +449,6 @@ var $chunithm_net = $("body *");
 
 // CSS applied to the HTML
 var the_css = {
-
     "#cra_wrapper": {
         "position": "absolute", "top": "0px", "left": "0px",
         "min-height": "100%", "width": "100%",
@@ -569,7 +574,7 @@ var the_css = {
 
 dependencies.map(function(x) { $("head").append("<script src='" + x + "'>"); });
 $chunithm_net.fadeTo(400, 0.75);
-$("head").append("<style>" + css(the_css) + "</style>");
+$("head").append("<style>" + _css(the_css) + "</style>");
 
 // ---- render the initial screen
 
