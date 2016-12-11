@@ -652,7 +652,7 @@ $("#cra_wrapper").delay(400).fadeIn(400);
 function fetch_playlog(callback)
 {
     function get_recent_list(recent_candidates) {
-        [].concat(recent_candidates).sort(function (p1, p2) {
+        return [].concat(recent_candidates).sort(function (p1, p2) {
             if (p1.rate > p2.rate) return 1;
             else if (p1.rate < p2.rate) return -1;
             else if (p1.play_date > p2.play_date) return -1;
