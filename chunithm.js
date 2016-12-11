@@ -661,23 +661,23 @@ function fecth_playlog(callback)
         }).slice(0, 10);
     }
 
+    function create_playlog(rate_base, score, play_date, id, name, level, image) {
+        return {
+            id: id,
+            level: level,
+            rate_base: rate_base,
+            image: image,
+            name: name,
+            score: score,
+            rate: score_to_rate(rate_base, score),
+            play_date: play_date
+        };
+    }
+
     $("#cra_window_inner").html("<p>loading playlog ...</p>");
     request_api("GetUserPlaylogApi", {}, function (d) {
+        recent_candidates = last_recent_candidates || Array.apply(null, new (array(30))).map(function (_) { return create_playlog(0, 0, ""); });
         var level_name_map = ["basic", "advance", "expert", "master", "worldsend"];
-
-        recent_candidates = last_recent_candidates;
-        if (!recent_candidates) {
-            recent_candidates = new Array();
-            for (var i = 0; i < 30; i++) {
-                recent_candidates.push({
-                    rate_base: 0,
-                    score: 0,
-                    rate: 0,
-                    play_date: "",
-                });
-            }
-        }
-
         var last_play_date = recent_candidates[recent_candidates.length - 1].play_date;
         for (var i = d.userPlaylogList.length - 1; i >= 0; i--) {
             if (d.userPlaylogList[i].levelName != "expert" && d.userPlaylogList[i].levelName != "master")
@@ -688,16 +688,14 @@ function fecth_playlog(callback)
 
             for (var j = 0; j < chart_list.length; j++) {
                 if (chart_list[j].name == d.userPlaylogList[i].musicName && level_name_map[chart_list[j].level] == d.userPlaylogList[i].levelName) {
-                    var playlog = {
-                        id: chart_list[j].id,
-                        level: chart_list[j].level,
-                        rate_base: chart_list[j].rate_base,
-                        image: chart_list[j].image,
-                        name: chart_list[j].name,
-                        score: d.userPlaylogList[i].score,
-                        rate: score_to_rate(chart_list[j].rate_base, d.userPlaylogList[i].score),
-                        play_date: d.userPlaylogList[i].userPlayDate,
-                    };
+                    var playlog = create_playlog(
+                        chart_list[j].rate_base,
+                        d.userPlaylogList[i].score,
+                        d.userPlaylogList[i].userPlayDate,
+                        chart_list[j].id,
+                        chart_list[j].name,
+                        chart_list[j].level,
+                        chart_list[j].image);
 
                     recent_list = get_recent_list(recent_candidates);
 
