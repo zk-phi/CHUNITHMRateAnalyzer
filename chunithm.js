@@ -422,7 +422,7 @@ var opt_rate    = 0;
 var disp_rate   = 0;
 var recent_rate = 0;
 var worst_chart_rate;
-var recent_candidate_list = new Array();
+var recent_candidates = new Array();
 var recent_list = new Array();
 
 // load the last data from localStorage (if exists)
@@ -432,7 +432,7 @@ var last_best_rate   = JSON.parse(localStorage.getItem("cra_best_rate"));
 var last_opt_rate    = JSON.parse(localStorage.getItem("cra_opt_rate"));
 var last_disp_rate   = JSON.parse(localStorage.getItem("cra_disp_rate"));
 var last_recent_rate = JSON.parse(localStorage.getItem("cra_recent_rate"));
-var last_recent_candidate_list = JSON.parse(localStorage.getItem("cra_recent_candidate_list"));
+var last_recent_candidates = JSON.parse(localStorage.getItem("cra_recent_candidates"));
 var last_recent_list = JSON.parse(localStorage.getItem("cra_recent_list"));
 
 // diff between the latest rate and the last rate
@@ -618,7 +618,7 @@ $("#cra_window_inner")
                             fecth_playlog(function () {
                                 localStorage.setItem("cra_chart_list", JSON.stringify(chart_list));
                                 localStorage.setItem("cra_version", JSON.stringify(cra_version));
-                                localStorage.setItem("cra_recent_candidate_list", JSON.stringify(recent_candidate_list));
+                                localStorage.setItem("cra_recent_candidates", JSON.stringify(recent_candidates));
                                 localStorage.setItem("cra_recent_list", JSON.stringify(recent_list));
                                 $("#cra_close_button").show(400);
                                 rate_display();
@@ -635,7 +635,7 @@ if(cra_version == last_cra_version) {
                .click(function() {
                    chart_list = last_chart_list;
                    disp_rate = last_disp_rate;
-                   recent_candidate_list = last_recent_candidate_list;
+                   recent_candidates = last_recent_candidates;
                    recent_list = last_recent_list;
                    rate_display();
                }));
@@ -648,19 +648,19 @@ $("#cra_wrapper").delay(400).fadeIn(400);
 // fetch music / user data
 // -----------------------------------------------------------------------------
 
-// use GetUserPlaylogApi to fetch playlog, and update recent_candidate_list and recent_list
+// use GetUserPlaylogApi to fetch playlog, and update recent_candidates and recent_list
 function fecth_playlog(callback)
 {
     $("#cra_window_inner").html("<p>loading playlog ...</p>");
     request_api("GetUserPlaylogApi", {}, function (d) {
         var level_name_map = ["basic", "advance", "expert", "master", "worldsend"];
-        var last_play_date = last_recent_candidate_list ? last_recent_candidate_list[last_recent_candidate_list.length - 1].play_date : 0;
+        var last_play_date = last_recent_candidates ? last_recent_candidates[last_recent_candidates.length - 1].play_date : 0;
 
-        recent_candidate_list = last_recent_candidate_list;
-        if (!recent_candidate_list) {
-            recent_candidate_list = new Array();
+        recent_candidates = last_recent_candidates;
+        if (!recent_candidates) {
+            recent_candidates = new Array();
             for (var i = 0; i < 30; i++) {
-                recent_candidate_list.push({
+                recent_candidates.push({
                     rate_base: 0,
                     score: 0,
                     rate: 0,
@@ -691,15 +691,15 @@ function fecth_playlog(callback)
                         play_date: play_date
                     };
 
-                    recent_list = [].concat(recent_candidate_list).sort(function (p1, p2) {
+                    recent_list = [].concat(recent_candidates).sort(function (p1, p2) {
                         return (p1.rate !== p2.rate) ? (p2.rate - p1.rate) : (p1.play_date - p2.play_date);
                     }).slice(0, 10);
 
                     if (playlog.rate > Math.min.apply(null, recent_list.map(function (p) { return p.rate; }))) {
-                        for (var k = 0; k < recent_candidate_list.length; k++) {
-                            if (recent_candidate_list[k].rate < playlog.rate) {
-                                recent_candidate_list.splice(k, 1);
-                                recent_candidate_list.push(playlog);
+                        for (var k = 0; k < recent_candidates.length; k++) {
+                            if (recent_candidates[k].rate < playlog.rate) {
+                                recent_candidates.splice(k, 1);
+                                recent_candidates.push(playlog);
                                 break;
                             }
                         }
@@ -707,14 +707,14 @@ function fecth_playlog(callback)
                     else if (playlog.score >= 1007500 || playlog.score >= Math.min.apply(null, recent_list.map(function (p) { return p.score; }))) {
                     }
                     else {
-                        recent_candidate_list.shift();
-                        recent_candidate_list.push(playlog);
+                        recent_candidates.shift();
+                        recent_candidates.push(playlog);
                     }
                 }
             }
         }
 
-        recent_list = [].concat(recent_candidate_list).sort(function (p1, p2) {
+        recent_list = [].concat(recent_candidates).sort(function (p1, p2) {
             return (p1.rate !== p2.rate) ? (p2.rate - p1.rate) : (p1.play_date - p2.play_date);
         }).slice(0, 10);
 
@@ -1414,17 +1414,17 @@ function render_recent_list(msgs1, msgs2)
 </div>`);
     }
 
-    for (var i = 0; i < recent_candidate_list.length; i++) {
-        var index = recent_candidate_list.length - (i + 1);
+    for (var i = 0; i < recent_candidates.length; i++) {
+        var index = recent_candidates.length - (i + 1);
         if (msgs2[i])
             $("#cra_chart_list")
                 .append("<hr>")
                 .append(dom(["div", { class: "mt_15" }, ["h2#page_title", msgs2[i]]]));
 
-        if (!recent_candidate_list[index].id || isNaN(recent_candidate_list[index].id))
+        if (!recent_candidates[index].id || isNaN(recent_candidates[index].id))
             continue;
 
-        var difficulty_icon = recent_candidate_list[index].level == 2 ? "common/images/icon_expert.png"
+        var difficulty_icon = recent_candidates[index].level == 2 ? "common/images/icon_expert.png"
             : "common/images/icon_master.png";
 
         var $list_item = $("<div class='frame02 w400 cra_chart_list_item'>")
@@ -1435,7 +1435,7 @@ function render_recent_list(msgs1, msgs2)
 <div class="play_jacket_side">
   <div class="play_jacket_area">
     <div id="Jacket" class="play_jacket_img">
-      <img src=${recent_candidate_list[index].image}>
+      <img src=${recent_candidates[index].image}>
     </div>
   </div>
 </div>
@@ -1445,22 +1445,22 @@ function render_recent_list(msgs1, msgs2)
       <img src="${difficulty_icon}">
     </div>
     <div id="Track" class="play_track_text">
-      ${rate_str(recent_candidate_list[index].rate_base)}
+      ${rate_str(recent_candidates[index].rate_base)}
     </div>
   </div>
   <div class="box02 play_musicdata_block">
     <div id="MusicTitle" class="play_musicdata_title">
-      ${recent_candidate_list[index].name}
+      ${recent_candidates[index].name}
     </div>
     <div class="play_musicdata_score clearfix">
       <div class="play_musicdata_score_text">
-        Score：<span id="Score">${recent_candidate_list[index].score}</span>
+        Score：<span id="Score">${recent_candidates[index].score}</span>
       </div>
       <br>
       <div class="play_musicdata_score_text">
         Rate：
         <span id="Rate">
-          ${rate_str(recent_candidate_list[index].rate)}
+          ${rate_str(recent_candidates[index].rate)}
         </span>
       </div>
     </div>
