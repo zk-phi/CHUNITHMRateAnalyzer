@@ -651,10 +651,19 @@ $("#cra_wrapper").delay(400).fadeIn(400);
 // use GetUserPlaylogApi to fetch playlog, and update recent_candidates and recent_list
 function fecth_playlog(callback)
 {
+    function get_recent_list(recent_candidates) {
+        [].concat(recent_candidates).sort(function (p1, p2) {
+            if (p1.rate > p2.rate) return 1;
+            else if (p1.rate < p2.rate) return -1;
+            else if (p1.play_date > p2.play_date) return -1;
+            else if (p1.play_date < p2.play_date) return 1;
+            return 0;
+        }).slice(0, 10);
+    }
+
     $("#cra_window_inner").html("<p>loading playlog ...</p>");
     request_api("GetUserPlaylogApi", {}, function (d) {
         var level_name_map = ["basic", "advance", "expert", "master", "worldsend"];
-        var last_play_date = last_recent_candidates ? last_recent_candidates[last_recent_candidates.length - 1].play_date : 0;
 
         recent_candidates = last_recent_candidates;
         if (!recent_candidates) {
@@ -664,18 +673,17 @@ function fecth_playlog(callback)
                     rate_base: 0,
                     score: 0,
                     rate: 0,
-                    play_date: 0,
+                    play_date: "",
                 });
             }
         }
 
+        var last_play_date = recent_candidates[recent_candidates.length - 1].play_date;
         for (var i = d.userPlaylogList.length - 1; i >= 0; i--) {
             if (d.userPlaylogList[i].levelName != "expert" && d.userPlaylogList[i].levelName != "master")
                 continue;
 
-            var date_info = /(\d{4})-(\d{2})-(\d{2}) (\d{1,2}):(\d{2}):(\d{2}).\d*/.exec(d.userPlaylogList[i].userPlayDate);
-            var play_date = new Date(date_info[1], date_info[2], date_info[3], date_info[4], date_info[5], date_info[6]).getTime();
-            if (play_date <= last_play_date)
+            if (d.userPlaylogList[i].userPlayDate <= last_play_date)
                 continue;
 
             for (var j = 0; j < chart_list.length; j++) {
@@ -688,12 +696,10 @@ function fecth_playlog(callback)
                         name: chart_list[j].name,
                         score: d.userPlaylogList[i].score,
                         rate: score_to_rate(chart_list[j].rate_base, d.userPlaylogList[i].score),
-                        play_date: play_date
+                        play_date: d.userPlaylogList[i].userPlayDate,
                     };
 
-                    recent_list = [].concat(recent_candidates).sort(function (p1, p2) {
-                        return (p1.rate !== p2.rate) ? (p2.rate - p1.rate) : (p1.play_date - p2.play_date);
-                    }).slice(0, 10);
+                    recent_list = get_recent_list(recent_candidates);
 
                     if (playlog.rate > Math.min.apply(null, recent_list.map(function (p) { return p.rate; }))) {
                         for (var k = 0; k < recent_candidates.length; k++) {
@@ -714,9 +720,7 @@ function fecth_playlog(callback)
             }
         }
 
-        recent_list = [].concat(recent_candidates).sort(function (p1, p2) {
-            return (p1.rate !== p2.rate) ? (p2.rate - p1.rate) : (p1.play_date - p2.play_date);
-        }).slice(0, 10);
+        recent_list = get_recent_list(recent_candidates);
 
         callback();
     }, function () {
