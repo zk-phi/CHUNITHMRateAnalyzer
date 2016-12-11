@@ -615,7 +615,7 @@ $("#cra_window_inner")
                 fetch_user_data(function() {
                     fetch_score_data(2, function() {
                         fetch_score_data(3, function() {
-                            fecth_playlog(function () {
+                            fetch_playlog(function () {
                                 localStorage.setItem("cra_chart_list", JSON.stringify(chart_list));
                                 localStorage.setItem("cra_version", JSON.stringify(cra_version));
                                 localStorage.setItem("cra_recent_candidates", JSON.stringify(recent_candidates));
@@ -649,7 +649,7 @@ $("#cra_wrapper").delay(400).fadeIn(400);
 // -----------------------------------------------------------------------------
 
 // use GetUserPlaylogApi to fetch playlog, and update recent_candidates and recent_list
-function fecth_playlog(callback)
+function fetch_playlog(callback)
 {
     function get_recent_list(recent_candidates) {
         [].concat(recent_candidates).sort(function (p1, p2) {
