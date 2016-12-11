@@ -708,9 +708,7 @@ function fetch_playlog(callback)
                             }
                         }
                     }
-                    else if (playlog.score >= 1007500 || playlog.score >= Math.min.apply(null, recent_list.map(function (p) { return p.score; }))) {
-                    }
-                    else {
+                    else if (playlog.score < 1007500 && playlog.score < Math.min.apply(null, recent_list.map(function (p) { return p.score; }))) {
                         recent_candidates.shift();
                         recent_candidates.push(playlog);
                     }
