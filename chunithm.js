@@ -1,6 +1,7 @@
 // CHUNITHM Rate Analyzer (C) zk_phi 2015-
 
-var cra_version = 160503;
+// ※ localStorage のデータに互換性がなくなる場合は必ずバージョンを上げる
+var cra_version = 161224;
 
 if (!location.href.match(/^https:\/\/chunithm-net.com/)) {
     alert("CHUNITHM NET を開いているタブで実行してください。");
@@ -22,6 +23,228 @@ var dependencies = [
 // -----------------------------------------------------------------------------
 // utilities
 // -----------------------------------------------------------------------------
+
+// ---- constants
+
+var level_name_map = {basic: 0, advance: 1, expert: 2, master: 3, worldsend: 4};
+
+var music_info = {
+     003: { rate_base: {          3: 11.8 }, image: "img/d739ba44da6798a0.jpg", name: "B.B.K.K.B.K.K." }
+    ,005: { rate_base: {          3: 11.3 }, image: "img/38faf81803b730f3.jpg", name: "Scatman (Ski Ba Bop Ba Dop Bop)" }
+    ,006: { rate_base: {          3: 12.3 }, image: "img/90589be457544570.jpg", name: "Reach for the Stars" }
+    ,007: { rate_base: { 2: 12.0, 3: 13.6 }, image: "img/b602913a68fca621.jpg", name: "初音ミクの消失" }
+    ,009: { rate_base: {          3: 11.3 }, image: "img/fce0bad9123dcd76.jpg", name: "情熱大陸" }
+    ,010: { rate_base: {          3: 11.7 }, image: "img/0d7bd146ebed6fba.jpg", name: "All I Want" }
+    ,014: { rate_base: {          3: 11.0 }, image: "img/af78dd039a36a4c7.jpg", name: "コネクト" }
+    ,017: { rate_base: {          3: 11.1 }, image: "img/696d4f956ebb4209.jpg", name: "空色デイズ" }
+    ,018: { rate_base: {          3: 11.2 }, image: "img/3c2606abe4dded71.jpg", name: "千本桜" }
+    ,019: { rate_base: {          3: 13.2 }, image: "img/0b98b8b4e7cfd997.jpg", name: "DRAGONLADY" }
+    ,021: { rate_base: {          3: 11.9 }, image: "img/4f69fb126f579c2f.jpg", name: "ナイト・オブ・ナイツ" }
+    ,023: { rate_base: {          3: 12.1 }, image: "img/b8ab9573859ebe4f.jpg", name: "一触即発☆禅ガール" }
+    ,027: { rate_base: {          3: 12.5 }, image: "img/fdc3bb451f6403d2.jpg", name: "タイガーランペイジ" }
+    ,033: { rate_base: {          3: 13.0 }, image: "img/fddc37caee47286d.jpg", name: "Blue Noise" }
+    ,035: { rate_base: {          3: 12.4 }, image: "img/aabf49add818546d.jpg", name: "Lapis" }
+    ,036: { rate_base: {          3: 11.0 }, image: "img/e273c9d64170b575.jpg", name: "届かない恋 '13" }
+    ,037: { rate_base: {          3: 11.3 }, image: "img/335dbb14cedb70bf.jpg", name: "鳥の詩" }
+    ,038: { rate_base: {          3: 11.0 }, image: "img/529d98ad07709ae5.jpg", name: "天ノ弱" }
+    ,041: { rate_base: {          3: 11.6 }, image: "img/7f17441bc2582ec8.jpg", name: "sweet little sister" }
+    ,042: { rate_base: {          3: 11.6 }, image: "img/4bbc4ec5ee9aa0b6.jpg", name: "oath sign" }
+    ,045: { rate_base: {          3: 12.2 }, image: "img/90dca26c66c5d5b7.jpg", name: "L9" }
+    ,047: { rate_base: {          3: 12.0 }, image: "img/5cb17a59f4b8c133.jpg", name: "六兆年と一夜物語" }
+    ,048: { rate_base: {          3: 11.8 }, image: "img/b38eba298df2c6db.jpg", name: "Unlimited Spark!" }
+    ,051: { rate_base: {          3: 12.7 }, image: "img/161f13a787a00032.jpg", name: "My First Phone" }
+    ,052: { rate_base: { 2: 11.1, 3: 13.2 }, image: "img/a62f975edc860e34.jpg", name: "Cyberozar" }
+    ,053: { rate_base: {          3: 12.3 }, image: "img/73ad66e81061bba3.jpg", name: "Teriqma" }
+    ,055: { rate_base: {          3: 11.2 }, image: "img/506f053a80e1b28e.jpg", name: "夏祭り" }
+    ,056: { rate_base: {          3: 11.0 }, image: "img/2535487ae13b2fd8.jpg", name: "そばかす" }
+    ,060: { rate_base: {          3: 11.3 }, image: "img/3bee1cce7d794f31.jpg", name: "only my railgun" }
+    ,061: { rate_base: { 2: 11.0, 3: 13.5 }, image: "img/2ccf97477eaf45ad.jpg", name: "GOLDEN RULE" }
+    ,062: { rate_base: {          3: 12.4 }, image: "img/9386971505bb20b0.jpg", name: "名も無い鳥" }
+    ,063: { rate_base: { 2: 11.7, 3: 13.1 }, image: "img/2df15f390356067f.jpg", name: "Gate of Fate" }
+    ,064: { rate_base: {          3: 12.7 }, image: "img/6bf934fede23724d.jpg", name: "今ぞ♡崇め奉れ☆オマエらよ！！～姫の秘メタル渇望～" }
+    ,065: { rate_base: {          3: 11.1 }, image: "img/713d52aa40ed7fc4.jpg", name: "Anemone" }
+    ,066: { rate_base: {          3: 12.3 }, image: "img/c22702914849a11a.jpg", name: "明るい未来" }
+    ,067: { rate_base: {          3: 11.2 }, image: "img/11437ebc94947550.jpg", name: "昵懇レファレンス" }
+    ,068: { rate_base: {          3: 11.7 }, image: "img/145b9b6f4c27d78e.jpg", name: "乗り切れ受験ウォーズ" }
+    ,069: { rate_base: { 2: 11.9, 3: 13.3 }, image: "img/c2c4ece2034eb620.jpg", name: "The wheel to the right" }
+    ,070: { rate_base: {          3: 12.4 }, image: "img/3ccebd87235f591c.jpg", name: "STAR" }
+    ,071: { rate_base: {          3: 12.3 }, image: "img/2bf02bef3051ecaf.jpg", name: "Infantoon Fantasy" }
+    ,072: { rate_base: {          3: 13.5 }, image: "img/ec3a366b4724f8f6.jpg", name: "Genesis" }
+    ,073: { rate_base: {          3: 12.6 }, image: "img/0c2791f737ce1ff2.jpg", name: "MUSIC PЯAYER" }
+    ,074: { rate_base: {          3: 11.0 }, image: "img/feef37ed3d91cfbd.jpg", name: "リリーシア" }
+    ,075: { rate_base: {          3: 11.7 }, image: "img/e1454dc2eeae2030.jpg", name: "Counselor" }
+    ,076: { rate_base: { 2: 11.8, 3: 13.4 }, image: "img/93abb77776c70b47.jpg", name: "luna blu" }
+    ,077: { rate_base: {          3: 12.8 }, image: "img/01fc7f761272bfb4.jpg", name: "ケモノガル" }
+    ,079: { rate_base: {          3: 11.0 }, image: "img/281f821a06a7da18.jpg", name: "ＧＯ！ＧＯ！ラブリズム♥" }
+    ,082: { rate_base: {          3: 12.5 }, image: "img/27ef71f8a76f1e8a.jpg", name: "Memories of Sun and Moon" }
+    ,083: { rate_base: {          3: 12.2 }, image: "img/181682bf5b277726.jpg", name: "ロストワンの号哭" }
+    ,088: { rate_base: {          3: 12.1 }, image: "img/c4223e68340efa41.jpg", name: "The Concept of Love" }
+    ,090: { rate_base: { 2: 11.6, 3: 13.2 }, image: "img/19d57f9a7652308a.jpg", name: "L'épisode" }
+    ,091: { rate_base: {          3: 11.2 }, image: "img/cb77a66b62023890.jpg", name: "Yet Another ”drizzly rain”" }
+    ,092: { rate_base: {          3: 12.8 }, image: "img/17315fb464f265bd.jpg", name: "最終鬼畜妹・一部声" }
+    ,093: { rate_base: {          3: 12.3 }, image: "img/6b40809324937ec9.jpg", name: "蒼空に舞え、墨染の桜" }
+    ,094: { rate_base: {          3: 12.3 }, image: "img/164258c65c714d50.jpg", name: "セツナトリップ" }
+    ,095: { rate_base: {          3: 12.1 }, image: "img/db38c119e4d8933e.jpg", name: "砂漠のハンティングガール♡" }
+    ,096: { rate_base: {          3: 11.8 }, image: "img/9d2ebc847487e01b.jpg", name: "チルノのパーフェクトさんすう教室" }
+    ,098: { rate_base: {          3: 11.4 }, image: "img/f7e67efaf6ced6ea.jpg", name: "魔理沙は大変なものを盗んでいきました" }
+    ,099: { rate_base: {          3: 11.7 }, image: "img/ee332e6fa86661fd.jpg", name: "言ノ葉カルマ" }
+    ,102: { rate_base: {          3: 12.5 }, image: "img/7fc6ae1b488b88de.jpg", name: "Tuning Rangers" }
+    ,103: { rate_base: { 2: 11.7, 3: 13.7 }, image: "img/3210d321c2700a57.jpg", name: "エンドマークに希望と涙を添えて" }
+    ,104: { rate_base: {          3: 12.5 }, image: "img/ff945c9cb9e43e83.jpg", name: "とーきょー全域★アキハバラ？" }
+    ,106: { rate_base: { 2: 12.2, 3: 13.8 }, image: "img/8219519cc94d5524.jpg", name: "宛城、炎上！！" }
+    ,107: { rate_base: {          3: 13.0 }, image: "img/b43fef626f5b88cd.jpg", name: "We Gonna Journey" }
+    ,108: { rate_base: {          3: 12.0 }, image: "img/1ec3213366f4ad57.jpg", name: "The ether" }
+    ,110: { rate_base: {          3: 11.2 }, image: "img/d42200159ef91521.jpg", name: "Magia" }
+    ,111: { rate_base: {          3: 11.3 }, image: "img/7ad659a57ef26888.jpg", name: "staple stable" }
+    ,112: { rate_base: {          3: 11.0 }, image: "img/3dc05a281c0724f7.jpg", name: "マジLOVE1000%" }
+    ,113: { rate_base: {          3: 11.4 }, image: "img/3f8eb68a4f6089dc.jpg", name: "ストリーミングハート" }
+    ,114: { rate_base: {          3: 11.4 }, image: "img/b02c3912d1524d5c.jpg", name: "Sweet Devil" }
+    ,115: { rate_base: {          3: 11.5 }, image: "img/9165ee58223accc0.jpg", name: "Dreaming" }
+    ,117: { rate_base: {          3: 11.5 }, image: "img/88124d980ac7eca4.jpg", name: "M.S.S.Planet" }
+    ,118: { rate_base: {          3: 12.0 }, image: "img/17e485acfe11a67f.jpg", name: "腐れ外道とチョコレゐト" }
+    ,119: { rate_base: {          3: 12.3 }, image: "img/a7dd6716fcae0cb8.jpg", name: "アウターサイエンス" }
+    ,120: { rate_base: {          3: 12.7 }, image: "img/a84a31e562efd7a0.jpg", name: "四次元跳躍機関" }
+    ,121: { rate_base: {          3: 12.5 }, image: "img/4196f71ce51620a0.jpg", name: "東方妖々夢 ～the maximum moving about～" }
+    ,122: { rate_base: {          3: 12.5 }, image: "img/67418ba28151c3ff.jpg", name: "少女幻葬戦慄曲　～　Necro Fantasia" }
+    ,124: { rate_base: {          3: 12.5 }, image: "img/74ce2f0a4b4f6fe2.jpg", name: "夏影" }
+    ,126: { rate_base: {          3: 11.3 }, image: "img/547ba5407b6e7fa0.jpg", name: "Heart To Heart" }
+    ,128: { rate_base: {          3: 12.7 }, image: "img/7edc6879319accfd.jpg", name: "The Formula" }
+    ,129: { rate_base: {          3: 11.2 }, image: "img/f56cd36303a3239a.jpg", name: "Hacking to the Gate" }
+    ,130: { rate_base: {          3: 11.7 }, image: "img/e4df0d48302ccd26.jpg", name: "スカイクラッドの観測者" }
+    ,131: { rate_base: {          3: 12.6 }, image: "img/38d3c5a5a45c6d07.jpg", name: "チルドレンレコード" }
+    ,132: { rate_base: {          3: 12.2 }, image: "img/1c508bbd42d335fe.jpg", name: "イカサマライフゲイム" }
+    ,134: { rate_base: { 2: 11.8, 3: 13.7 }, image: "img/08a24ed249ed2eec.jpg", name: "HAELEQUIN (Original Remaster)" }
+    ,135: { rate_base: {          3: 13.5 }, image: "img/e7ee14d9fe63d072.jpg", name: "Vallista" }
+    ,136: { rate_base: {          3: 12.5 }, image: "img/c4f977d264deafb1.jpg", name: "Äventyr" }
+    ,137: { rate_base: {          3: 13.6 }, image: "img/13a5a9ca35a9b71b.jpg", name: "Angel dust" }
+    ,138: { rate_base: {          3: 13.0 }, image: "img/478e8835e382f740.jpg", name: "conflict" }
+    ,140: { rate_base: {          3: 11.9 }, image: "img/0aad2e0ff661e7d1.jpg", name: "Guilty" }
+    ,141: { rate_base: { 2: 11.5, 3: 13.3 }, image: "img/2e6c11edba79d997.jpg", name: "閃鋼のブリューナク" }
+    ,142: { rate_base: {          3: 12.6 }, image: "img/a8d181c5442df7d2.jpg", name: "Altale" }
+    ,144: { rate_base: {          3: 13.3 }, image: "img/8b04b9ad2d49850c.jpg", name: "Aragami" }
+    ,145: { rate_base: {          3: 11.8 }, image: "img/0bb58f15b16703ab.jpg", name: "Change Our MIRAI！" }
+    ,146: { rate_base: {          3: 11.7 }, image: "img/d3b40f7b8e0758ff.jpg", name: "夕暮れワンルーム" }
+    ,148: { rate_base: {          3: 11.0 }, image: "img/cd458a75aa049889.jpg", name: "Theme of SeelischTact" }
+    ,149: { rate_base: {          3: 11.7 }, image: "img/c9c2fa20dcd9a46e.jpg", name: "緋色のDance" }
+    ,150: { rate_base: {          3: 11.8 }, image: "img/2a41ad71b77d12c9.jpg", name: "brilliant better" }
+    ,151: { rate_base: {          3: 12.5 }, image: "img/7237488215dbd1d3.jpg", name: "Alma" }
+    ,152: { rate_base: { 2: 11.7, 3: 13.0 }, image: "img/f63fab30a7b6f160.jpg", name: "Gustav Battle" }
+    ,154: { rate_base: {          3: 12.7 }, image: "img/2e9fdbbc15ade5cb.jpg", name: "SAVIOR OF SONG" }
+    ,156: { rate_base: {          3: 11.5 }, image: "img/b33923bd4e6e5609.jpg", name: "FREELY TOMORROW" }
+    ,157: { rate_base: {          3: 12.8 }, image: "img/573109ca9050f55d.jpg", name: "ギガンティック O.T.N" }
+    ,158: { rate_base: {          3: 11.0 }, image: "img/e3ce6712e8cddf10.jpg", name: "フォルテシモBELL" }
+    ,159: { rate_base: {          3: 13.3 }, image: "img/d5a47266b4fe0bfe.jpg", name: "ジングルベル" }
+    ,160: { rate_base: {          3: 11.5 }, image: "img/809bf2b3f8effa6f.jpg", name: "言ノ葉遊戯" }
+    ,161: { rate_base: {          3: 12.4 }, image: "img/4ceb5aed4a4a1c47.jpg", name: "私の中の幻想的世界観及びその顕現を想起させたある現実での出来事に関する一考察" }
+    ,163: { rate_base: {          3: 11.3 }, image: "img/fd6847e3bb2e3629.jpg", name: "幾四音-Ixion-" }
+    ,165: { rate_base: {          3: 12.8 }, image: "img/1e85c4b6775c84b0.jpg", name: "ぼくらの16bit戦争" }
+    ,166: { rate_base: {          3: 11.8 }, image: "img/5a0ac8501e3b95ce.jpg", name: "裏表ラバーズ" }
+    ,167: { rate_base: {          3: 12.7 }, image: "img/24611f2e2374e6a8.jpg", name: "脳漿炸裂ガール" }
+    ,168: { rate_base: {          3: 11.9 }, image: "img/1982767436fc52d8.jpg", name: "ネトゲ廃人シュプレヒコール" }
+    ,169: { rate_base: {          3: 11.4 }, image: "img/f092ddd9e1fe088b.jpg", name: "elegante" }
+    ,171: { rate_base: {          3: 12.3 }, image: "img/25abef88cb12af3e.jpg", name: "XL TECHNO" }
+    ,173: { rate_base: {          3: 13.1 }, image: "img/2e95529be9118a11.jpg", name: "Halcyon" }
+    ,176: { rate_base: {          3: 11.3 }, image: "img/aa0cefb5a0f00457.jpg", name: "Dance!" }
+    ,177: { rate_base: {          3: 12.6 }, image: "img/6e7843f9d831b0ac.jpg", name: "Jimang Shot" }
+    ,178: { rate_base: {          3: 12.7 }, image: "img/9f281db3bcc9353b.jpg", name: "stella=steLLa" }
+    ,179: { rate_base: {          3: 11.1 }, image: "img/0e73189a7083e4f4.jpg", name: "すろぉもぉしょん" }
+    ,180: { rate_base: { 2: 12.4, 3: 13.9 }, image: "img/a732d43fd2a11e8f.jpg", name: "怒槌" }
+    ,185: { rate_base: {          3: 11.2 }, image: "img/520c1fef62954ca6.jpg", name: "楽園の翼" }
+    ,187: { rate_base: {          3: 13.2 }, image: "img/e6642a96885723c1.jpg", name: "患部で止まってすぐ溶ける～狂気の優曇華院" }
+    ,189: { rate_base: {          3: 12.7 }, image: "img/9310d07b7e02e73a.jpg", name: "ひれ伏せ愚民どもっ！" }
+    ,190: { rate_base: {          3: 12.6 }, image: "img/bbaa464731ab96a4.jpg", name: "エテルニタス・ルドロジー" }
+    ,196: { rate_base: { 2: 11.9, 3: 13.7 }, image: "img/ed40032f25177518.jpg", name: "FREEDOM DiVE" }
+    ,197: { rate_base: { 2: 11.2, 3: 13.1 }, image: "img/ae6d3a8806e09613.jpg", name: "Jack-the-Ripper◆" }
+    ,199: { rate_base: {          3: 12.1 }, image: "img/d76afb63de1417f8.jpg", name: "ハート・ビート" }
+    ,200: { rate_base: {          3: 12.1 }, image: "img/569e7b07c0696bc7.jpg", name: "無敵We are one!!" }
+    ,201: { rate_base: { 2: 12.4, 3: 13.9 }, image: "img/a251c24a3cc4dbf7.jpg", name: "Contrapasso -inferno-" }
+    ,202: { rate_base: { 2: 11.2, 3: 13.1 }, image: "img/45112e2818cf80a2.jpg", name: "GEMINI -C-" }
+    ,203: { rate_base: {          3: 12.0 }, image: "img/101d4e7b03a5a89e.jpg", name: "FLOWER" }
+    ,204: { rate_base: {          3: 11.0 }, image: "img/1ea73ffbba6d7ead.jpg", name: "ちくわパフェだよ☆CKP" }
+    ,205: { rate_base: {          3: 12.7 }, image: "img/3d7803669dd3fcb9.jpg", name: "SNIPE WHOLE" }
+    ,206: { rate_base: {          3: 11.4 }, image: "img/e10bbd173df15772.jpg", name: "Signs Of Love (“Never More” ver.)" }
+    ,207: { rate_base: {          3: 11.7 }, image: "img/5151993f923b06a5.jpg", name: "Your Affection (Daisuke Asakura Remix)" }
+    ,208: { rate_base: {          3: 12.7 }, image: "img/5bab1a38b98d59b5.jpg", name: "SAMBISTA" }
+    ,209: { rate_base: {          3: 11.7 }, image: "img/5744f4cf66710a56.jpg", name: "君色シグナル" }
+    ,210: { rate_base: {          3: 12.4 }, image: "img/040cd43234aed57a.jpg", name: "アスノヨゾラ哨戒班" }
+    ,211: { rate_base: {          3: 12.2 }, image: "img/d99079fecaa936ab.jpg", name: "天樂" }
+    ,212: { rate_base: {          3: 12.1 }, image: "img/1ee29f73ee8f53d0.jpg", name: "いろは唄" }
+    ,213: { rate_base: {          3: 11.9 }, image: "img/c6d494f528391d1c.jpg", name: "星屑ユートピア" }
+    ,214: { rate_base: {          3: 11.9 }, image: "img/f4a2d88c38669f72.jpg", name: "青春はNon-Stop!" }
+    ,215: { rate_base: {          3: 12.4 }, image: "img/81cc90c04676f18b.jpg", name: "Falling Roses" }
+    ,216: { rate_base: {          3: 12.3 }, image: "img/3227722a8345a950.jpg", name: "放課後革命" }
+    ,217: { rate_base: {          3: 11.8 }, image: "img/2b3c90b1dab1ecff.jpg", name: "楽園ファンファーレ" }
+    ,220: { rate_base: {          3: 12.3 }, image: "img/c3041fd82b0a0710.jpg", name: "如月アテンション" }
+    ,222: { rate_base: {          3: 12.9 }, image: "img/ad33a423c865bed1.jpg", name: "Mr. Wonderland" }
+    ,223: { rate_base: { 2: 11.0, 3: 13.0 }, image: "img/8ec9a26e11ec1a40.jpg", name: "カミサマネジマキ" }
+    ,224: { rate_base: {          3: 11.1 }, image: "img/b9d170f84c1bb5d3.jpg", name: "恋愛裁判" }
+    ,225: { rate_base: {          3: 12.1 }, image: "img/6f86e2a47e9a283c.jpg", name: "ウミユリ海底譚" }
+    ,226: { rate_base: { 2: 12.3, 3: 13.8 }, image: "img/993b5cddb9d9badf.jpg", name: "Garakuta Doll Play" }
+    ,227: { rate_base: {          3: 11.5 }, image: "img/74c77deb2f2e5e07.jpg", name: "洗脳" }
+    ,228: { rate_base: {          3: 12.0 }, image: "img/882be51fe439614d.jpg", name: "このふざけた素晴らしき世界は、僕の為にある" }
+    ,229: { rate_base: { 2: 11.9, 3: 13.4 }, image: "img/73f86aec8d6c7c9b.jpg", name: "紅華刑" }
+    ,230: { rate_base: {          3: 12.4 }, image: "img/b59d2b2ab877a77d.jpg", name: "Hyperion" }
+    ,232: { rate_base: { 2: 11.3, 3: 13.4 }, image: "img/a2069fdb9d860d36.jpg", name: "Elemental Creation" }
+    ,233: { rate_base: {          3: 12.2 }, image: "img/5fe5db1d2e40ee7a.jpg", name: "アルストロメリア" }
+    ,235: { rate_base: {          3: 12.5 }, image: "img/8b84b06033585428.jpg", name: "ファッとして桃源郷" }
+    ,238: { rate_base: {          3: 11.9 }, image: "img/4c769ae611f83d21.jpg", name: "フレンズ" }
+    ,240: { rate_base: {          3: 12.6 }, image: "img/47397105bad447fb.jpg", name: "夜咄ディセイブ" }
+    ,243: { rate_base: {          3: 12.2 }, image: "img/8872c759bea3bd9f.jpg", name: "シュガーソングとビターステップ" }
+    ,244: { rate_base: {          3: 12.3 }, image: "img/e0a700914896ea4a.jpg", name: "回レ！雪月花" }
+    ,245: { rate_base: {          3: 11.4 }, image: "img/630ac5b31e8ab816.jpg", name: "Help me, あーりん！" }
+    ,246: { rate_base: {          3: 12.7 }, image: "img/d445e4878a818d8b.jpg", name: "なるとなぎのパーフェクトロックンロール教室" }
+    ,247: { rate_base: {          3: 11.9 }, image: "img/58847f9694837c0b.jpg", name: "絶世スターゲイト" }
+    ,248: { rate_base: { 2: 12.3, 3: 13.9 }, image: "img/a2fdef9e4b278a51.jpg", name: "Schrecklicher Aufstand" }
+    ,250: { rate_base: { 2: 11.8, 3: 13.5 }, image: "img/989f4458fb34aa9d.jpg", name: "Philosopher" }
+    ,251: { rate_base: {          3: 12.5 }, image: "img/457722c9f3ff5473.jpg", name: "Crazy ∞ nighT" }
+    ,252: { rate_base: {          3: 12.3 }, image: "img/bb221e3de960de7d.jpg", name: "愛迷エレジー" }
+    ,254: { rate_base: {          3: 11.7 }, image: "img/2e617d713547fe84.jpg", name: "その群青が愛しかったようだった" }
+    ,255: { rate_base: {          3: 11.1 }, image: "img/429d34fef5fddb02.jpg", name: "激情！ミルキィ大作戦" }
+    ,259: { rate_base: { 2: 11.3, 3: 13.1 }, image: "img/4d66e5d1669d79a2.jpg", name: "Oshama Scramble! (Cranky Remix)" }
+    ,261: { rate_base: {          3: 12.3 }, image: "img/6e917606db3c5a0e.jpg", name: "ロボットプラネットユートピア" }
+    ,262: { rate_base: {          3: 13.6 }, image: "img/676e59847912f5ca.jpg", name: "Tidal Wave" }
+    ,263: { rate_base: {          3: 11.7 }, image: "img/015358a0c0580022.jpg", name: "Hand in Hand" }
+    ,264: { rate_base: {          3: 12.2 }, image: "img/f44c6b628889f8ec.jpg", name: "My Dearest Song" }
+    ,267: { rate_base: {          3: 11.5 }, image: "img/a0d03551eb3930e9.jpg", name: "心象蜃気楼" }
+    ,270: { rate_base: {          3: 12.3 }, image: "img/21dfcd3ae2c5c370.jpg", name: "エンヴィキャットウォーク" }
+    ,273: { rate_base: {          3: 11.8 }, image: "img/604157e2c49d91d7.jpg", name: "ビバハピ" }
+    ,276: { rate_base: {          3: 12.4 }, image: "img/82105b37d18450b6.jpg", name: "後夜祭" }
+    ,278: { rate_base: {          3: 11.4 }, image: "img/5f1d7a520a2735d4.jpg", name: "からくりピエロ" }
+    ,279: { rate_base: {          3: 11.7 }, image: "img/84ecaebe6bce2a58.jpg", name: "深海少女" }
+    ,281: { rate_base: {          3: 13.4 }, image: "img/330e57eeeb0fb2cd.jpg", name: "ラクガキスト" }
+    ,286: { rate_base: {          3: 11.5 }, image: "img/afcce0c85c1f8610.jpg", name: "Tell Your World" }
+    ,287: { rate_base: {          3: 11.9 }, image: "img/5febf5df2b5094f3.jpg", name: "ロミオとシンデレラ" }
+    ,288: { rate_base: {          3: 11.6 }, image: "img/f29f10a963df60cf.jpg", name: "First Twinkle" }
+    ,291: { rate_base: {          3: 12.4 }, image: "img/9c5e71b3588dbc70.jpg", name: "Kronos" }
+    ,292: { rate_base: {          3: 12.0 }, image: "img/b12c25f87b1d036e.jpg", name: "月に叢雲華に風" }
+    ,293: { rate_base: {          3: 13.2 }, image: "img/c58227eb0d14938c.jpg", name: "インビジブル" }
+    ,296: { rate_base: {          3: 12.1 }, image: "img/76535cf4c728f2af.jpg", name: "かくしん的☆めたまるふぉ～ぜっ!" }
+    ,298: { rate_base: {          3: 12.6 }, image: "img/7c649691aa0c4b3d.jpg", name: "PRIVATE SERVICE" }
+    ,299: { rate_base: {          3: 11.4 }, image: "img/9bd44690db5375ac.jpg", name: "secret base ～君がくれたもの～ (10 years after Ver.)" }
+    ,300: { rate_base: {          3: 12.2 }, image: "img/012eb1ed09577836.jpg", name: "No Routine" }
+    ,305: { rate_base: { 2: 11.0, 3: 13.3 }, image: "img/266bd38219201fa1.jpg", name: "幻想のサテライト" }
+    ,306: { rate_base: {          3: 12.2 }, image: "img/106d9eec68ed84b3.jpg", name: "凛として咲く花の如く" }
+    ,307: { rate_base: {          3: 12.7 }, image: "img/ff9f70c8c0d9f24e.jpg", name: "Paqqin" }
+    ,308: { rate_base: {          3: 11.9 }, image: "img/f8d3f2e57ae2ff24.jpg", name: "fake!fake!" }
+    ,309: { rate_base: {          3: 12.5 }, image: "img/cee51d69c428f8f5.jpg", name: "Rising Hope" }
+    ,313: { rate_base: {          3: 11.4 }, image: "img/5ac018495d6f01a5.jpg", name: "ひだまりデイズ" }
+    ,316: { rate_base: {          3: 11.5 }, image: "img/88f9536c08cb4e3f.jpg", name: "みくみくにしてあげる♪【してやんよ】" }
+    ,317: { rate_base: {          3: 13.4 }, image: "img/db15d5b7aefaa672.jpg", name: "Air" }
+    ,318: { rate_base: {          3: 13.1 }, image: "img/f803d578eb4047eb.jpg", name: "DataErr0r" }
+    ,319: { rate_base: {          3: 12.6 }, image: "img/e9eeb98572b140bc.jpg", name: "Say A Vengeance" }
+    ,320: { rate_base: {          3: 12.6 }, image: "img/6b33d4fa539d5adb.jpg", name: "010" }
+    ,321: { rate_base: {          3: 12.5 }, image: "img/40cc7a6a264f88c1.jpg", name: "ERIS -Legend of Gaidelia-" }
+    ,322: { rate_base: {          3: 13.6 }, image: "img/8b145fe4cf0c01bb.jpg", name: "Imperishable Night 2006 (2016 Refine)" }
+    ,323: { rate_base: {          3: 13.5 }, image: "img/282cb1cacd4c1bb4.jpg", name: "Dreadnought" }
+    ,324: { rate_base: {          3: 12.6 }, image: "img/d51d4ffba9f8d45e.jpg", name: "STAGER" }
+    ,325: { rate_base: {          3: 12.6 }, image: "img/97eca622afca0f15.jpg", name: "Her Majesty" }
+    ,326: { rate_base: {          3: 12.5 }, image: "img/fd01fc38e38042e3.jpg", name: "Sakura Fubuki" }
+    ,327: { rate_base: {          3: 12.7 }, image: "img/17c363c1fd2fa7d1.jpg", name: "JULIAN" }
+    ,330: { rate_base: {          3: 12.1 }, image: "img/b3ea0fe012eb7ea2.jpg", name: "ドキドキDREAM!!!" }
+    ,331: { rate_base: {          3: 12.2 }, image: "img/ec37e447b91995dd.jpg", name: "猛進ソリストライフ！" }
+    ,336: { rate_base: {          3: 12.0 }, image: "img/e40fceaa1bb587b7.jpg", name: "シジョウノコエ VOCALO ver." }
+    ,101: { rate_base: {          3: 12.9 }, image: "img/81e347d3b96b2ae1.jpg", name: "Tango Rouge" }
+};
 
 // ---- API wrappers
 
@@ -170,276 +393,29 @@ function dom(template, params)
 // global vars
 // -----------------------------------------------------------------------------
 
-// TODO: No items can be removed from this list. We'd better use hash.
-//
-// List of chart ID vs rate_base, leveled 11 or more
-var chart_list = [
-     { id: 103, level: 2, rate_base: 11.7, image: "img/3210d321c2700a57.jpg", name: "エンドマークに希望と涙を添えて 赤" }
-    ,{ id: 68,  level: 3, rate_base: 11.7, image: "img/145b9b6f4c27d78e.jpg", name: "乗り切れ受験ウォーズ" }
-    ,{ id: 146, level: 3, rate_base: 11.7, image: "img/d3b40f7b8e0758ff.jpg", name: "夕暮れワンルーム" }
-    ,{ id: 69,  level: 2, rate_base: 11.9, image: "img/c2c4ece2034eb620.jpg", name: "The wheel to the right 赤" }
-    ,{ id: 63,  level: 2, rate_base: 11.7, image: "img/2df15f390356067f.jpg", name: "Gate of Fate 赤" }
-    ,{ id: 76,  level: 2, rate_base: 11.8, image: "img/93abb77776c70b47.jpg", name: "luna blu 赤" }
-    ,{ id: 140, level: 3, rate_base: 11.9, image: "img/0aad2e0ff661e7d1.jpg", name: "Guilty" }
-    ,{ id: 75,  level: 3, rate_base: 11.7, image: "img/e1454dc2eeae2030.jpg", name: "Counselor" }
-    ,{ id: 99,  level: 3, rate_base: 11.7, image: "img/ee332e6fa86661fd.jpg", name: "言ノ葉カルマ" }
-    ,{ id: 145, level: 3, rate_base: 11.8, image: "img/0bb58f15b16703ab.jpg", name: "Change Our MIRAI！" }
-    ,{ id: 134, level: 2, rate_base: 11.8, image: "img/08a24ed249ed2eec.jpg", name: "HAELEQUIN (Original Remaster) 赤" }
-    ,{ id: 3,   level: 3, rate_base: 11.8, image: "img/d739ba44da6798a0.jpg", name: "B.B.K.K.B.K.K." }
-    ,{ id: 149, level: 3, rate_base: 11.7, image: "img/c9c2fa20dcd9a46e.jpg", name: "緋色のDance" }
-    ,{ id: 48,  level: 3, rate_base: 11.8, image: "img/b38eba298df2c6db.jpg", name: "Unlimited Spark!" }
-    ,{ id: 96,  level: 3, rate_base: 11.8, image: "img/9d2ebc847487e01b.jpg", name: "チルノのパーフェクトさんすう教室" }
-    ,{ id: 94,  level: 3, rate_base: 12.3, image: "img/164258c65c714d50.jpg", name: "セツナトリップ" }
-    ,{ id: 47,  level: 3, rate_base: 12.0, image: "img/5cb17a59f4b8c133.jpg", name: "六兆年と一夜物語" }
-    ,{ id: 152, level: 2, rate_base: 11.7, image: "img/f63fab30a7b6f160.jpg", name: "Gustav Battle 赤" }
-    ,{ id: 141, level: 2, rate_base: 11.5, image: "img/2e6c11edba79d997.jpg", name: "閃鋼のブリューナク 赤" }
-    ,{ id: 67,  level: 3, rate_base: 11.2, image: "img/11437ebc94947550.jpg", name: "昵懇レファレンス" }
-    ,{ id: 65,  level: 3, rate_base: 11.1, image: "img/713d52aa40ed7fc4.jpg", name: "Anemone" }
-    ,{ id: 163, level: 3, rate_base: 11.3, image: "img/fd6847e3bb2e3629.jpg", name: "幾四音-Ixion-" }
-    ,{ id: 148, level: 3, rate_base: 11.0, image: "img/cd458a75aa049889.jpg", name: "Theme of SeelischTact" }
-    ,{ id: 79,  level: 3, rate_base: 11.0, image: "img/281f821a06a7da18.jpg", name: "ＧＯ！ＧＯ！ラブリズム♥" }
-    ,{ id: 158, level: 3, rate_base: 11.0, image: "img/e3ce6712e8cddf10.jpg", name: "フォルテシモBELL" }
-    ,{ id: 130, level: 3, rate_base: 11.7, image: "img/e4df0d48302ccd26.jpg", name: "スカイクラッドの観測者" }
-    ,{ id: 129, level: 3, rate_base: 11.2, image: "img/f56cd36303a3239a.jpg", name: "Hacking to the Gate" }
-    ,{ id: 176, level: 3, rate_base: 11.3, image: "img/aa0cefb5a0f00457.jpg", name: "Dance!" }
-    ,{ id: 207, level: 3, rate_base: 11.7, image: "img/5151993f923b06a5.jpg", name: "Your Affection (Daisuke Asakura Remix)" }
-    ,{ id: 206, level: 3, rate_base: 11.4, image: "img/e10bbd173df15772.jpg", name: "Signs Of Love (“Never More” ver.)" }
-    ,{ id: 10,  level: 3, rate_base: 11.7, image: "img/0d7bd146ebed6fba.jpg", name: "All I Want" }
-    ,{ id: 204, level: 3, rate_base: 11.0, image: "img/1ea73ffbba6d7ead.jpg", name: "ちくわパフェだよ☆CKP" }
-    ,{ id: 203, level: 3, rate_base: 12.0, image: "img/101d4e7b03a5a89e.jpg", name: "FLOWER" }
-    ,{ id: 91,  level: 3, rate_base: 11.2, image: "img/cb77a66b62023890.jpg", name: "Yet Another ”drizzly rain”" }
-    ,{ id: 115, level: 3, rate_base: 11.5, image: "img/9165ee58223accc0.jpg", name: "Dreaming" }
-    ,{ id: 41,  level: 3, rate_base: 11.6, image: "img/7f17441bc2582ec8.jpg", name: "sweet little sister" }
-    ,{ id: 98,  level: 3, rate_base: 11.4, image: "img/f7e67efaf6ced6ea.jpg", name: "魔理沙は大変なものを盗んでいきました" }
-    ,{ id: 156, level: 3, rate_base: 11.5, image: "img/b33923bd4e6e5609.jpg", name: "FREELY TOMORROW" }
-    ,{ id: 117, level: 3, rate_base: 11.5, image: "img/88124d980ac7eca4.jpg", name: "M.S.S.Planet" }
-    ,{ id: 118, level: 3, rate_base: 12.0, image: "img/17e485acfe11a67f.jpg", name: "腐れ外道とチョコレゐト" }
-    ,{ id: 18,  level: 3, rate_base: 11.2, image: "img/3c2606abe4dded71.jpg", name: "千本桜" }
-    ,{ id: 113, level: 3, rate_base: 11.4, image: "img/3f8eb68a4f6089dc.jpg", name: "ストリーミングハート" }
-    ,{ id: 38,  level: 3, rate_base: 11.0, image: "img/529d98ad07709ae5.jpg", name: "天ノ弱" }
-    ,{ id: 114, level: 3, rate_base: 11.4, image: "img/b02c3912d1524d5c.jpg", name: "Sweet Devil" }
-    ,{ id: 111, level: 3, rate_base: 11.3, image: "img/7ad659a57ef26888.jpg", name: "staple stable" }
-    ,{ id: 110, level: 3, rate_base: 11.2, image: "img/d42200159ef91521.jpg", name: "Magia" }
-    ,{ id: 5,   level: 3, rate_base: 11.3, image: "img/38faf81803b730f3.jpg", name: "Scatman (Ski Ba Bop Ba Dop Bop)" }
-    ,{ id: 60,  level: 3, rate_base: 11.3, image: "img/3bee1cce7d794f31.jpg", name: "only my railgun" }
-    ,{ id: 17,  level: 3, rate_base: 11.1, image: "img/696d4f956ebb4209.jpg", name: "空色デイズ" }
-    ,{ id: 104, level: 3, rate_base: 12.5, image: "img/ff945c9cb9e43e83.jpg", name: "とーきょー全域★アキハバラ？" }
-    ,{ id: 178, level: 3, rate_base: 12.7, image: "img/9f281db3bcc9353b.jpg", name: "stella=steLLa" }
-    ,{ id: 101, level: 3, rate_base: 12.9, image: "img/81e347d3b96b2ae1.jpg", name: "Tango Rouge" }
-    ,{ id: 64,  level: 3, rate_base: 12.7, image: "img/6bf934fede23724d.jpg", name: "今ぞ♡崇め奉れ☆オマエらよ！！～姫の秘メタル渇望～" }
-    ,{ id: 144, level: 3, rate_base: 13.3, image: "img/8b04b9ad2d49850c.jpg", name: "Aragami" }
-    ,{ id: 142, level: 3, rate_base: 12.6, image: "img/a8d181c5442df7d2.jpg", name: "Altale" }
-    ,{ id: 157, level: 3, rate_base: 12.8, image: "img/573109ca9050f55d.jpg", name: "ギガンティック O.T.N" }
-    ,{ id: 154, level: 3, rate_base: 12.7, image: "img/2e9fdbbc15ade5cb.jpg", name: "SAVIOR OF SONG" }
-    ,{ id: 180, level: 2, rate_base: 12.4, image: "img/a732d43fd2a11e8f.jpg", name: "怒槌 赤" }
-    ,{ id: 70,  level: 3, rate_base: 12.4, image: "img/3ccebd87235f591c.jpg", name: "STAR" }
-    ,{ id: 151, level: 3, rate_base: 12.5, image: "img/7237488215dbd1d3.jpg", name: "Alma" }
-    ,{ id: 82,  level: 3, rate_base: 12.5, image: "img/27ef71f8a76f1e8a.jpg", name: "Memories of Sun and Moon" }
-    ,{ id: 108, level: 3, rate_base: 12.0, image: "img/1ec3213366f4ad57.jpg", name: "The ether" }
-    ,{ id: 53,  level: 3, rate_base: 12.3, image: "img/73ad66e81061bba3.jpg", name: "Teriqma" }
-    ,{ id: 95,  level: 3, rate_base: 12.1, image: "img/db38c119e4d8933e.jpg", name: "砂漠のハンティングガール♡" }
-    ,{ id: 51,  level: 3, rate_base: 12.7, image: "img/161f13a787a00032.jpg", name: "My First Phone" }
-    ,{ id: 71,  level: 3, rate_base: 12.3, image: "img/2bf02bef3051ecaf.jpg", name: "Infantoon Fantasy" }
-    ,{ id: 161, level: 3, rate_base: 12.4, image: "img/4ceb5aed4a4a1c47.jpg", name: "私の中の幻想的世界観及びその顕現を想起させたある現実での出来事に関する一考察" }
-    ,{ id: 150, level: 3, rate_base: 11.8, image: "img/2a41ad71b77d12c9.jpg", name: "brilliant better" }
-    ,{ id: 88,  level: 3, rate_base: 12.1, image: "img/c4223e68340efa41.jpg", name: "The Concept of Love" }
-    ,{ id: 6,   level: 3, rate_base: 12.3, image: "img/90589be457544570.jpg", name: "Reach for the Stars" }
-    ,{ id: 136, level: 3, rate_base: 12.5, image: "img/c4f977d264deafb1.jpg", name: "Äventyr" }
-    ,{ id: 128, level: 3, rate_base: 12.7, image: "img/7edc6879319accfd.jpg", name: "The Formula" }
-    ,{ id: 45,  level: 3, rate_base: 12.2, image: "img/90dca26c66c5d5b7.jpg", name: "L9" }
-    ,{ id: 33,  level: 3, rate_base: 13.0, image: "img/fddc37caee47286d.jpg", name: "Blue Noise" }
-    ,{ id: 120, level: 3, rate_base: 12.7, image: "img/a84a31e562efd7a0.jpg", name: "四次元跳躍機関" }
-    ,{ id: 21,  level: 3, rate_base: 11.9, image: "img/4f69fb126f579c2f.jpg", name: "ナイト・オブ・ナイツ" }
-    ,{ id: 132, level: 3, rate_base: 12.2, image: "img/1c508bbd42d335fe.jpg", name: "イカサマライフゲイム" }
-    ,{ id: 83,  level: 3, rate_base: 12.2, image: "img/181682bf5b277726.jpg", name: "ロストワンの号哭" }
-    ,{ id: 27,  level: 3, rate_base: 12.5, image: "img/fdc3bb451f6403d2.jpg", name: "タイガーランペイジ" }
-    ,{ id: 23,  level: 3, rate_base: 12.1, image: "img/b8ab9573859ebe4f.jpg", name: "一触即発☆禅ガール" }
-    ,{ id: 180, level: 3, rate_base: 13.9, image: "img/a732d43fd2a11e8f.jpg", name: "怒槌" }
-    ,{ id: 103, level: 3, rate_base: 13.7, image: "img/3210d321c2700a57.jpg", name: "エンドマークに希望と涙を添えて" }
-    ,{ id: 152, level: 3, rate_base: 13.0, image: "img/f63fab30a7b6f160.jpg", name: "Gustav Battle" }
-    ,{ id: 69,  level: 3, rate_base: 13.3, image: "img/c2c4ece2034eb620.jpg", name: "The wheel to the right" }
-    ,{ id: 63,  level: 3, rate_base: 13.1, image: "img/2df15f390356067f.jpg", name: "Gate of Fate" }
-    ,{ id: 141, level: 3, rate_base: 13.3, image: "img/2e6c11edba79d997.jpg", name: "閃鋼のブリューナク" }
-    ,{ id: 76,  level: 3, rate_base: 13.4, image: "img/93abb77776c70b47.jpg", name: "luna blu" }
-    ,{ id: 107, level: 3, rate_base: 13.0, image: "img/b43fef626f5b88cd.jpg", name: "We Gonna Journey" }
-    ,{ id: 138, level: 3, rate_base: 13.0, image: "img/478e8835e382f740.jpg", name: "conflict" }
-    ,{ id: 135, level: 3, rate_base: 13.5, image: "img/e7ee14d9fe63d072.jpg", name: "Vallista" }
-    ,{ id: 134, level: 3, rate_base: 13.7, image: "img/08a24ed249ed2eec.jpg", name: "HAELEQUIN (Original Remaster)" }
-    ,{ id: 92,  level: 3, rate_base: 12.8, image: "img/17315fb464f265bd.jpg", name: "最終鬼畜妹・一部声" }
-    ,{ id: 159, level: 3, rate_base: 13.3, image: "img/d5a47266b4fe0bfe.jpg", name: "ジングルベル" }
-    ,{ id: 165, level: 3, rate_base: 12.8, image: "img/1e85c4b6775c84b0.jpg", name: "ぼくらの16bit戦争" }
-    ,{ id: 179, level: 3, rate_base: 11.1, image: "img/0e73189a7083e4f4.jpg", name: "すろぉもぉしょん" }
-    ,{ id: 166, level: 3, rate_base: 11.8, image: "img/5a0ac8501e3b95ce.jpg", name: "裏表ラバーズ" }
-    ,{ id: 168, level: 3, rate_base: 11.9, image: "img/1982767436fc52d8.jpg", name: "ネトゲ廃人シュプレヒコール" }
-    ,{ id: 167, level: 3, rate_base: 12.7, image: "img/24611f2e2374e6a8.jpg", name: "脳漿炸裂ガール" }
-    ,{ id: 169, level: 3, rate_base: 11.4, image: "img/f092ddd9e1fe088b.jpg", name: "elegante" }
-    ,{ id: 14,  level: 3, rate_base: 11.0, image: "img/af78dd039a36a4c7.jpg", name: "コネクト" }
-    ,{ id: 235, level: 3, rate_base: 12.5, image: "img/8b84b06033585428.jpg", name: "ファッとして桃源郷" }
-    ,{ id: 232, level: 3, rate_base: 13.4, image: "img/a2069fdb9d860d36.jpg", name: "Elemental Creation" }
-    ,{ id: 205, level: 3, rate_base: 12.7, image: "img/3d7803669dd3fcb9.jpg", name: "SNIPE WHOLE" }
-    ,{ id: 73,  level: 3, rate_base: 12.6, image: "img/0c2791f737ce1ff2.jpg", name: "MUSIC PЯAYER" }
-    ,{ id: 52,  level: 3, rate_base: 13.2, image: "img/a62f975edc860e34.jpg", name: "Cyberozar" }
-    ,{ id: 244, level: 3, rate_base: 12.3, image: "img/e0a700914896ea4a.jpg", name: "回レ！雪月花" }
-    ,{ id: 243, level: 3, rate_base: 12.2, image: "img/8872c759bea3bd9f.jpg", name: "シュガーソングとビターステップ" }
-    ,{ id: 171, level: 3, rate_base: 12.3, image: "img/25abef88cb12af3e.jpg", name: "XL TECHNO" }
-    ,{ id: 232, level: 2, rate_base: 11.3, image: "img/a2069fdb9d860d36.jpg", name: "Elemental Creation 赤" }
-    ,{ id: 52,  level: 2, rate_base: 11.1, image: "img/a62f975edc860e34.jpg", name: "Cyberozar 赤" }
-    ,{ id: 209, level: 3, rate_base: 11.7, image: "img/5744f4cf66710a56.jpg", name: "君色シグナル" }
-    ,{ id: 247, level: 3, rate_base: 11.9, image: "img/58847f9694837c0b.jpg", name: "絶世スターゲイト" }
-    ,{ id: 199, level: 3, rate_base: 12.1, image: "img/d76afb63de1417f8.jpg", name: "ハート・ビート" }
-    ,{ id: 173, level: 3, rate_base: 13.1, image: "img/2e95529be9118a11.jpg", name: "Halcyon" }
-    ,{ id: 185, level: 3, rate_base: 11.2, image: "img/520c1fef62954ca6.jpg", name: "楽園の翼" }
-    ,{ id: 42,  level: 3, rate_base: 11.6, image: "img/4bbc4ec5ee9aa0b6.jpg", name: "oath sign" }
-    ,{ id: 9,   level: 3, rate_base: 11.3, image: "img/fce0bad9123dcd76.jpg", name: "情熱大陸" }
-    ,{ id: 56,  level: 3, rate_base: 11.0, image: "img/2535487ae13b2fd8.jpg", name: "そばかす" }
-    ,{ id: 112, level: 3, rate_base: 11.0, image: "img/3dc05a281c0724f7.jpg", name: "マジLOVE1000%" }
-    ,{ id: 74,  level: 3, rate_base: 11.0, image: "img/feef37ed3d91cfbd.jpg", name: "リリーシア" }
-    ,{ id: 233, level: 3, rate_base: 12.2, image: "img/5fe5db1d2e40ee7a.jpg", name: "アルストロメリア" }
-    ,{ id: 197, level: 3, rate_base: 13.1, image: "img/ae6d3a8806e09613.jpg", name: "Jack-the-Ripper◆" }
-    ,{ id: 226, level: 2, rate_base: 12.3, image: "img/993b5cddb9d9badf.jpg", name: "Garakuta Doll Play 赤" }
-    ,{ id: 226, level: 3, rate_base: 13.8, image: "img/993b5cddb9d9badf.jpg", name: "Garakuta Doll Play" }
-    ,{ id: 62,  level: 3, rate_base: 12.4, image: "img/9386971505bb20b0.jpg", name: "名も無い鳥" }
-    ,{ id: 90,  level: 2, rate_base: 11.6, image: "img/19d57f9a7652308a.jpg", name: "L'épisode 赤" }
-    ,{ id: 90,  level: 3, rate_base: 13.2, image: "img/19d57f9a7652308a.jpg", name: "L'épisode" }
-    ,{ id: 72,  level: 3, rate_base: 13.5, image: "img/ec3a366b4724f8f6.jpg", name: "Genesis" }
-    ,{ id: 197, level: 2, rate_base: 11.2, image: "img/ae6d3a8806e09613.jpg", name: "Jack-the-Ripper◆ 赤" }
-    ,{ id: 255, level: 3, rate_base: 11.1, image: "img/429d34fef5fddb02.jpg", name: "激情！ミルキィ大作戦" }
-    ,{ id: 214, level: 3, rate_base: 11.9, image: "img/f4a2d88c38669f72.jpg", name: "青春はNon-Stop!" }
-    ,{ id: 215, level: 3, rate_base: 12.4, image: "img/81cc90c04676f18b.jpg", name: "Falling Roses" }
-    ,{ id: 200, level: 3, rate_base: 12.1, image: "img/569e7b07c0696bc7.jpg", name: "無敵We are one!!" }
-    ,{ id: 202, level: 2, rate_base: 11.2, image: "img/45112e2818cf80a2.jpg", name: "GEMINI -C- 赤" }
-    ,{ id: 202, level: 3, rate_base: 13.1, image: "img/45112e2818cf80a2.jpg", name: "GEMINI -C-" }
-    ,{ id: 222, level: 3, rate_base: 12.9, image: "img/ad33a423c865bed1.jpg", name: "Mr. Wonderland" }
-    ,{ id: 252, level: 3, rate_base: 12.3, image: "img/bb221e3de960de7d.jpg", name: "愛迷エレジー" }
-    ,{ id: 224, level: 3, rate_base: 11.1, image: "img/b9d170f84c1bb5d3.jpg", name: "恋愛裁判" }
-    ,{ id: 228, level: 3, rate_base: 12.0, image: "img/882be51fe439614d.jpg", name: "このふざけた素晴らしき世界は、僕の為にある" }
-    ,{ id: 213, level: 3, rate_base: 11.9, image: "img/c6d494f528391d1c.jpg", name: "星屑ユートピア" }
-    ,{ id: 212, level: 3, rate_base: 12.1, image: "img/1ee29f73ee8f53d0.jpg", name: "いろは唄" }
-    ,{ id: 131, level: 3, rate_base: 12.6, image: "img/38d3c5a5a45c6d07.jpg", name: "チルドレンレコード" }
-    ,{ id: 220, level: 3, rate_base: 12.3, image: "img/c3041fd82b0a0710.jpg", name: "如月アテンション" }
-    ,{ id: 240, level: 3, rate_base: 12.6, image: "img/47397105bad447fb.jpg", name: "夜咄ディセイブ" }
-    ,{ id: 19,  level: 3, rate_base: 13.2, image: "img/0b98b8b4e7cfd997.jpg", name: "DRAGONLADY" }
-    ,{ id: 106, level: 2, rate_base: 12.2, image: "img/8219519cc94d5524.jpg", name: "宛城、炎上！！ 赤" }
-    ,{ id: 246, level: 3, rate_base: 12.7, image: "img/d445e4878a818d8b.jpg", name: "なるとなぎのパーフェクトロックンロール教室" }
-    ,{ id: 106, level: 3, rate_base: 13.8, image: "img/8219519cc94d5524.jpg", name: "宛城、炎上！！" }
-    ,{ id: 245, level: 3, rate_base: 11.4, image: "img/630ac5b31e8ab816.jpg", name: "Help me, あーりん！" }
-    ,{ id: 61,  level: 3, rate_base: 13.5, image: "img/2ccf97477eaf45ad.jpg", name: "GOLDEN RULE" }
-    ,{ id: 160, level: 3, rate_base: 11.5, image: "img/809bf2b3f8effa6f.jpg", name: "言ノ葉遊戯" }
-    ,{ id: 61,  level: 2, rate_base: 11.0, image: "img/2ccf97477eaf45ad.jpg", name: "GOLDEN RULE 赤" }
-    ,{ id: 196, level: 3, rate_base: 13.7, image: "img/ed40032f25177518.jpg", name: "FREEDOM DiVE" }
-    ,{ id: 196, level: 2, rate_base: 11.9, image: "img/ed40032f25177518.jpg", name: "FREEDOM DiVE 赤" }
-    ,{ id: 121, level: 3, rate_base: 12.5, image: "img/4196f71ce51620a0.jpg", name: "東方妖々夢 ～the maximum moving about～" }
-    ,{ id: 93,  level: 3, rate_base: 12.3, image: "img/6b40809324937ec9.jpg", name: "蒼空に舞え、墨染の桜" }
-    ,{ id: 122, level: 3, rate_base: 12.5, image: "img/67418ba28151c3ff.jpg", name: "少女幻葬戦慄曲　～　Necro Fantasia" }
-    ,{ id: 177, level: 3, rate_base: 12.6, image: "img/6e7843f9d831b0ac.jpg", name: "Jimang Shot" }
-    ,{ id: 36,  level: 3, rate_base: 11.0, image: "img/e273c9d64170b575.jpg", name: "届かない恋 '13" }
-    ,{ id: 126, level: 3, rate_base: 11.3, image: "img/547ba5407b6e7fa0.jpg", name: "Heart To Heart" }
-    ,{ id: 35,  level: 3, rate_base: 12.4, image: "img/aabf49add818546d.jpg", name: "Lapis" }
-    ,{ id: 223, level: 3, rate_base: 13.0, image: "img/8ec9a26e11ec1a40.jpg", name: "カミサマネジマキ" }
-    ,{ id: 216, level: 3, rate_base: 12.3, image: "img/3227722a8345a950.jpg", name: "放課後革命" }
-    ,{ id: 225, level: 3, rate_base: 12.1, image: "img/6f86e2a47e9a283c.jpg", name: "ウミユリ海底譚" }
-    ,{ id: 210, level: 3, rate_base: 12.4, image: "img/040cd43234aed57a.jpg", name: "アスノヨゾラ哨戒班" }
-    ,{ id: 211, level: 3, rate_base: 12.2, image: "img/d99079fecaa936ab.jpg", name: "天樂" }
-    ,{ id: 251, level: 3, rate_base: 12.5, image: "img/457722c9f3ff5473.jpg", name: "Crazy ∞ nighT" }
-    ,{ id: 223, level: 2, rate_base: 11.0, image: "img/8ec9a26e11ec1a40.jpg", name: "カミサマネジマキ 赤" }
-    ,{ id: 217, level: 3, rate_base: 11.8, image: "img/2b3c90b1dab1ecff.jpg", name: "楽園ファンファーレ" }
-    ,{ id: 227, level: 3, rate_base: 11.5, image: "img/74c77deb2f2e5e07.jpg", name: "洗脳" }
-    ,{ id: 208, level: 3, rate_base: 12.7, image: "img/5bab1a38b98d59b5.jpg", name: "SAMBISTA" }
-    ,{ id: 201, level: 2, rate_base: 12.4, image: "img/a251c24a3cc4dbf7.jpg", name: "Contrapasso -inferno- 赤" }
-    ,{ id: 201, level: 3, rate_base: 13.9, image: "img/a251c24a3cc4dbf7.jpg", name: "Contrapasso -inferno-" }
-    ,{ id: 305, level: 3, rate_base: 13.3, image: "img/266bd38219201fa1.jpg", name: "幻想のサテライト" }
-    ,{ id: 317, level: 3, rate_base: 13.4, image: "img/db15d5b7aefaa672.jpg", name: "Air" }
-    ,{ id: 248, level: 3, rate_base: 13.9, image: "img/a2fdef9e4b278a51.jpg", name: "Schrecklicher Aufstand" }
-    ,{ id: 318, level: 3, rate_base: 13.1, image: "img/f803d578eb4047eb.jpg", name: "DataErr0r" }
-    ,{ id: 298, level: 3, rate_base: 12.6, image: "img/7c649691aa0c4b3d.jpg", name: "PRIVATE SERVICE" }
-    ,{ id: 250, level: 3, rate_base: 13.5, image: "img/989f4458fb34aa9d.jpg", name: "Philosopher" }
-    ,{ id: 77,  level: 3, rate_base: 12.8, image: "img/01fc7f761272bfb4.jpg", name: "ケモノガル" }
-    ,{ id: 330, level: 3, rate_base: 12.1, image: "img/b3ea0fe012eb7ea2.jpg", name: "ドキドキDREAM!!!" }
-    ,{ id: 292, level: 3, rate_base: 12.0, image: "img/b12c25f87b1d036e.jpg", name: "月に叢雲華に風" }
-    ,{ id: 306, level: 3, rate_base: 12.2, image: "img/106d9eec68ed84b3.jpg", name: "凛として咲く花の如く" }
-    ,{ id: 124, level: 3, rate_base: 12.5, image: "img/74ce2f0a4b4f6fe2.jpg", name: "夏影" }
-    ,{ id: 309, level: 3, rate_base: 12.5, image: "img/cee51d69c428f8f5.jpg", name: "Rising Hope" }
-    ,{ id: 238, level: 3, rate_base: 11.9, image: "img/4c769ae611f83d21.jpg", name: "フレンズ" }
-    ,{ id: 308, level: 3, rate_base: 11.9, image: "img/f8d3f2e57ae2ff24.jpg", name: "fake!fake!" }
-    ,{ id: 55,  level: 3, rate_base: 11.2, image: "img/506f053a80e1b28e.jpg", name: "夏祭り" }
-    ,{ id: 66,  level: 3, rate_base: 12.3, image: "img/c22702914849a11a.jpg", name: "明るい未来" }
-    ,{ id: 261, level: 3, rate_base: 12.3, image: "img/6e917606db3c5a0e.jpg", name: "ロボットプラネットユートピア" }
-    ,{ id: 102, level: 3, rate_base: 12.5, image: "img/7fc6ae1b488b88de.jpg", name: "Tuning Rangers" }
-    ,{ id: 276, level: 3, rate_base: 12.4, image: "img/82105b37d18450b6.jpg", name: "後夜祭" }
-    ,{ id: 263, level: 3, rate_base: 11.7, image: "img/015358a0c0580022.jpg", name: "Hand in Hand" }
-    ,{ id: 37,  level: 3, rate_base: 11.3, image: "img/335dbb14cedb70bf.jpg", name: "鳥の詩" }
-    ,{ id: 299, level: 3, rate_base: 11.4, image: "img/9bd44690db5375ac.jpg", name: "secret base ～君がくれたもの～ (10 years after Ver.)" }
-    ,{ id: 305, level: 2, rate_base: 11.0, image: "img/266bd38219201fa1.jpg", name: "幻想のサテライト 赤" }
-    ,{ id: 254, level: 3, rate_base: 11.7, image: "img/2e617d713547fe84.jpg", name: "その群青が愛しかったようだった" }
-    ,{ id: 267, level: 3, rate_base: 11.5, image: "img/a0d03551eb3930e9.jpg", name: "心象蜃気楼" }
-    ,{ id: 248, level: 2, rate_base: 12.3, image: "img/a2fdef9e4b278a51.jpg", name: "Schrecklicher Aufstand 赤" }
-    ,{ id: 7,   level: 3, rate_base: 13.6, image: "img/b602913a68fca621.jpg", name: "初音ミクの消失" }
-    ,{ id: 7,   level: 2, rate_base: 12.0, image: "img/b602913a68fca621.jpg", name: "初音ミクの消失　赤" }
-    ,{ id: 287, level: 3, rate_base: 11.9, image: "img/5febf5df2b5094f3.jpg", name: "ロミオとシンデレラ" }
-    ,{ id: 279, level: 3, rate_base: 11.7, image: "img/84ecaebe6bce2a58.jpg", name: "深海少女" }
-    ,{ id: 278, level: 3, rate_base: 11.4, image: "img/5f1d7a520a2735d4.jpg", name: "からくりピエロ" }
-    ,{ id: 286, level: 3, rate_base: 11.5, image: "img/afcce0c85c1f8610.jpg", name: "Tell Your World" }
-    ,{ id: 316, level: 3, rate_base: 11.5, image: "img/88f9536c08cb4e3f.jpg", name: "みくみくにしてあげる♪【してやんよ】" }
-    ,{ id: 288, level: 3, rate_base: 11.6, image: "img/f29f10a963df60cf.jpg", name: "First Twinkle" }
-    ,{ id: 273, level: 3, rate_base: 11.8, image: "img/604157e2c49d91d7.jpg", name: "ビバハピ" }
-    ,{ id: 250, level: 2, rate_base: 11.8, image: "img/989f4458fb34aa9d.jpg", name: "Philosopher 赤" }
-    ,{ id: 336, level: 3, rate_base: 12.0, image: "img/e40fceaa1bb587b7.jpg", name: "シジョウノコエ VOCALO ver." }
-    ,{ id: 319, level: 3, rate_base: 12.6, image: "img/e9eeb98572b140bc.jpg", name: "Say A Vengeance" }
-    ,{ id: 320, level: 3, rate_base: 12.6, image: "img/6b33d4fa539d5adb.jpg", name: "010" }
-    ,{ id: 321, level: 3, rate_base: 12.5, image: "img/40cc7a6a264f88c1.jpg", name: "ERIS -Legend of Gaidelia-" }
-    ,{ id: 137, level: 3, rate_base: 13.6, image: "img/13a5a9ca35a9b71b.jpg", name: "Angel dust" }
-    ,{ id: 187, level: 3, rate_base: 13.2, image: "img/e6642a96885723c1.jpg", name: "患部で止まってすぐ溶ける～狂気の優曇華院" }
-    ,{ id: 322, level: 3, rate_base: 13.6, image: "img/8b145fe4cf0c01bb.jpg", name: "Imperishable Night 2006 (2016 Refine)" }
-    ,{ id: 189, level: 3, rate_base: 12.7, image: "img/9310d07b7e02e73a.jpg", name: "ひれ伏せ愚民どもっ！" }
-    ,{ id: 300, level: 3, rate_base: 12.2, image: "img/012eb1ed09577836.jpg", name: "No Routine" }
-    ,{ id: 190, level: 3, rate_base: 12.6, image: "img/bbaa464731ab96a4.jpg", name: "エテルニタス・ルドロジー" }
-    ,{ id: 331, level: 3, rate_base: 12.2, image: "img/ec37e447b91995dd.jpg", name: "猛進ソリストライフ！" }
-    ,{ id: 259, level: 3, rate_base: 13.1, image: "img/4d66e5d1669d79a2.jpg", name: "Oshama Scramble! (Cranky Remix)" }
-    ,{ id: 230, level: 3, rate_base: 12.4, image: "img/b59d2b2ab877a77d.jpg", name: "Hyperion" }
-    ,{ id: 307, level: 3, rate_base: 12.7, image: "img/ff9f70c8c0d9f24e.jpg", name: "Paqqin" }
-    ,{ id: 229, level: 3, rate_base: 13.4, image: "img/73f86aec8d6c7c9b.jpg", name: "紅華刑" }
-    ,{ id: 262, level: 3, rate_base: 13.6, image: "img/676e59847912f5ca.jpg", name: "Tidal Wave" }
-    ,{ id: 323, level: 3, rate_base: 13.5, image: "img/282cb1cacd4c1bb4.jpg", name: "Dreadnought" }
-    ,{ id: 324, level: 3, rate_base: 12.6, image: "img/d51d4ffba9f8d45e.jpg", name: "STAGER" }
-    ,{ id: 325, level: 3, rate_base: 12.6, image: "img/97eca622afca0f15.jpg", name: "Her Majesty" }
-    ,{ id: 259, level: 2, rate_base: 11.3, image: "img/4d66e5d1669d79a2.jpg", name: "Oshama Scramble! (Cranky Remix) 赤" }
-    ,{ id: 229, level: 2, rate_base: 11.9, image: "img/73f86aec8d6c7c9b.jpg", name: "紅華刑 赤" }
-    ,{ id: 281, level: 3, rate_base: 13.4, image: "img/330e57eeeb0fb2cd.jpg", name: "ラクガキスト" }
-    ,{ id: 293, level: 3, rate_base: 13.2, image: "img/c58227eb0d14938c.jpg", name: "インビジブル" }
-    ,{ id: 270, level: 3, rate_base: 12.3, image: "img/21dfcd3ae2c5c370.jpg", name: "エンヴィキャットウォーク" }
-    ,{ id: 119, level: 3, rate_base: 12.3, image: "img/a7dd6716fcae0cb8.jpg", name: "アウターサイエンス" }
-    ,{ id: 313, level: 3, rate_base: 11.4, image: "img/5ac018495d6f01a5.jpg", name: "ひだまりデイズ" }
-    ,{ id: 296, level: 3, rate_base: 12.1, image: "img/76535cf4c728f2af.jpg", name: "かくしん的☆めたまるふぉ～ぜっ!" }
-    ,{ id: 326, level: 3, rate_base: 12.5, image: "img/fd01fc38e38042e3.jpg", name: "Sakura Fubuki" }
-    ,{ id: 327, level: 3, rate_base: 12.7, image: "img/17c363c1fd2fa7d1.jpg", name: "JULIAN" }
-    ,{ id: 264, level: 3, rate_base: 12.2, image: "img/f44c6b628889f8ec.jpg", name: "My Dearest Song" }
-    ,{ id: 291, level: 3, rate_base: 12.4, image: "img/9c5e71b3588dbc70.jpg", name: "Kronos" }
-];
-
 // latest rate
-var best_rate   = 0;
-var opt_rate    = 0;
-var disp_rate   = 0;
-var recent_rate = 0;
-var worst_chart_rate;
+var disp_rate         = 0;
+var best_rate         = 0;
+var best_list         = new Array();
+var best_rate_border;
+var recent_rate       = 0;
 var recent_candidates = new Array();
-var recent_list = new Array();
+var opt_rate          = 0;
 
 // load the last data from localStorage (if exists)
-var last_cra_version = JSON.parse(localStorage.getItem("cra_version"));
-var last_chart_list  = JSON.parse(localStorage.getItem("cra_chart_list"));
-var last_best_rate   = JSON.parse(localStorage.getItem("cra_best_rate"));
-var last_opt_rate    = JSON.parse(localStorage.getItem("cra_opt_rate"));
-var last_disp_rate   = JSON.parse(localStorage.getItem("cra_disp_rate"));
-var last_recent_rate = JSON.parse(localStorage.getItem("cra_recent_rate"));
+var last_cra_version       = JSON.parse(localStorage.getItem("cra_version"));
+var last_disp_rate         = JSON.parse(localStorage.getItem("cra_disp_rate"));
+var last_best_rate         = JSON.parse(localStorage.getItem("cra_best_rate"));
+var last_best_list         = JSON.parse(localStorage.getItem("cra_best_list"));
+var last_recent_rate       = JSON.parse(localStorage.getItem("cra_recent_rate"));
 var last_recent_candidates = JSON.parse(localStorage.getItem("cra_recent_candidates"));
-var last_recent_list = JSON.parse(localStorage.getItem("cra_recent_list"));
+var last_opt_rate          = JSON.parse(localStorage.getItem("cra_opt_rate"));
 
-// diff between the latest rate and the last rate
-var best_rate_diff;
-var opt_rate_diff;
-var recent_rate_diff;
+// diff between the current rate and the last rate
 var disp_rate_diff;
+var best_rate_diff;
+var recent_rate_diff;
+var opt_rate_diff;
 
 // -----------------------------------------------------------------------------
 // UI
@@ -616,10 +592,6 @@ $("#cra_window_inner")
                     fetch_score_data(2, function() {
                         fetch_score_data(3, function() {
                             fetch_playlog(function () {
-                                localStorage.setItem("cra_chart_list", JSON.stringify(chart_list));
-                                localStorage.setItem("cra_version", JSON.stringify(cra_version));
-                                localStorage.setItem("cra_recent_candidates", JSON.stringify(recent_candidates));
-                                localStorage.setItem("cra_recent_list", JSON.stringify(recent_list));
                                 $("#cra_close_button").show(400);
                                 rate_display();
                             });
@@ -633,10 +605,9 @@ if(cra_version == last_cra_version) {
     $("#cra_window_inner")
         .append($("<h2 id='page_title' class='cra_button cra_view_last'>前回のデータを見る</h2>")
                .click(function() {
-                   chart_list = last_chart_list;
+                   best_list = last_best_list;
                    disp_rate = last_disp_rate;
                    recent_candidates = last_recent_candidates;
-                   recent_list = last_recent_list;
                    rate_display();
                }));
 }
@@ -648,75 +619,76 @@ $("#cra_wrapper").delay(400).fadeIn(400);
 // fetch music / user data
 // -----------------------------------------------------------------------------
 
-// use GetUserPlaylogApi to fetch playlog, and update recent_candidates and recent_list
-function fetch_playlog(callback)
-{
-    function get_recent_list(recent_candidates) {
-        return [].concat(recent_candidates).sort(function (p1, p2) {
-            if (p1.rate !== p2.rate) return p2.rate - p1.rate;
-            else if (p1.play_date < p2.play_date) return -1;
-            else if (p1.play_date > p2.play_date) return 1;
-            return 0;
-        }).slice(0, 10);
+// Create playlog entity if music_info exists. Otherwise return null.
+function playlog(id, level, score, play_date /* optional */) {
+    var music_info = music_info[id];
+    var rate_base  = music_info && music_info.rate_base[id];
+    if (!rate_base) return null;
+    return {
+        id:        id,
+        level:     level,
+        score:     score,
+        rate:      score_to_rate(rate_base, score)
+        play_date: play_date,
+        rate_diff: 0,
+        rate_base: rate_base
+    };
+}
+
+function comp_rate(p1, p2) {
+    if (p1.rate !== p2.rate) return p2.rate - p1.rate;
+    else if (p1.play_date < p2.play_date) return -1;
+    else if (p1.play_date > p2.play_date) return 1;
+    return 0;
+}
+
+function comp_id(p1, p2) {
+    return (p1.id - p2.id) || (p1.level - p2.level);
+}
+
+// push new playlog to recent_candidates if appropriate.
+function push_playlog_to_recent_candidates (playlog) {
+    var recent_list = [].concat(recent_candidates).sort(comp_rate).slice(0, 10);
+    var min_rate    = Math.min.apply(null, recent_list.map(function (p) { return p.rate; }));
+    var min_score   = Math.min.apply(null, recent_list.map(function (p) { return p.score; }));
+
+    if (playlog.length < 30) {
+        recent_candidates.push(playlog);
     }
 
-    function create_playlog(rate_base, score, play_date, id, name, level, image) {
-        return {
-            id: id,
-            level: level,
-            rate_base: rate_base,
-            image: image,
-            name: name,
-            score: score,
-            rate: score_to_rate(rate_base, score),
-            play_date: play_date
-        };
-    }
-
-    $("#cra_window_inner").html("<p>loading playlog ...</p>");
-    request_api("GetUserPlaylogApi", {}, function (d) {
-        recent_candidates = last_recent_candidates || Array.apply(null, new Array(30)).map(function (_) { return create_playlog(0, 0, ""); });
-        var level_name_map = ["basic", "advance", "expert", "master", "worldsend"];
-        var last_play_date = recent_candidates[recent_candidates.length - 1].play_date;
-        for (var i = d.userPlaylogList.length - 1; i >= 0; i--) {
-            if (d.userPlaylogList[i].levelName != "expert" && d.userPlaylogList[i].levelName != "master")
-                continue;
-
-            if (d.userPlaylogList[i].userPlayDate <= last_play_date)
-                continue;
-
-            for (var j = 0; j < chart_list.length; j++) {
-                if (chart_list[j].name == d.userPlaylogList[i].musicName && level_name_map[chart_list[j].level] == d.userPlaylogList[i].levelName) {
-                    var playlog = create_playlog(
-                        chart_list[j].rate_base,
-                        d.userPlaylogList[i].score,
-                        d.userPlaylogList[i].userPlayDate,
-                        chart_list[j].id,
-                        chart_list[j].name,
-                        chart_list[j].level,
-                        chart_list[j].image);
-
-                    recent_list = get_recent_list(recent_candidates);
-
-                    if (playlog.rate > Math.min.apply(null, recent_list.map(function (p) { return p.rate; }))) {
-                        for (var k = 0; k < recent_candidates.length; k++) {
-                            if (recent_candidates[k].rate < playlog.rate) {
-                                recent_candidates.splice(k, 1);
-                                recent_candidates.push(playlog);
-                                break;
-                            }
-                        }
-                    }
-                    else if (playlog.score < 1007500 && playlog.score < Math.min.apply(null, recent_list.map(function (p) { return p.score; }))) {
-                        recent_candidates.shift();
-                        recent_candidates.push(playlog);
-                    }
-                }
+    else if (playlog.rate > min_rate) {
+        for (var k = 0; k < recent_candidates.length; k++) {
+            if (recent_candidates[k].rate < playlog.rate) {
+                recent_candidates.splice(k, 1);
+                recent_candidates.push(playlog);
+                break;
             }
         }
+    }
 
-        recent_list = get_recent_list(recent_candidates);
+    else if (playlog.score < 1007500 && playlog.score < min_score) {
+        recent_candidates.shift();
+        recent_candidates.push(playlog);
+    }
+}
 
+// use GetUserPlaylogApi to fetch playlog, and update
+// recent_candidates and recent_list.
+function fetch_playlog(callback)
+{
+    $("#cra_window_inner").html("<p>loading playlog ...</p>");
+    request_api("GetUserPlaylogApi", {}, function (d) {
+        var last_play_date = recent_candidates[recent_candidates.length - 1].play_date;
+        for (var i = d.userPlaylogList.length - 1; i >= 0; i--) {
+            var playlog = playlog(
+                d.userPlaylogList[i].musicId,
+                level_name_map[d.userPlaylogList[i].levelName],
+                d.userPlaylogList[i].score,
+                d.userPlaylogList[i].userPlayDate,
+            );
+            if (playlog && playlog.play_date > last_play_date)
+                push_playlog_to_recent_candidates(playlog);
+        }
         callback();
     }, function () {
         $("#cra_window_inner").html("<p>CHUNITHM NET との通信に失敗しました。</p>");
@@ -730,14 +702,13 @@ function fetch_score_data(level, callback)
     request_api("GetUserMusicApi", {
         level: "1990" + level
     }, function(d) {
-        var map = {};
-        for (var i = 0; i < d.userMusicList.length; i++)
-            map[d.userMusicList[i].musicId] = d.userMusicList[i].scoreMax;
-        for (var i = 0; i < chart_list.length; i++) {
-            if (chart_list[i].level == level) {
-                chart_list[i].score = map[chart_list[i].id] || 0;
-                chart_list[i].rate  = score_to_rate(chart_list[i].rate_base, chart_list[i].score);
-            }
+        for (var i = 0; i < d.userMusicList.length; i++) {
+            var playlog = playlog(
+                d.userMusicList[i].musicId,
+                level,
+                d.userMusicList[i].scoreMax
+            );
+            if (playlog) best_list.push(playlog);
         }
         callback();
     }, function() {
@@ -753,7 +724,6 @@ function fetch_user_data(callback)
         friendCode: 0, fileLevel: 1
     }, function(d) {
         disp_rate = d.userInfo.playerRating / 100.0;
-        localStorage.setItem("cra_disp_rate", JSON.stringify(disp_rate));
         callback();
     }, function() {
         $("#cra_window_inner")
@@ -1062,19 +1032,33 @@ function rate_display()
 {
     var i;
 
-    $("#cra_window_inner").html("<p>calculating rate ...</p>");
+    $("#cra_window_inner").html("<p>computing rate ...</p>");
+
+    // save lists to localstorage (before they get sorted)
+    localStorage.setItem("cra_version", JSON.stringify(cra_version));
+    localStorage.setItem("cra_best_list", JSON.stringify(best_list));
+    localStorage.setItem("cra_recent_candidates", JSON.stringify(recent_candidates));
+    localStorage.setItem("cra_recent_list", JSON.stringify(recent_list));
 
     // calculate score improvement
-    for (i = 0; i < chart_list.length; i++) {
-        chart_list[i].rate_diff =
-            !last_chart_list ? 0
-            : chart_list[i].rate - (last_chart_list[i] && last_chart_list[i].rate || 0);
+    best_list      = best_list.sort(comp_id);
+    last_best_list = last_best_list && last_best_list.sort(comp_id);
+    for (var i = 0, j = 0; i < best_list.length;) {
+        if (!last_best_list[j]) break;
+        var comp = comp_rate(best_list[i], last_best_list[j]);
+        if (comp < 0) j++;
+        else if (comp > 0) i++;
+        else {
+            best_list[i].rate_diff = best_list[i].rate - last_best_list[j].rate;
+            i++;
+            j++;
+        }
     }
 
     // calculate rate and their diff
-    chart_list.sort(function(a, b) { return - (a.rate - b.rate); });
-    for (i = 0; i < 30; i++) best_rate += chart_list[i].rate;
-    opt_rate = ((best_rate + chart_list[0].rate * 10) / 40);
+    best_list.sort(function(a, b) { return - (a.rate - b.rate); });
+    for (i = 0; i < 30; i++) best_rate += best_list[i].rate;
+    opt_rate = ((best_rate + best_list[0].rate * 10) / 40);
     best_rate = (best_rate / 30);
     recent_rate = disp_rate * 4 - best_rate * 3;
     best_rate_diff = last_best_rate ? best_rate - last_best_rate : 0;
@@ -1082,27 +1066,28 @@ function rate_display()
     disp_rate_diff = last_disp_rate ? disp_rate - last_disp_rate : 0;
     recent_rate_diff = last_recent_rate ? recent_rate - last_recent_rate : 0;
 
-    // save rate to localstorage
+    // save rates to localStorage
+    localStorage.setItem("cra_disp_rate", JSON.stringify(disp_rate));
     localStorage.setItem("cra_best_rate", JSON.stringify(best_rate));
     localStorage.setItem("cra_opt_rate", JSON.stringify(opt_rate));
     localStorage.setItem("cra_recent_rate", JSON.stringify(recent_rate));
 
     // calculate required score to improve the rate
-    worst_chart_rate = chart_list[29].rate;
-    for (i = 0; i < chart_list.length; i++)
+    best_rate_border = best_list[Math.min(29, best_list.length - 1)].rate;
+    for (i = 0; i < best_list.length; i++)
     {
-        chart_list[i].req_score = rate_to_score(chart_list[i].rate_base, worst_chart_rate);
-        chart_list[i].req_diff = Math.max(chart_list[i].req_score - chart_list[i].score, 0);
+        best_list[i].req_score = rate_to_score(best_list[i].rate_base, best_rate_border);
+        best_list[i].req_diff = Math.max(best_list[i].req_score - best_list[i].score, 0);
     }
 
     // calculate recommendability
     var block_ix = Math.max(0, Math.min(21, Math.ceil(best_rate * 10 - 130)));
-    for (i = 0; i < chart_list.length; i++) {
+    for (i = 0; i < best_list.length; i++) {
         var rate = expected_rate[block_ix][i];
-        chart_list[i].expected_improvement =
-              chart_list[i].rate >= rate || rate <= worst_chart_rate ? 0
-            : i < 30 ? rate - chart_list[i].rate
-            : rate - worst_chart_rate;
+        best_list[i].expected_improvement =
+              best_list[i].rate >= rate || rate <= best_rate_border ? 0
+            : i < 30 ? rate - best_list[i].rate
+            : rate - best_rate_border;
     }
 
     // remove window and show the result
@@ -1144,8 +1129,8 @@ function rate_display()
                   "(B: " + rate_str(best_rate) + rate_diff_str(best_rate_diff) + " + " +
                   "R: " + rate_str(recent_rate) + rate_diff_str(recent_rate_diff) + ") / " +
                   "最大レート: " + rate_str(opt_rate) + rate_diff_str(opt_rate_diff) + " / " +
-                  "曲別レートトップ: " + rate_str(chart_list[0].rate) +
-                  " (" + chart_list[0].name + ") #CHUNITHMRateAnalyzer")
+                  "曲別レートトップ: " + rate_str(best_list[0].rate) +
+                  " (" + best_list[0].name + ") #CHUNITHMRateAnalyzer")
             .html("Tweet");
 
         $("#cra_sort_menu")
@@ -1166,68 +1151,65 @@ function rate_display()
             .html("Follow");
 
         $("#cra_sort_rate").click(function() {
-            chart_list.sort(function(a, b) { return - (a.rate - b.rate); });
-            render_chart_list({ 0: "曲別レート (高い順)", 30: "BEST 枠ここまで" });
+            best_list.sort(comp_rate);
+            render_chart_list(best_list, { 0: "曲別レート (高い順)", 30: "BEST 枠ここまで" });
         });
 
         $("#cra_sort_base").click(function() {
-            chart_list.sort(function(a, b) { return - (a.rate_base - b.rate_base); });
+            best_list.sort(function(a, b) { return - (a.rate_base - b.rate_base); });
             var indices = { 0 : "LEVEL 13+" };
-            for (i = 0; chart_list[i].rate_base >= 13.7; i++) ;
+            for (i = 0; best_list[i].rate_base >= 13.7; i++) ;
             indices[i] = "LEVEL 13";
-            for (i = 0; chart_list[i].rate_base >= 13; i++) ;
+            for (i = 0; best_list[i].rate_base >= 13; i++) ;
             indices[i] = "LEVEL 12+";
-            for (i = 0; chart_list[i].rate_base >= 12.7; i++) ;
+            for (i = 0; best_list[i].rate_base >= 12.7; i++) ;
             indices[i] = "LEVEL 12";
-            for (i = 0; chart_list[i].rate_base >= 12; i++) ;
+            for (i = 0; best_list[i].rate_base >= 12; i++) ;
             indices[i] = "LEVEL 11";
-            render_chart_list(indices);
+            render_chart_list(best_list, indices);
         });
 
         $("#cra_sort_score").click(function() {
-            chart_list.sort(function(a, b) { return - (a.score - b.score) });
+            best_list.sort(function(a, b) { return - (a.score - b.score) });
             var indices = { 0 : "SSS" };
-            for (i = 0; chart_list[i].score >= 1007500; i++) ;
+            for (i = 0; best_list[i].score >= 1007500; i++) ;
             indices[i] = "SS";
-            for (i = 0; chart_list[i].score >= 1000000; i++) ;
+            for (i = 0; best_list[i].score >= 1000000; i++) ;
             indices[i] = "S";
-            for (i = 0; chart_list[i].score >=  975000; i++) ;
+            for (i = 0; best_list[i].score >=  975000; i++) ;
             indices[i] = "AAA";
-            for (i = 0; chart_list[i].score >=  950000; i++) ;
+            for (i = 0; best_list[i].score >=  950000; i++) ;
             indices[i] = "AA";
-            for (i = 0; chart_list[i].score >=  925000; i++) ;
+            for (i = 0; best_list[i].score >=  925000; i++) ;
             indices[i] = "A";
-            for (i = 0; chart_list[i].score >=  900000; i++) ;
+            for (i = 0; best_list[i].score >=  900000; i++) ;
             indices[i] = "A未満"
-            render_chart_list(indices);
+            render_chart_list(best_list, indices);
         });
 
         $("#cra_sort_score_req").click(function() {
-            chart_list.sort(function(a, b) {
+            best_list.sort(function(a, b) {
                 return (isNaN(b.req_diff) ? -1 : 0) + (isNaN(b.req_diff) ? 1 : 0)
                     || a.req_diff - b.req_diff
                     || - (a.rate_base - b.rate_base);
             });
-            render_chart_list({ 0: "レート上げに必要なスコア順", 30: "BEST 枠ここまで" });
+            render_chart_list(best_list, { 0: "レート上げに必要なスコア順", 30: "BEST 枠ここまで" });
         });
 
         $("#cra_sort_score_ave").click(function() {
             var indices = { };
-            chart_list.sort(function(a, b) {
+            best_list.sort(function(a, b) {
                     return - (a.expected_improvement - b.expected_improvement)
             });
-            for (var i = 0; i < chart_list.length && chart_list[i].expected_improvement > 0; i++) ;
+            for (var i = 0; i < best_list.length && best_list[i].expected_improvement > 0; i++) ;
             indices[0] = "おすすめ"
             indices[i] = "おすすめここまで"
-            render_chart_list(indices);
+            render_chart_list(best_list, indices);
         });
 
         $("#cra_recent_list").click(function () {
-            var indeices1 = { };
-            var indeices2 = { };
-            indeices1[0] = "Recent枠";
-            indeices2[0] = "Recent候補枠";
-            render_recent_list(indeices1, indeices2);
+            recent_candidates.sort(comp_rate);
+            render_chart_list(recent_candidates, { 0: 'Recent枠', 10: 'Recent候補枠'});
         });
 
         $("#cra_manage_play_data").click(function () {
@@ -1261,47 +1243,50 @@ function rate_display()
 
         // render chart list
         var indices = {};
-        chart_list.sort(function(a, b) {
+        best_list.sort(function(a, b) {
             return (a.rate_diff ? 0 : 1) + (b.rate_diff ? 0 : -1) || - (a.rate - b.rate);
         });
-        for (var i = 0; i < chart_list.length && chart_list[i].rate_diff != 0; i++) ;
+        for (var i = 0; i < best_list.length && best_list[i].rate_diff != 0; i++);
         if (i) indices[0] = "最近レートを更新した曲";
         indices[i] = "曲別レート (高い順)";
-        for (; i < chart_list.length && chart_list[i].req_diff <= 0; i++) ;
+        for (; i < best_list.length && best_list[i].req_diff <= 0; i++) ;
         indices[i] = "BEST 枠ここまで";
-        render_chart_list(indices);
+        render_chart_list(best_list, indices);
     });
 }
 
 // refresh the chart list display
-function render_chart_list(msgs)
+function render_chart_list(list, msgs)
 {
     // hide old items
     $("#cra_chart_list *").remove();
     $("#cra_chart_list").css({ display: "none" });
 
-    for (var i = 0; i < chart_list.length; i++)
+    for (var i = 0; i < list.length; i++)
     {
         if (msgs[i])
             $("#cra_chart_list")
             .append("<hr>")
             .append(dom(["div", {class: "mt_15"}, ["h2#page_title", msgs[i]]]));
 
-        if (isNaN(chart_list[i].req_diff))
-            continue;
+        // 満点出しても BEST 枠を改善できない譜面を出さない（Recent 枠
+        // の場合は req_diff = undefined なので影響しない）
+        if (isNaN(list[i].req_diff)) continue;
 
-        var difficulty_icon = chart_list[i].level == 2 ? "common/images/icon_expert.png"
+        var difficulty_icon = list[i].level == 2 ? "common/images/icon_expert.png"
             : "common/images/icon_master.png";
 
         var $list_item = $("<div class='frame02 w400 cra_chart_list_item'>")
             .appendTo("#cra_chart_list");
+
+        var music_info = music_info[list[i].id];
 
         $list_item
             .html(`
 <div class="play_jacket_side">
   <div class="play_jacket_area">
     <div id="Jacket" class="play_jacket_img">
-      <img src=${chart_list[i].image}>
+      <img src=${music_info.image}>
     </div>
   </div>
 </div>
@@ -1311,29 +1296,29 @@ function render_chart_list(msgs)
       <img src="${difficulty_icon}">
     </div>
     <div id="Track" class="play_track_text">
-      ${rate_str(chart_list[i].rate_base)}
+      ${rate_str(list[i].rate_base)}
     </div>
   </div>
   <div class="box02 play_musicdata_block">
     <div id="MusicTitle" class="play_musicdata_title">
-      ${chart_list[i].name}
+      ${music_info.name}
     </div>
     <div class="play_musicdata_score clearfix">
       <div class="play_musicdata_score_text">
-        Score：<span id="Score">${chart_list[i].score}</span>
+        Score：<span id="Score">${list[i].score}</span>
       </div>
       <br>
       <div class="play_musicdata_score_text">
         Rate：
         <span id="Rate">
-          ${rate_str(chart_list[i].rate)}${rate_diff_str(chart_list[i].rate_diff)}
+          ${rate_str(list[i].rate)}${rate_diff_str(list[i].rate_diff)}
         </span>
       </div>
     </div>
   </div>
   <div id="IconBatch" class="play_musicdata_icon clearfix">
-    ${chart_list[i].req_diff > 0 ?
-      "BEST枠入りまで: " + chart_list[i].req_diff + " (" + chart_list[i].req_score + ")" :
+    ${list[i].req_diff > 0 ?
+      "BEST枠入りまで: " + list[i].req_diff + " (" + list[i].req_score + ")" :
       ""}
   </div>
 </div>`);
@@ -1350,122 +1335,5 @@ function render_chart_list(msgs)
     }
 
     // $("#cra_chart_list").show(400);
-    $("#cra_chart_list").show();
-}
-
-// refresh the recent list display
-function render_recent_list(msgs1, msgs2)
-{
-    // hide old items
-    $("#cra_chart_list *").remove();
-    $("#cra_chart_list").css({ display: "none" });
-
-    for (var i = 0; i < recent_list.length; i++) {
-        if (msgs1[i])
-            $("#cra_chart_list")
-                .append("<hr>")
-                .append(dom(["div", { class: "mt_15" }, ["h2#page_title", msgs1[i]]]));
-
-        if (!recent_list[i].id || isNaN(recent_list[i].id))
-            continue;
-
-        var difficulty_icon = recent_list[i].level == 2 ? "common/images/icon_expert.png"
-            : "common/images/icon_master.png";
-
-        var $list_item = $("<div class='frame02 w400 cra_chart_list_item'>")
-            .appendTo("#cra_chart_list");
-
-        $list_item
-            .html(`
-<div class="play_jacket_side">
-  <div class="play_jacket_area">
-    <div id="Jacket" class="play_jacket_img">
-      <img src=${recent_list[i].image}>
-    </div>
-  </div>
-</div>
-<div class="play_data_side01">
-  <div class="box02 play_track_block">
-    <div id="TrackLevel" class="play_track_result">
-      <img src="${difficulty_icon}">
-    </div>
-    <div id="Track" class="play_track_text">
-      ${rate_str(recent_list[i].rate_base)}
-    </div>
-  </div>
-  <div class="box02 play_musicdata_block">
-    <div id="MusicTitle" class="play_musicdata_title">
-      ${recent_list[i].name}
-    </div>
-    <div class="play_musicdata_score clearfix">
-      <div class="play_musicdata_score_text">
-        Score：<span id="Score">${recent_list[i].score}</span>
-      </div>
-      <br>
-      <div class="play_musicdata_score_text">
-        Rate：
-        <span id="Rate">
-          ${rate_str(recent_list[i].rate)}
-        </span>
-      </div>
-    </div>
-  </div>
-</div>`);
-    }
-
-    for (var i = 0; i < recent_candidates.length; i++) {
-        var index = recent_candidates.length - (i + 1);
-        if (msgs2[i])
-            $("#cra_chart_list")
-                .append("<hr>")
-                .append(dom(["div", { class: "mt_15" }, ["h2#page_title", msgs2[i]]]));
-
-        if (!recent_candidates[index].id || isNaN(recent_candidates[index].id))
-            continue;
-
-        var difficulty_icon = recent_candidates[index].level == 2 ? "common/images/icon_expert.png"
-            : "common/images/icon_master.png";
-
-        var $list_item = $("<div class='frame02 w400 cra_chart_list_item'>")
-            .appendTo("#cra_chart_list");
-
-        $list_item
-            .html(`
-<div class="play_jacket_side">
-  <div class="play_jacket_area">
-    <div id="Jacket" class="play_jacket_img">
-      <img src=${recent_candidates[index].image}>
-    </div>
-  </div>
-</div>
-<div class="play_data_side01">
-  <div class="box02 play_track_block">
-    <div id="TrackLevel" class="play_track_result">
-      <img src="${difficulty_icon}">
-    </div>
-    <div id="Track" class="play_track_text">
-      ${rate_str(recent_candidates[index].rate_base)}
-    </div>
-  </div>
-  <div class="box02 play_musicdata_block">
-    <div id="MusicTitle" class="play_musicdata_title">
-      ${recent_candidates[index].name}
-    </div>
-    <div class="play_musicdata_score clearfix">
-      <div class="play_musicdata_score_text">
-        Score：<span id="Score">${recent_candidates[index].score}</span>
-      </div>
-      <br>
-      <div class="play_musicdata_score_text">
-        Rate：
-        <span id="Rate">
-          ${rate_str(recent_candidates[index].rate)}
-        </span>
-      </div>
-    </div>
-  </div>
-</div>`);
-    }
-
     $("#cra_chart_list").show();
 }
