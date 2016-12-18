@@ -423,8 +423,7 @@ var chart_list = [
     ,{ id: 257, level: 3, rate_base: 13.0, image: "img/bef9b79c637bf4c9.jpg", name: "BOKUTO"}
     ,{ id: 219, level: 2, rate_base: 12.7, image: "img/246f63902c4b0f89.jpg", name: "玩具狂奏曲 -終焉- 赤"}
     ,{ id: 219, level: 3, rate_base: 13.9, image: "img/246f63902c4b0f89.jpg", name: "玩具狂奏曲 -終焉-"}
-     
-   ];
+];
 
 // latest rate
 var best_rate   = 0;
