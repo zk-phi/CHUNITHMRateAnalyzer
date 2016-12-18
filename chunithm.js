@@ -414,7 +414,17 @@ var chart_list = [
     ,{ id: 327, level: 3, rate_base: 12.7, image: "img/17c363c1fd2fa7d1.jpg", name: "JULIAN" }
     ,{ id: 264, level: 3, rate_base: 12.2, image: "img/f44c6b628889f8ec.jpg", name: "My Dearest Song" }
     ,{ id: 291, level: 3, rate_base: 12.4, image: "img/9c5e71b3588dbc70.jpg", name: "Kronos" }
-];
+    ,{ id: 290, level: 3, rate_base: 11.3, image: "img/b1d08379f05c706e.jpg", name: "檄!帝国華撃団"}
+    ,{ id: 304, level: 3, rate_base: 11.7, image: "img/16cb8567115a2f2c.jpg", name: "In The Blue Sky ’01"}
+    ,{ id: 329, level: 3, rate_base: 12.3, image: "img/e869980ddd2f9c68.jpg", name: "STAIRWAY TO GENERATION"}
+    ,{ id: 332, level: 3, rate_base: 12.3, image: "img/41001ddd4214d6b6.jpg", name: "空威張りビヘイビア"}
+    ,{ id: 260, level: 3, rate_base: 12.4, image: "img/03f1dafe3b08607e.jpg", name: "D.E.A.D.L.Y."}
+    ,{ id: 289, level: 3, rate_base: 12.7, image: "img/0cece587cced4d3f.jpg", name: "ウソラセラ"}
+    ,{ id: 257, level: 3, rate_base: 13.0, image: "img/bef9b79c637bf4c9.jpg", name: "BOKUTO"}
+    ,{ id: 219, level: 2, rate_base: 12.7, image: "img/246f63902c4b0f89.jpg", name: "玩具狂奏曲 -終焉- 赤"}
+    ,{ id: 219, level: 3, rate_base: 13.9, image: "img/246f63902c4b0f89.jpg", name: "玩具狂奏曲 -終焉-"}
+     
+   ];
 
 // latest rate
 var best_rate   = 0;
