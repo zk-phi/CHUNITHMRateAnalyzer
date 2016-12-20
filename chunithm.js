@@ -26,7 +26,7 @@ var dependencies = [
 
 // ---- constants
 
-var level_name_map = {basic: 0, advance: 1, expert: 2, master: 3, worldsend: 4};
+var level_name_map = { basic: 0, advance: 1, expert: 2, master: 3, worldsend: 4 };
 
 var music_info = {
      003: { rate_base: {          3: 11.8 }, image: "img/d739ba44da6798a0.jpg", name: "B.B.K.K.B.K.K." }
@@ -88,6 +88,7 @@ var music_info = {
     ,096: { rate_base: {          3: 11.8 }, image: "img/9d2ebc847487e01b.jpg", name: "チルノのパーフェクトさんすう教室" }
     ,098: { rate_base: {          3: 11.4 }, image: "img/f7e67efaf6ced6ea.jpg", name: "魔理沙は大変なものを盗んでいきました" }
     ,099: { rate_base: {          3: 11.7 }, image: "img/ee332e6fa86661fd.jpg", name: "言ノ葉カルマ" }
+    ,101: { rate_base: {          3: 12.9 }, image: "img/81e347d3b96b2ae1.jpg", name: "Tango Rouge" }
     ,102: { rate_base: {          3: 12.5 }, image: "img/7fc6ae1b488b88de.jpg", name: "Tuning Rangers" }
     ,103: { rate_base: { 2: 11.7, 3: 13.7 }, image: "img/3210d321c2700a57.jpg", name: "エンドマークに希望と涙を添えて" }
     ,104: { rate_base: {          3: 12.5 }, image: "img/ff945c9cb9e43e83.jpg", name: "とーきょー全域★アキハバラ？" }
@@ -174,6 +175,7 @@ var music_info = {
     ,215: { rate_base: {          3: 12.4 }, image: "img/81cc90c04676f18b.jpg", name: "Falling Roses" }
     ,216: { rate_base: {          3: 12.3 }, image: "img/3227722a8345a950.jpg", name: "放課後革命" }
     ,217: { rate_base: {          3: 11.8 }, image: "img/2b3c90b1dab1ecff.jpg", name: "楽園ファンファーレ" }
+    ,219: { rate_base: { 2: 12.7, 3: 13.9 }, image: "img/246f63902c4b0f89.jpg", name: "玩具狂奏曲 -終焉-" }
     ,220: { rate_base: {          3: 12.3 }, image: "img/c3041fd82b0a0710.jpg", name: "如月アテンション" }
     ,222: { rate_base: {          3: 12.9 }, image: "img/ad33a423c865bed1.jpg", name: "Mr. Wonderland" }
     ,223: { rate_base: { 2: 11.0, 3: 13.0 }, image: "img/8ec9a26e11ec1a40.jpg", name: "カミサマネジマキ" }
@@ -200,7 +202,9 @@ var music_info = {
     ,252: { rate_base: {          3: 12.3 }, image: "img/bb221e3de960de7d.jpg", name: "愛迷エレジー" }
     ,254: { rate_base: {          3: 11.7 }, image: "img/2e617d713547fe84.jpg", name: "その群青が愛しかったようだった" }
     ,255: { rate_base: {          3: 11.1 }, image: "img/429d34fef5fddb02.jpg", name: "激情！ミルキィ大作戦" }
+    ,257: { rate_base: {          3: 13.0 }, image: "img/bef9b79c637bf4c9.jpg", name: "BOKUTO" }
     ,259: { rate_base: { 2: 11.3, 3: 13.1 }, image: "img/4d66e5d1669d79a2.jpg", name: "Oshama Scramble! (Cranky Remix)" }
+    ,260: { rate_base: {          3: 12.4 }, image: "img/03f1dafe3b08607e.jpg", name: "D.E.A.D.L.Y." }
     ,261: { rate_base: {          3: 12.3 }, image: "img/6e917606db3c5a0e.jpg", name: "ロボットプラネットユートピア" }
     ,262: { rate_base: {          3: 13.6 }, image: "img/676e59847912f5ca.jpg", name: "Tidal Wave" }
     ,263: { rate_base: {          3: 11.7 }, image: "img/015358a0c0580022.jpg", name: "Hand in Hand" }
@@ -215,6 +219,8 @@ var music_info = {
     ,286: { rate_base: {          3: 11.5 }, image: "img/afcce0c85c1f8610.jpg", name: "Tell Your World" }
     ,287: { rate_base: {          3: 11.9 }, image: "img/5febf5df2b5094f3.jpg", name: "ロミオとシンデレラ" }
     ,288: { rate_base: {          3: 11.6 }, image: "img/f29f10a963df60cf.jpg", name: "First Twinkle" }
+    ,289: { rate_base: {          3: 12.7 }, image: "img/0cece587cced4d3f.jpg", name: "ウソラセラ" }
+    ,290: { rate_base: {          3: 11.3 }, image: "img/b1d08379f05c706e.jpg", name: "檄!帝国華撃団" }
     ,291: { rate_base: {          3: 12.4 }, image: "img/9c5e71b3588dbc70.jpg", name: "Kronos" }
     ,292: { rate_base: {          3: 12.0 }, image: "img/b12c25f87b1d036e.jpg", name: "月に叢雲華に風" }
     ,293: { rate_base: {          3: 13.2 }, image: "img/c58227eb0d14938c.jpg", name: "インビジブル" }
@@ -222,6 +228,7 @@ var music_info = {
     ,298: { rate_base: {          3: 12.6 }, image: "img/7c649691aa0c4b3d.jpg", name: "PRIVATE SERVICE" }
     ,299: { rate_base: {          3: 11.4 }, image: "img/9bd44690db5375ac.jpg", name: "secret base ～君がくれたもの～ (10 years after Ver.)" }
     ,300: { rate_base: {          3: 12.2 }, image: "img/012eb1ed09577836.jpg", name: "No Routine" }
+    ,304: { rate_base: {          3: 11.7 }, image: "img/16cb8567115a2f2c.jpg", name: "In The Blue Sky ’01" }
     ,305: { rate_base: { 2: 11.0, 3: 13.3 }, image: "img/266bd38219201fa1.jpg", name: "幻想のサテライト" }
     ,306: { rate_base: {          3: 12.2 }, image: "img/106d9eec68ed84b3.jpg", name: "凛として咲く花の如く" }
     ,307: { rate_base: {          3: 12.7 }, image: "img/ff9f70c8c0d9f24e.jpg", name: "Paqqin" }
@@ -240,10 +247,11 @@ var music_info = {
     ,325: { rate_base: {          3: 12.6 }, image: "img/97eca622afca0f15.jpg", name: "Her Majesty" }
     ,326: { rate_base: {          3: 12.5 }, image: "img/fd01fc38e38042e3.jpg", name: "Sakura Fubuki" }
     ,327: { rate_base: {          3: 12.7 }, image: "img/17c363c1fd2fa7d1.jpg", name: "JULIAN" }
+    ,329: { rate_base: {          3: 12.3 }, image: "img/e869980ddd2f9c68.jpg", name: "STAIRWAY TO GENERATION" }
     ,330: { rate_base: {          3: 12.1 }, image: "img/b3ea0fe012eb7ea2.jpg", name: "ドキドキDREAM!!!" }
     ,331: { rate_base: {          3: 12.2 }, image: "img/ec37e447b91995dd.jpg", name: "猛進ソリストライフ！" }
+    ,332: { rate_base: {          3: 12.3 }, image: "img/41001ddd4214d6b6.jpg", name: "空威張りビヘイビア" }
     ,336: { rate_base: {          3: 12.0 }, image: "img/e40fceaa1bb587b7.jpg", name: "シジョウノコエ VOCALO ver." }
-    ,101: { rate_base: {          3: 12.9 }, image: "img/81e347d3b96b2ae1.jpg", name: "Tango Rouge" }
 };
 
 // ---- API wrappers
