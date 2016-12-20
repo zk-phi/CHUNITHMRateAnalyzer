@@ -636,7 +636,7 @@ function playlog(id, level, score, play_date /* optional */) {
         id:        id,
         level:     level,
         score:     score,
-        rate:      score_to_rate(rate_base, score)
+        rate:      score_to_rate(rate_base, score),
         play_date: play_date,
         rate_diff: 0,
         rate_base: rate_base
@@ -660,7 +660,7 @@ function push_playlog_to_recent_candidates (playlog) {
     var min_rate    = Math.min.apply(null, recent_list.map(function (p) { return p.rate; }));
     var min_score   = Math.min.apply(null, recent_list.map(function (p) { return p.score; }));
 
-    else if (playlog.rate > min_rate) {
+    if (playlog.rate > min_rate) {
         for (var k = 0; k < recent_candidates.length; k++) {
             if (recent_candidates[k].rate < playlog.rate) {
                 if (playlog.length >= 30) recent_candidates.splice(k, 1);
@@ -688,7 +688,7 @@ function fetch_playlog(callback)
                 d.userPlaylogList[i].musicId,
                 level_name_map[d.userPlaylogList[i].levelName],
                 d.userPlaylogList[i].score,
-                d.userPlaylogList[i].userPlayDate,
+                d.userPlaylogList[i].userPlayDate
             );
             if (playlog && playlog.play_date > last_play_date)
                 push_playlog_to_recent_candidates(playlog);
