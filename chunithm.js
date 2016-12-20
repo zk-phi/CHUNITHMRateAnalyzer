@@ -629,8 +629,8 @@ $("#cra_wrapper").delay(400).fadeIn(400);
 
 // Create playlog entity if music_info exists. Otherwise return null.
 function playlog(id, level, score, play_date /* optional */) {
-    var music_info = music_info[id];
-    var rate_base  = music_info && music_info.rate_base[id];
+    var info = music_info[id];
+    var rate_base  = info && info.rate_base[id];
     if (!rate_base) return null;
     return {
         id:        id,
@@ -655,24 +655,24 @@ function comp_id(p1, p2) {
 }
 
 // push new playlog to recent_candidates if appropriate.
-function push_playlog_to_recent_candidates (playlog) {
+function push_playlog_to_recent_candidates (log) {
     var recent_list = [].concat(recent_candidates).sort(comp_rate).slice(0, 10);
     var min_rate    = Math.min.apply(null, recent_list.map(function (p) { return p.rate; }));
     var min_score   = Math.min.apply(null, recent_list.map(function (p) { return p.score; }));
 
-    if (playlog.rate > min_rate) {
+    if (log.rate > min_rate) {
         for (var k = 0; k < recent_candidates.length; k++) {
-            if (recent_candidates[k].rate < playlog.rate) {
+            if (recent_candidates[k].rate < log.rate) {
                 if (playlog.length >= 30) recent_candidates.splice(k, 1);
-                recent_candidates.push(playlog);
+                recent_candidates.push(log);
                 break;
             }
         }
     }
 
-    else if (playlog.score < 1007500 && playlog.score < min_score) {
-        if (playlog.length >= 30) recent_candidates.shift();
-        recent_candidates.push(playlog);
+    else if (log.score < 1007500 && log.score < min_score) {
+        if (log.length >= 30) recent_candidates.shift();
+        recent_candidates.push(log);
     }
 }
 
@@ -684,14 +684,14 @@ function fetch_playlog(callback)
     request_api("GetUserPlaylogApi", {}, function (d) {
         var last_play_date = recent_candidates[recent_candidates.length - 1].play_date;
         for (var i = d.userPlaylogList.length - 1; i >= 0; i--) {
-            var playlog = playlog(
+            var log = playlog(
                 d.userPlaylogList[i].musicId,
                 level_name_map[d.userPlaylogList[i].levelName],
                 d.userPlaylogList[i].score,
                 d.userPlaylogList[i].userPlayDate
             );
-            if (playlog && playlog.play_date > last_play_date)
-                push_playlog_to_recent_candidates(playlog);
+            if (log && log.play_date > last_play_date)
+                push_playlog_to_recent_candidates(log);
         }
         callback();
     }, function () {
@@ -707,12 +707,12 @@ function fetch_score_data(level, callback)
         level: "1990" + level
     }, function(d) {
         for (var i = 0; i < d.userMusicList.length; i++) {
-            var playlog = playlog(
+            var log = playlog(
                 d.userMusicList[i].musicId,
                 level,
                 d.userMusicList[i].scoreMax
             );
-            if (playlog) best_list.push(playlog);
+            if (log) best_list.push(log);
         }
         callback();
     }, function() {
@@ -1283,14 +1283,14 @@ function render_chart_list(list, msgs)
         var $list_item = $("<div class='frame02 w400 cra_chart_list_item'>")
             .appendTo("#cra_chart_list");
 
-        var music_info = music_info[list[i].id];
+        var info = music_info[list[i].id];
 
         $list_item
             .html(`
 <div class="play_jacket_side">
   <div class="play_jacket_area">
     <div id="Jacket" class="play_jacket_img">
-      <img src=${music_info.image}>
+      <img src=${info.image}>
     </div>
   </div>
 </div>
@@ -1305,7 +1305,7 @@ function render_chart_list(list, msgs)
   </div>
   <div class="box02 play_musicdata_block">
     <div id="MusicTitle" class="play_musicdata_title">
-      ${music_info.name}
+      ${info.name}
     </div>
     <div class="play_musicdata_score clearfix">
       <div class="play_musicdata_score_text">
