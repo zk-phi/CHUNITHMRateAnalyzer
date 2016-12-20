@@ -401,23 +401,22 @@ function dom(template, params)
 // global vars
 // -----------------------------------------------------------------------------
 
-// latest rate
+// current values
 var disp_rate         = 0;
 var best_rate         = 0;
 var best_list         = new Array();
 var best_rate_border;
 var recent_rate       = 0;
-var recent_candidates = new Array();
 var opt_rate          = 0;
+var recent_candidates = JSON.parse(localStorage.getItem("cra_recent_candidates")) || new Array();
 
 // load the last data from localStorage (if exists)
-var last_cra_version       = JSON.parse(localStorage.getItem("cra_version"));
-var last_disp_rate         = JSON.parse(localStorage.getItem("cra_disp_rate"));
-var last_best_rate         = JSON.parse(localStorage.getItem("cra_best_rate"));
-var last_best_list         = JSON.parse(localStorage.getItem("cra_best_list"));
-var last_recent_rate       = JSON.parse(localStorage.getItem("cra_recent_rate"));
-var last_recent_candidates = JSON.parse(localStorage.getItem("cra_recent_candidates"));
-var last_opt_rate          = JSON.parse(localStorage.getItem("cra_opt_rate"));
+var last_cra_version = JSON.parse(localStorage.getItem("cra_version"));
+var last_disp_rate   = JSON.parse(localStorage.getItem("cra_disp_rate"));
+var last_best_rate   = JSON.parse(localStorage.getItem("cra_best_rate"));
+var last_best_list   = JSON.parse(localStorage.getItem("cra_best_list"));
+var last_recent_rate = JSON.parse(localStorage.getItem("cra_recent_rate"));
+var last_opt_rate    = JSON.parse(localStorage.getItem("cra_opt_rate"));
 
 // diff between the current rate and the last rate
 var disp_rate_diff;
@@ -615,7 +614,6 @@ if(cra_version == last_cra_version) {
                .click(function() {
                    best_list = last_best_list;
                    disp_rate = last_disp_rate;
-                   recent_candidates = last_recent_candidates;
                    rate_display();
                }));
 }
@@ -656,14 +654,15 @@ function comp_id(p1, p2) {
 
 // push new playlog to recent_candidates if appropriate.
 function push_playlog_to_recent_candidates (log) {
+    var len = recent_candidates.length;
     var recent_list = [].concat(recent_candidates).sort(comp_rate).slice(0, 10);
-    var min_rate    = Math.min.apply(null, recent_list.map(function (p) { return p.rate; }));
-    var min_score   = Math.min.apply(null, recent_list.map(function (p) { return p.score; }));
+    var min_rate    = len ? Math.min.apply(null, recent_list.map(function (p) { return p.rate; })) : 0;
+    var min_score   = len ? Math.min.apply(null, recent_list.map(function (p) { return p.score; })) : 0;
 
     if (log.rate > min_rate) {
         for (var k = 0; k < recent_candidates.length; k++) {
             if (recent_candidates[k].rate < log.rate) {
-                if (recent_candidates.length >= 30) recent_candidates.splice(k, 1);
+                if (len >= 30) recent_candidates.splice(k, 1);
                 recent_candidates.push(log);
                 break;
             }
@@ -671,7 +670,7 @@ function push_playlog_to_recent_candidates (log) {
     }
 
     else if (log.score < 1007500 && log.score < min_score) {
-        if (recent_candidates.length >= 30) recent_candidates.shift();
+        if (len >= 30) recent_candidates.shift();
         recent_candidates.push(log);
     }
 }
