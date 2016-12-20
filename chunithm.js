@@ -630,7 +630,7 @@ $("#cra_wrapper").delay(400).fadeIn(400);
 // Create playlog entity if music_info exists. Otherwise return null.
 function playlog(id, level, score, play_date /* optional */) {
     var info = music_info[id];
-    var rate_base  = info && info.rate_base[id];
+    var rate_base  = info && info.rate_base[level];
     if (!rate_base) return null;
     return {
         id:        id,
@@ -663,7 +663,7 @@ function push_playlog_to_recent_candidates (log) {
     if (log.rate > min_rate) {
         for (var k = 0; k < recent_candidates.length; k++) {
             if (recent_candidates[k].rate < log.rate) {
-                if (playlog.length >= 30) recent_candidates.splice(k, 1);
+                if (recent_candidates.length >= 30) recent_candidates.splice(k, 1);
                 recent_candidates.push(log);
                 break;
             }
@@ -671,7 +671,7 @@ function push_playlog_to_recent_candidates (log) {
     }
 
     else if (log.score < 1007500 && log.score < min_score) {
-        if (log.length >= 30) recent_candidates.shift();
+        if (recent_candidates.length >= 30) recent_candidates.shift();
         recent_candidates.push(log);
     }
 }
