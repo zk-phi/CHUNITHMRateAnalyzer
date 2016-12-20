@@ -682,7 +682,7 @@ function fetch_playlog(callback)
 {
     $("#cra_window_inner").html("<p>loading playlog ...</p>");
     request_api("GetUserPlaylogApi", {}, function (d) {
-        var last_play_date = recent_candidates[recent_candidates.length - 1].play_date;
+        var last_play_date = recent_candidates[0] && recent_candidates[recent_candidates.length - 1].play_date;
         for (var i = d.userPlaylogList.length - 1; i >= 0; i--) {
             var log = playlog(
                 d.userPlaylogList[i].musicId,
@@ -690,7 +690,7 @@ function fetch_playlog(callback)
                 d.userPlaylogList[i].score,
                 d.userPlaylogList[i].userPlayDate
             );
-            if (log && log.play_date > last_play_date)
+            if (log && (!last_play_date || log.play_date > last_play_date))
                 push_playlog_to_recent_candidates(log);
         }
         callback();
@@ -1042,7 +1042,6 @@ function rate_display()
     localStorage.setItem("cra_version", JSON.stringify(cra_version));
     localStorage.setItem("cra_best_list", JSON.stringify(best_list));
     localStorage.setItem("cra_recent_candidates", JSON.stringify(recent_candidates));
-    localStorage.setItem("cra_recent_list", JSON.stringify(recent_list));
 
     // calculate score improvement
     best_list      = best_list.sort(comp_id);
@@ -1061,7 +1060,7 @@ function rate_display()
 
     // calculate rate and their diff
     best_list.sort(function(a, b) { return - (a.rate - b.rate); });
-    for (i = 0; i < 30; i++) best_rate += best_list[i].rate;
+    for (i = 0; i < 30 && i < best_list.length; i++) best_rate += best_list[i].rate;
     opt_rate = ((best_rate + best_list[0].rate * 10) / 40);
     best_rate = (best_rate / 30);
     recent_rate = disp_rate * 4 - best_rate * 3;
