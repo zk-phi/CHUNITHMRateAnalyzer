@@ -660,14 +660,10 @@ function push_playlog_to_recent_candidates (playlog) {
     var min_rate    = Math.min.apply(null, recent_list.map(function (p) { return p.rate; }));
     var min_score   = Math.min.apply(null, recent_list.map(function (p) { return p.score; }));
 
-    if (playlog.length < 30) {
-        recent_candidates.push(playlog);
-    }
-
     else if (playlog.rate > min_rate) {
         for (var k = 0; k < recent_candidates.length; k++) {
             if (recent_candidates[k].rate < playlog.rate) {
-                recent_candidates.splice(k, 1);
+                if (playlog.length >= 30) recent_candidates.splice(k, 1);
                 recent_candidates.push(playlog);
                 break;
             }
@@ -675,7 +671,7 @@ function push_playlog_to_recent_candidates (playlog) {
     }
 
     else if (playlog.score < 1007500 && playlog.score < min_score) {
-        recent_candidates.shift();
+        if (playlog.length >= 30) recent_candidates.shift();
         recent_candidates.push(playlog);
     }
 }
