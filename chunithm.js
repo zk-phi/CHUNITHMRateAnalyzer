@@ -1,7 +1,7 @@
 // CHUNITHM Rate Analyzer (C) zk_phi 2015-
 
 // ※ localStorage のデータに互換性がなくなる場合は必ずバージョンを上げる
-var cra_version = 161224;
+var CRA_VERSION = 161224;
 
 if (!location.href.match(/^https:\/\/chunithm-net.com/)) {
     alert("CHUNITHM NET を開いているタブで実行してください。");
@@ -16,7 +16,7 @@ if (!location.href.match(/^https:\/\/chunithm-net.com/)) {
 
 // list of resources required to execute this script (note that all
 // resources must be provided via HTTPS)
-var dependencies = [
+var DEPENDENCIES = [
     "https://platform.twitter.com/widgets.js" // Twitter tweet/follow button
 ];
 
@@ -26,9 +26,9 @@ var dependencies = [
 
 // ---- constants
 
-var level_name_map = { basic: 0, advance: 1, expert: 2, master: 3, worldsend: 4 };
+var LEVEL_ID = { basic: 0, advance: 1, expert: 2, master: 3, worldsend: 4 };
 
-var music_info = {
+var MUSIC_INFO = {
      003: { rate_base: {          3: 11.8 }, image: "img/d739ba44da6798a0.jpg", name: "B.B.K.K.B.K.K." }
     ,005: { rate_base: {          3: 11.3 }, image: "img/38faf81803b730f3.jpg", name: "Scatman (Ski Ba Bop Ba Dop Bop)" }
     ,006: { rate_base: {          3: 12.3 }, image: "img/90589be457544570.jpg", name: "Reach for the Stars" }
@@ -555,7 +555,7 @@ var the_css = {
 
 // ---- load the dependencies and the CSS
 
-dependencies.map(function(x) { $("head").append("<script src='" + x + "'>"); });
+DEPENDENCIES.map(function(x) { $("head").append("<script src='" + x + "'>"); });
 $chunithm_net.fadeTo(400, 0.75);
 $("head").append("<style>" + _css(the_css) + "</style>");
 
@@ -608,7 +608,7 @@ $("#cra_window_inner")
            }));
 
 // view button
-if(cra_version == last_cra_version) {
+if(CRA_VERSION == last_cra_version) {
     $("#cra_window_inner")
         .append($("<h2 id='page_title' class='cra_button cra_view_last'>前回のデータを見る</h2>")
                .click(function() {
@@ -625,9 +625,9 @@ $("#cra_wrapper").delay(400).fadeIn(400);
 // fetch music / user data
 // -----------------------------------------------------------------------------
 
-// Create playlog entity if music_info exists. Otherwise return null.
+// Create playlog entity if MUSIC_INFO exists. Otherwise return null.
 function playlog(id, level, score, play_date /* optional */) {
-    var info = music_info[id];
+    var info = MUSIC_INFO[id];
     var rate_base  = info && info.rate_base[level];
     if (!rate_base) return null;
     return {
@@ -685,7 +685,7 @@ function fetch_playlog(callback)
         for (var i = d.userPlaylogList.length - 1; i >= 0; i--) {
             var log = playlog(
                 d.userPlaylogList[i].musicId,
-                level_name_map[d.userPlaylogList[i].levelName],
+                LEVEL_ID[d.userPlaylogList[i].levelName],
                 d.userPlaylogList[i].score,
                 d.userPlaylogList[i].userPlayDate
             );
@@ -1038,7 +1038,7 @@ function rate_display()
     $("#cra_window_inner").html("<p>computing rate ...</p>");
 
     // save lists to localstorage (before they get sorted)
-    localStorage.setItem("cra_version", JSON.stringify(cra_version));
+    localStorage.setItem("cra_version", JSON.stringify(CRA_VERSION));
     localStorage.setItem("cra_best_list", JSON.stringify(best_list));
     localStorage.setItem("cra_recent_candidates", JSON.stringify(recent_candidates));
 
@@ -1281,7 +1281,7 @@ function render_chart_list(list, msgs)
         var $list_item = $("<div class='frame02 w400 cra_chart_list_item'>")
             .appendTo("#cra_chart_list");
 
-        var info = music_info[list[i].id];
+        var info = MUSIC_INFO[list[i].id];
 
         $list_item
             .html(`
