@@ -1,7 +1,7 @@
 // CHUNITHM Rate Analyzer (C) zk_phi 2015-
 
 // ※ localStorage のデータに互換性がなくなる場合は必ずバージョンを上げる
-var CRA_VERSION = 161224;
+var CRA_VERSION = 170101;
 
 if (!location.href.match(/^https:\/\/chunithm-net.com/)) {
     alert("CHUNITHM NET を開いているタブで実行してください。");
