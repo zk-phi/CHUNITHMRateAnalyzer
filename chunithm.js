@@ -28,230 +28,230 @@ var DEPENDENCIES = [
 
 var LEVEL_ID = { basic: 0, advance: 1, expert: 2, master: 3, worldsend: 4 };
 
-var MUSIC_INFO = {
-     003: { rate_base: {          3: 11.8 }, image: "img/d739ba44da6798a0.jpg", name: "B.B.K.K.B.K.K." }
-    ,005: { rate_base: {          3: 11.3 }, image: "img/38faf81803b730f3.jpg", name: "Scatman (Ski Ba Bop Ba Dop Bop)" }
-    ,006: { rate_base: {          3: 12.3 }, image: "img/90589be457544570.jpg", name: "Reach for the Stars" }
-    ,007: { rate_base: { 2: 12.0, 3: 13.6 }, image: "img/b602913a68fca621.jpg", name: "初音ミクの消失" }
-    ,009: { rate_base: {          3: 11.3 }, image: "img/fce0bad9123dcd76.jpg", name: "情熱大陸" }
-    ,010: { rate_base: {          3: 11.7 }, image: "img/0d7bd146ebed6fba.jpg", name: "All I Want" }
-    ,014: { rate_base: {          3: 11.0 }, image: "img/af78dd039a36a4c7.jpg", name: "コネクト" }
-    ,017: { rate_base: {          3: 11.1 }, image: "img/696d4f956ebb4209.jpg", name: "空色デイズ" }
-    ,018: { rate_base: {          3: 11.2 }, image: "img/3c2606abe4dded71.jpg", name: "千本桜" }
-    ,019: { rate_base: {          3: 13.2 }, image: "img/0b98b8b4e7cfd997.jpg", name: "DRAGONLADY" }
-    ,021: { rate_base: {          3: 11.9 }, image: "img/4f69fb126f579c2f.jpg", name: "ナイト・オブ・ナイツ" }
-    ,023: { rate_base: {          3: 12.1 }, image: "img/b8ab9573859ebe4f.jpg", name: "一触即発☆禅ガール" }
-    ,027: { rate_base: {          3: 12.5 }, image: "img/fdc3bb451f6403d2.jpg", name: "タイガーランペイジ" }
-    ,033: { rate_base: {          3: 13.0 }, image: "img/fddc37caee47286d.jpg", name: "Blue Noise" }
-    ,035: { rate_base: {          3: 12.4 }, image: "img/aabf49add818546d.jpg", name: "Lapis" }
-    ,036: { rate_base: {          3: 11.0 }, image: "img/e273c9d64170b575.jpg", name: "届かない恋 '13" }
-    ,037: { rate_base: {          3: 11.3 }, image: "img/335dbb14cedb70bf.jpg", name: "鳥の詩" }
-    ,038: { rate_base: {          3: 11.0 }, image: "img/529d98ad07709ae5.jpg", name: "天ノ弱" }
-    ,041: { rate_base: {          3: 11.6 }, image: "img/7f17441bc2582ec8.jpg", name: "sweet little sister" }
-    ,042: { rate_base: {          3: 11.6 }, image: "img/4bbc4ec5ee9aa0b6.jpg", name: "oath sign" }
-    ,045: { rate_base: {          3: 12.2 }, image: "img/90dca26c66c5d5b7.jpg", name: "L9" }
-    ,047: { rate_base: {          3: 12.0 }, image: "img/5cb17a59f4b8c133.jpg", name: "六兆年と一夜物語" }
-    ,048: { rate_base: {          3: 11.8 }, image: "img/b38eba298df2c6db.jpg", name: "Unlimited Spark!" }
-    ,051: { rate_base: {          3: 12.7 }, image: "img/161f13a787a00032.jpg", name: "My First Phone" }
-    ,052: { rate_base: { 2: 11.1, 3: 13.2 }, image: "img/a62f975edc860e34.jpg", name: "Cyberozar" }
-    ,053: { rate_base: {          3: 12.3 }, image: "img/73ad66e81061bba3.jpg", name: "Teriqma" }
-    ,055: { rate_base: {          3: 11.2 }, image: "img/506f053a80e1b28e.jpg", name: "夏祭り" }
-    ,056: { rate_base: {          3: 11.0 }, image: "img/2535487ae13b2fd8.jpg", name: "そばかす" }
-    ,060: { rate_base: {          3: 11.3 }, image: "img/3bee1cce7d794f31.jpg", name: "only my railgun" }
-    ,061: { rate_base: { 2: 11.0, 3: 13.5 }, image: "img/2ccf97477eaf45ad.jpg", name: "GOLDEN RULE" }
-    ,062: { rate_base: {          3: 12.4 }, image: "img/9386971505bb20b0.jpg", name: "名も無い鳥" }
-    ,063: { rate_base: { 2: 11.7, 3: 13.1 }, image: "img/2df15f390356067f.jpg", name: "Gate of Fate" }
-    ,064: { rate_base: {          3: 12.7 }, image: "img/6bf934fede23724d.jpg", name: "今ぞ♡崇め奉れ☆オマエらよ！！～姫の秘メタル渇望～" }
-    ,065: { rate_base: {          3: 11.1 }, image: "img/713d52aa40ed7fc4.jpg", name: "Anemone" }
-    ,066: { rate_base: {          3: 12.3 }, image: "img/c22702914849a11a.jpg", name: "明るい未来" }
-    ,067: { rate_base: {          3: 11.2 }, image: "img/11437ebc94947550.jpg", name: "昵懇レファレンス" }
-    ,068: { rate_base: {          3: 11.7 }, image: "img/145b9b6f4c27d78e.jpg", name: "乗り切れ受験ウォーズ" }
-    ,069: { rate_base: { 2: 11.9, 3: 13.3 }, image: "img/c2c4ece2034eb620.jpg", name: "The wheel to the right" }
-    ,070: { rate_base: {          3: 12.4 }, image: "img/3ccebd87235f591c.jpg", name: "STAR" }
-    ,071: { rate_base: {          3: 12.3 }, image: "img/2bf02bef3051ecaf.jpg", name: "Infantoon Fantasy" }
-    ,072: { rate_base: {          3: 13.5 }, image: "img/ec3a366b4724f8f6.jpg", name: "Genesis" }
-    ,073: { rate_base: {          3: 12.6 }, image: "img/0c2791f737ce1ff2.jpg", name: "MUSIC PЯAYER" }
-    ,074: { rate_base: {          3: 11.0 }, image: "img/feef37ed3d91cfbd.jpg", name: "リリーシア" }
-    ,075: { rate_base: {          3: 11.7 }, image: "img/e1454dc2eeae2030.jpg", name: "Counselor" }
-    ,076: { rate_base: { 2: 11.8, 3: 13.4 }, image: "img/93abb77776c70b47.jpg", name: "luna blu" }
-    ,077: { rate_base: {          3: 12.8 }, image: "img/01fc7f761272bfb4.jpg", name: "ケモノガル" }
-    ,079: { rate_base: {          3: 11.0 }, image: "img/281f821a06a7da18.jpg", name: "ＧＯ！ＧＯ！ラブリズム♥" }
-    ,082: { rate_base: {          3: 12.5 }, image: "img/27ef71f8a76f1e8a.jpg", name: "Memories of Sun and Moon" }
-    ,083: { rate_base: {          3: 12.2 }, image: "img/181682bf5b277726.jpg", name: "ロストワンの号哭" }
-    ,088: { rate_base: {          3: 12.1 }, image: "img/c4223e68340efa41.jpg", name: "The Concept of Love" }
-    ,090: { rate_base: { 2: 11.6, 3: 13.2 }, image: "img/19d57f9a7652308a.jpg", name: "L'épisode" }
-    ,091: { rate_base: {          3: 11.2 }, image: "img/cb77a66b62023890.jpg", name: "Yet Another ”drizzly rain”" }
-    ,092: { rate_base: {          3: 12.8 }, image: "img/17315fb464f265bd.jpg", name: "最終鬼畜妹・一部声" }
-    ,093: { rate_base: {          3: 12.3 }, image: "img/6b40809324937ec9.jpg", name: "蒼空に舞え、墨染の桜" }
-    ,094: { rate_base: {          3: 12.3 }, image: "img/164258c65c714d50.jpg", name: "セツナトリップ" }
-    ,095: { rate_base: {          3: 12.1 }, image: "img/db38c119e4d8933e.jpg", name: "砂漠のハンティングガール♡" }
-    ,096: { rate_base: {          3: 11.8 }, image: "img/9d2ebc847487e01b.jpg", name: "チルノのパーフェクトさんすう教室" }
-    ,098: { rate_base: {          3: 11.4 }, image: "img/f7e67efaf6ced6ea.jpg", name: "魔理沙は大変なものを盗んでいきました" }
-    ,099: { rate_base: {          3: 11.7 }, image: "img/ee332e6fa86661fd.jpg", name: "言ノ葉カルマ" }
-    ,101: { rate_base: {          3: 12.9 }, image: "img/81e347d3b96b2ae1.jpg", name: "Tango Rouge" }
-    ,102: { rate_base: {          3: 12.5 }, image: "img/7fc6ae1b488b88de.jpg", name: "Tuning Rangers" }
-    ,103: { rate_base: { 2: 11.7, 3: 13.7 }, image: "img/3210d321c2700a57.jpg", name: "エンドマークに希望と涙を添えて" }
-    ,104: { rate_base: {          3: 12.5 }, image: "img/ff945c9cb9e43e83.jpg", name: "とーきょー全域★アキハバラ？" }
-    ,106: { rate_base: { 2: 12.2, 3: 13.8 }, image: "img/8219519cc94d5524.jpg", name: "宛城、炎上！！" }
-    ,107: { rate_base: {          3: 13.0 }, image: "img/b43fef626f5b88cd.jpg", name: "We Gonna Journey" }
-    ,108: { rate_base: {          3: 12.0 }, image: "img/1ec3213366f4ad57.jpg", name: "The ether" }
-    ,110: { rate_base: {          3: 11.2 }, image: "img/d42200159ef91521.jpg", name: "Magia" }
-    ,111: { rate_base: {          3: 11.3 }, image: "img/7ad659a57ef26888.jpg", name: "staple stable" }
-    ,112: { rate_base: {          3: 11.0 }, image: "img/3dc05a281c0724f7.jpg", name: "マジLOVE1000%" }
-    ,113: { rate_base: {          3: 11.4 }, image: "img/3f8eb68a4f6089dc.jpg", name: "ストリーミングハート" }
-    ,114: { rate_base: {          3: 11.4 }, image: "img/b02c3912d1524d5c.jpg", name: "Sweet Devil" }
-    ,115: { rate_base: {          3: 11.5 }, image: "img/9165ee58223accc0.jpg", name: "Dreaming" }
-    ,117: { rate_base: {          3: 11.5 }, image: "img/88124d980ac7eca4.jpg", name: "M.S.S.Planet" }
-    ,118: { rate_base: {          3: 12.0 }, image: "img/17e485acfe11a67f.jpg", name: "腐れ外道とチョコレゐト" }
-    ,119: { rate_base: {          3: 12.3 }, image: "img/a7dd6716fcae0cb8.jpg", name: "アウターサイエンス" }
-    ,120: { rate_base: {          3: 12.7 }, image: "img/a84a31e562efd7a0.jpg", name: "四次元跳躍機関" }
-    ,121: { rate_base: {          3: 12.5 }, image: "img/4196f71ce51620a0.jpg", name: "東方妖々夢 ～the maximum moving about～" }
-    ,122: { rate_base: {          3: 12.5 }, image: "img/67418ba28151c3ff.jpg", name: "少女幻葬戦慄曲　～　Necro Fantasia" }
-    ,124: { rate_base: {          3: 12.5 }, image: "img/74ce2f0a4b4f6fe2.jpg", name: "夏影" }
-    ,126: { rate_base: {          3: 11.3 }, image: "img/547ba5407b6e7fa0.jpg", name: "Heart To Heart" }
-    ,128: { rate_base: {          3: 12.7 }, image: "img/7edc6879319accfd.jpg", name: "The Formula" }
-    ,129: { rate_base: {          3: 11.2 }, image: "img/f56cd36303a3239a.jpg", name: "Hacking to the Gate" }
-    ,130: { rate_base: {          3: 11.7 }, image: "img/e4df0d48302ccd26.jpg", name: "スカイクラッドの観測者" }
-    ,131: { rate_base: {          3: 12.6 }, image: "img/38d3c5a5a45c6d07.jpg", name: "チルドレンレコード" }
-    ,132: { rate_base: {          3: 12.2 }, image: "img/1c508bbd42d335fe.jpg", name: "イカサマライフゲイム" }
-    ,134: { rate_base: { 2: 11.8, 3: 13.7 }, image: "img/08a24ed249ed2eec.jpg", name: "HAELEQUIN (Original Remaster)" }
-    ,135: { rate_base: {          3: 13.5 }, image: "img/e7ee14d9fe63d072.jpg", name: "Vallista" }
-    ,136: { rate_base: {          3: 12.5 }, image: "img/c4f977d264deafb1.jpg", name: "Äventyr" }
-    ,137: { rate_base: {          3: 13.6 }, image: "img/13a5a9ca35a9b71b.jpg", name: "Angel dust" }
-    ,138: { rate_base: {          3: 13.0 }, image: "img/478e8835e382f740.jpg", name: "conflict" }
-    ,140: { rate_base: {          3: 11.9 }, image: "img/0aad2e0ff661e7d1.jpg", name: "Guilty" }
-    ,141: { rate_base: { 2: 11.5, 3: 13.3 }, image: "img/2e6c11edba79d997.jpg", name: "閃鋼のブリューナク" }
-    ,142: { rate_base: {          3: 12.6 }, image: "img/a8d181c5442df7d2.jpg", name: "Altale" }
-    ,144: { rate_base: {          3: 13.3 }, image: "img/8b04b9ad2d49850c.jpg", name: "Aragami" }
-    ,145: { rate_base: {          3: 11.8 }, image: "img/0bb58f15b16703ab.jpg", name: "Change Our MIRAI！" }
-    ,146: { rate_base: {          3: 11.7 }, image: "img/d3b40f7b8e0758ff.jpg", name: "夕暮れワンルーム" }
-    ,148: { rate_base: {          3: 11.0 }, image: "img/cd458a75aa049889.jpg", name: "Theme of SeelischTact" }
-    ,149: { rate_base: {          3: 11.7 }, image: "img/c9c2fa20dcd9a46e.jpg", name: "緋色のDance" }
-    ,150: { rate_base: {          3: 11.8 }, image: "img/2a41ad71b77d12c9.jpg", name: "brilliant better" }
-    ,151: { rate_base: {          3: 12.5 }, image: "img/7237488215dbd1d3.jpg", name: "Alma" }
-    ,152: { rate_base: { 2: 11.7, 3: 13.0 }, image: "img/f63fab30a7b6f160.jpg", name: "Gustav Battle" }
-    ,154: { rate_base: {          3: 12.7 }, image: "img/2e9fdbbc15ade5cb.jpg", name: "SAVIOR OF SONG" }
-    ,156: { rate_base: {          3: 11.5 }, image: "img/b33923bd4e6e5609.jpg", name: "FREELY TOMORROW" }
-    ,157: { rate_base: {          3: 12.8 }, image: "img/573109ca9050f55d.jpg", name: "ギガンティック O.T.N" }
-    ,158: { rate_base: {          3: 11.0 }, image: "img/e3ce6712e8cddf10.jpg", name: "フォルテシモBELL" }
-    ,159: { rate_base: {          3: 13.3 }, image: "img/d5a47266b4fe0bfe.jpg", name: "ジングルベル" }
-    ,160: { rate_base: {          3: 11.5 }, image: "img/809bf2b3f8effa6f.jpg", name: "言ノ葉遊戯" }
-    ,161: { rate_base: {          3: 12.4 }, image: "img/4ceb5aed4a4a1c47.jpg", name: "私の中の幻想的世界観及びその顕現を想起させたある現実での出来事に関する一考察" }
-    ,163: { rate_base: {          3: 11.3 }, image: "img/fd6847e3bb2e3629.jpg", name: "幾四音-Ixion-" }
-    ,165: { rate_base: {          3: 12.8 }, image: "img/1e85c4b6775c84b0.jpg", name: "ぼくらの16bit戦争" }
-    ,166: { rate_base: {          3: 11.8 }, image: "img/5a0ac8501e3b95ce.jpg", name: "裏表ラバーズ" }
-    ,167: { rate_base: {          3: 12.7 }, image: "img/24611f2e2374e6a8.jpg", name: "脳漿炸裂ガール" }
-    ,168: { rate_base: {          3: 11.9 }, image: "img/1982767436fc52d8.jpg", name: "ネトゲ廃人シュプレヒコール" }
-    ,169: { rate_base: {          3: 11.4 }, image: "img/f092ddd9e1fe088b.jpg", name: "elegante" }
-    ,171: { rate_base: {          3: 12.3 }, image: "img/25abef88cb12af3e.jpg", name: "XL TECHNO" }
-    ,173: { rate_base: {          3: 13.1 }, image: "img/2e95529be9118a11.jpg", name: "Halcyon" }
-    ,176: { rate_base: {          3: 11.3 }, image: "img/aa0cefb5a0f00457.jpg", name: "Dance!" }
-    ,177: { rate_base: {          3: 12.6 }, image: "img/6e7843f9d831b0ac.jpg", name: "Jimang Shot" }
-    ,178: { rate_base: {          3: 12.7 }, image: "img/9f281db3bcc9353b.jpg", name: "stella=steLLa" }
-    ,179: { rate_base: {          3: 11.1 }, image: "img/0e73189a7083e4f4.jpg", name: "すろぉもぉしょん" }
-    ,180: { rate_base: { 2: 12.4, 3: 13.9 }, image: "img/a732d43fd2a11e8f.jpg", name: "怒槌" }
-    ,185: { rate_base: {          3: 11.2 }, image: "img/520c1fef62954ca6.jpg", name: "楽園の翼" }
-    ,187: { rate_base: {          3: 13.2 }, image: "img/e6642a96885723c1.jpg", name: "患部で止まってすぐ溶ける～狂気の優曇華院" }
-    ,189: { rate_base: {          3: 12.7 }, image: "img/9310d07b7e02e73a.jpg", name: "ひれ伏せ愚民どもっ！" }
-    ,190: { rate_base: {          3: 12.6 }, image: "img/bbaa464731ab96a4.jpg", name: "エテルニタス・ルドロジー" }
-    ,196: { rate_base: { 2: 11.9, 3: 13.7 }, image: "img/ed40032f25177518.jpg", name: "FREEDOM DiVE" }
-    ,197: { rate_base: { 2: 11.2, 3: 13.1 }, image: "img/ae6d3a8806e09613.jpg", name: "Jack-the-Ripper◆" }
-    ,199: { rate_base: {          3: 12.1 }, image: "img/d76afb63de1417f8.jpg", name: "ハート・ビート" }
-    ,200: { rate_base: {          3: 12.1 }, image: "img/569e7b07c0696bc7.jpg", name: "無敵We are one!!" }
-    ,201: { rate_base: { 2: 12.4, 3: 13.9 }, image: "img/a251c24a3cc4dbf7.jpg", name: "Contrapasso -inferno-" }
-    ,202: { rate_base: { 2: 11.2, 3: 13.1 }, image: "img/45112e2818cf80a2.jpg", name: "GEMINI -C-" }
-    ,203: { rate_base: {          3: 12.0 }, image: "img/101d4e7b03a5a89e.jpg", name: "FLOWER" }
-    ,204: { rate_base: {          3: 11.0 }, image: "img/1ea73ffbba6d7ead.jpg", name: "ちくわパフェだよ☆CKP" }
-    ,205: { rate_base: {          3: 12.7 }, image: "img/3d7803669dd3fcb9.jpg", name: "SNIPE WHOLE" }
-    ,206: { rate_base: {          3: 11.4 }, image: "img/e10bbd173df15772.jpg", name: "Signs Of Love (“Never More” ver.)" }
-    ,207: { rate_base: {          3: 11.7 }, image: "img/5151993f923b06a5.jpg", name: "Your Affection (Daisuke Asakura Remix)" }
-    ,208: { rate_base: {          3: 12.7 }, image: "img/5bab1a38b98d59b5.jpg", name: "SAMBISTA" }
-    ,209: { rate_base: {          3: 11.7 }, image: "img/5744f4cf66710a56.jpg", name: "君色シグナル" }
-    ,210: { rate_base: {          3: 12.4 }, image: "img/040cd43234aed57a.jpg", name: "アスノヨゾラ哨戒班" }
-    ,211: { rate_base: {          3: 12.2 }, image: "img/d99079fecaa936ab.jpg", name: "天樂" }
-    ,212: { rate_base: {          3: 12.1 }, image: "img/1ee29f73ee8f53d0.jpg", name: "いろは唄" }
-    ,213: { rate_base: {          3: 11.9 }, image: "img/c6d494f528391d1c.jpg", name: "星屑ユートピア" }
-    ,214: { rate_base: {          3: 11.9 }, image: "img/f4a2d88c38669f72.jpg", name: "青春はNon-Stop!" }
-    ,215: { rate_base: {          3: 12.4 }, image: "img/81cc90c04676f18b.jpg", name: "Falling Roses" }
-    ,216: { rate_base: {          3: 12.3 }, image: "img/3227722a8345a950.jpg", name: "放課後革命" }
-    ,217: { rate_base: {          3: 11.8 }, image: "img/2b3c90b1dab1ecff.jpg", name: "楽園ファンファーレ" }
-    ,219: { rate_base: { 2: 12.7, 3: 13.9 }, image: "img/246f63902c4b0f89.jpg", name: "玩具狂奏曲 -終焉-" }
-    ,220: { rate_base: {          3: 12.3 }, image: "img/c3041fd82b0a0710.jpg", name: "如月アテンション" }
-    ,222: { rate_base: {          3: 12.9 }, image: "img/ad33a423c865bed1.jpg", name: "Mr. Wonderland" }
-    ,223: { rate_base: { 2: 11.0, 3: 13.0 }, image: "img/8ec9a26e11ec1a40.jpg", name: "カミサマネジマキ" }
-    ,224: { rate_base: {          3: 11.1 }, image: "img/b9d170f84c1bb5d3.jpg", name: "恋愛裁判" }
-    ,225: { rate_base: {          3: 12.1 }, image: "img/6f86e2a47e9a283c.jpg", name: "ウミユリ海底譚" }
-    ,226: { rate_base: { 2: 12.3, 3: 13.8 }, image: "img/993b5cddb9d9badf.jpg", name: "Garakuta Doll Play" }
-    ,227: { rate_base: {          3: 11.5 }, image: "img/74c77deb2f2e5e07.jpg", name: "洗脳" }
-    ,228: { rate_base: {          3: 12.0 }, image: "img/882be51fe439614d.jpg", name: "このふざけた素晴らしき世界は、僕の為にある" }
-    ,229: { rate_base: { 2: 11.9, 3: 13.4 }, image: "img/73f86aec8d6c7c9b.jpg", name: "紅華刑" }
-    ,230: { rate_base: {          3: 12.4 }, image: "img/b59d2b2ab877a77d.jpg", name: "Hyperion" }
-    ,232: { rate_base: { 2: 11.3, 3: 13.4 }, image: "img/a2069fdb9d860d36.jpg", name: "Elemental Creation" }
-    ,233: { rate_base: {          3: 12.2 }, image: "img/5fe5db1d2e40ee7a.jpg", name: "アルストロメリア" }
-    ,235: { rate_base: {          3: 12.5 }, image: "img/8b84b06033585428.jpg", name: "ファッとして桃源郷" }
-    ,238: { rate_base: {          3: 11.9 }, image: "img/4c769ae611f83d21.jpg", name: "フレンズ" }
-    ,240: { rate_base: {          3: 12.6 }, image: "img/47397105bad447fb.jpg", name: "夜咄ディセイブ" }
-    ,243: { rate_base: {          3: 12.2 }, image: "img/8872c759bea3bd9f.jpg", name: "シュガーソングとビターステップ" }
-    ,244: { rate_base: {          3: 12.3 }, image: "img/e0a700914896ea4a.jpg", name: "回レ！雪月花" }
-    ,245: { rate_base: {          3: 11.4 }, image: "img/630ac5b31e8ab816.jpg", name: "Help me, あーりん！" }
-    ,246: { rate_base: {          3: 12.7 }, image: "img/d445e4878a818d8b.jpg", name: "なるとなぎのパーフェクトロックンロール教室" }
-    ,247: { rate_base: {          3: 11.9 }, image: "img/58847f9694837c0b.jpg", name: "絶世スターゲイト" }
-    ,248: { rate_base: { 2: 12.3, 3: 13.9 }, image: "img/a2fdef9e4b278a51.jpg", name: "Schrecklicher Aufstand" }
-    ,250: { rate_base: { 2: 11.8, 3: 13.5 }, image: "img/989f4458fb34aa9d.jpg", name: "Philosopher" }
-    ,251: { rate_base: {          3: 12.5 }, image: "img/457722c9f3ff5473.jpg", name: "Crazy ∞ nighT" }
-    ,252: { rate_base: {          3: 12.3 }, image: "img/bb221e3de960de7d.jpg", name: "愛迷エレジー" }
-    ,254: { rate_base: {          3: 11.7 }, image: "img/2e617d713547fe84.jpg", name: "その群青が愛しかったようだった" }
-    ,255: { rate_base: {          3: 11.1 }, image: "img/429d34fef5fddb02.jpg", name: "激情！ミルキィ大作戦" }
-    ,257: { rate_base: {          3: 13.0 }, image: "img/bef9b79c637bf4c9.jpg", name: "BOKUTO" }
-    ,259: { rate_base: { 2: 11.3, 3: 13.1 }, image: "img/4d66e5d1669d79a2.jpg", name: "Oshama Scramble! (Cranky Remix)" }
-    ,260: { rate_base: {          3: 12.4 }, image: "img/03f1dafe3b08607e.jpg", name: "D.E.A.D.L.Y." }
-    ,261: { rate_base: {          3: 12.3 }, image: "img/6e917606db3c5a0e.jpg", name: "ロボットプラネットユートピア" }
-    ,262: { rate_base: {          3: 13.6 }, image: "img/676e59847912f5ca.jpg", name: "Tidal Wave" }
-    ,263: { rate_base: {          3: 11.7 }, image: "img/015358a0c0580022.jpg", name: "Hand in Hand" }
-    ,264: { rate_base: {          3: 12.2 }, image: "img/f44c6b628889f8ec.jpg", name: "My Dearest Song" }
-    ,267: { rate_base: {          3: 11.5 }, image: "img/a0d03551eb3930e9.jpg", name: "心象蜃気楼" }
-    ,270: { rate_base: {          3: 12.3 }, image: "img/21dfcd3ae2c5c370.jpg", name: "エンヴィキャットウォーク" }
-    ,273: { rate_base: {          3: 11.8 }, image: "img/604157e2c49d91d7.jpg", name: "ビバハピ" }
-    ,276: { rate_base: {          3: 12.4 }, image: "img/82105b37d18450b6.jpg", name: "後夜祭" }
-    ,278: { rate_base: {          3: 11.4 }, image: "img/5f1d7a520a2735d4.jpg", name: "からくりピエロ" }
-    ,279: { rate_base: {          3: 11.7 }, image: "img/84ecaebe6bce2a58.jpg", name: "深海少女" }
-    ,281: { rate_base: {          3: 13.4 }, image: "img/330e57eeeb0fb2cd.jpg", name: "ラクガキスト" }
-    ,286: { rate_base: {          3: 11.5 }, image: "img/afcce0c85c1f8610.jpg", name: "Tell Your World" }
-    ,287: { rate_base: {          3: 11.9 }, image: "img/5febf5df2b5094f3.jpg", name: "ロミオとシンデレラ" }
-    ,288: { rate_base: {          3: 11.6 }, image: "img/f29f10a963df60cf.jpg", name: "First Twinkle" }
-    ,289: { rate_base: {          3: 12.7 }, image: "img/0cece587cced4d3f.jpg", name: "ウソラセラ" }
-    ,290: { rate_base: {          3: 11.3 }, image: "img/b1d08379f05c706e.jpg", name: "檄!帝国華撃団" }
-    ,291: { rate_base: {          3: 12.4 }, image: "img/9c5e71b3588dbc70.jpg", name: "Kronos" }
-    ,292: { rate_base: {          3: 12.0 }, image: "img/b12c25f87b1d036e.jpg", name: "月に叢雲華に風" }
-    ,293: { rate_base: {          3: 13.2 }, image: "img/c58227eb0d14938c.jpg", name: "インビジブル" }
-    ,296: { rate_base: {          3: 12.1 }, image: "img/76535cf4c728f2af.jpg", name: "かくしん的☆めたまるふぉ～ぜっ!" }
-    ,298: { rate_base: {          3: 12.6 }, image: "img/7c649691aa0c4b3d.jpg", name: "PRIVATE SERVICE" }
-    ,299: { rate_base: {          3: 11.4 }, image: "img/9bd44690db5375ac.jpg", name: "secret base ～君がくれたもの～ (10 years after Ver.)" }
-    ,300: { rate_base: {          3: 12.2 }, image: "img/012eb1ed09577836.jpg", name: "No Routine" }
-    ,304: { rate_base: {          3: 11.7 }, image: "img/16cb8567115a2f2c.jpg", name: "In The Blue Sky ’01" }
-    ,305: { rate_base: { 2: 11.0, 3: 13.3 }, image: "img/266bd38219201fa1.jpg", name: "幻想のサテライト" }
-    ,306: { rate_base: {          3: 12.2 }, image: "img/106d9eec68ed84b3.jpg", name: "凛として咲く花の如く" }
-    ,307: { rate_base: {          3: 12.7 }, image: "img/ff9f70c8c0d9f24e.jpg", name: "Paqqin" }
-    ,308: { rate_base: {          3: 11.9 }, image: "img/f8d3f2e57ae2ff24.jpg", name: "fake!fake!" }
-    ,309: { rate_base: {          3: 12.5 }, image: "img/cee51d69c428f8f5.jpg", name: "Rising Hope" }
-    ,313: { rate_base: {          3: 11.4 }, image: "img/5ac018495d6f01a5.jpg", name: "ひだまりデイズ" }
-    ,316: { rate_base: {          3: 11.5 }, image: "img/88f9536c08cb4e3f.jpg", name: "みくみくにしてあげる♪【してやんよ】" }
-    ,317: { rate_base: {          3: 13.4 }, image: "img/db15d5b7aefaa672.jpg", name: "Air" }
-    ,318: { rate_base: {          3: 13.1 }, image: "img/f803d578eb4047eb.jpg", name: "DataErr0r" }
-    ,319: { rate_base: {          3: 12.6 }, image: "img/e9eeb98572b140bc.jpg", name: "Say A Vengeance" }
-    ,320: { rate_base: {          3: 12.6 }, image: "img/6b33d4fa539d5adb.jpg", name: "010" }
-    ,321: { rate_base: {          3: 12.5 }, image: "img/40cc7a6a264f88c1.jpg", name: "ERIS -Legend of Gaidelia-" }
-    ,322: { rate_base: {          3: 13.6 }, image: "img/8b145fe4cf0c01bb.jpg", name: "Imperishable Night 2006 (2016 Refine)" }
-    ,323: { rate_base: {          3: 13.5 }, image: "img/282cb1cacd4c1bb4.jpg", name: "Dreadnought" }
-    ,324: { rate_base: {          3: 12.6 }, image: "img/d51d4ffba9f8d45e.jpg", name: "STAGER" }
-    ,325: { rate_base: {          3: 12.6 }, image: "img/97eca622afca0f15.jpg", name: "Her Majesty" }
-    ,326: { rate_base: {          3: 12.5 }, image: "img/fd01fc38e38042e3.jpg", name: "Sakura Fubuki" }
-    ,327: { rate_base: {          3: 12.7 }, image: "img/17c363c1fd2fa7d1.jpg", name: "JULIAN" }
-    ,329: { rate_base: {          3: 12.3 }, image: "img/e869980ddd2f9c68.jpg", name: "STAIRWAY TO GENERATION" }
-    ,330: { rate_base: {          3: 12.1 }, image: "img/b3ea0fe012eb7ea2.jpg", name: "ドキドキDREAM!!!" }
-    ,331: { rate_base: {          3: 12.2 }, image: "img/ec37e447b91995dd.jpg", name: "猛進ソリストライフ！" }
-    ,332: { rate_base: {          3: 12.3 }, image: "img/41001ddd4214d6b6.jpg", name: "空威張りビヘイビア" }
-    ,336: { rate_base: {          3: 12.0 }, image: "img/e40fceaa1bb587b7.jpg", name: "シジョウノコエ VOCALO ver." }
+var DIFFICULTY = {
+     003: { rate_base: {          3: 11.8 }, image: "img/d739ba44da6798a0.jpg" } // B.B.K.K.B.K.K.
+    ,005: { rate_base: {          3: 11.3 }, image: "img/38faf81803b730f3.jpg" } // Scatman (Ski Ba Bop Ba Dop Bop)
+    ,006: { rate_base: {          3: 12.3 }, image: "img/90589be457544570.jpg" } // Reach for the Stars
+    ,007: { rate_base: { 2: 12.0, 3: 13.6 }, image: "img/b602913a68fca621.jpg" } // 初音ミクの消失
+    ,009: { rate_base: {          3: 11.3 }, image: "img/fce0bad9123dcd76.jpg" } // 情熱大陸
+    ,010: { rate_base: {          3: 11.7 }, image: "img/0d7bd146ebed6fba.jpg" } // All I Want
+    ,014: { rate_base: {          3: 11.0 }, image: "img/af78dd039a36a4c7.jpg" } // コネクト
+    ,017: { rate_base: {          3: 11.1 }, image: "img/696d4f956ebb4209.jpg" } // 空色デイズ
+    ,018: { rate_base: {          3: 11.2 }, image: "img/3c2606abe4dded71.jpg" } // 千本桜
+    ,019: { rate_base: {          3: 13.2 }, image: "img/0b98b8b4e7cfd997.jpg" } // DRAGONLADY
+    ,021: { rate_base: {          3: 11.9 }, image: "img/4f69fb126f579c2f.jpg" } // ナイト・オブ・ナイツ
+    ,023: { rate_base: {          3: 12.1 }, image: "img/b8ab9573859ebe4f.jpg" } // 一触即発☆禅ガール
+    ,027: { rate_base: {          3: 12.5 }, image: "img/fdc3bb451f6403d2.jpg" } // タイガーランペイジ
+    ,033: { rate_base: {          3: 13.0 }, image: "img/fddc37caee47286d.jpg" } // Blue Noise
+    ,035: { rate_base: {          3: 12.4 }, image: "img/aabf49add818546d.jpg" } // Lapis
+    ,036: { rate_base: {          3: 11.0 }, image: "img/e273c9d64170b575.jpg" } // 届かない恋 '13
+    ,037: { rate_base: {          3: 11.3 }, image: "img/335dbb14cedb70bf.jpg" } // 鳥の詩
+    ,038: { rate_base: {          3: 11.0 }, image: "img/529d98ad07709ae5.jpg" } // 天ノ弱
+    ,041: { rate_base: {          3: 11.6 }, image: "img/7f17441bc2582ec8.jpg" } // sweet little sister
+    ,042: { rate_base: {          3: 11.6 }, image: "img/4bbc4ec5ee9aa0b6.jpg" } // oath sign
+    ,045: { rate_base: {          3: 12.2 }, image: "img/90dca26c66c5d5b7.jpg" } // L9
+    ,047: { rate_base: {          3: 12.0 }, image: "img/5cb17a59f4b8c133.jpg" } // 六兆年と一夜物語
+    ,048: { rate_base: {          3: 11.8 }, image: "img/b38eba298df2c6db.jpg" } // Unlimited Spark!
+    ,051: { rate_base: {          3: 12.7 }, image: "img/161f13a787a00032.jpg" } // My First Phone
+    ,052: { rate_base: { 2: 11.1, 3: 13.2 }, image: "img/a62f975edc860e34.jpg" } // Cyberozar
+    ,053: { rate_base: {          3: 12.3 }, image: "img/73ad66e81061bba3.jpg" } // Teriqma
+    ,055: { rate_base: {          3: 11.2 }, image: "img/506f053a80e1b28e.jpg" } // 夏祭り
+    ,056: { rate_base: {          3: 11.0 }, image: "img/2535487ae13b2fd8.jpg" } // そばかす
+    ,060: { rate_base: {          3: 11.3 }, image: "img/3bee1cce7d794f31.jpg" } // only my railgun
+    ,061: { rate_base: { 2: 11.0, 3: 13.5 }, image: "img/2ccf97477eaf45ad.jpg" } // GOLDEN RULE
+    ,062: { rate_base: {          3: 12.4 }, image: "img/9386971505bb20b0.jpg" } // 名も無い鳥
+    ,063: { rate_base: { 2: 11.7, 3: 13.1 }, image: "img/2df15f390356067f.jpg" } // Gate of Fate
+    ,064: { rate_base: {          3: 12.7 }, image: "img/6bf934fede23724d.jpg" } // 今ぞ♡崇め奉れ☆オマエらよ！！～姫の秘メタル渇望～
+    ,065: { rate_base: {          3: 11.1 }, image: "img/713d52aa40ed7fc4.jpg" } // Anemone
+    ,066: { rate_base: {          3: 12.3 }, image: "img/c22702914849a11a.jpg" } // 明るい未来
+    ,067: { rate_base: {          3: 11.2 }, image: "img/11437ebc94947550.jpg" } // 昵懇レファレンス
+    ,068: { rate_base: {          3: 11.7 }, image: "img/145b9b6f4c27d78e.jpg" } // 乗り切れ受験ウォーズ
+    ,069: { rate_base: { 2: 11.9, 3: 13.3 }, image: "img/c2c4ece2034eb620.jpg" } // The wheel to the right
+    ,070: { rate_base: {          3: 12.4 }, image: "img/3ccebd87235f591c.jpg" } // STAR
+    ,071: { rate_base: {          3: 12.3 }, image: "img/2bf02bef3051ecaf.jpg" } // Infantoon Fantasy
+    ,072: { rate_base: {          3: 13.5 }, image: "img/ec3a366b4724f8f6.jpg" } // Genesis
+    ,073: { rate_base: {          3: 12.6 }, image: "img/0c2791f737ce1ff2.jpg" } // MUSIC PЯAYER
+    ,074: { rate_base: {          3: 11.0 }, image: "img/feef37ed3d91cfbd.jpg" } // リリーシア
+    ,075: { rate_base: {          3: 11.7 }, image: "img/e1454dc2eeae2030.jpg" } // Counselor
+    ,076: { rate_base: { 2: 11.8, 3: 13.4 }, image: "img/93abb77776c70b47.jpg" } // luna blu
+    ,077: { rate_base: {          3: 12.8 }, image: "img/01fc7f761272bfb4.jpg" } // ケモノガル
+    ,079: { rate_base: {          3: 11.0 }, image: "img/281f821a06a7da18.jpg" } // ＧＯ！ＧＯ！ラブリズム♥
+    ,082: { rate_base: {          3: 12.5 }, image: "img/27ef71f8a76f1e8a.jpg" } // Memories of Sun and Moon
+    ,083: { rate_base: {          3: 12.2 }, image: "img/181682bf5b277726.jpg" } // ロストワンの号哭
+    ,088: { rate_base: {          3: 12.1 }, image: "img/c4223e68340efa41.jpg" } // The Concept of Love
+    ,090: { rate_base: { 2: 11.6, 3: 13.2 }, image: "img/19d57f9a7652308a.jpg" } // L'épisode
+    ,091: { rate_base: {          3: 11.2 }, image: "img/cb77a66b62023890.jpg" } // Yet Another ”drizzly rain”
+    ,092: { rate_base: {          3: 12.8 }, image: "img/17315fb464f265bd.jpg" } // 最終鬼畜妹・一部声
+    ,093: { rate_base: {          3: 12.3 }, image: "img/6b40809324937ec9.jpg" } // 蒼空に舞え、墨染の桜
+    ,094: { rate_base: {          3: 12.3 }, image: "img/164258c65c714d50.jpg" } // セツナトリップ
+    ,095: { rate_base: {          3: 12.1 }, image: "img/db38c119e4d8933e.jpg" } // 砂漠のハンティングガール♡
+    ,096: { rate_base: {          3: 11.8 }, image: "img/9d2ebc847487e01b.jpg" } // チルノのパーフェクトさんすう教室
+    ,098: { rate_base: {          3: 11.4 }, image: "img/f7e67efaf6ced6ea.jpg" } // 魔理沙は大変なものを盗んでいきました
+    ,099: { rate_base: {          3: 11.7 }, image: "img/ee332e6fa86661fd.jpg" } // 言ノ葉カルマ
+    ,101: { rate_base: {          3: 12.9 }, image: "img/81e347d3b96b2ae1.jpg" } // Tango Rouge
+    ,102: { rate_base: {          3: 12.5 }, image: "img/7fc6ae1b488b88de.jpg" } // Tuning Rangers
+    ,103: { rate_base: { 2: 11.7, 3: 13.7 }, image: "img/3210d321c2700a57.jpg" } // エンドマークに希望と涙を添えて
+    ,104: { rate_base: {          3: 12.5 }, image: "img/ff945c9cb9e43e83.jpg" } // とーきょー全域★アキハバラ？
+    ,106: { rate_base: { 2: 12.2, 3: 13.8 }, image: "img/8219519cc94d5524.jpg" } // 宛城、炎上！！
+    ,107: { rate_base: {          3: 13.0 }, image: "img/b43fef626f5b88cd.jpg" } // We Gonna Journey
+    ,108: { rate_base: {          3: 12.0 }, image: "img/1ec3213366f4ad57.jpg" } // The ether
+    ,110: { rate_base: {          3: 11.2 }, image: "img/d42200159ef91521.jpg" } // Magia
+    ,111: { rate_base: {          3: 11.3 }, image: "img/7ad659a57ef26888.jpg" } // staple stable
+    ,112: { rate_base: {          3: 11.0 }, image: "img/3dc05a281c0724f7.jpg" } // マジLOVE1000%
+    ,113: { rate_base: {          3: 11.4 }, image: "img/3f8eb68a4f6089dc.jpg" } // ストリーミングハート
+    ,114: { rate_base: {          3: 11.4 }, image: "img/b02c3912d1524d5c.jpg" } // Sweet Devil
+    ,115: { rate_base: {          3: 11.5 }, image: "img/9165ee58223accc0.jpg" } // Dreaming
+    ,117: { rate_base: {          3: 11.5 }, image: "img/88124d980ac7eca4.jpg" } // M.S.S.Planet
+    ,118: { rate_base: {          3: 12.0 }, image: "img/17e485acfe11a67f.jpg" } // 腐れ外道とチョコレゐト
+    ,119: { rate_base: {          3: 12.3 }, image: "img/a7dd6716fcae0cb8.jpg" } // アウターサイエンス
+    ,120: { rate_base: {          3: 12.7 }, image: "img/a84a31e562efd7a0.jpg" } // 四次元跳躍機関
+    ,121: { rate_base: {          3: 12.5 }, image: "img/4196f71ce51620a0.jpg" } // 東方妖々夢 ～the maximum moving about～
+    ,122: { rate_base: {          3: 12.5 }, image: "img/67418ba28151c3ff.jpg" } // 少女幻葬戦慄曲　～　Necro Fantasia
+    ,124: { rate_base: {          3: 12.5 }, image: "img/74ce2f0a4b4f6fe2.jpg" } // 夏影
+    ,126: { rate_base: {          3: 11.3 }, image: "img/547ba5407b6e7fa0.jpg" } // Heart To Heart
+    ,128: { rate_base: {          3: 12.7 }, image: "img/7edc6879319accfd.jpg" } // The Formula
+    ,129: { rate_base: {          3: 11.2 }, image: "img/f56cd36303a3239a.jpg" } // Hacking to the Gate
+    ,130: { rate_base: {          3: 11.7 }, image: "img/e4df0d48302ccd26.jpg" } // スカイクラッドの観測者
+    ,131: { rate_base: {          3: 12.6 }, image: "img/38d3c5a5a45c6d07.jpg" } // チルドレンレコード
+    ,132: { rate_base: {          3: 12.2 }, image: "img/1c508bbd42d335fe.jpg" } // イカサマライフゲイム
+    ,134: { rate_base: { 2: 11.8, 3: 13.7 }, image: "img/08a24ed249ed2eec.jpg" } // HAELEQUIN (Original Remaster)
+    ,135: { rate_base: {          3: 13.5 }, image: "img/e7ee14d9fe63d072.jpg" } // Vallista
+    ,136: { rate_base: {          3: 12.5 }, image: "img/c4f977d264deafb1.jpg" } // Äventyr
+    ,137: { rate_base: {          3: 13.6 }, image: "img/13a5a9ca35a9b71b.jpg" } // Angel dust
+    ,138: { rate_base: {          3: 13.0 }, image: "img/478e8835e382f740.jpg" } // conflict
+    ,140: { rate_base: {          3: 11.9 }, image: "img/0aad2e0ff661e7d1.jpg" } // Guilty
+    ,141: { rate_base: { 2: 11.5, 3: 13.3 }, image: "img/2e6c11edba79d997.jpg" } // 閃鋼のブリューナク
+    ,142: { rate_base: {          3: 12.6 }, image: "img/a8d181c5442df7d2.jpg" } // Altale
+    ,144: { rate_base: {          3: 13.3 }, image: "img/8b04b9ad2d49850c.jpg" } // Aragami
+    ,145: { rate_base: {          3: 11.8 }, image: "img/0bb58f15b16703ab.jpg" } // Change Our MIRAI！
+    ,146: { rate_base: {          3: 11.7 }, image: "img/d3b40f7b8e0758ff.jpg" } // 夕暮れワンルーム
+    ,148: { rate_base: {          3: 11.0 }, image: "img/cd458a75aa049889.jpg" } // Theme of SeelischTact
+    ,149: { rate_base: {          3: 11.7 }, image: "img/c9c2fa20dcd9a46e.jpg" } // 緋色のDance
+    ,150: { rate_base: {          3: 11.8 }, image: "img/2a41ad71b77d12c9.jpg" } // brilliant better
+    ,151: { rate_base: {          3: 12.5 }, image: "img/7237488215dbd1d3.jpg" } // Alma
+    ,152: { rate_base: { 2: 11.7, 3: 13.0 }, image: "img/f63fab30a7b6f160.jpg" } // Gustav Battle
+    ,154: { rate_base: {          3: 12.7 }, image: "img/2e9fdbbc15ade5cb.jpg" } // SAVIOR OF SONG
+    ,156: { rate_base: {          3: 11.5 }, image: "img/b33923bd4e6e5609.jpg" } // FREELY TOMORROW
+    ,157: { rate_base: {          3: 12.8 }, image: "img/573109ca9050f55d.jpg" } // ギガンティック O.T.N
+    ,158: { rate_base: {          3: 11.0 }, image: "img/e3ce6712e8cddf10.jpg" } // フォルテシモBELL
+    ,159: { rate_base: {          3: 13.3 }, image: "img/d5a47266b4fe0bfe.jpg" } // ジングルベル
+    ,160: { rate_base: {          3: 11.5 }, image: "img/809bf2b3f8effa6f.jpg" } // 言ノ葉遊戯
+    ,161: { rate_base: {          3: 12.4 }, image: "img/4ceb5aed4a4a1c47.jpg" } // 私の中の幻想的世界観及びその顕現を想起させたある現実での出来事に関する一考察
+    ,163: { rate_base: {          3: 11.3 }, image: "img/fd6847e3bb2e3629.jpg" } // 幾四音-Ixion-
+    ,165: { rate_base: {          3: 12.8 }, image: "img/1e85c4b6775c84b0.jpg" } // ぼくらの16bit戦争
+    ,166: { rate_base: {          3: 11.8 }, image: "img/5a0ac8501e3b95ce.jpg" } // 裏表ラバーズ
+    ,167: { rate_base: {          3: 12.7 }, image: "img/24611f2e2374e6a8.jpg" } // 脳漿炸裂ガール
+    ,168: { rate_base: {          3: 11.9 }, image: "img/1982767436fc52d8.jpg" } // ネトゲ廃人シュプレヒコール
+    ,169: { rate_base: {          3: 11.4 }, image: "img/f092ddd9e1fe088b.jpg" } // elegante
+    ,171: { rate_base: {          3: 12.3 }, image: "img/25abef88cb12af3e.jpg" } // XL TECHNO
+    ,173: { rate_base: {          3: 13.1 }, image: "img/2e95529be9118a11.jpg" } // Halcyon
+    ,176: { rate_base: {          3: 11.3 }, image: "img/aa0cefb5a0f00457.jpg" } // Dance!
+    ,177: { rate_base: {          3: 12.6 }, image: "img/6e7843f9d831b0ac.jpg" } // Jimang Shot
+    ,178: { rate_base: {          3: 12.7 }, image: "img/9f281db3bcc9353b.jpg" } // stella=steLLa
+    ,179: { rate_base: {          3: 11.1 }, image: "img/0e73189a7083e4f4.jpg" } // すろぉもぉしょん
+    ,180: { rate_base: { 2: 12.4, 3: 13.9 }, image: "img/a732d43fd2a11e8f.jpg" } // 怒槌
+    ,185: { rate_base: {          3: 11.2 }, image: "img/520c1fef62954ca6.jpg" } // 楽園の翼
+    ,187: { rate_base: {          3: 13.2 }, image: "img/e6642a96885723c1.jpg" } // 患部で止まってすぐ溶ける～狂気の優曇華院
+    ,189: { rate_base: {          3: 12.7 }, image: "img/9310d07b7e02e73a.jpg" } // ひれ伏せ愚民どもっ！
+    ,190: { rate_base: {          3: 12.6 }, image: "img/bbaa464731ab96a4.jpg" } // エテルニタス・ルドロジー
+    ,196: { rate_base: { 2: 11.9, 3: 13.7 }, image: "img/ed40032f25177518.jpg" } // FREEDOM DiVE
+    ,197: { rate_base: { 2: 11.2, 3: 13.1 }, image: "img/ae6d3a8806e09613.jpg" } // Jack-the-Ripper◆
+    ,199: { rate_base: {          3: 12.1 }, image: "img/d76afb63de1417f8.jpg" } // ハート・ビート
+    ,200: { rate_base: {          3: 12.1 }, image: "img/569e7b07c0696bc7.jpg" } // 無敵We are one!!
+    ,201: { rate_base: { 2: 12.4, 3: 13.9 }, image: "img/a251c24a3cc4dbf7.jpg" } // Contrapasso -inferno-
+    ,202: { rate_base: { 2: 11.2, 3: 13.1 }, image: "img/45112e2818cf80a2.jpg" } // GEMINI -C-
+    ,203: { rate_base: {          3: 12.0 }, image: "img/101d4e7b03a5a89e.jpg" } // FLOWER
+    ,204: { rate_base: {          3: 11.0 }, image: "img/1ea73ffbba6d7ead.jpg" } // ちくわパフェだよ☆CKP
+    ,205: { rate_base: {          3: 12.7 }, image: "img/3d7803669dd3fcb9.jpg" } // SNIPE WHOLE
+    ,206: { rate_base: {          3: 11.4 }, image: "img/e10bbd173df15772.jpg" } // Signs Of Love (“Never More” ver.)
+    ,207: { rate_base: {          3: 11.7 }, image: "img/5151993f923b06a5.jpg" } // Your Affection (Daisuke Asakura Remix)
+    ,208: { rate_base: {          3: 12.7 }, image: "img/5bab1a38b98d59b5.jpg" } // SAMBISTA
+    ,209: { rate_base: {          3: 11.7 }, image: "img/5744f4cf66710a56.jpg" } // 君色シグナル
+    ,210: { rate_base: {          3: 12.4 }, image: "img/040cd43234aed57a.jpg" } // アスノヨゾラ哨戒班
+    ,211: { rate_base: {          3: 12.2 }, image: "img/d99079fecaa936ab.jpg" } // 天樂
+    ,212: { rate_base: {          3: 12.1 }, image: "img/1ee29f73ee8f53d0.jpg" } // いろは唄
+    ,213: { rate_base: {          3: 11.9 }, image: "img/c6d494f528391d1c.jpg" } // 星屑ユートピア
+    ,214: { rate_base: {          3: 11.9 }, image: "img/f4a2d88c38669f72.jpg" } // 青春はNon-Stop!
+    ,215: { rate_base: {          3: 12.4 }, image: "img/81cc90c04676f18b.jpg" } // Falling Roses
+    ,216: { rate_base: {          3: 12.3 }, image: "img/3227722a8345a950.jpg" } // 放課後革命
+    ,217: { rate_base: {          3: 11.8 }, image: "img/2b3c90b1dab1ecff.jpg" } // 楽園ファンファーレ
+    ,219: { rate_base: { 2: 12.7, 3: 13.9 }, image: "img/246f63902c4b0f89.jpg" } // 玩具狂奏曲 -終焉-
+    ,220: { rate_base: {          3: 12.3 }, image: "img/c3041fd82b0a0710.jpg" } // 如月アテンション
+    ,222: { rate_base: {          3: 12.9 }, image: "img/ad33a423c865bed1.jpg" } // Mr. Wonderland
+    ,223: { rate_base: { 2: 11.0, 3: 13.0 }, image: "img/8ec9a26e11ec1a40.jpg" } // カミサマネジマキ
+    ,224: { rate_base: {          3: 11.1 }, image: "img/b9d170f84c1bb5d3.jpg" } // 恋愛裁判
+    ,225: { rate_base: {          3: 12.1 }, image: "img/6f86e2a47e9a283c.jpg" } // ウミユリ海底譚
+    ,226: { rate_base: { 2: 12.3, 3: 13.8 }, image: "img/993b5cddb9d9badf.jpg" } // Garakuta Doll Play
+    ,227: { rate_base: {          3: 11.5 }, image: "img/74c77deb2f2e5e07.jpg" } // 洗脳
+    ,228: { rate_base: {          3: 12.0 }, image: "img/882be51fe439614d.jpg" } // このふざけた素晴らしき世界は、僕の為にある
+    ,229: { rate_base: { 2: 11.9, 3: 13.4 }, image: "img/73f86aec8d6c7c9b.jpg" } // 紅華刑
+    ,230: { rate_base: {          3: 12.4 }, image: "img/b59d2b2ab877a77d.jpg" } // Hyperion
+    ,232: { rate_base: { 2: 11.3, 3: 13.4 }, image: "img/a2069fdb9d860d36.jpg" } // Elemental Creation
+    ,233: { rate_base: {          3: 12.2 }, image: "img/5fe5db1d2e40ee7a.jpg" } // アルストロメリア
+    ,235: { rate_base: {          3: 12.5 }, image: "img/8b84b06033585428.jpg" } // ファッとして桃源郷
+    ,238: { rate_base: {          3: 11.9 }, image: "img/4c769ae611f83d21.jpg" } // フレンズ
+    ,240: { rate_base: {          3: 12.6 }, image: "img/47397105bad447fb.jpg" } // 夜咄ディセイブ
+    ,243: { rate_base: {          3: 12.2 }, image: "img/8872c759bea3bd9f.jpg" } // シュガーソングとビターステップ
+    ,244: { rate_base: {          3: 12.3 }, image: "img/e0a700914896ea4a.jpg" } // 回レ！雪月花
+    ,245: { rate_base: {          3: 11.4 }, image: "img/630ac5b31e8ab816.jpg" } // Help me, あーりん！
+    ,246: { rate_base: {          3: 12.7 }, image: "img/d445e4878a818d8b.jpg" } // なるとなぎのパーフェクトロックンロール教室
+    ,247: { rate_base: {          3: 11.9 }, image: "img/58847f9694837c0b.jpg" } // 絶世スターゲイト
+    ,248: { rate_base: { 2: 12.3, 3: 13.9 }, image: "img/a2fdef9e4b278a51.jpg" } // Schrecklicher Aufstand
+    ,250: { rate_base: { 2: 11.8, 3: 13.5 }, image: "img/989f4458fb34aa9d.jpg" } // Philosopher
+    ,251: { rate_base: {          3: 12.5 }, image: "img/457722c9f3ff5473.jpg" } // Crazy ∞ nighT
+    ,252: { rate_base: {          3: 12.3 }, image: "img/bb221e3de960de7d.jpg" } // 愛迷エレジー
+    ,254: { rate_base: {          3: 11.7 }, image: "img/2e617d713547fe84.jpg" } // その群青が愛しかったようだった
+    ,255: { rate_base: {          3: 11.1 }, image: "img/429d34fef5fddb02.jpg" } // 激情！ミルキィ大作戦
+    ,257: { rate_base: {          3: 13.0 }, image: "img/bef9b79c637bf4c9.jpg" } // BOKUTO
+    ,259: { rate_base: { 2: 11.3, 3: 13.1 }, image: "img/4d66e5d1669d79a2.jpg" } // Oshama Scramble! (Cranky Remix)
+    ,260: { rate_base: {          3: 12.4 }, image: "img/03f1dafe3b08607e.jpg" } // D.E.A.D.L.Y.
+    ,261: { rate_base: {          3: 12.3 }, image: "img/6e917606db3c5a0e.jpg" } // ロボットプラネットユートピア
+    ,262: { rate_base: {          3: 13.6 }, image: "img/676e59847912f5ca.jpg" } // Tidal Wave
+    ,263: { rate_base: {          3: 11.7 }, image: "img/015358a0c0580022.jpg" } // Hand in Hand
+    ,264: { rate_base: {          3: 12.2 }, image: "img/f44c6b628889f8ec.jpg" } // My Dearest Song
+    ,267: { rate_base: {          3: 11.5 }, image: "img/a0d03551eb3930e9.jpg" } // 心象蜃気楼
+    ,270: { rate_base: {          3: 12.3 }, image: "img/21dfcd3ae2c5c370.jpg" } // エンヴィキャットウォーク
+    ,273: { rate_base: {          3: 11.8 }, image: "img/604157e2c49d91d7.jpg" } // ビバハピ
+    ,276: { rate_base: {          3: 12.4 }, image: "img/82105b37d18450b6.jpg" } // 後夜祭
+    ,278: { rate_base: {          3: 11.4 }, image: "img/5f1d7a520a2735d4.jpg" } // からくりピエロ
+    ,279: { rate_base: {          3: 11.7 }, image: "img/84ecaebe6bce2a58.jpg" } // 深海少女
+    ,281: { rate_base: {          3: 13.4 }, image: "img/330e57eeeb0fb2cd.jpg" } // ラクガキスト
+    ,286: { rate_base: {          3: 11.5 }, image: "img/afcce0c85c1f8610.jpg" } // Tell Your World
+    ,287: { rate_base: {          3: 11.9 }, image: "img/5febf5df2b5094f3.jpg" } // ロミオとシンデレラ
+    ,288: { rate_base: {          3: 11.6 }, image: "img/f29f10a963df60cf.jpg" } // First Twinkle
+    ,289: { rate_base: {          3: 12.7 }, image: "img/0cece587cced4d3f.jpg" } // ウソラセラ
+    ,290: { rate_base: {          3: 11.3 }, image: "img/b1d08379f05c706e.jpg" } // 檄!帝国華撃団
+    ,291: { rate_base: {          3: 12.4 }, image: "img/9c5e71b3588dbc70.jpg" } // Kronos
+    ,292: { rate_base: {          3: 12.0 }, image: "img/b12c25f87b1d036e.jpg" } // 月に叢雲華に風
+    ,293: { rate_base: {          3: 13.2 }, image: "img/c58227eb0d14938c.jpg" } // インビジブル
+    ,296: { rate_base: {          3: 12.1 }, image: "img/76535cf4c728f2af.jpg" } // かくしん的☆めたまるふぉ～ぜっ!
+    ,298: { rate_base: {          3: 12.6 }, image: "img/7c649691aa0c4b3d.jpg" } // PRIVATE SERVICE
+    ,299: { rate_base: {          3: 11.4 }, image: "img/9bd44690db5375ac.jpg" } // secret base ～君がくれたもの～ (10 years after Ver.)
+    ,300: { rate_base: {          3: 12.2 }, image: "img/012eb1ed09577836.jpg" } // No Routine
+    ,304: { rate_base: {          3: 11.7 }, image: "img/16cb8567115a2f2c.jpg" } // In The Blue Sky ’01
+    ,305: { rate_base: { 2: 11.0, 3: 13.3 }, image: "img/266bd38219201fa1.jpg" } // 幻想のサテライト
+    ,306: { rate_base: {          3: 12.2 }, image: "img/106d9eec68ed84b3.jpg" } // 凛として咲く花の如く
+    ,307: { rate_base: {          3: 12.7 }, image: "img/ff9f70c8c0d9f24e.jpg" } // Paqqin
+    ,308: { rate_base: {          3: 11.9 }, image: "img/f8d3f2e57ae2ff24.jpg" } // fake!fake!
+    ,309: { rate_base: {          3: 12.5 }, image: "img/cee51d69c428f8f5.jpg" } // Rising Hope
+    ,313: { rate_base: {          3: 11.4 }, image: "img/5ac018495d6f01a5.jpg" } // ひだまりデイズ
+    ,316: { rate_base: {          3: 11.5 }, image: "img/88f9536c08cb4e3f.jpg" } // みくみくにしてあげる♪【してやんよ】
+    ,317: { rate_base: {          3: 13.4 }, image: "img/db15d5b7aefaa672.jpg" } // Air
+    ,318: { rate_base: {          3: 13.1 }, image: "img/f803d578eb4047eb.jpg" } // DataErr0r
+    ,319: { rate_base: {          3: 12.6 }, image: "img/e9eeb98572b140bc.jpg" } // Say A Vengeance
+    ,320: { rate_base: {          3: 12.6 }, image: "img/6b33d4fa539d5adb.jpg" } // 010
+    ,321: { rate_base: {          3: 12.5 }, image: "img/40cc7a6a264f88c1.jpg" } // ERIS -Legend of Gaidelia-
+    ,322: { rate_base: {          3: 13.6 }, image: "img/8b145fe4cf0c01bb.jpg" } // Imperishable Night 2006 (2016 Refine)
+    ,323: { rate_base: {          3: 13.5 }, image: "img/282cb1cacd4c1bb4.jpg" } // Dreadnought
+    ,324: { rate_base: {          3: 12.6 }, image: "img/d51d4ffba9f8d45e.jpg" } // STAGER
+    ,325: { rate_base: {          3: 12.6 }, image: "img/97eca622afca0f15.jpg" } // Her Majesty
+    ,326: { rate_base: {          3: 12.5 }, image: "img/fd01fc38e38042e3.jpg" } // Sakura Fubuki
+    ,327: { rate_base: {          3: 12.7 }, image: "img/17c363c1fd2fa7d1.jpg" } // JULIAN
+    ,329: { rate_base: {          3: 12.3 }, image: "img/e869980ddd2f9c68.jpg" } // STAIRWAY TO GENERATION
+    ,330: { rate_base: {          3: 12.1 }, image: "img/b3ea0fe012eb7ea2.jpg" } // ドキドキDREAM!!!
+    ,331: { rate_base: {          3: 12.2 }, image: "img/ec37e447b91995dd.jpg" } // 猛進ソリストライフ！
+    ,332: { rate_base: {          3: 12.3 }, image: "img/41001ddd4214d6b6.jpg" } // 空威張りビヘイビア
+    ,336: { rate_base: {          3: 12.0 }, image: "img/e40fceaa1bb587b7.jpg" } // シジョウノコエ VOCALO ver.
 };
 
 // ---- API wrappers
@@ -400,6 +400,9 @@ function dom(template, params)
 // -----------------------------------------------------------------------------
 // global vars
 // -----------------------------------------------------------------------------
+
+// name vs details map
+var music_info = {};
 
 // current values
 var disp_rate         = 0;
@@ -626,12 +629,13 @@ $("#cra_wrapper").delay(400).fadeIn(400);
 // -----------------------------------------------------------------------------
 
 // Create playlog entity if MUSIC_INFO exists. Otherwise return null.
-function playlog(id, level, score, play_date /* optional */) {
-    var info = MUSIC_INFO[id];
+function playlog(name, level, score, play_date /* optional */) {
+    var info = music_info[name];
     var rate_base  = info && info.rate_base[level];
     if (!rate_base) return null;
     return {
-        id:        id,
+        name:      name,
+        image:     info.image,
         level:     level,
         score:     score,
         rate:      score_to_rate(rate_base, score),
@@ -684,7 +688,7 @@ function fetch_playlog(callback)
         var last_play_date = recent_candidates[0] && recent_candidates[recent_candidates.length - 1].play_date;
         for (var i = d.userPlaylogList.length - 1; i >= 0; i--) {
             var log = playlog(
-                d.userPlaylogList[i].musicId,
+                d.userPlaylogList[i].musicName,
                 LEVEL_ID[d.userPlaylogList[i].levelName],
                 d.userPlaylogList[i].score,
                 d.userPlaylogList[i].userPlayDate
@@ -698,16 +702,20 @@ function fetch_playlog(callback)
     });
 }
 
-// use GetUserMusicApi to fetch all scores, and update chart_list
+// use GetUserMusicApi to fetch all scores, then update music_info and
+// chart_list
 function fetch_score_data(level, callback)
 {
     $("#cra_window_inner").html("<p>loading ...</p>");
     request_api("GetUserMusicApi", {
         level: "1990" + level
     }, function(d) {
+        Object.keys(d.musicNameMap).map(function (id) {
+            music_info[d.musicNameMap[id]] = DIFFICULTY[id];
+        });
         for (var i = 0; i < d.userMusicList.length; i++) {
             var log = playlog(
-                d.userMusicList[i].musicId,
+                d.musicNameMap[d.userMusicList[i].musicId],
                 level,
                 d.userMusicList[i].scoreMax
             );
@@ -1281,14 +1289,12 @@ function render_chart_list(list, msgs)
         var $list_item = $("<div class='frame02 w400 cra_chart_list_item'>")
             .appendTo("#cra_chart_list");
 
-        var info = MUSIC_INFO[list[i].id];
-
         $list_item
             .html(`
 <div class="play_jacket_side">
   <div class="play_jacket_area">
     <div id="Jacket" class="play_jacket_img">
-      <img src=${info.image}>
+      <img src=${list[i].image}>
     </div>
   </div>
 </div>
@@ -1303,7 +1309,7 @@ function render_chart_list(list, msgs)
   </div>
   <div class="box02 play_musicdata_block">
     <div id="MusicTitle" class="play_musicdata_title">
-      ${info.name}
+      ${list[i].name}
     </div>
     <div class="play_musicdata_score clearfix">
       <div class="play_musicdata_score_text">
