@@ -407,11 +407,11 @@ var music_info = {};
 // current values
 var disp_rate         = 0;
 var best_rate         = 0;
-var best_list         = new Array();
+var best_list         = [];
 var best_rate_border;
 var recent_rate       = 0;
 var opt_rate          = 0;
-var recent_candidates = JSON.parse(localStorage.getItem("cra_recent_candidates")) || new Array();
+var recent_candidates = JSON.parse(localStorage.getItem("cra_recent_candidates")) || [];
 
 // load the last data from localStorage (if exists)
 var last_cra_version = JSON.parse(localStorage.getItem("cra_version"));
@@ -1219,7 +1219,7 @@ function rate_display()
 
         $("#cra_recent_list").click(function () {
             recent_candidates.sort(comp_rate);
-            render_chart_list(recent_candidates, { 0: 'Recent枠', 10: 'Recent候補枠'});
+            render_chart_list(recent_candidates, { 0: 'Recent枠', 10: 'Recent候補枠' });
         });
 
         $("#cra_manage_play_data").click(function () {
