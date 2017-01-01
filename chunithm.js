@@ -175,6 +175,7 @@ var DIFFICULTY = {
     ,215: { rate_base: {          3: 12.4 }, image: "img/81cc90c04676f18b.jpg" } // Falling Roses
     ,216: { rate_base: {          3: 12.3 }, image: "img/3227722a8345a950.jpg" } // 放課後革命
     ,217: { rate_base: {          3: 11.8 }, image: "img/2b3c90b1dab1ecff.jpg" } // 楽園ファンファーレ
+    ,218: { rate_base: {          3: 12.4 }, image: "img/20359304f5e0574a.jpg" } // サウンドプレイヤー
     ,219: { rate_base: { 2: 12.7, 3: 13.9 }, image: "img/246f63902c4b0f89.jpg" } // 玩具狂奏曲 -終焉-
     ,220: { rate_base: {          3: 12.3 }, image: "img/c3041fd82b0a0710.jpg" } // 如月アテンション
     ,222: { rate_base: {          3: 12.9 }, image: "img/ad33a423c865bed1.jpg" } // Mr. Wonderland
@@ -577,7 +578,7 @@ $("#cra_window_wrapper")
 $("#cra_window_outer")
     .html("<div id='cra_window_inner' class='frame01_inside w450'></div>");
 $("#cra_window_inner")
-    .html("<p class='cra_caution'>CAUTION</p>" +
+    .html("<p class='cra_caution'>🎍CAUTION🎍</p>" +
           "<p>12/3- Recent枠表示機能(β)とデータ提供機能の追加。</p>" +
           "<p>9/13- スコアの取得を高速化。</p>" +
           "<p>9/12- 単曲レートの切り捨て位置を修正。</p>" +
