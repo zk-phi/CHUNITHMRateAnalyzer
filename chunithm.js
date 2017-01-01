@@ -1059,9 +1059,9 @@ function rate_display()
     last_best_list = last_best_list && last_best_list.sort(comp_id);
     for (var i = 0, j = 0; i < best_list.length;) {
         if (!last_best_list[j]) break;
-        var comp = comp_rate(best_list[i], last_best_list[j]);
-        if (comp < 0) j++;
-        else if (comp > 0) i++;
+        var comp = comp_id(best_list[i], last_best_list[j]);
+        if (comp < 0) i++;
+        else if (comp > 0) j++;
         else {
             best_list[i].rate_diff = best_list[i].rate - last_best_list[j].rate;
             i++;
