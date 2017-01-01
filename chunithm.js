@@ -661,8 +661,8 @@ function comp_id(p1, p2) {
 function push_playlog_to_recent_candidates (log) {
     var len = recent_candidates.length;
     var recent_list = [].concat(recent_candidates).sort(comp_rate).slice(0, 10);
-    var min_rate    = len >= 30 ? Math.min.apply(null, recent_list.map(function (p) { return p.rate; })) : 0;
-    var min_score   = len >= 30 ? Math.min.apply(null, recent_list.map(function (p) { return p.score; })) : 0;
+    var min_rate    = len >= 10 ? Math.min.apply(null, recent_list.map(function (p) { return p.rate; })) : 0;
+    var min_score   = len >= 10 ? Math.min.apply(null, recent_list.map(function (p) { return p.score; })) : 0;
 
     if (log.rate > min_rate) {
         if (len < 30) recent_candidates.push(log);
