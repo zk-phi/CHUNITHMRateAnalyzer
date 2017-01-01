@@ -669,7 +669,7 @@ function push_playlog_to_recent_candidates (log) {
         else {
             for (var k = 0; k < recent_candidates.length; k++) {
                 if (recent_candidates[k].rate < log.rate) {
-                    if (len >= 30) recent_candidates.splice(k, 1);
+                    recent_candidates.splice(k, 1);
                     recent_candidates.push(log);
                     break;
                 }
