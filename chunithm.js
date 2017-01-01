@@ -1284,7 +1284,7 @@ function render_chart_list(list, msgs)
 
         // 満点出しても BEST 枠を改善できない譜面を出さない（Recent 枠
         // の場合は req_diff = undefined なので影響しない）
-        if (isNaN(list[i].req_diff)) continue;
+        if (list[i].req_diff && isNaN(list[i].req_diff)) continue;
 
         var difficulty_icon = list[i].level == 2 ? "common/images/icon_expert.png"
             : "common/images/icon_master.png";
