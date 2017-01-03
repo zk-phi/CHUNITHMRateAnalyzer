@@ -715,7 +715,9 @@ function fetch_score_data(level, callback)
         level: "1990" + level
     }, function(d) {
         Object.keys(d.musicNameMap).map(function (id) {
-            music_info[d.musicNameMap[id]] = DIFFICULTY[id];
+            if (DIFFICULTY[id]) {
+                music_info[d.musicNameMap[id]] = DIFFICULTY[id];
+            }
         });
         for (var i = 0; i < d.userMusicList.length; i++) {
             var log = playlog(
@@ -1055,24 +1057,26 @@ function rate_display()
     localStorage.setItem("cra_recent_candidates", JSON.stringify(recent_candidates));
 
     // calculate score improvement
-    best_list      = best_list.sort(comp_id);
-    last_best_list = last_best_list && last_best_list.sort(comp_id);
-    for (var i = 0, j = 0; i < best_list.length;) {
-        if (!last_best_list[j]) break;
-        var comp = comp_id(best_list[i], last_best_list[j]);
-        if (comp < 0) i++;
-        else if (comp > 0) j++;
-        else {
-            best_list[i].rate_diff = best_list[i].rate - last_best_list[j].rate;
-            i++;
-            j++;
+    if (last_best_list) {
+        best_list      = best_list.sort(comp_id);
+        last_best_list = last_best_list.sort(comp_id);
+        for (var i = 0, j = 0; i < best_list.length;) {
+            if (!last_best_list[j]) break;
+            var comp = comp_id(best_list[i], last_best_list[j]);
+            if (comp < 0) i++;
+            else if (comp > 0) j++;
+            else {
+                best_list[i].rate_diff = best_list[i].rate - last_best_list[j].rate;
+                i++;
+                j++;
+            }
         }
     }
 
     // calculate rate and their diff
     best_list.sort(function(a, b) { return - (a.rate - b.rate); });
     for (i = 0; i < 30 && i < best_list.length; i++) best_rate += best_list[i].rate;
-    opt_rate = ((best_rate + best_list[0].rate * 10) / 40);
+    opt_rate = best_list[0] ? ((best_rate + best_list[0].rate * 10) / 40) : 0;
     best_rate = (best_rate / 30);
     recent_rate = disp_rate * 4 - best_rate * 3;
     best_rate_diff = last_best_rate ? best_rate - last_best_rate : 0;
@@ -1087,7 +1091,7 @@ function rate_display()
     localStorage.setItem("cra_recent_rate", JSON.stringify(recent_rate));
 
     // calculate required score to improve the rate
-    best_rate_border = best_list[Math.min(29, best_list.length - 1)].rate;
+    best_rate_border = best_list[0] ? best_list[Math.min(29, best_list.length - 1)].rate : 0;
     for (i = 0; i < best_list.length; i++)
     {
         best_list[i].req_score = rate_to_score(best_list[i].rate_base, best_rate_border);
@@ -1329,7 +1333,7 @@ function render_chart_list(list, msgs)
     </div>
   </div>
   <div id="IconBatch" class="play_musicdata_icon clearfix">
-    ${list[i].req_diff > 0 ?
+    ${list[i].req_diff && list[i].req_diff > 0 ?
       "BEST枠入りまで: " + list[i].req_diff + " (" + list[i].req_score + ")" :
       ""}
   </div>
