@@ -698,7 +698,21 @@ function fetch_playlog(callback)
                 d.userPlaylogList[i].score,
                 d.userPlaylogList[i].userPlayDate
             );
-            if (log && (!last_play_date || log.play_date > last_play_date))
+
+            if (!log) {
+                log = {
+                    name: d.userPlaylogList[i].musicName,
+                    image: d.userPlaylogList[i].musicFileName,
+                    level: LEVEL_ID[d.userPlaylogList[i].levelName],
+                    score: d.userPlaylogList[i].score,
+                    rate: 0,
+                    play_date: d.userPlaylogList[i].userPlayDate,
+                    rate_diff: 0,
+                    rate_base: 0,
+                }
+            }
+
+            if ((log.level != 4) && (!last_play_date || log.play_date > last_play_date))
                 push_playlog_to_recent_candidates(log);
         }
         callback();
