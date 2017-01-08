@@ -17,7 +17,8 @@ if (!location.href.match(/^https:\/\/chunithm-net.com/)) {
 // list of resources required to execute this script (note that all
 // resources must be provided via HTTPS)
 var DEPENDENCIES = [
-    "https://platform.twitter.com/widgets.js" // Twitter tweet/follow button
+    "https://platform.twitter.com/widgets.js", // Twitter tweet/follow button
+    "https://max-eipi.github.io/CHUNITHMRateAnalyzer/gaslibs/offer_playlog.js"
 ];
 
 // -----------------------------------------------------------------------------
@@ -1158,7 +1159,7 @@ function rate_display()
                   "<div id='cra_sort_score_req' class='cra_sort_button'>必要スコア順</div>" +
                   "<div id='cra_sort_score_ave' class='cra_sort_button'>おすすめ(β)</div>" +
                   "<div id='cra_recent_list' class='cra_sort_button'>Recent枠(β)</div>" +
-                  "<div id='cra_manage_play_data' class='cra_sort_button'>プレイデータ管理</div>");
+                  "<div id='cra_offer_playlog' class='cra_sort_button'>プレイデータ提供</div>");
 
         $("#cra_footer")
             .html("CHUNITHM Rate Analyzer by zk_phi " +
@@ -1230,30 +1231,36 @@ function rate_display()
             render_chart_list(recent_candidates, { 0: 'Recent枠', 10: 'Recent候補枠' });
         });
 
-        $("#cra_manage_play_data").click(function () {
-            function includes(root, files) {
-                if (files.length > 0) {
-                    var script = document.createElement("script");
-                    var done = false;
-                    script.src = root + files[0];
-                    script.type = "text/javascript";
-                    var head = document.getElementsByTagName("head").item(0);
-                    head.appendChild(script);
-                    script.onload = script.onreadystatechange = function () {
-                        if (!done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")) {
-                            done = true;
-                            files.shift();
-                            includes(root, files);
-                            script.onload = script.onreadystatechange = null;
-                            if (head && script.parentNode) {
-                                head.removeChild(script);
-                            }
-                        }
-                    };
-                }
-            }
+        $("#cra_offer_playlog").click(function () {
+            try {
+                gas_manage_history(
+                    function (d) {
+                        var data = d.result;
+                        var recent_candidate_list = data.recentCandidate;
+                        alert(recent_candidate_list.map(function (p) {
+                            return p.name + ":(" + p.score + "," + p.rate + ")";
+                        }).reduce(function (prev, curr) {
+                            return prev + "\n" + curr;
+                        }));
 
-            includes("https://max-eipi.github.io/CHUNITHMRateAnalyzer/gaslibs/", ["gas_data_manager.js","manage_history.js","exec_manage_history.js"]);
+                        var recent_list = data.recent;
+                        var ave = recent_list
+                            .map(function (p) { return p.rate; })
+                            .reduce(function (prev, curr) { return prev + curr; }) / 10;
+                        ave = Math.floor(ave * 100) / 100;
+                        alert("Recent値 : " + ave + "\nRecent枠内訳\n" +
+                            recent_list.map(function (p) {
+                                return p.name + ":(" + p.score + "," + p.rate + ")";
+                            }).reduce(function (prev, curr) {
+                                return prev + "\n" + curr;
+                            }));
+                    },
+                    function (id) { alert("エラー : " + id); });
+            }
+            catch (e) {
+                alert("動作が停止しました。次に出てくるアラートメッセージを開発者にお知らせください。");
+                alert("例外 : " + e.name + "\n内容 : " + e.message);
+            }
         });
 
         // load twitter buttons
