@@ -302,7 +302,7 @@ var chart_list = [
     ,{ id: 90,  level: 2, rate_base: 11.7, image: "img/19d57f9a7652308a.jpg", name: "L'épisode 赤" }
     ,{ id: 90,  level: 3, rate_base: 13.2, image: "img/19d57f9a7652308a.jpg", name: "L'épisode" }
     ,{ id: 72,  level: 3, rate_base: 13.5, image: "img/ec3a366b4724f8f6.jpg", name: "Genesis" }
-    ,{ id: 197, level: 2, rate_base: 11.2, image: "img/ae6d3a8806e09613.jpg", name: "Jack-the-Ripper◆ 赤" }
+    ,{ id: 197, level: 2, rate_base: 11.7, image: "img/ae6d3a8806e09613.jpg", name: "Jack-the-Ripper◆ 赤" }
     ,{ id: 255, level: 3, rate_base: 11.1, image: "img/429d34fef5fddb02.jpg", name: "激情！ミルキィ大作戦" }
     ,{ id: 214, level: 3, rate_base: 11.9, image: "img/f4a2d88c38669f72.jpg", name: "青春はNon-Stop!" }
     ,{ id: 215, level: 3, rate_base: 12.4, image: "img/81cc90c04676f18b.jpg", name: "Falling Roses" }
