@@ -285,7 +285,7 @@ var chart_list = [
     ,{ id: 232, level: 2, rate_base: 11.3, image: "img/a2069fdb9d860d36.jpg", name: "Elemental Creation 赤" }
     ,{ id: 52,  level: 2, rate_base: 11.1, image: "img/a62f975edc860e34.jpg", name: "Cyberozar 赤" }
     ,{ id: 209, level: 3, rate_base: 11.7, image: "img/5744f4cf66710a56.jpg", name: "君色シグナル" }
-    ,{ id: 247, level: 3, rate_base: 11.9, image: "img/58847f9694837c0b.jpg", name: "絶世スターゲイト" }
+    ,{ id: 247, level: 3, rate_base: 11.7, image: "img/58847f9694837c0b.jpg", name: "絶世スターゲイト" }
     ,{ id: 199, level: 3, rate_base: 12.1, image: "img/d76afb63de1417f8.jpg", name: "ハート・ビート" }
     ,{ id: 173, level: 3, rate_base: 13.1, image: "img/2e95529be9118a11.jpg", name: "Halcyon" }
     ,{ id: 185, level: 3, rate_base: 11.2, image: "img/520c1fef62954ca6.jpg", name: "楽園の翼" }
