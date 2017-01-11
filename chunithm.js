@@ -188,7 +188,7 @@ var chart_list = [
     ,{ id: 3,   level: 3, rate_base: 11.8, image: "img/d739ba44da6798a0.jpg", name: "B.B.K.K.B.K.K." }
     ,{ id: 149, level: 3, rate_base: 11.7, image: "img/c9c2fa20dcd9a46e.jpg", name: "緋色のDance" }
     ,{ id: 48,  level: 3, rate_base: 11.8, image: "img/b38eba298df2c6db.jpg", name: "Unlimited Spark!" }
-    ,{ id: 96,  level: 3, rate_base: 11.8, image: "img/9d2ebc847487e01b.jpg", name: "チルノのパーフェクトさんすう教室" }
+    ,{ id: 96,  level: 3, rate_base: 11.9, image: "img/9d2ebc847487e01b.jpg", name: "チルノのパーフェクトさんすう教室" }
     ,{ id: 94,  level: 3, rate_base: 12.3, image: "img/164258c65c714d50.jpg", name: "セツナトリップ" }
     ,{ id: 47,  level: 3, rate_base: 12.0, image: "img/5cb17a59f4b8c133.jpg", name: "六兆年と一夜物語" }
     ,{ id: 152, level: 2, rate_base: 11.7, image: "img/f63fab30a7b6f160.jpg", name: "Gustav Battle 赤" }
