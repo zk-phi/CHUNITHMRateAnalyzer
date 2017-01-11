@@ -424,6 +424,7 @@ var chart_list = [
     ,{ id: 219, level: 2, rate_base: 12.7, image: "img/246f63902c4b0f89.jpg", name: "玩具狂奏曲 -終焉- 赤"}
     ,{ id: 219, level: 3, rate_base: 13.9, image: "img/246f63902c4b0f89.jpg", name: "玩具狂奏曲 -終焉-"}
     ,{ id: 218, level: 3, rate_base: 12.4, image: "img/20359304f5e0574a.jpg", name: "サウンドプレイヤー"}
+    ,{ id: 302, level: 3, rate_base: 13.3, image: "img/13446730e8b99f0e.jpg", name: "Strahv"}
 ];
 
 // latest rate
