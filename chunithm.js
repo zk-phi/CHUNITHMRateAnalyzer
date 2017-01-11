@@ -427,6 +427,7 @@ var chart_list = [
     ,{ id: 302, level: 3, rate_base: 13.3, image: "img/13446730e8b99f0e.jpg", name: "Strahv"}
     ,{ id: 328, level: 3, rate_base: 13.7, image: "img/c7cf3ce1e858e3f0.jpg", name: "★LittlE HearTs★"}
     ,{ id: 19,  level: 2, rate_base: 11.0, image: "img/0b98b8b4e7cfd997.jpg", name: "DRAGONLADY 赤" }
+    ,{ id: 137, level: 2, rate_base: 11.4, image: "img/13a5a9ca35a9b71b.jpg", name: "Angel dust 赤" }
 ];
 
 // latest rate
