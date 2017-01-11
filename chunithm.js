@@ -304,7 +304,7 @@ var chart_list = [
     ,{ id: 72,  level: 3, rate_base: 13.5, image: "img/ec3a366b4724f8f6.jpg", name: "Genesis" }
     ,{ id: 197, level: 2, rate_base: 11.7, image: "img/ae6d3a8806e09613.jpg", name: "Jack-the-Ripper◆ 赤" }
     ,{ id: 255, level: 3, rate_base: 11.1, image: "img/429d34fef5fddb02.jpg", name: "激情！ミルキィ大作戦" }
-    ,{ id: 214, level: 3, rate_base: 11.9, image: "img/f4a2d88c38669f72.jpg", name: "青春はNon-Stop!" }
+    ,{ id: 214, level: 3, rate_base: 11.8, image: "img/f4a2d88c38669f72.jpg", name: "青春はNon-Stop！" }
     ,{ id: 215, level: 3, rate_base: 12.4, image: "img/81cc90c04676f18b.jpg", name: "Falling Roses" }
     ,{ id: 200, level: 3, rate_base: 12.1, image: "img/569e7b07c0696bc7.jpg", name: "無敵We are one!!" }
     ,{ id: 202, level: 2, rate_base: 11.2, image: "img/45112e2818cf80a2.jpg", name: "GEMINI -C- 赤" }
