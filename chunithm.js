@@ -39,7 +39,7 @@ var DIFFICULTY = {
     , 14: { rate_base: {          3: 11.0 }, image: "img/af78dd039a36a4c7.jpg" } // コネクト
     , 17: { rate_base: {          3: 11.1 }, image: "img/696d4f956ebb4209.jpg" } // 空色デイズ
     , 18: { rate_base: {          3: 11.2 }, image: "img/3c2606abe4dded71.jpg" } // 千本桜
-    , 19: { rate_base: {          3: 13.2 }, image: "img/0b98b8b4e7cfd997.jpg" } // DRAGONLADY
+    , 19: { rate_base: { 2: 11.0, 3: 13.2 }, image: "img/0b98b8b4e7cfd997.jpg" } // DRAGONLADY
     , 21: { rate_base: {          3: 11.9 }, image: "img/4f69fb126f579c2f.jpg" } // ナイト・オブ・ナイツ
     , 23: { rate_base: {          3: 12.1 }, image: "img/b8ab9573859ebe4f.jpg" } // 一触即発☆禅ガール
     , 27: { rate_base: {          3: 12.5 }, image: "img/fdc3bb451f6403d2.jpg" } // タイガーランペイジ
@@ -80,13 +80,13 @@ var DIFFICULTY = {
     , 82: { rate_base: {          3: 12.5 }, image: "img/27ef71f8a76f1e8a.jpg" } // Memories of Sun and Moon
     , 83: { rate_base: {          3: 12.2 }, image: "img/181682bf5b277726.jpg" } // ロストワンの号哭
     , 88: { rate_base: {          3: 12.1 }, image: "img/c4223e68340efa41.jpg" } // The Concept of Love
-    , 90: { rate_base: { 2: 11.6, 3: 13.2 }, image: "img/19d57f9a7652308a.jpg" } // L'épisode
+    , 90: { rate_base: { 2: 11.7, 3: 13.2 }, image: "img/19d57f9a7652308a.jpg" } // L'épisode
     , 91: { rate_base: {          3: 11.2 }, image: "img/cb77a66b62023890.jpg" } // Yet Another ”drizzly rain”
     , 92: { rate_base: {          3: 12.8 }, image: "img/17315fb464f265bd.jpg" } // 最終鬼畜妹・一部声
     , 93: { rate_base: {          3: 12.3 }, image: "img/6b40809324937ec9.jpg" } // 蒼空に舞え、墨染の桜
     , 94: { rate_base: {          3: 12.3 }, image: "img/164258c65c714d50.jpg" } // セツナトリップ
     , 95: { rate_base: {          3: 12.1 }, image: "img/db38c119e4d8933e.jpg" } // 砂漠のハンティングガール♡
-    , 96: { rate_base: {          3: 11.8 }, image: "img/9d2ebc847487e01b.jpg" } // チルノのパーフェクトさんすう教室
+    , 96: { rate_base: {          3: 11.9 }, image: "img/9d2ebc847487e01b.jpg" } // チルノのパーフェクトさんすう教室
     , 98: { rate_base: {          3: 11.4 }, image: "img/f7e67efaf6ced6ea.jpg" } // 魔理沙は大変なものを盗んでいきました
     , 99: { rate_base: {          3: 11.7 }, image: "img/ee332e6fa86661fd.jpg" } // 言ノ葉カルマ
     ,101: { rate_base: {          3: 12.9 }, image: "img/81e347d3b96b2ae1.jpg" } // Tango Rouge
@@ -118,7 +118,7 @@ var DIFFICULTY = {
     ,134: { rate_base: { 2: 11.8, 3: 13.7 }, image: "img/08a24ed249ed2eec.jpg" } // HAELEQUIN (Original Remaster)
     ,135: { rate_base: {          3: 13.5 }, image: "img/e7ee14d9fe63d072.jpg" } // Vallista
     ,136: { rate_base: {          3: 12.5 }, image: "img/c4f977d264deafb1.jpg" } // Äventyr
-    ,137: { rate_base: {          3: 13.6 }, image: "img/13a5a9ca35a9b71b.jpg" } // Angel dust
+    ,137: { rate_base: { 2: 11.4, 3: 13.6 }, image: "img/13a5a9ca35a9b71b.jpg" } // Angel dust
     ,138: { rate_base: {          3: 13.0 }, image: "img/478e8835e382f740.jpg" } // conflict
     ,140: { rate_base: {          3: 11.9 }, image: "img/0aad2e0ff661e7d1.jpg" } // Guilty
     ,141: { rate_base: { 2: 11.5, 3: 13.3 }, image: "img/2e6c11edba79d997.jpg" } // 閃鋼のブリューナク
@@ -156,7 +156,7 @@ var DIFFICULTY = {
     ,189: { rate_base: {          3: 12.7 }, image: "img/9310d07b7e02e73a.jpg" } // ひれ伏せ愚民どもっ！
     ,190: { rate_base: {          3: 12.6 }, image: "img/bbaa464731ab96a4.jpg" } // エテルニタス・ルドロジー
     ,196: { rate_base: { 2: 11.9, 3: 13.7 }, image: "img/ed40032f25177518.jpg" } // FREEDOM DiVE
-    ,197: { rate_base: { 2: 11.2, 3: 13.1 }, image: "img/ae6d3a8806e09613.jpg" } // Jack-the-Ripper◆
+    ,197: { rate_base: { 2: 11.7, 3: 13.1 }, image: "img/ae6d3a8806e09613.jpg" } // Jack-the-Ripper◆
     ,199: { rate_base: {          3: 12.1 }, image: "img/d76afb63de1417f8.jpg" } // ハート・ビート
     ,200: { rate_base: {          3: 12.1 }, image: "img/569e7b07c0696bc7.jpg" } // 無敵We are one!!
     ,201: { rate_base: { 2: 12.4, 3: 13.9 }, image: "img/a251c24a3cc4dbf7.jpg" } // Contrapasso -inferno-
@@ -172,7 +172,7 @@ var DIFFICULTY = {
     ,211: { rate_base: {          3: 12.2 }, image: "img/d99079fecaa936ab.jpg" } // 天樂
     ,212: { rate_base: {          3: 12.1 }, image: "img/1ee29f73ee8f53d0.jpg" } // いろは唄
     ,213: { rate_base: {          3: 11.9 }, image: "img/c6d494f528391d1c.jpg" } // 星屑ユートピア
-    ,214: { rate_base: {          3: 11.9 }, image: "img/f4a2d88c38669f72.jpg" } // 青春はNon-Stop!
+    ,214: { rate_base: {          3: 11.8 }, image: "img/f4a2d88c38669f72.jpg" } // 青春はNon-Stop!
     ,215: { rate_base: {          3: 12.4 }, image: "img/81cc90c04676f18b.jpg" } // Falling Roses
     ,216: { rate_base: {          3: 12.3 }, image: "img/3227722a8345a950.jpg" } // 放課後革命
     ,217: { rate_base: {          3: 11.8 }, image: "img/2b3c90b1dab1ecff.jpg" } // 楽園ファンファーレ
@@ -197,7 +197,7 @@ var DIFFICULTY = {
     ,244: { rate_base: {          3: 12.3 }, image: "img/e0a700914896ea4a.jpg" } // 回レ！雪月花
     ,245: { rate_base: {          3: 11.4 }, image: "img/630ac5b31e8ab816.jpg" } // Help me, あーりん！
     ,246: { rate_base: {          3: 12.7 }, image: "img/d445e4878a818d8b.jpg" } // なるとなぎのパーフェクトロックンロール教室
-    ,247: { rate_base: {          3: 11.9 }, image: "img/58847f9694837c0b.jpg" } // 絶世スターゲイト
+    ,247: { rate_base: {          3: 11.7 }, image: "img/58847f9694837c0b.jpg" } // 絶世スターゲイト
     ,248: { rate_base: { 2: 12.3, 3: 13.9 }, image: "img/a2fdef9e4b278a51.jpg" } // Schrecklicher Aufstand
     ,250: { rate_base: { 2: 11.8, 3: 13.5 }, image: "img/989f4458fb34aa9d.jpg" } // Philosopher
     ,251: { rate_base: {          3: 12.5 }, image: "img/457722c9f3ff5473.jpg" } // Crazy ∞ nighT
@@ -230,6 +230,7 @@ var DIFFICULTY = {
     ,298: { rate_base: {          3: 12.6 }, image: "img/7c649691aa0c4b3d.jpg" } // PRIVATE SERVICE
     ,299: { rate_base: {          3: 11.4 }, image: "img/9bd44690db5375ac.jpg" } // secret base ～君がくれたもの～ (10 years after Ver.)
     ,300: { rate_base: {          3: 12.2 }, image: "img/012eb1ed09577836.jpg" } // No Routine
+    ,302: { rate_base: {          3: 13.3 }, image: "img/13446730e8b99f0e.jpg" } // Strahv
     ,304: { rate_base: {          3: 11.7 }, image: "img/16cb8567115a2f2c.jpg" } // In The Blue Sky ’01
     ,305: { rate_base: { 2: 11.0, 3: 13.3 }, image: "img/266bd38219201fa1.jpg" } // 幻想のサテライト
     ,306: { rate_base: {          3: 12.2 }, image: "img/106d9eec68ed84b3.jpg" } // 凛として咲く花の如く
@@ -249,6 +250,7 @@ var DIFFICULTY = {
     ,325: { rate_base: {          3: 12.6 }, image: "img/97eca622afca0f15.jpg" } // Her Majesty
     ,326: { rate_base: {          3: 12.5 }, image: "img/fd01fc38e38042e3.jpg" } // Sakura Fubuki
     ,327: { rate_base: {          3: 12.7 }, image: "img/17c363c1fd2fa7d1.jpg" } // JULIAN
+    ,328: { rate_base: {          3: 13.7 }, image: "img/c7cf3ce1e858e3f0.jpg" } // ★LittlE HearTs★
     ,329: { rate_base: {          3: 12.3 }, image: "img/e869980ddd2f9c68.jpg" } // STAIRWAY TO GENERATION
     ,330: { rate_base: {          3: 12.1 }, image: "img/b3ea0fe012eb7ea2.jpg" } // ドキドキDREAM!!!
     ,331: { rate_base: {          3: 12.2 }, image: "img/ec37e447b91995dd.jpg" } // 猛進ソリストライフ！
