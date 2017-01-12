@@ -13,11 +13,15 @@ if (!location.href.match(/^https:\/\/chunithm-net.com/)) {
     throw Error();
 }
 
-// list of resources required to execute this script (note that all
-// resources must be provided via HTTPS)
-var dependencies = [
-    "https://platform.twitter.com/widgets.js" // Twitter tweet/follow button
-];
+// List of dependencies (note that all resources must be provided via
+// HTTPS).
+var dependencies = {
+    js: [
+        "https://platform.twitter.com/widgets.js" // Twitter tweet/follow button
+    ],
+    css: [
+    ],
+};
 
 // -----------------------------------------------------------------------------
 // utilities
@@ -45,7 +49,7 @@ function request_api(api_name, req_data, callback, errorback)
     });
 }
 
-// ---- rate <-> score
+// ---- Rate <-> Score
 
 // Calculate rate from given SCORE and RATE_BASE. (reference :
 // http://d.hatena.ne.jp/risette14/20150913/1442160273)
@@ -79,7 +83,7 @@ function rate_to_score(rate_base, target_rate)
         :  900000;
 }
 
-// ---- unparsers
+// ---- Unparsers
 
 // Format a positive floating number NUM to a string of the form
 // `xx.xx'.
@@ -99,7 +103,7 @@ function rate_diff_str(num)
         : "";
 }
 
-// (unused)
+// (unused) Get rank icon suitable for SCORE.
 function rank_icon (score)
 {
     return score >= 1007500 ? "common/images/icon_sss.png"
@@ -111,7 +115,7 @@ function rank_icon (score)
         : "";
 }
 
-// ---- obj -> dom
+// ---- JS Obj -> DOM
 
 // Stringify a js object in the CSS format.
 function _css(obj)
@@ -124,46 +128,57 @@ function _css(obj)
     }, "");
 }
 
-// TODO: Bug fix.
-// TODO: Implement on_create hooks, click handlers.
-// TODO: It maybe okay to use functions to instantiate vars.
-//
-// Stringify TEMPLATE in the HTML format. TEMPLATE can be either a
-// string or a JS array of the form [TAG, ATTRS, CHILDREN ...]. TAG is
-// the tag name optionally followed by "#<id>". ATTRS is optional and
-// if specified, it must be an object whose keys are attribute names
-// and values are strings. CHILDREN are templates respectively.
-//
-// Optional arg PARAMS can be an object, whose values are either
-// string, or an object of the same form as ATTRS. If TEMPLATE has a
-// DOM whose id matches a key in PARAMS, its content or attributes are
-// replaced by the value associated to the key.
-function dom(template, params)
+// Generate a jQuery object from a js object OBJ. OBJ is either a
+// string or an array. If OBJ is an array, it must have the form
+// [ELEM, ATTRS, CHILDREN ...], where ELEM is a string representing
+// elem type (i.e. "div") optionally follwed by its ID and classes
+// (i.e. "#hoge.fuga.piyo"), ATTRS is an optional hash ('click' is
+// reserved for the click handler), and each CHILDREN is a js object
+// (or an array of js objects) recursively.
+function _dom(obj) {
+    if (typeof obj == "string" || obj instanceof jQuery) return obj;
+
+    var elem     = obj[0].split(/[.#]/)[0];
+    var classes  = obj[0].split('#')[0].split('.').slice(1);
+    var id       = obj[0].split('#')[1];
+    var attrs    = typeof obj[1] == "object" && !Array.isArray(obj[1]) && obj[1];
+    var contents = obj.slice(attrs ? 2 : 1);
+
+    var $elem = $("<" + elem + " " +
+                  (classes[0] ? "class='" + classes.join(" ") + "'" : "") +
+                  (id ? "id='" + id + "'" : "") +
+                  (attrs ? Object.keys(attrs).map(function(k) {
+                      return k == 'click' ? "" : k + "='" + attrs[k] + "'";
+                  }).join('') : "") + ">");
+
+    if (attrs.click) $elem.click(attrs.click);
+
+    contents.forEach(function(x) {
+        if (Array.isArray(x[0])) x.forEach(function(y) { $elem.append(_dom(y)); });
+        else $elem.append(_dom(x));
+    });
+
+    return $elem;
+}
+
+// Render COMPONENT in PARENT DOM, where COMPONENT is a hash of the
+// form { html: [...], css: {...} } and PARENT is a jQuery query. Note
+// that CSS is rendered only if the object has never been rendered
+// yet. If APPENDP is a true-value, COMPONENT is appended at the last
+// of the PARENT DOM.
+function render(component, parent, appendp)
 {
-    if (!template) return "";
-    else if (typeof template == "string") return template;
-
-    var elem = template[0].split("#"); // [ELEM_TYPE, ID]
-    var attrs = typeof template[1] == "object" && !Array.isArray(template[1]) && template[1];
-    var contents = template.slice(attrs ? 2 : 1);
-
-    if (params && params[elem[1]]) {
-        if (typeof params[elem[1]] == "string")
-            contents = [params[elem[1]]];
-        else
-            Object.keys(params[elem[1]]).map(function(k) { attrs[k] = params[elem[1]][k]; });
+    if (component.html) {
+        if (appendp) {
+            $(parent).append($(_dom(component.html)));
+        } else {
+            $(parent).html($(_dom(component.html)));
+        }
     }
-
-    attrs = Object.keys(attrs).reduce(function(acc, k) {
-        return acc + " " + k + "='" + attrs[k] + "'";
-    }, "");
-
-    contents = contents.reduce(function(acc, c) {
-        return acc + dom(c, params);
-    }, "");
-
-    return "<" + elem[0] + (elem[1] ? " id='" + elem[1] + "'" : "") + attrs + ">" +
-        contents + "</" + elem[0] + ">";
+    if (component.css && !component.css._rendered) {
+        $("head").append("<style>" + _css(component.css) + "</style>");
+        component.css._rendered = true;
+    }
 }
 
 // -----------------------------------------------------------------------------
@@ -330,7 +345,7 @@ var chart_list = [
     ,{ id: 196, level: 2, rate_base: 11.9, image: "img/ed40032f25177518.jpg", name: "FREEDOM DiVE 赤" }
     ,{ id: 121, level: 3, rate_base: 12.5, image: "img/4196f71ce51620a0.jpg", name: "東方妖々夢 ～the maximum moving about～" }
     ,{ id: 93,  level: 3, rate_base: 12.3, image: "img/6b40809324937ec9.jpg", name: "蒼空に舞え、墨染の桜" }
-    ,{ id: 122, level: 3, rate_base: 12.5, image: "img/67418ba28151c3ff.jpg", name: "少女幻葬戦慄曲　～　Necro Fantasia" }
+    ,{ id: 122, level: 3, rate_base: 12.5, image: "img/67418ba28151c3ff.jpg", name: "少女幻葬戦慄曲 ～ Necro Fantasia" }
     ,{ id: 177, level: 3, rate_base: 12.6, image: "img/6e7843f9d831b0ac.jpg", name: "Jimang Shot" }
     ,{ id: 36,  level: 3, rate_base: 11.0, image: "img/e273c9d64170b575.jpg", name: "届かない恋 '13" }
     ,{ id: 126, level: 3, rate_base: 11.3, image: "img/547ba5407b6e7fa0.jpg", name: "Heart To Heart" }
@@ -374,7 +389,7 @@ var chart_list = [
     ,{ id: 267, level: 3, rate_base: 11.5, image: "img/a0d03551eb3930e9.jpg", name: "心象蜃気楼" }
     ,{ id: 248, level: 2, rate_base: 12.3, image: "img/a2fdef9e4b278a51.jpg", name: "Schrecklicher Aufstand 赤" }
     ,{ id: 7,   level: 3, rate_base: 13.6, image: "img/b602913a68fca621.jpg", name: "初音ミクの消失" }
-    ,{ id: 7,   level: 2, rate_base: 12.0, image: "img/b602913a68fca621.jpg", name: "初音ミクの消失　赤" }
+    ,{ id: 7,   level: 2, rate_base: 12.0, image: "img/b602913a68fca621.jpg", name: "初音ミクの消失 赤" }
     ,{ id: 287, level: 3, rate_base: 11.9, image: "img/5febf5df2b5094f3.jpg", name: "ロミオとシンデレラ" }
     ,{ id: 279, level: 3, rate_base: 11.7, image: "img/84ecaebe6bce2a58.jpg", name: "深海少女" }
     ,{ id: 278, level: 3, rate_base: 11.4, image: "img/5f1d7a520a2735d4.jpg", name: "からくりピエロ" }
@@ -455,40 +470,8 @@ var disp_rate_diff;
 // UI
 // -----------------------------------------------------------------------------
 
-var $chunithm_net = $("body *");
-
 // CSS applied to the HTML
 var the_css = {
-    "#cra_wrapper": {
-        "position": "absolute", "top": "0px", "left": "0px",
-        "min-height": "100%", "width": "100%",
-        "display": "none", "z-index": "10000",
-        "text-align": "center",
-    },
-
-    "#cra_window_wrapper": {
-        "position": "absolute", "top": "0px", "left": "0px",
-        "height": "100%", "width": "100%"
-    },
-
-    "#cra_window_helper": {
-        "display": "inline-block", "vertical-align": "middle",
-        "height": "100%"
-    },
-
-    "#cra_window_outer": {
-        "display": "inline-block", "vertical-align": "middle"
-    },
-
-    "#cra_window_inner p": { "margin": "20px" },
-    "#cra_window_inner .cra_caution": { "font-size": "25px" },
-
-    "#cra_close_button": {
-        "position": "fixed", "right": "20px", "top": "20px",
-        "z-index": "100",
-        "font-size": "30px",
-    },
-
     "#logo": { "max-width": "100%" },
 
     "#cra_chart_list": {
@@ -511,139 +494,107 @@ var the_css = {
     ".cra_button": { "cursor": "pointer" }
 }
 
-// var initial_screen =
-//     ["div#cra_wrapper",
-//      ["div#cra_window_wrapper",
-//       ["div#cra_window_helper"],
-//       ["div#cra_window_outer", {class: "frame01 w460"},
-//        ["div#cra_window_inner",
-//         ["p", {class: "cra_caution"},
-//          "CAUTION"],
-//         ["p",
-//          "このツールは CHUNITHM NET の内部で使われている URLに直接アクセス" +
-//          "することでスコア情報を収集します。これが「通常想定し得ない方法」" +
-//          "による、あるいは「不正な」サービスの利用と解釈された場合、利用規約" +
-//          "によってアカウント停止等の処分が行われる可能性があります。"],
-//         ["p",
-//          "ツールの性質を理解したうえで、各自の判断でご利用ください。" +
-//          "このツールを使用したことで起こったトラブルに作者は対応しません。"],
-//         ["p",
-//          "ツールを閉じるには、右上の×ボタンをクリックしてください。"]]]],
-//      ["div#cra_close_button", {class: "cra_button"}, "x"]];
+// --- caution dialog
 
-// var main_screen_doms = [
-//     ["img#logo", {src: "https://zk-phi.github.io/CHUNITHMRateAnalyzer/logo.png"}],
-//     ["h2#cra_rate",
-//      ["p#cra_best_rate",
-//       "BEST枠平均: ", ["span#rate_best"], " / ", "達成可能: ", ["span#rate_opt"], " ",
-//       ["a#cra_share_button", {
-//           class: "twitter-share-button",
-//           href: "https://twitter.com/share",
-//           "data-url": " ",
-//           "data-lang": "ja"
-//       }]],
-//      ["p#cra_disp_rate",
-//       "(RECENT枠平均: ", ["span#rate_recent"], "表示レート: ", ["span#rate_disp"], ")"]],
-//     ["div#cra_sort_menu", {class: "cra_button"},
-//      ["div#cra_sort_rate", {class: "cra_sort_button"}, "レート順"],
-//      ["div#cra_sort_base", {class: "cra_sort_button"}, "難易度順"],
-//      ["div#cra_sort_score", {class: "cra_sort_button"}, "スコア順"],
-//      ["div#cra_sort_score_req", {class: "cra_sort_button"}, "必要スコア順"]],
-//     ["div#cra_chart_list"],
-//     "<hr>",
-//     ["div#cra_footer",
-//      "CHUNITHM Rate Analyzer by zk_phi ",
-//      ["a#cra_follow_button", {
-//          class: "twitter-follow-button",
-//          href: "https://twitter.com/zk_phi"
-//      }, "follow"]]
-// ];
+var css_caution_dialog = {
+    "#cra_window_wrapper": {
+        "position": "absolute", "top": "0px", "left": "0px",
+        "height": "100%", "width": "100%"
+    },
 
-// var list_item_template =
-//     ["div", {class: "frame02 w400 cra_chart_list_item"},
-//      ["div", {class: "play_jacket_side"},
-//       ["div", {class: "play_jacket_area"},
-//        ["div#Jacket", {class: "play_jacket_img"},
-//         ["img#jacket_img"]]]],
-//     ["div", {class: "play_data_side01"},
-//      ["div", {class: "box02 play_track_block"},
-//       ["div#TrackLevel", {class: "play_track_result"},
-//        ["img#difficulty_icon"]],
-//       ["div#Track", {class: "play_track_text"}]],
-//     ["div", {class: "box02 play_musicdata_block"},
-//      ["div#MusicTitle", {class: "play_musicdata_title"}],
-//      ["div", {class: "play_musicdata_score clearfix"},
-//       ["div", {class: "play_musicdata_score_text"},
-//        "Score: ", ["span#Score"]],
-//       "<br>",
-//       ["div", {class: "play_musicdata_score_text"},
-//        "Rate: ", ["span#Rate"]]]],
-//      ["div#IconBatch", {class: "play_musicdata_icon clearfix"}]]];
+    "#cra_window_helper": {
+        "display": "inline-block", "vertical-align": "middle",
+        "height": "100%"
+    },
 
-// ---- load the dependencies and the CSS
+    "#cra_window_outer": {
+        "display": "inline-block", "vertical-align": "middle"
+    },
 
-dependencies.map(function(x) { $("head").append("<script src='" + x + "'>"); });
-$chunithm_net.fadeTo(400, 0.75);
-$("head").append("<style>" + _css(the_css) + "</style>");
+    "#cra_window_inner p": { "margin": "20px" },
+    "#cra_window_inner .cra_caution": { "font-size": "25px" }
+};
+
+function caution_dialog(content, buttons) {
+    return {
+        css: css_caution_dialog,
+        html:
+        ['div#cra_window_wrapper',
+         ['div#cra_window_helper'],
+         ['div#cra_window_outer.frame01.w460',
+          ['div#cra_window_inner.frame01_inside.w450',
+           content.map(function(x) { return ['p', x]; }),
+           buttons.map(function(x) {
+               return ['h2#page_title.cra_button', { click: x.action } x.label]; })]]]
+    };
+}
 
 // ---- render the initial screen
 
-// $("body").append(dom(initial_screen));
+// load dependencies
+dependencies.js.map(function(x) { $("head").append("<script src='" + x + "'>"); });
+dependencies.css.map(function(x) { $("head").append("<link rel='stylesheet' href='" + x + "'"); });
+$("head").append("<style>" + _css(the_css) + "</style>");
 
-$("body")
-    .append("<div id='cra_wrapper'></div>");
-$("#cra_wrapper")
-    .html("<div id='cra_window_wrapper'></div>" +
-          "<div id='cra_close_button' class='cra_button'>x</div>");
-$("#cra_window_wrapper")
-    .html("<div id='cra_window_helper'></div>" +
-          "<div id='cra_window_outer' class='frame01 w460'></div>");
-$("#cra_window_outer")
-    .html("<div id='cra_window_inner' class='frame01_inside w450'></div>");
-$("#cra_window_inner")
-    .html("<p class='cra_caution'>CAUTION</p>" +
-          "<p>9/13- スコアの取得を高速化。</p>" +
-          "<p>9/12- 単曲レートの切り捨て位置を修正。</p>" +
-          "<p>8/29- 譜面定数の判明したものから更新しています (譜面定数の調査方法は<a href='http://d.hatena.ne.jp/risette14/20150924/1443064402'>こちら</a>)。</p>" +
-          "<p>ツールの性質を理解したうえで、各自の判断でご利用ください。</p>" +
-          "<p>ツールを閉じるには、右上の×ボタンをクリックしてください。</p>");
+// hide chunithm_net
+var $chunithm_net = $("body *");
+$chunithm_net.fadeTo(400, 0.75);
 
-// close button
-$("#cra_close_button")
-    .click(function() {
-        $("html, body").animate({ scrollTop: 0 }, 400);
-        $("#cra_wrapper").fadeOut(400, function() { $(this).remove(); });
-        $chunithm_net.delay(400).fadeTo(400, 1);
-    });
-
-// fetch button
-$("#cra_window_inner")
-    .append($("<h2 id='page_title' class='cra_button cra_fetch_score'>スコアを解析する</h2>")
-            .click(function() {
-                $("#cra_close_button").hide(400);
-                fetch_user_data(function() {
-                    fetch_score_data(2, function() {
-                        fetch_score_data(3, function() {
-                            localStorage.setItem("cra_chart_list", JSON.stringify(chart_list));
-                            localStorage.setItem("cra_version", JSON.stringify(cra_version));
-                            $("#cra_close_button").show(400);
-                            rate_display();
-                        });
-                    });
-               });
-           }));
-
-// view button
-if(cra_version == last_cra_version) {
-    $("#cra_window_inner")
-        .append($("<h2 id='page_title' class='cra_button cra_view_last'>前回のデータを見る</h2>")
-               .click(function() {
-                   chart_list = last_chart_list;
-                   disp_rate = last_disp_rate;
-                   rate_display();
-               }));
+function onclick_cra_close () {
+    $("html, body").animate({ scrollTop: 0 }, 400);
+    $("#cra_wrapper").fadeOut(400, function() { $(this).remove(); });
+    $chunithm_net.delay(400).fadeTo(400, 1);
 }
 
+function onclick_do_analyze () {
+    $("#cra_close_button").hide(400);
+    fetch_user_data(function() {
+        fetch_score_data(2, function() {
+            fetch_score_data(3, function() {
+                localStorage.setItem("cra_chart_list", JSON.stringify(chart_list));
+                localStorage.setItem("cra_version", JSON.stringify(cra_version));
+                $("#cra_close_button").show(400);
+                rate_display();
+            });
+        });
+    });
+}
+
+function onclick_see_last_analysis () {
+    chart_list = last_chart_list;
+    disp_rate = last_disp_rate;
+    rate_display();
+}
+
+var css_initial_screen = {
+    "#cra_wrapper": {
+        "position": "absolute", "top": "0px", "left": "0px",
+        "min-height": "100%", "width": "100%",
+        "display": "none", "z-index": "10000",
+        "text-align": "center",
+    },
+    "#cra_close_button": {
+        "position": "fixed", "right": "20px", "top": "20px",
+        "z-index": "100",
+        "font-size": "30px",
+    }
+};
+
+var initial_screen = {
+    css: css_initial_screen,
+    html:
+    ['div#cra_wrapper',
+     ["div#cra_close_button.cra_button", { click: onclick_cra_close }, "x"]
+     caution_dialog(
+         ['9/13- スコアの取得を高速化。',
+          '9/12- 単曲レートの切り捨て位置を修正。',
+          'ツールの性質を理解したうえで、各自の判断でご利用ください。',
+          'ツールを閉じるには、右上の×ボタンをクリックしてください。'],
+         [{ label: 'スコアを解析する', action: onclick_do_analyze },
+          { label: '前回のデータを見る', action: onclick_see_last_analysis }]), ]
+};
+
+render(initial_screen, 'body', true);
 $("html, body").animate({ scrollTop: 0 }, 400);
 $("#cra_wrapper").delay(400).fadeIn(400);
 
@@ -1177,7 +1128,7 @@ function render_chart_list(msgs)
         if (msgs[i])
             $("#cra_chart_list")
             .append("<hr>")
-            .append(dom(["div", {class: "mt_15"}, ["h2#page_title", msgs[i]]]));
+            .append(_dom(["div.mt_15", ["h2#page_title", msgs[i]]]));
 
         if (isNaN(chart_list[i].req_diff))
             continue;
@@ -1229,18 +1180,7 @@ function render_chart_list(msgs)
       ""}
   </div>
 </div>`);
-
-        // $("#cra_chart_list").append(dom(list_item_template, {
-        //     jacket_img: {src: chart_list[i].image},
-        //     difficulty_icon: difficulty_icon,
-        //     Track: rate_str(chart_list[i].rate_base),
-        //     MusicTitle: chart_list[i].name,
-        //     Score: chart_list[i].score,
-        //     Rate: rate_str(chart_list[i].rate) + rate_diff_str(chart_list[i].rate_diff),
-        //     IconBatch: chart_list[i].req_diff ? "BEST枠入りまで：" + chart_list[i].req_diff : ""
-        // }));
     }
 
-    // $("#cra_chart_list").show(400);
     $("#cra_chart_list").show();
 }
