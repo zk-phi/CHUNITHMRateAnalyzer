@@ -484,6 +484,12 @@ var the_css = {
         "background-color": "black", "color": "white"
     },
 
+    '#cra_offer_playlog': {
+        "position": "static", "font-size": "10px",
+        "vertical-align": "top", "margin": "0 0 0 5px",
+        "padding": "2px 5px", "border-radius": "4px"
+    },
+
     ".cra_chart_list_item": {
         "text-align": "center",
     },
@@ -1152,6 +1158,7 @@ function rate_display()
     </div>
   </div>
   <a id="cra_share_button" class="twitter-share-button"></a>
+  <div id='cra_offer_playlog' class="cra_sort_button">データ提供</div>
 </div>`);
 
         $("#cra_share_button")
@@ -1168,14 +1175,19 @@ function rate_display()
                   " (" + best_list[0].name + ") #CHUNITHMRateAnalyzer")
             .html("Tweet");
 
+        $("#cra_offer_playlog").click(function () {
+            if (window.confirm('Recent 枠の解析をされている @max_eipi さんにプレー履歴を提供し、解析に協力することができます。ユーザー名等は送信されません。提供する場合は OK をクリックしてください。')) {
+                offer_playlog();
+            }
+        });
+
         $("#cra_sort_menu")
             .html("<div id='cra_sort_rate' class='cra_sort_button'>レート順</div>" +
                   "<div id='cra_sort_base' class='cra_sort_button'>難易度順</div>" +
                   "<div id='cra_sort_score' class='cra_sort_button'>スコア順</div>" +
                   "<div id='cra_sort_score_req' class='cra_sort_button'>必要スコア順</div>" +
                   "<div id='cra_sort_score_ave' class='cra_sort_button'>おすすめ(β)</div>" +
-                  "<div id='cra_recent_list' class='cra_sort_button'>Recent枠(β)</div>" +
-                  "<div id='cra_offer_playlog' class='cra_sort_button'>プレイデータ提供</div>");
+                  "<div id='cra_recent_list' class='cra_sort_button'>Recent枠(β)</div>");
 
         $("#cra_footer")
             .html("CHUNITHM Rate Analyzer by zk_phi " +
@@ -1245,10 +1257,6 @@ function rate_display()
         $("#cra_recent_list").click(function () {
             recent_candidates.sort(comp_rate);
             render_chart_list(recent_candidates, { 0: 'Recent枠', 10: 'Recent候補枠' });
-        });
-
-        $("#cra_offer_playlog").click(function () {
-            offer_playlog();
         });
 
         // load twitter buttons
