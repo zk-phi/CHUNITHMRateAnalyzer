@@ -188,7 +188,7 @@ var chart_list = [
     ,{ id: 3,   level: 3, rate_base: 11.8, image: "img/d739ba44da6798a0.jpg", name: "B.B.K.K.B.K.K." }
     ,{ id: 149, level: 3, rate_base: 11.7, image: "img/c9c2fa20dcd9a46e.jpg", name: "緋色のDance" }
     ,{ id: 48,  level: 3, rate_base: 11.8, image: "img/b38eba298df2c6db.jpg", name: "Unlimited Spark!" }
-    ,{ id: 96,  level: 3, rate_base: 11.8, image: "img/9d2ebc847487e01b.jpg", name: "チルノのパーフェクトさんすう教室" }
+    ,{ id: 96,  level: 3, rate_base: 11.9, image: "img/9d2ebc847487e01b.jpg", name: "チルノのパーフェクトさんすう教室" }
     ,{ id: 94,  level: 3, rate_base: 12.3, image: "img/164258c65c714d50.jpg", name: "セツナトリップ" }
     ,{ id: 47,  level: 3, rate_base: 12.0, image: "img/5cb17a59f4b8c133.jpg", name: "六兆年と一夜物語" }
     ,{ id: 152, level: 2, rate_base: 11.7, image: "img/f63fab30a7b6f160.jpg", name: "Gustav Battle 赤" }
@@ -285,7 +285,7 @@ var chart_list = [
     ,{ id: 232, level: 2, rate_base: 11.3, image: "img/a2069fdb9d860d36.jpg", name: "Elemental Creation 赤" }
     ,{ id: 52,  level: 2, rate_base: 11.1, image: "img/a62f975edc860e34.jpg", name: "Cyberozar 赤" }
     ,{ id: 209, level: 3, rate_base: 11.7, image: "img/5744f4cf66710a56.jpg", name: "君色シグナル" }
-    ,{ id: 247, level: 3, rate_base: 11.9, image: "img/58847f9694837c0b.jpg", name: "絶世スターゲイト" }
+    ,{ id: 247, level: 3, rate_base: 11.7, image: "img/58847f9694837c0b.jpg", name: "絶世スターゲイト" }
     ,{ id: 199, level: 3, rate_base: 12.1, image: "img/d76afb63de1417f8.jpg", name: "ハート・ビート" }
     ,{ id: 173, level: 3, rate_base: 13.1, image: "img/2e95529be9118a11.jpg", name: "Halcyon" }
     ,{ id: 185, level: 3, rate_base: 11.2, image: "img/520c1fef62954ca6.jpg", name: "楽園の翼" }
@@ -299,12 +299,12 @@ var chart_list = [
     ,{ id: 226, level: 2, rate_base: 12.3, image: "img/993b5cddb9d9badf.jpg", name: "Garakuta Doll Play 赤" }
     ,{ id: 226, level: 3, rate_base: 13.8, image: "img/993b5cddb9d9badf.jpg", name: "Garakuta Doll Play" }
     ,{ id: 62,  level: 3, rate_base: 12.4, image: "img/9386971505bb20b0.jpg", name: "名も無い鳥" }
-    ,{ id: 90,  level: 2, rate_base: 11.6, image: "img/19d57f9a7652308a.jpg", name: "L'épisode 赤" }
+    ,{ id: 90,  level: 2, rate_base: 11.7, image: "img/19d57f9a7652308a.jpg", name: "L'épisode 赤" }
     ,{ id: 90,  level: 3, rate_base: 13.2, image: "img/19d57f9a7652308a.jpg", name: "L'épisode" }
     ,{ id: 72,  level: 3, rate_base: 13.5, image: "img/ec3a366b4724f8f6.jpg", name: "Genesis" }
-    ,{ id: 197, level: 2, rate_base: 11.2, image: "img/ae6d3a8806e09613.jpg", name: "Jack-the-Ripper◆ 赤" }
+    ,{ id: 197, level: 2, rate_base: 11.7, image: "img/ae6d3a8806e09613.jpg", name: "Jack-the-Ripper◆ 赤" }
     ,{ id: 255, level: 3, rate_base: 11.1, image: "img/429d34fef5fddb02.jpg", name: "激情！ミルキィ大作戦" }
-    ,{ id: 214, level: 3, rate_base: 11.9, image: "img/f4a2d88c38669f72.jpg", name: "青春はNon-Stop!" }
+    ,{ id: 214, level: 3, rate_base: 11.8, image: "img/f4a2d88c38669f72.jpg", name: "青春はNon-Stop！" }
     ,{ id: 215, level: 3, rate_base: 12.4, image: "img/81cc90c04676f18b.jpg", name: "Falling Roses" }
     ,{ id: 200, level: 3, rate_base: 12.1, image: "img/569e7b07c0696bc7.jpg", name: "無敵We are one!!" }
     ,{ id: 202, level: 2, rate_base: 11.2, image: "img/45112e2818cf80a2.jpg", name: "GEMINI -C- 赤" }
@@ -424,6 +424,10 @@ var chart_list = [
     ,{ id: 219, level: 2, rate_base: 12.7, image: "img/246f63902c4b0f89.jpg", name: "玩具狂奏曲 -終焉- 赤"}
     ,{ id: 219, level: 3, rate_base: 13.9, image: "img/246f63902c4b0f89.jpg", name: "玩具狂奏曲 -終焉-"}
     ,{ id: 218, level: 3, rate_base: 12.4, image: "img/20359304f5e0574a.jpg", name: "サウンドプレイヤー"}
+    ,{ id: 302, level: 3, rate_base: 13.3, image: "img/13446730e8b99f0e.jpg", name: "Strahv"}
+    ,{ id: 328, level: 3, rate_base: 13.7, image: "img/c7cf3ce1e858e3f0.jpg", name: "★LittlE HearTs★"}
+    ,{ id: 19,  level: 2, rate_base: 11.0, image: "img/0b98b8b4e7cfd997.jpg", name: "DRAGONLADY 赤" }
+    ,{ id: 137, level: 2, rate_base: 11.4, image: "img/13a5a9ca35a9b71b.jpg", name: "Angel dust 赤" }
 ];
 
 // latest rate
