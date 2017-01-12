@@ -238,6 +238,7 @@ var DIFFICULTY = {
     ,307: { rate_base: {          3: 12.7 }, image: "img/ff9f70c8c0d9f24e.jpg" } // Paqqin
     ,308: { rate_base: {          3: 11.9 }, image: "img/f8d3f2e57ae2ff24.jpg" } // fake!fake!
     ,309: { rate_base: {          3: 12.5 }, image: "img/cee51d69c428f8f5.jpg" } // Rising Hope
+    ,312: { rate_base: {          3: 13.3 }, image: "img/81805f2ef1e58db8.jpg" } // ぶいえす!!らいばる!!
     ,313: { rate_base: {          3: 11.4 }, image: "img/5ac018495d6f01a5.jpg" } // ひだまりデイズ
     ,316: { rate_base: {          3: 11.5 }, image: "img/88f9536c08cb4e3f.jpg" } // みくみくにしてあげる♪【してやんよ】
     ,317: { rate_base: {          3: 13.4 }, image: "img/db15d5b7aefaa672.jpg" } // Air
