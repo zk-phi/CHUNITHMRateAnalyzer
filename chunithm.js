@@ -227,16 +227,18 @@ var DIFFICULTY = {
     ,292: { rate_base: {          3: 12.0 }, image: "img/b12c25f87b1d036e.jpg" } // 月に叢雲華に風
     ,293: { rate_base: {          3: 13.2 }, image: "img/c58227eb0d14938c.jpg" } // インビジブル
     ,296: { rate_base: {          3: 12.1 }, image: "img/76535cf4c728f2af.jpg" } // かくしん的☆めたまるふぉ～ぜっ!
+    ,297: { rate_base: {          3: 12.3 }, image: "img/8463cebfa120b884.jpg" } // 風仁雷仁
     ,298: { rate_base: {          3: 12.6 }, image: "img/7c649691aa0c4b3d.jpg" } // PRIVATE SERVICE
     ,299: { rate_base: {          3: 11.4 }, image: "img/9bd44690db5375ac.jpg" } // secret base ～君がくれたもの～ (10 years after Ver.)
     ,300: { rate_base: {          3: 12.2 }, image: "img/012eb1ed09577836.jpg" } // No Routine
-    ,302: { rate_base: {          3: 13.3 }, image: "img/13446730e8b99f0e.jpg" } // Strahv
+    ,302: { rate_base: { 2: 11.0, 3: 13.3 }, image: "img/13446730e8b99f0e.jpg" } // Strahv
     ,304: { rate_base: {          3: 11.7 }, image: "img/16cb8567115a2f2c.jpg" } // In The Blue Sky ’01
     ,305: { rate_base: { 2: 11.0, 3: 13.3 }, image: "img/266bd38219201fa1.jpg" } // 幻想のサテライト
     ,306: { rate_base: {          3: 12.2 }, image: "img/106d9eec68ed84b3.jpg" } // 凛として咲く花の如く
     ,307: { rate_base: {          3: 12.7 }, image: "img/ff9f70c8c0d9f24e.jpg" } // Paqqin
     ,308: { rate_base: {          3: 11.9 }, image: "img/f8d3f2e57ae2ff24.jpg" } // fake!fake!
     ,309: { rate_base: {          3: 12.5 }, image: "img/cee51d69c428f8f5.jpg" } // Rising Hope
+    ,312: { rate_base: {          3: 13.3 }, image: "img/81805f2ef1e58db8.jpg" } // ぶいえす!!らいばる!!
     ,313: { rate_base: {          3: 11.4 }, image: "img/5ac018495d6f01a5.jpg" } // ひだまりデイズ
     ,316: { rate_base: {          3: 11.5 }, image: "img/88f9536c08cb4e3f.jpg" } // みくみくにしてあげる♪【してやんよ】
     ,317: { rate_base: {          3: 13.4 }, image: "img/db15d5b7aefaa672.jpg" } // Air
