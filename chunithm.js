@@ -229,6 +229,7 @@ var DIFFICULTY = {
     ,291: { rate_base: {          3: 12.4 }, image: "img/9c5e71b3588dbc70.jpg" } // Kronos
     ,292: { rate_base: {          3: 12.0 }, image: "img/b12c25f87b1d036e.jpg" } // 月に叢雲華に風
     ,293: { rate_base: {          3: 13.2 }, image: "img/c58227eb0d14938c.jpg" } // インビジブル
+    ,294: { rate_base: {          3: 13.0 }, image: "img/c63005195d15922e.jpg" } // 人生リセットボタン
     ,296: { rate_base: {          3: 12.1 }, image: "img/76535cf4c728f2af.jpg" } // かくしん的☆めたまるふぉ～ぜっ!
     ,297: { rate_base: {          3: 12.3 }, image: "img/8463cebfa120b884.jpg" } // 風仁雷仁
     ,298: { rate_base: {          3: 12.6 }, image: "img/7c649691aa0c4b3d.jpg" } // PRIVATE SERVICE
