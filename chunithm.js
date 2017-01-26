@@ -219,6 +219,7 @@ var DIFFICULTY = {
     ,278: { rate_base: {          3: 11.4 }, image: "img/5f1d7a520a2735d4.jpg" } // からくりピエロ
     ,279: { rate_base: {          3: 11.7 }, image: "img/84ecaebe6bce2a58.jpg" } // 深海少女
     ,281: { rate_base: {          3: 13.4 }, image: "img/330e57eeeb0fb2cd.jpg" } // ラクガキスト
+    ,283: { rate_base: {          3: 12.0 }, image: "img/c658788de6594b15.jpg" } // 神曲
     ,286: { rate_base: {          3: 11.5 }, image: "img/afcce0c85c1f8610.jpg" } // Tell Your World
     ,287: { rate_base: {          3: 11.9 }, image: "img/5febf5df2b5094f3.jpg" } // ロミオとシンデレラ
     ,288: { rate_base: {          3: 11.6 }, image: "img/f29f10a963df60cf.jpg" } // First Twinkle
