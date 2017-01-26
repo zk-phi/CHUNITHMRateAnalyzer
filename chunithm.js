@@ -213,6 +213,7 @@ var DIFFICULTY = {
     ,264: { rate_base: {          3: 12.2 }, image: "img/f44c6b628889f8ec.jpg" } // My Dearest Song
     ,267: { rate_base: {          3: 11.5 }, image: "img/a0d03551eb3930e9.jpg" } // 心象蜃気楼
     ,270: { rate_base: {          3: 12.3 }, image: "img/21dfcd3ae2c5c370.jpg" } // エンヴィキャットウォーク
+    ,271: { rate_base: {          3: 12.8 }, image: "img/99b79d4bd74e476c.jpg" } // 鬼KYOKAN
     ,273: { rate_base: {          3: 11.8 }, image: "img/604157e2c49d91d7.jpg" } // ビバハピ
     ,276: { rate_base: {          3: 12.4 }, image: "img/82105b37d18450b6.jpg" } // 後夜祭
     ,278: { rate_base: {          3: 11.4 }, image: "img/5f1d7a520a2735d4.jpg" } // からくりピエロ
