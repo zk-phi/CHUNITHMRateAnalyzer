@@ -213,11 +213,14 @@ var DIFFICULTY = {
     ,264: { rate_base: {          3: 12.2 }, image: "img/f44c6b628889f8ec.jpg" } // My Dearest Song
     ,267: { rate_base: {          3: 11.5 }, image: "img/a0d03551eb3930e9.jpg" } // 心象蜃気楼
     ,270: { rate_base: {          3: 12.3 }, image: "img/21dfcd3ae2c5c370.jpg" } // エンヴィキャットウォーク
+    ,271: { rate_base: {          3: 12.8 }, image: "img/99b79d4bd74e476c.jpg" } // 鬼KYOKAN
     ,273: { rate_base: {          3: 11.8 }, image: "img/604157e2c49d91d7.jpg" } // ビバハピ
     ,276: { rate_base: {          3: 12.4 }, image: "img/82105b37d18450b6.jpg" } // 後夜祭
     ,278: { rate_base: {          3: 11.4 }, image: "img/5f1d7a520a2735d4.jpg" } // からくりピエロ
     ,279: { rate_base: {          3: 11.7 }, image: "img/84ecaebe6bce2a58.jpg" } // 深海少女
     ,281: { rate_base: {          3: 13.4 }, image: "img/330e57eeeb0fb2cd.jpg" } // ラクガキスト
+    ,283: { rate_base: {          3: 12.0 }, image: "img/c658788de6594b15.jpg" } // 神曲
+    ,284: { rate_base: {          3: 12.7 }, image: "img/16b25dc6eb7765aa.jpg" } // 幸せになれる隠しコマンドがあるらしい
     ,286: { rate_base: {          3: 11.5 }, image: "img/afcce0c85c1f8610.jpg" } // Tell Your World
     ,287: { rate_base: {          3: 11.9 }, image: "img/5febf5df2b5094f3.jpg" } // ロミオとシンデレラ
     ,288: { rate_base: {          3: 11.6 }, image: "img/f29f10a963df60cf.jpg" } // First Twinkle
@@ -226,11 +229,13 @@ var DIFFICULTY = {
     ,291: { rate_base: {          3: 12.4 }, image: "img/9c5e71b3588dbc70.jpg" } // Kronos
     ,292: { rate_base: {          3: 12.0 }, image: "img/b12c25f87b1d036e.jpg" } // 月に叢雲華に風
     ,293: { rate_base: {          3: 13.2 }, image: "img/c58227eb0d14938c.jpg" } // インビジブル
+    ,294: { rate_base: {          3: 13.0 }, image: "img/c63005195d15922e.jpg" } // 人生リセットボタン
     ,296: { rate_base: {          3: 12.1 }, image: "img/76535cf4c728f2af.jpg" } // かくしん的☆めたまるふぉ～ぜっ!
     ,297: { rate_base: {          3: 12.3 }, image: "img/8463cebfa120b884.jpg" } // 風仁雷仁
     ,298: { rate_base: {          3: 12.6 }, image: "img/7c649691aa0c4b3d.jpg" } // PRIVATE SERVICE
     ,299: { rate_base: {          3: 11.4 }, image: "img/9bd44690db5375ac.jpg" } // secret base ～君がくれたもの～ (10 years after Ver.)
     ,300: { rate_base: {          3: 12.2 }, image: "img/012eb1ed09577836.jpg" } // No Routine
+    ,301: { rate_base: {          3: 12.2 }, image: "img/62941303552504e8.jpg" } // 白い雪のプリンセスは
     ,302: { rate_base: { 2: 11.0, 3: 13.3 }, image: "img/13446730e8b99f0e.jpg" } // Strahv
     ,304: { rate_base: {          3: 11.7 }, image: "img/16cb8567115a2f2c.jpg" } // In The Blue Sky ’01
     ,305: { rate_base: { 2: 11.0, 3: 13.3 }, image: "img/266bd38219201fa1.jpg" } // 幻想のサテライト
