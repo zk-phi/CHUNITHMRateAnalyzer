@@ -33,8 +33,8 @@ var DIFFICULTY = {
        3: { rate_base: {          3: 11.8 }, image: "img/d739ba44da6798a0.jpg" } // B.B.K.K.B.K.K.
     ,  5: { rate_base: {          3: 11.3 }, image: "img/38faf81803b730f3.jpg" } // Scatman (Ski Ba Bop Ba Dop Bop)
     ,  6: { rate_base: {          3: 12.3 }, image: "img/90589be457544570.jpg" } // Reach for the Stars
-    ,  7: { rate_base: { 2: 12.0, 3: 13.6 }, image: "img/b602913a68fca621.jpg" } // 初音ミクの消失
-    ,  9: { rate_base: {          3: 11.3 }, image: "img/fce0bad9123dcd76.jpg" } // 情熱大陸
+    ,  7: { rate_base: { 2: 12.0, 3: 13.4 }, image: "img/b602913a68fca621.jpg" } // 初音ミクの消失
+    ,  9: { rate_base: {          3: 12.0 }, image: "img/fce0bad9123dcd76.jpg" } // 情熱大陸
     , 10: { rate_base: {          3: 11.7 }, image: "img/0d7bd146ebed6fba.jpg" } // All I Want
     , 14: { rate_base: {          3: 11.0 }, image: "img/af78dd039a36a4c7.jpg" } // コネクト
     , 17: { rate_base: {          3: 11.1 }, image: "img/696d4f956ebb4209.jpg" } // 空色デイズ
@@ -71,7 +71,7 @@ var DIFFICULTY = {
     , 70: { rate_base: {          3: 12.4 }, image: "img/3ccebd87235f591c.jpg" } // STAR
     , 71: { rate_base: {          3: 12.3 }, image: "img/2bf02bef3051ecaf.jpg" } // Infantoon Fantasy
     , 72: { rate_base: {          3: 13.5 }, image: "img/ec3a366b4724f8f6.jpg" } // Genesis
-    , 73: { rate_base: {          3: 12.6 }, image: "img/0c2791f737ce1ff2.jpg" } // MUSIC PЯAYER
+    , 73: { rate_base: {          3: 12.7 }, image: "img/0c2791f737ce1ff2.jpg" } // MUSIC PЯAYER
     , 74: { rate_base: {          3: 11.0 }, image: "img/feef37ed3d91cfbd.jpg" } // リリーシア
     , 75: { rate_base: {          3: 11.7 }, image: "img/e1454dc2eeae2030.jpg" } // Counselor
     , 76: { rate_base: { 2: 11.8, 3: 13.4 }, image: "img/93abb77776c70b47.jpg" } // luna blu
@@ -204,13 +204,15 @@ var DIFFICULTY = {
     ,252: { rate_base: {          3: 12.3 }, image: "img/bb221e3de960de7d.jpg" } // 愛迷エレジー
     ,254: { rate_base: {          3: 11.7 }, image: "img/2e617d713547fe84.jpg" } // その群青が愛しかったようだった
     ,255: { rate_base: {          3: 11.1 }, image: "img/429d34fef5fddb02.jpg" } // 激情！ミルキィ大作戦
+    ,256: { rate_base: {          3: 12.7 }, image: "img/755fb1e2b79ba896.jpg" } // 札付きのワル 〜マイケルのうた〜
     ,257: { rate_base: {          3: 13.0 }, image: "img/bef9b79c637bf4c9.jpg" } // BOKUTO
     ,259: { rate_base: { 2: 11.3, 3: 13.1 }, image: "img/4d66e5d1669d79a2.jpg" } // Oshama Scramble! (Cranky Remix)
     ,260: { rate_base: {          3: 12.4 }, image: "img/03f1dafe3b08607e.jpg" } // D.E.A.D.L.Y.
     ,261: { rate_base: {          3: 12.3 }, image: "img/6e917606db3c5a0e.jpg" } // ロボットプラネットユートピア
-    ,262: { rate_base: {          3: 13.6 }, image: "img/676e59847912f5ca.jpg" } // Tidal Wave
+    ,262: { rate_base: {          3: 13.5 }, image: "img/676e59847912f5ca.jpg" } // Tidal Wave
     ,263: { rate_base: {          3: 11.7 }, image: "img/015358a0c0580022.jpg" } // Hand in Hand
     ,264: { rate_base: {          3: 12.2 }, image: "img/f44c6b628889f8ec.jpg" } // My Dearest Song
+    ,265: { rate_base: {          3: 12.3 }, image: "img/874f9509a5e5707e.jpg" } // 猫祭り
     ,267: { rate_base: {          3: 11.5 }, image: "img/a0d03551eb3930e9.jpg" } // 心象蜃気楼
     ,270: { rate_base: {          3: 12.3 }, image: "img/21dfcd3ae2c5c370.jpg" } // エンヴィキャットウォーク
     ,271: { rate_base: {          3: 12.8 }, image: "img/99b79d4bd74e476c.jpg" } // 鬼KYOKAN
@@ -244,7 +246,7 @@ var DIFFICULTY = {
     ,307: { rate_base: {          3: 12.7 }, image: "img/ff9f70c8c0d9f24e.jpg" } // Paqqin
     ,308: { rate_base: {          3: 11.9 }, image: "img/f8d3f2e57ae2ff24.jpg" } // fake!fake!
     ,309: { rate_base: {          3: 12.5 }, image: "img/cee51d69c428f8f5.jpg" } // Rising Hope
-    ,312: { rate_base: {          3: 13.3 }, image: "img/81805f2ef1e58db8.jpg" } // ぶいえす!!らいばる!!
+    ,312: { rate_base: { 2: 11.0, 3: 13.3 }, image: "img/81805f2ef1e58db8.jpg" } // ぶいえす!!らいばる!!
     ,313: { rate_base: {          3: 11.4 }, image: "img/5ac018495d6f01a5.jpg" } // ひだまりデイズ
     ,316: { rate_base: {          3: 11.5 }, image: "img/88f9536c08cb4e3f.jpg" } // みくみくにしてあげる♪【してやんよ】
     ,317: { rate_base: {          3: 13.4 }, image: "img/db15d5b7aefaa672.jpg" } // Air
@@ -258,12 +260,24 @@ var DIFFICULTY = {
     ,325: { rate_base: {          3: 12.6 }, image: "img/97eca622afca0f15.jpg" } // Her Majesty
     ,326: { rate_base: {          3: 12.5 }, image: "img/fd01fc38e38042e3.jpg" } // Sakura Fubuki
     ,327: { rate_base: {          3: 12.7 }, image: "img/17c363c1fd2fa7d1.jpg" } // JULIAN
-    ,328: { rate_base: {          3: 13.7 }, image: "img/c7cf3ce1e858e3f0.jpg" } // ★LittlE HearTs★
+    ,328: { rate_base: { 2: 11.4, 3: 13.7 }, image: "img/c7cf3ce1e858e3f0.jpg" } // ★LittlE HearTs★
     ,329: { rate_base: {          3: 12.3 }, image: "img/e869980ddd2f9c68.jpg" } // STAIRWAY TO GENERATION
     ,330: { rate_base: {          3: 12.1 }, image: "img/b3ea0fe012eb7ea2.jpg" } // ドキドキDREAM!!!
     ,331: { rate_base: {          3: 12.2 }, image: "img/ec37e447b91995dd.jpg" } // 猛進ソリストライフ！
     ,332: { rate_base: {          3: 12.3 }, image: "img/41001ddd4214d6b6.jpg" } // 空威張りビヘイビア
+    ,334: { rate_base: {          3: 12.4 }, image: "img/2704dddce9cd4e3c.jpg" } // FLOATED CALM
     ,336: { rate_base: {          3: 12.0 }, image: "img/e40fceaa1bb587b7.jpg" } // シジョウノコエ VOCALO ver.
+    ,339: { rate_base: {          3: 11.7 }, image: "img/65353f99e301c521.jpg" } // Revolution Game
+    ,343: { rate_base: {                  }, image: "img/e21129db8b503610.jpg" } // Daydream cafe
+    ,344: { rate_base: {                  }, image: "img/fa151f477301a676.jpg" } // ノーポイッ！
+    ,345: { rate_base: {                  }, image: "img/1c098cdf731eb671.jpg" } // ムーンライト伝説
+    ,385: { rate_base: {          3: 13.4 }, image: "img/82c76a871596142c.jpg" } // Evans
+    ,386: { rate_base: {　2: 12.5, 3: 13.9 }, image: "img/8205ea9449f1b000.jpg" } // 神威
+    ,399: { rate_base: {                  }, image: "img/854cf33a2b30f004.jpg" } // 最愛テトラグラマトン
+    ,409: { rate_base: {          3: 13.8 }, image: "img/19f776c8daa51095.jpg" } // Finite
+    ,410: { rate_base: {          3: 12.7 }, image: "img/cbfb4c6a58342201.jpg" } // MY LIBERATION
+    ,414: { rate_base: {          3: 13.4 }, image: "img/cd2aebc19c4fa1cd.jpg" } // We Gonna Party -Feline Groove Mix-
+    ,417: { rate_base: {          3: 12.4 }, image: "img/b739e3b0af173789.jpg" } // Redo
 };
 
 // ---- API wrappers
