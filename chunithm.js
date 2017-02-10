@@ -53,15 +53,15 @@ var DIFFICULTY = {
     , 45: { rate_base: {          3: 12.2 }, image: "img/90dca26c66c5d5b7.jpg" } // L9
     , 47: { rate_base: {          3: 12.0 }, image: "img/5cb17a59f4b8c133.jpg" } // 六兆年と一夜物語
     , 48: { rate_base: {          3: 11.8 }, image: "img/b38eba298df2c6db.jpg" } // Unlimited Spark!
-    , 51: { rate_base: {          3: 12.7 }, image: "img/161f13a787a00032.jpg" } // My First Phone
+    , 51: { rate_base: {          3: 12.8 }, image: "img/161f13a787a00032.jpg" } // My First Phone
     , 52: { rate_base: { 2: 11.1, 3: 13.2 }, image: "img/a62f975edc860e34.jpg" } // Cyberozar
     , 53: { rate_base: {          3: 12.3 }, image: "img/73ad66e81061bba3.jpg" } // Teriqma
     , 55: { rate_base: {          3: 11.2 }, image: "img/506f053a80e1b28e.jpg" } // 夏祭り
     , 56: { rate_base: {          3: 11.0 }, image: "img/2535487ae13b2fd8.jpg" } // そばかす
     , 60: { rate_base: {          3: 11.3 }, image: "img/3bee1cce7d794f31.jpg" } // only my railgun
-    , 61: { rate_base: { 2: 11.0, 3: 13.5 }, image: "img/2ccf97477eaf45ad.jpg" } // GOLDEN RULE
+    , 61: { rate_base: { 2: 11.0, 3: 13.6 }, image: "img/2ccf97477eaf45ad.jpg" } // GOLDEN RULE
     , 62: { rate_base: {          3: 12.4 }, image: "img/9386971505bb20b0.jpg" } // 名も無い鳥
-    , 63: { rate_base: { 2: 11.7, 3: 13.1 }, image: "img/2df15f390356067f.jpg" } // Gate of Fate
+    , 63: { rate_base: { 2: 11.7, 3: 13.2 }, image: "img/2df15f390356067f.jpg" } // Gate of Fate
     , 64: { rate_base: {          3: 12.7 }, image: "img/6bf934fede23724d.jpg" } // 今ぞ♡崇め奉れ☆オマエらよ！！～姫の秘メタル渇望～
     , 65: { rate_base: {          3: 11.1 }, image: "img/713d52aa40ed7fc4.jpg" } // Anemone
     , 66: { rate_base: {          3: 12.3 }, image: "img/c22702914849a11a.jpg" } // 明るい未来
@@ -80,7 +80,7 @@ var DIFFICULTY = {
     , 82: { rate_base: {          3: 12.5 }, image: "img/27ef71f8a76f1e8a.jpg" } // Memories of Sun and Moon
     , 83: { rate_base: {          3: 12.2 }, image: "img/181682bf5b277726.jpg" } // ロストワンの号哭
     , 88: { rate_base: {          3: 12.1 }, image: "img/c4223e68340efa41.jpg" } // The Concept of Love
-    , 90: { rate_base: { 2: 11.7, 3: 13.2 }, image: "img/19d57f9a7652308a.jpg" } // L'épisode
+    , 90: { rate_base: { 2: 11.7, 3: 13.3 }, image: "img/19d57f9a7652308a.jpg" } // L'épisode
     , 91: { rate_base: {          3: 11.2 }, image: "img/cb77a66b62023890.jpg" } // Yet Another ”drizzly rain”
     , 92: { rate_base: {          3: 12.8 }, image: "img/17315fb464f265bd.jpg" } // 最終鬼畜妹・一部声
     , 93: { rate_base: {          3: 12.3 }, image: "img/6b40809324937ec9.jpg" } // 蒼空に舞え、墨染の桜
@@ -106,7 +106,7 @@ var DIFFICULTY = {
     ,118: { rate_base: {          3: 12.0 }, image: "img/17e485acfe11a67f.jpg" } // 腐れ外道とチョコレゐト
     ,119: { rate_base: {          3: 12.3 }, image: "img/a7dd6716fcae0cb8.jpg" } // アウターサイエンス
     ,120: { rate_base: {          3: 12.7 }, image: "img/a84a31e562efd7a0.jpg" } // 四次元跳躍機関
-    ,121: { rate_base: {          3: 12.5 }, image: "img/4196f71ce51620a0.jpg" } // 東方妖々夢 ～the maximum moving about～
+    ,121: { rate_base: {          3: 12.7 }, image: "img/4196f71ce51620a0.jpg" } // 東方妖々夢 ～the maximum moving about～
     ,122: { rate_base: {          3: 12.5 }, image: "img/67418ba28151c3ff.jpg" } // 少女幻葬戦慄曲　～　Necro Fantasia
     ,124: { rate_base: {          3: 12.5 }, image: "img/74ce2f0a4b4f6fe2.jpg" } // 夏影
     ,126: { rate_base: {          3: 11.3 }, image: "img/547ba5407b6e7fa0.jpg" } // Heart To Heart
@@ -115,15 +115,15 @@ var DIFFICULTY = {
     ,130: { rate_base: {          3: 11.7 }, image: "img/e4df0d48302ccd26.jpg" } // スカイクラッドの観測者
     ,131: { rate_base: {          3: 12.6 }, image: "img/38d3c5a5a45c6d07.jpg" } // チルドレンレコード
     ,132: { rate_base: {          3: 12.2 }, image: "img/1c508bbd42d335fe.jpg" } // イカサマライフゲイム
-    ,134: { rate_base: { 2: 11.8, 3: 13.7 }, image: "img/08a24ed249ed2eec.jpg" } // HAELEQUIN (Original Remaster)
+    ,134: { rate_base: { 2: 11.8, 3: 13.8 }, image: "img/08a24ed249ed2eec.jpg" } // HAELEQUIN (Original Remaster)
     ,135: { rate_base: {          3: 13.5 }, image: "img/e7ee14d9fe63d072.jpg" } // Vallista
     ,136: { rate_base: {          3: 12.5 }, image: "img/c4f977d264deafb1.jpg" } // Äventyr
     ,137: { rate_base: { 2: 11.4, 3: 13.6 }, image: "img/13a5a9ca35a9b71b.jpg" } // Angel dust
     ,138: { rate_base: {          3: 13.0 }, image: "img/478e8835e382f740.jpg" } // conflict
     ,140: { rate_base: {          3: 11.9 }, image: "img/0aad2e0ff661e7d1.jpg" } // Guilty
-    ,141: { rate_base: { 2: 11.5, 3: 13.3 }, image: "img/2e6c11edba79d997.jpg" } // 閃鋼のブリューナク
+    ,141: { rate_base: { 2: 11.5, 3: 13.4 }, image: "img/2e6c11edba79d997.jpg" } // 閃鋼のブリューナク
     ,142: { rate_base: {          3: 12.6 }, image: "img/a8d181c5442df7d2.jpg" } // Altale
-    ,144: { rate_base: {          3: 13.3 }, image: "img/8b04b9ad2d49850c.jpg" } // Aragami
+    ,144: { rate_base: {          3: 13.4 }, image: "img/8b04b9ad2d49850c.jpg" } // Aragami
     ,145: { rate_base: {          3: 11.8 }, image: "img/0bb58f15b16703ab.jpg" } // Change Our MIRAI！
     ,146: { rate_base: {          3: 11.7 }, image: "img/d3b40f7b8e0758ff.jpg" } // 夕暮れワンルーム
     ,148: { rate_base: {          3: 11.0 }, image: "img/cd458a75aa049889.jpg" } // Theme of SeelischTact
@@ -147,7 +147,7 @@ var DIFFICULTY = {
     ,171: { rate_base: {          3: 12.3 }, image: "img/25abef88cb12af3e.jpg" } // XL TECHNO
     ,173: { rate_base: {          3: 13.1 }, image: "img/2e95529be9118a11.jpg" } // Halcyon
     ,176: { rate_base: {          3: 11.3 }, image: "img/aa0cefb5a0f00457.jpg" } // Dance!
-    ,177: { rate_base: {          3: 12.6 }, image: "img/6e7843f9d831b0ac.jpg" } // Jimang Shot
+    ,177: { rate_base: {          3: 12.7 }, image: "img/6e7843f9d831b0ac.jpg" } // Jimang Shot
     ,178: { rate_base: {          3: 12.7 }, image: "img/9f281db3bcc9353b.jpg" } // stella=steLLa
     ,179: { rate_base: {          3: 11.1 }, image: "img/0e73189a7083e4f4.jpg" } // すろぉもぉしょん
     ,180: { rate_base: { 2: 12.4, 3: 13.9 }, image: "img/a732d43fd2a11e8f.jpg" } // 怒槌
@@ -241,7 +241,7 @@ var DIFFICULTY = {
     ,301: { rate_base: {          3: 12.2 }, image: "img/62941303552504e8.jpg" } // 白い雪のプリンセスは
     ,302: { rate_base: { 2: 11.0, 3: 13.3 }, image: "img/13446730e8b99f0e.jpg" } // Strahv
     ,304: { rate_base: {          3: 11.7 }, image: "img/16cb8567115a2f2c.jpg" } // In The Blue Sky ’01
-    ,305: { rate_base: { 2: 11.0, 3: 13.3 }, image: "img/266bd38219201fa1.jpg" } // 幻想のサテライト
+    ,305: { rate_base: { 2: 11.0, 3: 13.2 }, image: "img/266bd38219201fa1.jpg" } // 幻想のサテライト
     ,306: { rate_base: {          3: 12.2 }, image: "img/106d9eec68ed84b3.jpg" } // 凛として咲く花の如く
     ,307: { rate_base: {          3: 12.7 }, image: "img/ff9f70c8c0d9f24e.jpg" } // Paqqin
     ,308: { rate_base: {          3: 11.9 }, image: "img/f8d3f2e57ae2ff24.jpg" } // fake!fake!
@@ -249,8 +249,8 @@ var DIFFICULTY = {
     ,312: { rate_base: { 2: 11.0, 3: 13.3 }, image: "img/81805f2ef1e58db8.jpg" } // ぶいえす!!らいばる!!
     ,313: { rate_base: {          3: 11.4 }, image: "img/5ac018495d6f01a5.jpg" } // ひだまりデイズ
     ,316: { rate_base: {          3: 11.5 }, image: "img/88f9536c08cb4e3f.jpg" } // みくみくにしてあげる♪【してやんよ】
-    ,317: { rate_base: {          3: 13.4 }, image: "img/db15d5b7aefaa672.jpg" } // Air
-    ,318: { rate_base: {          3: 13.1 }, image: "img/f803d578eb4047eb.jpg" } // DataErr0r
+    ,317: { rate_base: {          3: 13.2 }, image: "img/db15d5b7aefaa672.jpg" } // Air
+    ,318: { rate_base: {          3: 13.0 }, image: "img/f803d578eb4047eb.jpg" } // DataErr0r
     ,319: { rate_base: {          3: 12.6 }, image: "img/e9eeb98572b140bc.jpg" } // Say A Vengeance
     ,320: { rate_base: {          3: 12.6 }, image: "img/6b33d4fa539d5adb.jpg" } // 010
     ,321: { rate_base: {          3: 12.5 }, image: "img/40cc7a6a264f88c1.jpg" } // ERIS -Legend of Gaidelia-
@@ -272,8 +272,8 @@ var DIFFICULTY = {
     ,344: { rate_base: {                  }, image: "img/fa151f477301a676.jpg" } // ノーポイッ！
     ,345: { rate_base: {                  }, image: "img/1c098cdf731eb671.jpg" } // ムーンライト伝説
     ,385: { rate_base: {          3: 13.4 }, image: "img/82c76a871596142c.jpg" } // Evans
-    ,386: { rate_base: {　2: 12.5, 3: 13.9 }, image: "img/8205ea9449f1b000.jpg" } // 神威
-    ,399: { rate_base: {                  }, image: "img/854cf33a2b30f004.jpg" } // 最愛テトラグラマトン
+    ,386: { rate_base: { 2: 12.5, 3: 13.9 }, image: "img/8205ea9449f1b000.jpg" } // 神威
+    ,399: { rate_base: {          3: 12.6 }, image: "img/854cf33a2b30f004.jpg" } // 最愛テトラグラマトン
     ,409: { rate_base: {          3: 13.8 }, image: "img/19f776c8daa51095.jpg" } // Finite
     ,410: { rate_base: {          3: 12.7 }, image: "img/cbfb4c6a58342201.jpg" } // MY LIBERATION
     ,414: { rate_base: {          3: 13.4 }, image: "img/cd2aebc19c4fa1cd.jpg" } // We Gonna Party -Feline Groove Mix-
