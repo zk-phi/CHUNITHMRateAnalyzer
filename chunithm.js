@@ -187,7 +187,7 @@ var DIFFICULTY = {
     ,227: { rate_base: {          3: 11.5 }, image: "img/74c77deb2f2e5e07.jpg" } // 洗脳
     ,228: { rate_base: {          3: 12.0 }, image: "img/882be51fe439614d.jpg" } // このふざけた素晴らしき世界は、僕の為にある
     ,229: { rate_base: { 2: 11.9, 3: 13.4 }, image: "img/73f86aec8d6c7c9b.jpg" } // 紅華刑
-    ,230: { rate_base: {          3: 12.4 }, image: "img/b59d2b2ab877a77d.jpg" } // Hyperion
+    ,230: { rate_base: {          3: 12.5 }, image: "img/b59d2b2ab877a77d.jpg" } // Hyperion
     ,232: { rate_base: { 2: 11.3, 3: 13.4 }, image: "img/a2069fdb9d860d36.jpg" } // Elemental Creation
     ,233: { rate_base: {          3: 12.2 }, image: "img/5fe5db1d2e40ee7a.jpg" } // アルストロメリア
     ,235: { rate_base: {          3: 12.5 }, image: "img/8b84b06033585428.jpg" } // ファッとして桃源郷
