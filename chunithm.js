@@ -257,7 +257,7 @@ var DIFFICULTY = {
     ,322: { rate_base: {          3: 13.6 }, image: "img/8b145fe4cf0c01bb.jpg" } // Imperishable Night 2006 (2016 Refine)
     ,323: { rate_base: {          3: 13.5 }, image: "img/282cb1cacd4c1bb4.jpg" } // Dreadnought
     ,324: { rate_base: {          3: 12.6 }, image: "img/d51d4ffba9f8d45e.jpg" } // STAGER
-    ,325: { rate_base: {          3: 12.6 }, image: "img/97eca622afca0f15.jpg" } // 
+    ,325: { rate_base: {          3: 12.6 }, image: "img/97eca622afca0f15.jpg" } // Her Majesty
     ,326: { rate_base: {          3: 12.5 }, image: "img/fd01fc38e38042e3.jpg" } // Sakura Fubuki
     ,327: { rate_base: {          3: 12.7 }, image: "img/17c363c1fd2fa7d1.jpg" } // JULIAN
     ,328: { rate_base: { 2: 11.4, 3: 13.7 }, image: "img/c7cf3ce1e858e3f0.jpg" } // ★LittlE HearTs★
