@@ -108,7 +108,7 @@ var DIFFICULTY = {
     ,120: { rate_base: {          3: 12.7 }, image: "img/a84a31e562efd7a0.jpg" } // 四次元跳躍機関
     ,121: { rate_base: {          3: 12.7 }, image: "img/4196f71ce51620a0.jpg" } // 東方妖々夢 ～the maximum moving about～
     ,122: { rate_base: {          3: 12.5 }, image: "img/67418ba28151c3ff.jpg" } // 少女幻葬戦慄曲　～　Necro Fantasia
-    ,124: { rate_base: {          3: 12.5 }, image: "img/74ce2f0a4b4f6fe2.jpg" } // 夏影
+    ,124: { rate_base: {          3: 12.2 }, image: "img/74ce2f0a4b4f6fe2.jpg" } // 夏影
     ,126: { rate_base: {          3: 11.3 }, image: "img/547ba5407b6e7fa0.jpg" } // Heart To Heart
     ,128: { rate_base: {          3: 12.7 }, image: "img/7edc6879319accfd.jpg" } // The Formula
     ,129: { rate_base: {          3: 11.2 }, image: "img/f56cd36303a3239a.jpg" } // Hacking to the Gate
@@ -119,7 +119,7 @@ var DIFFICULTY = {
     ,135: { rate_base: {          3: 13.5 }, image: "img/e7ee14d9fe63d072.jpg" } // Vallista
     ,136: { rate_base: {          3: 12.5 }, image: "img/c4f977d264deafb1.jpg" } // Äventyr
     ,137: { rate_base: { 2: 11.4, 3: 13.6 }, image: "img/13a5a9ca35a9b71b.jpg" } // Angel dust
-    ,138: { rate_base: {          3: 13.0 }, image: "img/478e8835e382f740.jpg" } // conflict
+    ,138: { rate_base: {          3: 13.1 }, image: "img/478e8835e382f740.jpg" } // conflict
     ,140: { rate_base: {          3: 11.9 }, image: "img/0aad2e0ff661e7d1.jpg" } // Guilty
     ,141: { rate_base: { 2: 11.5, 3: 13.4 }, image: "img/2e6c11edba79d997.jpg" } // 閃鋼のブリューナク
     ,142: { rate_base: {          3: 12.6 }, image: "img/a8d181c5442df7d2.jpg" } // Altale
@@ -152,7 +152,7 @@ var DIFFICULTY = {
     ,179: { rate_base: {          3: 11.1 }, image: "img/0e73189a7083e4f4.jpg" } // すろぉもぉしょん
     ,180: { rate_base: { 2: 12.4, 3: 13.9 }, image: "img/a732d43fd2a11e8f.jpg" } // 怒槌
     ,185: { rate_base: {          3: 11.2 }, image: "img/520c1fef62954ca6.jpg" } // 楽園の翼
-    ,187: { rate_base: {          3: 13.2 }, image: "img/e6642a96885723c1.jpg" } // 患部で止まってすぐ溶ける～狂気の優曇華院
+    ,187: { rate_base: {          3: 13.1 }, image: "img/e6642a96885723c1.jpg" } // 患部で止まってすぐ溶ける～狂気の優曇華院
     ,189: { rate_base: {          3: 12.7 }, image: "img/9310d07b7e02e73a.jpg" } // ひれ伏せ愚民どもっ！
     ,190: { rate_base: {          3: 12.6 }, image: "img/bbaa464731ab96a4.jpg" } // エテルニタス・ルドロジー
     ,196: { rate_base: { 2: 11.9, 3: 13.7 }, image: "img/ed40032f25177518.jpg" } // FREEDOM DiVE
@@ -199,14 +199,14 @@ var DIFFICULTY = {
     ,246: { rate_base: {          3: 12.7 }, image: "img/d445e4878a818d8b.jpg" } // なるとなぎのパーフェクトロックンロール教室
     ,247: { rate_base: {          3: 11.7 }, image: "img/58847f9694837c0b.jpg" } // 絶世スターゲイト
     ,248: { rate_base: { 2: 12.3, 3: 13.9 }, image: "img/a2fdef9e4b278a51.jpg" } // Schrecklicher Aufstand
-    ,250: { rate_base: { 2: 11.8, 3: 13.5 }, image: "img/989f4458fb34aa9d.jpg" } // Philosopher
+    ,250: { rate_base: { 2: 11.8, 3: 13.4 }, image: "img/989f4458fb34aa9d.jpg" } // Philosopher
     ,251: { rate_base: {          3: 12.5 }, image: "img/457722c9f3ff5473.jpg" } // Crazy ∞ nighT
     ,252: { rate_base: {          3: 12.3 }, image: "img/bb221e3de960de7d.jpg" } // 愛迷エレジー
     ,254: { rate_base: {          3: 11.7 }, image: "img/2e617d713547fe84.jpg" } // その群青が愛しかったようだった
     ,255: { rate_base: {          3: 11.1 }, image: "img/429d34fef5fddb02.jpg" } // 激情！ミルキィ大作戦
     ,256: { rate_base: {          3: 12.7 }, image: "img/755fb1e2b79ba896.jpg" } // 札付きのワル 〜マイケルのうた〜
     ,257: { rate_base: {          3: 13.0 }, image: "img/bef9b79c637bf4c9.jpg" } // BOKUTO
-    ,259: { rate_base: { 2: 11.3, 3: 13.1 }, image: "img/4d66e5d1669d79a2.jpg" } // Oshama Scramble! (Cranky Remix)
+    ,259: { rate_base: { 2: 11.3, 3: 13.0 }, image: "img/4d66e5d1669d79a2.jpg" } // Oshama Scramble! (Cranky Remix)
     ,260: { rate_base: {          3: 12.4 }, image: "img/03f1dafe3b08607e.jpg" } // D.E.A.D.L.Y.
     ,261: { rate_base: {          3: 12.3 }, image: "img/6e917606db3c5a0e.jpg" } // ロボットプラネットユートピア
     ,262: { rate_base: {          3: 13.5 }, image: "img/676e59847912f5ca.jpg" } // Tidal Wave
@@ -257,7 +257,7 @@ var DIFFICULTY = {
     ,322: { rate_base: {          3: 13.6 }, image: "img/8b145fe4cf0c01bb.jpg" } // Imperishable Night 2006 (2016 Refine)
     ,323: { rate_base: {          3: 13.5 }, image: "img/282cb1cacd4c1bb4.jpg" } // Dreadnought
     ,324: { rate_base: {          3: 12.6 }, image: "img/d51d4ffba9f8d45e.jpg" } // STAGER
-    ,325: { rate_base: {          3: 12.6 }, image: "img/97eca622afca0f15.jpg" } // Her Majesty
+    ,325: { rate_base: {          3: 12.6 }, image: "img/97eca622afca0f15.jpg" } // 
     ,326: { rate_base: {          3: 12.5 }, image: "img/fd01fc38e38042e3.jpg" } // Sakura Fubuki
     ,327: { rate_base: {          3: 12.7 }, image: "img/17c363c1fd2fa7d1.jpg" } // JULIAN
     ,328: { rate_base: { 2: 11.4, 3: 13.7 }, image: "img/c7cf3ce1e858e3f0.jpg" } // ★LittlE HearTs★
@@ -266,7 +266,7 @@ var DIFFICULTY = {
     ,331: { rate_base: {          3: 12.2 }, image: "img/ec37e447b91995dd.jpg" } // 猛進ソリストライフ！
     ,332: { rate_base: {          3: 12.3 }, image: "img/41001ddd4214d6b6.jpg" } // 空威張りビヘイビア
     ,334: { rate_base: {          3: 12.4 }, image: "img/2704dddce9cd4e3c.jpg" } // FLOATED CALM
-    ,336: { rate_base: {          3: 12.0 }, image: "img/e40fceaa1bb587b7.jpg" } // シジョウノコエ VOCALO ver.
+    ,336: { rate_base: {          3: 12.2 }, image: "img/e40fceaa1bb587b7.jpg" } // シジョウノコエ VOCALO ver.
     ,339: { rate_base: {          3: 11.7 }, image: "img/65353f99e301c521.jpg" } // Revolution Game
     ,343: { rate_base: {                  }, image: "img/e21129db8b503610.jpg" } // Daydream cafe
     ,344: { rate_base: {                  }, image: "img/fa151f477301a676.jpg" } // ノーポイッ！
