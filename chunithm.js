@@ -230,7 +230,7 @@ var DIFFICULTY = {
     ,289: { rate_base: {          3: 12.7 }, image: "img/0cece587cced4d3f.jpg" } // ウソラセラ
     ,290: { rate_base: {          3: 11.3 }, image: "img/b1d08379f05c706e.jpg" } // 檄!帝国華撃団
     ,291: { rate_base: {          3: 12.4 }, image: "img/9c5e71b3588dbc70.jpg" } // Kronos
-    ,292: { rate_base: {          3: 12.0 }, image: "img/b12c25f87b1d036e.jpg" } // 月に叢雲華に風
+    ,292: { rate_base: {          3: 12.1 }, image: "img/b12c25f87b1d036e.jpg" } // 月に叢雲華に風
     ,293: { rate_base: {          3: 13.2 }, image: "img/c58227eb0d14938c.jpg" } // インビジブル
     ,294: { rate_base: {          3: 13.0 }, image: "img/c63005195d15922e.jpg" } // 人生リセットボタン
     ,296: { rate_base: {          3: 12.1 }, image: "img/76535cf4c728f2af.jpg" } // かくしん的☆めたまるふぉ～ぜっ!
