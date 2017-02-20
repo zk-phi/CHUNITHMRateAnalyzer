@@ -82,7 +82,7 @@ var DIFFICULTY = {
     , 88: { rate_base: {          3: 12.1 }, image: "img/c4223e68340efa41.jpg" } // The Concept of Love
     , 90: { rate_base: { 2: 11.7, 3: 13.3 }, image: "img/19d57f9a7652308a.jpg" } // L'épisode
     , 91: { rate_base: {          3: 11.2 }, image: "img/cb77a66b62023890.jpg" } // Yet Another ”drizzly rain”
-    , 92: { rate_base: {          3: 12.8 }, image: "img/17315fb464f265bd.jpg" } // 最終鬼畜妹・一部声
+    , 92: { rate_base: {          3: 12.9 }, image: "img/17315fb464f265bd.jpg" } // 最終鬼畜妹・一部声
     , 93: { rate_base: {          3: 12.3 }, image: "img/6b40809324937ec9.jpg" } // 蒼空に舞え、墨染の桜
     , 94: { rate_base: {          3: 12.3 }, image: "img/164258c65c714d50.jpg" } // セツナトリップ
     , 95: { rate_base: {          3: 12.1 }, image: "img/db38c119e4d8933e.jpg" } // 砂漠のハンティングガール♡
