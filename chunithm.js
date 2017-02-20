@@ -129,7 +129,7 @@ var DIFFICULTY = {
     ,148: { rate_base: {          3: 11.0 }, image: "img/cd458a75aa049889.jpg" } // Theme of SeelischTact
     ,149: { rate_base: {          3: 11.7 }, image: "img/c9c2fa20dcd9a46e.jpg" } // 緋色のDance
     ,150: { rate_base: {          3: 11.8 }, image: "img/2a41ad71b77d12c9.jpg" } // brilliant better
-    ,151: { rate_base: {          3: 12.5 }, image: "img/7237488215dbd1d3.jpg" } // Alma
+    ,151: { rate_base: {          3: 12.6 }, image: "img/7237488215dbd1d3.jpg" } // Alma
     ,152: { rate_base: { 2: 11.7, 3: 13.0 }, image: "img/f63fab30a7b6f160.jpg" } // Gustav Battle
     ,154: { rate_base: {          3: 12.7 }, image: "img/2e9fdbbc15ade5cb.jpg" } // SAVIOR OF SONG
     ,156: { rate_base: {          3: 11.5 }, image: "img/b33923bd4e6e5609.jpg" } // FREELY TOMORROW
