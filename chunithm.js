@@ -144,7 +144,7 @@ var DIFFICULTY = {
     ,167: { rate_base: {          3: 12.7 }, image: "img/24611f2e2374e6a8.jpg" } // 脳漿炸裂ガール
     ,168: { rate_base: {          3: 11.9 }, image: "img/1982767436fc52d8.jpg" } // ネトゲ廃人シュプレヒコール
     ,169: { rate_base: {          3: 11.4 }, image: "img/f092ddd9e1fe088b.jpg" } // elegante
-    ,171: { rate_base: {          3: 12.3 }, image: "img/25abef88cb12af3e.jpg" } // XL TECHNO
+    ,171: { rate_base: {          3: 12.4 }, image: "img/25abef88cb12af3e.jpg" } // XL TECHNO
     ,173: { rate_base: {          3: 13.1 }, image: "img/2e95529be9118a11.jpg" } // Halcyon
     ,176: { rate_base: {          3: 11.3 }, image: "img/aa0cefb5a0f00457.jpg" } // Dance!
     ,177: { rate_base: {          3: 12.7 }, image: "img/6e7843f9d831b0ac.jpg" } // Jimang Shot
