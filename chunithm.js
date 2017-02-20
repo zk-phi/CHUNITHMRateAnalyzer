@@ -196,7 +196,7 @@ var DIFFICULTY = {
     ,243: { rate_base: {          3: 12.2 }, image: "img/8872c759bea3bd9f.jpg" } // シュガーソングとビターステップ
     ,244: { rate_base: {          3: 12.3 }, image: "img/e0a700914896ea4a.jpg" } // 回レ！雪月花
     ,245: { rate_base: {          3: 11.4 }, image: "img/630ac5b31e8ab816.jpg" } // Help me, あーりん！
-    ,246: { rate_base: {          3: 12.7 }, image: "img/d445e4878a818d8b.jpg" } // なるとなぎのパーフェクトロックンロール教室
+    ,246: { rate_base: {          3: 12.8 }, image: "img/d445e4878a818d8b.jpg" } // なるとなぎのパーフェクトロックンロール教室
     ,247: { rate_base: {          3: 11.7 }, image: "img/58847f9694837c0b.jpg" } // 絶世スターゲイト
     ,248: { rate_base: { 2: 12.3, 3: 13.9 }, image: "img/a2fdef9e4b278a51.jpg" } // Schrecklicher Aufstand
     ,250: { rate_base: { 2: 11.8, 3: 13.4 }, image: "img/989f4458fb34aa9d.jpg" } // Philosopher
