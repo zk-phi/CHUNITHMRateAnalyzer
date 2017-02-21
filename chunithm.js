@@ -62,7 +62,7 @@ var DIFFICULTY = {
     , 61: { rate_base: { 2: 11.0, 3: 13.6 }, image: "img/2ccf97477eaf45ad.jpg" } // GOLDEN RULE
     , 62: { rate_base: {          3: 12.4 }, image: "img/9386971505bb20b0.jpg" } // 名も無い鳥
     , 63: { rate_base: { 2: 11.7, 3: 13.2 }, image: "img/2df15f390356067f.jpg" } // Gate of Fate
-    , 64: { rate_base: {          3: 12.7 }, image: "img/6bf934fede23724d.jpg" } // 今ぞ♡崇め奉れ☆オマエらよ！！～姫の秘メタル渇望～
+    , 64: { rate_base: {          3: 12.8 }, image: "img/6bf934fede23724d.jpg" } // 今ぞ♡崇め奉れ☆オマエらよ！！～姫の秘メタル渇望～
     , 65: { rate_base: {          3: 11.1 }, image: "img/713d52aa40ed7fc4.jpg" } // Anemone
     , 66: { rate_base: {          3: 12.3 }, image: "img/c22702914849a11a.jpg" } // 明るい未来
     , 67: { rate_base: {          3: 11.2 }, image: "img/11437ebc94947550.jpg" } // 昵懇レファレンス
@@ -82,7 +82,7 @@ var DIFFICULTY = {
     , 88: { rate_base: {          3: 12.1 }, image: "img/c4223e68340efa41.jpg" } // The Concept of Love
     , 90: { rate_base: { 2: 11.7, 3: 13.3 }, image: "img/19d57f9a7652308a.jpg" } // L'épisode
     , 91: { rate_base: {          3: 11.2 }, image: "img/cb77a66b62023890.jpg" } // Yet Another ”drizzly rain”
-    , 92: { rate_base: {          3: 12.8 }, image: "img/17315fb464f265bd.jpg" } // 最終鬼畜妹・一部声
+    , 92: { rate_base: {          3: 12.9 }, image: "img/17315fb464f265bd.jpg" } // 最終鬼畜妹・一部声
     , 93: { rate_base: {          3: 12.3 }, image: "img/6b40809324937ec9.jpg" } // 蒼空に舞え、墨染の桜
     , 94: { rate_base: {          3: 12.3 }, image: "img/164258c65c714d50.jpg" } // セツナトリップ
     , 95: { rate_base: {          3: 12.1 }, image: "img/db38c119e4d8933e.jpg" } // 砂漠のハンティングガール♡
@@ -129,22 +129,22 @@ var DIFFICULTY = {
     ,148: { rate_base: {          3: 11.0 }, image: "img/cd458a75aa049889.jpg" } // Theme of SeelischTact
     ,149: { rate_base: {          3: 11.7 }, image: "img/c9c2fa20dcd9a46e.jpg" } // 緋色のDance
     ,150: { rate_base: {          3: 11.8 }, image: "img/2a41ad71b77d12c9.jpg" } // brilliant better
-    ,151: { rate_base: {          3: 12.5 }, image: "img/7237488215dbd1d3.jpg" } // Alma
+    ,151: { rate_base: {          3: 12.6 }, image: "img/7237488215dbd1d3.jpg" } // Alma
     ,152: { rate_base: { 2: 11.7, 3: 13.0 }, image: "img/f63fab30a7b6f160.jpg" } // Gustav Battle
-    ,154: { rate_base: {          3: 12.7 }, image: "img/2e9fdbbc15ade5cb.jpg" } // SAVIOR OF SONG
+    ,154: { rate_base: {          3: 12.8 }, image: "img/2e9fdbbc15ade5cb.jpg" } // SAVIOR OF SONG
     ,156: { rate_base: {          3: 11.5 }, image: "img/b33923bd4e6e5609.jpg" } // FREELY TOMORROW
-    ,157: { rate_base: {          3: 12.8 }, image: "img/573109ca9050f55d.jpg" } // ギガンティック O.T.N
+    ,157: { rate_base: {          3: 12.9 }, image: "img/573109ca9050f55d.jpg" } // ギガンティック O.T.N
     ,158: { rate_base: {          3: 11.0 }, image: "img/e3ce6712e8cddf10.jpg" } // フォルテシモBELL
     ,159: { rate_base: {          3: 13.3 }, image: "img/d5a47266b4fe0bfe.jpg" } // ジングルベル
     ,160: { rate_base: {          3: 11.5 }, image: "img/809bf2b3f8effa6f.jpg" } // 言ノ葉遊戯
-    ,161: { rate_base: {          3: 12.4 }, image: "img/4ceb5aed4a4a1c47.jpg" } // 私の中の幻想的世界観及びその顕現を想起させたある現実での出来事に関する一考察
+    ,161: { rate_base: {          3: 12.5 }, image: "img/4ceb5aed4a4a1c47.jpg" } // 私の中の幻想的世界観及びその顕現を想起させたある現実での出来事に関する一考察
     ,163: { rate_base: {          3: 11.3 }, image: "img/fd6847e3bb2e3629.jpg" } // 幾四音-Ixion-
     ,165: { rate_base: {          3: 12.8 }, image: "img/1e85c4b6775c84b0.jpg" } // ぼくらの16bit戦争
     ,166: { rate_base: {          3: 11.8 }, image: "img/5a0ac8501e3b95ce.jpg" } // 裏表ラバーズ
     ,167: { rate_base: {          3: 12.7 }, image: "img/24611f2e2374e6a8.jpg" } // 脳漿炸裂ガール
     ,168: { rate_base: {          3: 11.9 }, image: "img/1982767436fc52d8.jpg" } // ネトゲ廃人シュプレヒコール
     ,169: { rate_base: {          3: 11.4 }, image: "img/f092ddd9e1fe088b.jpg" } // elegante
-    ,171: { rate_base: {          3: 12.3 }, image: "img/25abef88cb12af3e.jpg" } // XL TECHNO
+    ,171: { rate_base: {          3: 12.4 }, image: "img/25abef88cb12af3e.jpg" } // XL TECHNO
     ,173: { rate_base: {          3: 13.1 }, image: "img/2e95529be9118a11.jpg" } // Halcyon
     ,176: { rate_base: {          3: 11.3 }, image: "img/aa0cefb5a0f00457.jpg" } // Dance!
     ,177: { rate_base: {          3: 12.7 }, image: "img/6e7843f9d831b0ac.jpg" } // Jimang Shot
@@ -196,7 +196,7 @@ var DIFFICULTY = {
     ,243: { rate_base: {          3: 12.2 }, image: "img/8872c759bea3bd9f.jpg" } // シュガーソングとビターステップ
     ,244: { rate_base: {          3: 12.3 }, image: "img/e0a700914896ea4a.jpg" } // 回レ！雪月花
     ,245: { rate_base: {          3: 11.4 }, image: "img/630ac5b31e8ab816.jpg" } // Help me, あーりん！
-    ,246: { rate_base: {          3: 12.7 }, image: "img/d445e4878a818d8b.jpg" } // なるとなぎのパーフェクトロックンロール教室
+    ,246: { rate_base: {          3: 12.8 }, image: "img/d445e4878a818d8b.jpg" } // なるとなぎのパーフェクトロックンロール教室
     ,247: { rate_base: {          3: 11.7 }, image: "img/58847f9694837c0b.jpg" } // 絶世スターゲイト
     ,248: { rate_base: { 2: 12.3, 3: 13.9 }, image: "img/a2fdef9e4b278a51.jpg" } // Schrecklicher Aufstand
     ,250: { rate_base: { 2: 11.8, 3: 13.4 }, image: "img/989f4458fb34aa9d.jpg" } // Philosopher
@@ -218,7 +218,7 @@ var DIFFICULTY = {
     ,271: { rate_base: {          3: 12.8 }, image: "img/99b79d4bd74e476c.jpg" } // 鬼KYOKAN
     ,272: { rate_base: {          3: 11.7 }, image: "img/98b02f86db4d3fe2.jpg" } // 有頂天ビバーチェ
     ,273: { rate_base: {          3: 11.8 }, image: "img/604157e2c49d91d7.jpg" } // ビバハピ
-    ,276: { rate_base: {          3: 12.4 }, image: "img/82105b37d18450b6.jpg" } // 後夜祭
+    ,276: { rate_base: {          3: 12.3 }, image: "img/82105b37d18450b6.jpg" } // 後夜祭
     ,278: { rate_base: {          3: 11.4 }, image: "img/5f1d7a520a2735d4.jpg" } // からくりピエロ
     ,279: { rate_base: {          3: 11.7 }, image: "img/84ecaebe6bce2a58.jpg" } // 深海少女
     ,281: { rate_base: {          3: 13.4 }, image: "img/330e57eeeb0fb2cd.jpg" } // ラクガキスト
@@ -230,7 +230,7 @@ var DIFFICULTY = {
     ,289: { rate_base: {          3: 12.7 }, image: "img/0cece587cced4d3f.jpg" } // ウソラセラ
     ,290: { rate_base: {          3: 11.3 }, image: "img/b1d08379f05c706e.jpg" } // 檄!帝国華撃団
     ,291: { rate_base: {          3: 12.4 }, image: "img/9c5e71b3588dbc70.jpg" } // Kronos
-    ,292: { rate_base: {          3: 12.0 }, image: "img/b12c25f87b1d036e.jpg" } // 月に叢雲華に風
+    ,292: { rate_base: {          3: 12.1 }, image: "img/b12c25f87b1d036e.jpg" } // 月に叢雲華に風
     ,293: { rate_base: {          3: 13.2 }, image: "img/c58227eb0d14938c.jpg" } // インビジブル
     ,294: { rate_base: {          3: 13.0 }, image: "img/c63005195d15922e.jpg" } // 人生リセットボタン
     ,296: { rate_base: {          3: 12.1 }, image: "img/76535cf4c728f2af.jpg" } // かくしん的☆めたまるふぉ～ぜっ!
