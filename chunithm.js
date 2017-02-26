@@ -272,7 +272,7 @@ var DIFFICULTY = {
     ,334: { rate_base: {          3: 12.4 }, image: "img/2704dddce9cd4e3c.jpg" } // FLOATED CALM
     ,336: { rate_base: {          3: 12.2 }, image: "img/e40fceaa1bb587b7.jpg" } // シジョウノコエ VOCALO ver.
     ,339: { rate_base: {          3: 11.7 }, image: "img/65353f99e301c521.jpg" } // Revolution Game
-    ,343: { rate_base: {                  }, image: "img/e21129db8b503610.jpg" } // Daydream cafe
+    ,343: { rate_base: {          3: 11.6 }, image: "img/e21129db8b503610.jpg" } // Daydream cafe
     ,344: { rate_base: {                  }, image: "img/fa151f477301a676.jpg" } // ノーポイッ！
     ,345: { rate_base: {                  }, image: "img/1c098cdf731eb671.jpg" } // ムーンライト伝説
     ,385: { rate_base: {          3: 13.4 }, image: "img/82c76a871596142c.jpg" } // Evans
