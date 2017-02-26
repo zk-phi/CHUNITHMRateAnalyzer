@@ -276,6 +276,7 @@ var DIFFICULTY = {
     ,344: { rate_base: {          3: 11.7 }, image: "img/fa151f477301a676.jpg" } // ノーポイッ！
     ,345: { rate_base: {          3: 11.5 }, image: "img/1c098cdf731eb671.jpg" } // ムーンライト伝説
     ,377: { rate_base: {          3: 11.5 }, image: "img/841eecc396c5059a.jpg" } // 泡沫、哀のまほろば
+    ,379: { rate_base: {          3: 11.8 }, image: "img/021eef9b80989a2e.jpg" } // 愛き夜道 feat. ランコ、雨天決行
     ,385: { rate_base: {          3: 13.4 }, image: "img/82c76a871596142c.jpg" } // Evans
     ,386: { rate_base: { 2: 12.5, 3: 13.9 }, image: "img/8205ea9449f1b000.jpg" } // 神威
     ,399: { rate_base: {          3: 12.6 }, image: "img/854cf33a2b30f004.jpg" } // 最愛テトラグラマトン
