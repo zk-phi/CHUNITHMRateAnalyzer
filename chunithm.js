@@ -117,6 +117,7 @@ var DIFFICULTY = {
     ,130: { rate_base: {          3: 11.7 }, image: "img/e4df0d48302ccd26.jpg" } // スカイクラッドの観測者
     ,131: { rate_base: {          3: 12.6 }, image: "img/38d3c5a5a45c6d07.jpg" } // チルドレンレコード
     ,132: { rate_base: {          3: 12.2 }, image: "img/1c508bbd42d335fe.jpg" } // イカサマライフゲイム
+    ,133: { rate_base: {          3: 11.0 }, image: "img/566d55b9b73112d5.jpg" } // シリョクケンサ
     ,134: { rate_base: { 2: 11.8, 3: 13.8 }, image: "img/08a24ed249ed2eec.jpg" } // HAELEQUIN (Original Remaster)
     ,135: { rate_base: {          3: 13.5 }, image: "img/e7ee14d9fe63d072.jpg" } // Vallista
     ,136: { rate_base: {          3: 12.5 }, image: "img/c4f977d264deafb1.jpg" } // Äventyr
