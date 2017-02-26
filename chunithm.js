@@ -80,6 +80,7 @@ var DIFFICULTY = {
     , 82: { rate_base: {          3: 12.5 }, image: "img/27ef71f8a76f1e8a.jpg" } // Memories of Sun and Moon
     , 83: { rate_base: {          3: 12.2 }, image: "img/181682bf5b277726.jpg" } // ロストワンの号哭
     , 88: { rate_base: {          3: 12.1 }, image: "img/c4223e68340efa41.jpg" } // The Concept of Love
+    , 89: { rate_base: {          3: 11.0 }, image: "img/a7b85d734fea4749.jpg" } // JET
     , 90: { rate_base: { 2: 11.7, 3: 13.3 }, image: "img/19d57f9a7652308a.jpg" } // L'épisode
     , 91: { rate_base: {          3: 11.2 }, image: "img/cb77a66b62023890.jpg" } // Yet Another ”drizzly rain”
     , 92: { rate_base: {          3: 12.9 }, image: "img/17315fb464f265bd.jpg" } // 最終鬼畜妹・一部声
