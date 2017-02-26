@@ -110,6 +110,7 @@ var DIFFICULTY = {
     ,121: { rate_base: {          3: 12.7 }, image: "img/4196f71ce51620a0.jpg" } // 東方妖々夢 ～the maximum moving about～
     ,122: { rate_base: {          3: 12.5 }, image: "img/67418ba28151c3ff.jpg" } // 少女幻葬戦慄曲　～　Necro Fantasia
     ,124: { rate_base: {          3: 12.2 }, image: "img/74ce2f0a4b4f6fe2.jpg" } // 夏影
+    ,125: { rate_base: {          3: 11.0 }, image: "img/f75a80f9b86eedab.jpg" } // Little Busters! ～TV animation ver.～
     ,126: { rate_base: {          3: 11.3 }, image: "img/547ba5407b6e7fa0.jpg" } // Heart To Heart
     ,128: { rate_base: {          3: 12.7 }, image: "img/7edc6879319accfd.jpg" } // The Formula
     ,129: { rate_base: {          3: 11.2 }, image: "img/f56cd36303a3239a.jpg" } // Hacking to the Gate
