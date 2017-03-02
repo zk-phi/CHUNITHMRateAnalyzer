@@ -157,7 +157,7 @@ var DIFFICULTY = {
     ,180: { rate_base: { 2: 12.4, 3: 13.9 }, image: "img/a732d43fd2a11e8f.jpg" } // 怒槌
     ,185: { rate_base: {          3: 11.2 }, image: "img/520c1fef62954ca6.jpg" } // 楽園の翼
     ,186: { rate_base: {          3: 11.9 }, image: "img/e26ef92a66d5d07f.jpg" } // ってゐ！ ～えいえんてゐVer～
-    ,187: { rate_base: {          3: 13.1 }, image: "img/e6642a96885723c1.jpg" } // 患部で止まってすぐ溶ける～狂気の優曇華院
+    ,187: { rate_base: { 2: 11.2, 3: 13.1 }, image: "img/e6642a96885723c1.jpg" } // 患部で止まってすぐ溶ける～狂気の優曇華院
     ,189: { rate_base: {          3: 12.7 }, image: "img/9310d07b7e02e73a.jpg" } // ひれ伏せ愚民どもっ！
     ,190: { rate_base: {          3: 12.6 }, image: "img/bbaa464731ab96a4.jpg" } // エテルニタス・ルドロジー
     ,196: { rate_base: { 2: 11.9, 3: 13.7 }, image: "img/ed40032f25177518.jpg" } // FREEDOM DiVE
