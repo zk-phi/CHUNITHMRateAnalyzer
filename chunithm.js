@@ -208,7 +208,7 @@ var DIFFICULTY = {
     ,251: { rate_base: {          3: 12.5 }, image: "img/457722c9f3ff5473.jpg" } // Crazy ∞ nighT
     ,252: { rate_base: {          3: 12.3 }, image: "img/bb221e3de960de7d.jpg" } // 愛迷エレジー
     ,254: { rate_base: {          3: 11.7 }, image: "img/2e617d713547fe84.jpg" } // その群青が愛しかったようだった
-    ,255: { rate_base: {          3: 11.1 }, image: "img/429d34fef5fddb02.jpg" } // 激情！ミルキィ大作戦
+    ,255: { rate_base: {          3: 11.0 }, image: "img/429d34fef5fddb02.jpg" } // 激情！ミルキィ大作戦
     ,256: { rate_base: {          3: 12.7 }, image: "img/755fb1e2b79ba896.jpg" } // 札付きのワル 〜マイケルのうた〜
     ,257: { rate_base: {          3: 13.0 }, image: "img/bef9b79c637bf4c9.jpg" } // BOKUTO
     ,259: { rate_base: { 2: 11.3, 3: 13.0 }, image: "img/4d66e5d1669d79a2.jpg" } // Oshama Scramble! (Cranky Remix)
