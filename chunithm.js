@@ -66,7 +66,7 @@ var DIFFICULTY = {
     , 65: { rate_base: {          3: 11.1 }, image: "img/713d52aa40ed7fc4.jpg" } // Anemone
     , 66: { rate_base: {          3: 12.3 }, image: "img/c22702914849a11a.jpg" } // 明るい未来
     , 67: { rate_base: {          3: 11.2 }, image: "img/11437ebc94947550.jpg" } // 昵懇レファレンス
-    , 68: { rate_base: {          3: 11.7 }, image: "img/145b9b6f4c27d78e.jpg" } // 乗り切れ受験ウォーズ
+    , 68: { rate_base: {          3: 11.5 }, image: "img/145b9b6f4c27d78e.jpg" } // 乗り切れ受験ウォーズ
     , 69: { rate_base: { 2: 11.9, 3: 13.3 }, image: "img/c2c4ece2034eb620.jpg" } // The wheel to the right
     , 70: { rate_base: {          3: 12.4 }, image: "img/3ccebd87235f591c.jpg" } // STAR
     , 71: { rate_base: {          3: 12.3 }, image: "img/2bf02bef3051ecaf.jpg" } // Infantoon Fantasy
