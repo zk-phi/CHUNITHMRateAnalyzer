@@ -66,7 +66,7 @@ var DIFFICULTY = {
     , 65: { rate_base: {          3: 11.1 }, image: "img/713d52aa40ed7fc4.jpg" } // Anemone
     , 66: { rate_base: {          3: 12.3 }, image: "img/c22702914849a11a.jpg" } // 明るい未来
     , 67: { rate_base: {          3: 11.2 }, image: "img/11437ebc94947550.jpg" } // 昵懇レファレンス
-    , 68: { rate_base: {          3: 11.7 }, image: "img/145b9b6f4c27d78e.jpg" } // 乗り切れ受験ウォーズ
+    , 68: { rate_base: {          3: 11.5 }, image: "img/145b9b6f4c27d78e.jpg" } // 乗り切れ受験ウォーズ
     , 69: { rate_base: { 2: 11.9, 3: 13.3 }, image: "img/c2c4ece2034eb620.jpg" } // The wheel to the right
     , 70: { rate_base: {          3: 12.4 }, image: "img/3ccebd87235f591c.jpg" } // STAR
     , 71: { rate_base: {          3: 12.3 }, image: "img/2bf02bef3051ecaf.jpg" } // Infantoon Fantasy
@@ -147,6 +147,7 @@ var DIFFICULTY = {
     ,167: { rate_base: {          3: 12.7 }, image: "img/24611f2e2374e6a8.jpg" } // 脳漿炸裂ガール
     ,168: { rate_base: {          3: 11.9 }, image: "img/1982767436fc52d8.jpg" } // ネトゲ廃人シュプレヒコール
     ,169: { rate_base: {          3: 11.4 }, image: "img/f092ddd9e1fe088b.jpg" } // elegante
+    ,170: { rate_base: {          3: 11.2 }, image: "img/de40692ecc47778b.jpg" } // DETARAME ROCK&ROLL THEORY
     ,171: { rate_base: {          3: 12.4 }, image: "img/25abef88cb12af3e.jpg" } // XL TECHNO
     ,173: { rate_base: {          3: 13.1 }, image: "img/2e95529be9118a11.jpg" } // Halcyon
     ,176: { rate_base: {          3: 11.3 }, image: "img/aa0cefb5a0f00457.jpg" } // Dance!
@@ -155,7 +156,8 @@ var DIFFICULTY = {
     ,179: { rate_base: {          3: 11.1 }, image: "img/0e73189a7083e4f4.jpg" } // すろぉもぉしょん
     ,180: { rate_base: { 2: 12.4, 3: 13.9 }, image: "img/a732d43fd2a11e8f.jpg" } // 怒槌
     ,185: { rate_base: {          3: 11.2 }, image: "img/520c1fef62954ca6.jpg" } // 楽園の翼
-    ,187: { rate_base: {          3: 13.1 }, image: "img/e6642a96885723c1.jpg" } // 患部で止まってすぐ溶ける～狂気の優曇華院
+    ,186: { rate_base: {          3: 11.9 }, image: "img/e26ef92a66d5d07f.jpg" } // ってゐ！ ～えいえんてゐVer～
+    ,187: { rate_base: { 2: 11.2, 3: 13.1 }, image: "img/e6642a96885723c1.jpg" } // 患部で止まってすぐ溶ける～狂気の優曇華院
     ,189: { rate_base: {          3: 12.7 }, image: "img/9310d07b7e02e73a.jpg" } // ひれ伏せ愚民どもっ！
     ,190: { rate_base: {          3: 12.6 }, image: "img/bbaa464731ab96a4.jpg" } // エテルニタス・ルドロジー
     ,196: { rate_base: { 2: 11.9, 3: 13.7 }, image: "img/ed40032f25177518.jpg" } // FREEDOM DiVE
@@ -206,7 +208,7 @@ var DIFFICULTY = {
     ,251: { rate_base: {          3: 12.5 }, image: "img/457722c9f3ff5473.jpg" } // Crazy ∞ nighT
     ,252: { rate_base: {          3: 12.3 }, image: "img/bb221e3de960de7d.jpg" } // 愛迷エレジー
     ,254: { rate_base: {          3: 11.7 }, image: "img/2e617d713547fe84.jpg" } // その群青が愛しかったようだった
-    ,255: { rate_base: {          3: 11.1 }, image: "img/429d34fef5fddb02.jpg" } // 激情！ミルキィ大作戦
+    ,255: { rate_base: {          3: 11.0 }, image: "img/429d34fef5fddb02.jpg" } // 激情！ミルキィ大作戦
     ,256: { rate_base: {          3: 12.7 }, image: "img/755fb1e2b79ba896.jpg" } // 札付きのワル 〜マイケルのうた〜
     ,257: { rate_base: {          3: 13.0 }, image: "img/bef9b79c637bf4c9.jpg" } // BOKUTO
     ,259: { rate_base: { 2: 11.3, 3: 13.0 }, image: "img/4d66e5d1669d79a2.jpg" } // Oshama Scramble! (Cranky Remix)
@@ -250,8 +252,10 @@ var DIFFICULTY = {
     ,307: { rate_base: {          3: 12.7 }, image: "img/ff9f70c8c0d9f24e.jpg" } // Paqqin
     ,308: { rate_base: {          3: 11.9 }, image: "img/f8d3f2e57ae2ff24.jpg" } // fake!fake!
     ,309: { rate_base: {          3: 12.5 }, image: "img/cee51d69c428f8f5.jpg" } // Rising Hope
+    ,119: { rate_base: {          3: 11.8 }, image: "img/8f359edeac59a511.jpg" } // Be My Friend
     ,312: { rate_base: { 2: 11.0, 3: 13.3 }, image: "img/81805f2ef1e58db8.jpg" } // ぶいえす!!らいばる!!
     ,313: { rate_base: {          3: 11.4 }, image: "img/5ac018495d6f01a5.jpg" } // ひだまりデイズ
+    ,314: { rate_base: {          3: 11.8 }, image: "img/5fb63e847a057938.jpg" } // This game
     ,316: { rate_base: {          3: 11.5 }, image: "img/88f9536c08cb4e3f.jpg" } // みくみくにしてあげる♪【してやんよ】
     ,317: { rate_base: {          3: 13.2 }, image: "img/db15d5b7aefaa672.jpg" } // Air
     ,318: { rate_base: {          3: 13.0 }, image: "img/f803d578eb4047eb.jpg" } // DataErr0r
@@ -285,7 +289,7 @@ var DIFFICULTY = {
     ,399: { rate_base: {          3: 12.6 }, image: "img/854cf33a2b30f004.jpg" } // 最愛テトラグラマトン
     ,409: { rate_base: {          3: 13.8 }, image: "img/19f776c8daa51095.jpg" } // Finite
     ,410: { rate_base: {          3: 12.7 }, image: "img/cbfb4c6a58342201.jpg" } // MY LIBERATION
-    ,414: { rate_base: {          3: 13.4 }, image: "img/cd2aebc19c4fa1cd.jpg" } // We Gonna Party -Feline Groove Mix-
+    ,414: { rate_base: { 2: 11.3, 3: 13.4 }, image: "img/cd2aebc19c4fa1cd.jpg" } // We Gonna Party -Feline Groove Mix-
     ,416: { rate_base: {          3: 12.4 }, image: "img/d13c5d162e6fa57e.jpg" } // Through The Tower
     ,417: { rate_base: {          3: 12.4 }, image: "img/b739e3b0af173789.jpg" } // Redo
 };
