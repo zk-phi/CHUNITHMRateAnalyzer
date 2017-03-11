@@ -284,6 +284,7 @@ var DIFFICULTY = {
     ,345: { rate_base: {          3: 11.5 }, image: "img/1c098cdf731eb671.jpg" } // ムーンライト伝説
     ,350: { rate_base: {          3: 12.7 }, image: "img/44c1e56a88c144c3.jpg" } // FEEL×ALIVE
     ,351: { rate_base: {          3: 12.9 }, image: "img/fb91e08c99009fd4.jpg" } // ぶぉん！ぶぉん！らいど・おん！
+    ,367: { rate_base: {          3: 11.7 }, image: "img/0c6288729e80a1df.jpg" } // いーあるふぁんくらぶ
     ,377: { rate_base: {          3: 11.5 }, image: "img/841eecc396c5059a.jpg" } // 泡沫、哀のまほろば
     ,379: { rate_base: {          3: 11.8 }, image: "img/021eef9b80989a2e.jpg" } // 愛き夜道 feat. ランコ、雨天決行
     ,380: { rate_base: {          3: 11.4 }, image: "img/f5f99bf548dab947.jpg" } // Starlight Dance Floor
