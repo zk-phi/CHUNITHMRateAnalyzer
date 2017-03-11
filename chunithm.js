@@ -258,6 +258,7 @@ var DIFFICULTY = {
     ,312: { rate_base: { 2: 11.0, 3: 13.3 }, image: "img/81805f2ef1e58db8.jpg" } // ぶいえす!!らいばる!!
     ,313: { rate_base: {          3: 11.4 }, image: "img/5ac018495d6f01a5.jpg" } // ひだまりデイズ
     ,314: { rate_base: {          3: 11.8 }, image: "img/5fb63e847a057938.jpg" } // This game
+    ,315: { rate_base: {          3: 11.3 }, image: "img/fa70cc77f963cdba.jpg" } // オラシオン
     ,316: { rate_base: {          3: 11.5 }, image: "img/88f9536c08cb4e3f.jpg" } // みくみくにしてあげる♪【してやんよ】
     ,317: { rate_base: {          3: 13.2 }, image: "img/db15d5b7aefaa672.jpg" } // Air
     ,318: { rate_base: {          3: 13.0 }, image: "img/f803d578eb4047eb.jpg" } // DataErr0r
