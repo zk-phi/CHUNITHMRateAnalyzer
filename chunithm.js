@@ -135,7 +135,7 @@ var DIFFICULTY = {
     ,151: { rate_base: {          3: 12.6 }, image: "img/7237488215dbd1d3.jpg" } // Alma
     ,152: { rate_base: { 2: 11.7, 3: 13.0 }, image: "img/f63fab30a7b6f160.jpg" } // Gustav Battle
     ,154: { rate_base: {          3: 12.8 }, image: "img/2e9fdbbc15ade5cb.jpg" } // SAVIOR OF SONG
-    ,156: { rate_base: {          3: 11.5 }, image: "img/b33923bd4e6e5609.jpg" } // FREELY TOMORROW
+    ,156: { rate_base: {          3: 11.4 }, image: "img/b33923bd4e6e5609.jpg" } // FREELY TOMORROW
     ,157: { rate_base: {          3: 12.9 }, image: "img/573109ca9050f55d.jpg" } // ギガンティック O.T.N
     ,158: { rate_base: {          3: 11.0 }, image: "img/e3ce6712e8cddf10.jpg" } // フォルテシモBELL
     ,159: { rate_base: {          3: 13.3 }, image: "img/d5a47266b4fe0bfe.jpg" } // ジングルベル
