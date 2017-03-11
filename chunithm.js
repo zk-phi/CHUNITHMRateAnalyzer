@@ -139,7 +139,7 @@ var DIFFICULTY = {
     ,157: { rate_base: {          3: 12.9 }, image: "img/573109ca9050f55d.jpg" } // ギガンティック O.T.N
     ,158: { rate_base: {          3: 11.0 }, image: "img/e3ce6712e8cddf10.jpg" } // フォルテシモBELL
     ,159: { rate_base: {          3: 13.3 }, image: "img/d5a47266b4fe0bfe.jpg" } // ジングルベル
-    ,160: { rate_base: {          3: 11.5 }, image: "img/809bf2b3f8effa6f.jpg" } // 言ノ葉遊戯
+    ,160: { rate_base: {          3: 11.6 }, image: "img/809bf2b3f8effa6f.jpg" } // 言ノ葉遊戯
     ,161: { rate_base: {          3: 12.5 }, image: "img/4ceb5aed4a4a1c47.jpg" } // 私の中の幻想的世界観及びその顕現を想起させたある現実での出来事に関する一考察
     ,163: { rate_base: {          3: 11.3 }, image: "img/fd6847e3bb2e3629.jpg" } // 幾四音-Ixion-
     ,165: { rate_base: {          3: 12.8 }, image: "img/1e85c4b6775c84b0.jpg" } // ぼくらの16bit戦争
