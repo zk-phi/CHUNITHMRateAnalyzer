@@ -47,7 +47,7 @@ var DIFFICULTY = {
     , 35: { rate_base: {          3: 12.4 }, image: "img/aabf49add818546d.jpg" } // Lapis
     , 36: { rate_base: {          3: 11.0 }, image: "img/e273c9d64170b575.jpg" } // 届かない恋 '13
     , 37: { rate_base: {          3: 11.3 }, image: "img/335dbb14cedb70bf.jpg" } // 鳥の詩
-    , 38: { rate_base: {          3: 11.0 }, image: "img/529d98ad07709ae5.jpg" } // 天ノ弱
+    , 38: { rate_base: {          3: 11.1 }, image: "img/529d98ad07709ae5.jpg" } // 天ノ弱
     , 41: { rate_base: {          3: 11.6 }, image: "img/7f17441bc2582ec8.jpg" } // sweet little sister
     , 42: { rate_base: {          3: 11.6 }, image: "img/4bbc4ec5ee9aa0b6.jpg" } // oath sign
     , 45: { rate_base: {          3: 12.2 }, image: "img/90dca26c66c5d5b7.jpg" } // L9
