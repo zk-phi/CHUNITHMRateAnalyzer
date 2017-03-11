@@ -229,6 +229,7 @@ var DIFFICULTY = {
     ,278: { rate_base: {          3: 11.4 }, image: "img/5f1d7a520a2735d4.jpg" } // からくりピエロ
     ,279: { rate_base: {          3: 11.7 }, image: "img/84ecaebe6bce2a58.jpg" } // 深海少女
     ,281: { rate_base: { 2: 11.1, 3: 13.4 }, image: "img/330e57eeeb0fb2cd.jpg" } // ラクガキスト
+    ,282: { rate_base: {          3: 11.7 }, image: "img/4a51a3a5dc24c579.jpg" } // アカツキアライヴァル
     ,283: { rate_base: {          3: 12.0 }, image: "img/c658788de6594b15.jpg" } // 神曲
     ,284: { rate_base: {          3: 12.7 }, image: "img/16b25dc6eb7765aa.jpg" } // 幸せになれる隠しコマンドがあるらしい
     ,286: { rate_base: {          3: 11.5 }, image: "img/afcce0c85c1f8610.jpg" } // Tell Your World
