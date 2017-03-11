@@ -58,7 +58,7 @@ var DIFFICULTY = {
     , 53: { rate_base: {          3: 12.3 }, image: "img/73ad66e81061bba3.jpg" } // Teriqma
     , 55: { rate_base: {          3: 11.2 }, image: "img/506f053a80e1b28e.jpg" } // 夏祭り
     , 56: { rate_base: {          3: 11.0 }, image: "img/2535487ae13b2fd8.jpg" } // そばかす
-    , 60: { rate_base: {          3: 11.3 }, image: "img/3bee1cce7d794f31.jpg" } // only my railgun
+    , 60: { rate_base: {          3: 11.4 }, image: "img/3bee1cce7d794f31.jpg" } // only my railgun
     , 61: { rate_base: { 2: 11.0, 3: 13.6 }, image: "img/2ccf97477eaf45ad.jpg" } // GOLDEN RULE
     , 62: { rate_base: {          3: 12.4 }, image: "img/9386971505bb20b0.jpg" } // 名も無い鳥
     , 63: { rate_base: { 2: 11.7, 3: 13.2 }, image: "img/2df15f390356067f.jpg" } // Gate of Fate
