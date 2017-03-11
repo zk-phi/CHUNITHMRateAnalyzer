@@ -286,6 +286,7 @@ var DIFFICULTY = {
     ,351: { rate_base: {          3: 12.9 }, image: "img/fb91e08c99009fd4.jpg" } // ぶぉん！ぶぉん！らいど・おん！
     ,367: { rate_base: {          3: 11.7 }, image: "img/0c6288729e80a1df.jpg" } // いーあるふぁんくらぶ
     ,368: { rate_base: {          3: 12.8 }, image: "img/8b14785409866748.jpg" } // おこちゃま戦争
+    ,369: { rate_base: {          3: 11.7 }, image: "img/d3a5a61b5eb2b8fb.jpg" } // エイリアンエイリアン
     ,377: { rate_base: {          3: 11.5 }, image: "img/841eecc396c5059a.jpg" } // 泡沫、哀のまほろば
     ,379: { rate_base: {          3: 11.8 }, image: "img/021eef9b80989a2e.jpg" } // 愛き夜道 feat. ランコ、雨天決行
     ,380: { rate_base: {          3: 11.4 }, image: "img/f5f99bf548dab947.jpg" } // Starlight Dance Floor
