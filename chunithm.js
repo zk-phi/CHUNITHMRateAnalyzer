@@ -38,7 +38,7 @@ var DIFFICULTY = {
     , 10: { rate_base: {          3: 11.7 }, image: "img/0d7bd146ebed6fba.jpg" } // All I Want
     , 14: { rate_base: {          3: 11.0 }, image: "img/af78dd039a36a4c7.jpg" } // コネクト
     , 17: { rate_base: {          3: 11.2 }, image: "img/696d4f956ebb4209.jpg" } // 空色デイズ
-    , 18: { rate_base: {          3: 11.2 }, image: "img/3c2606abe4dded71.jpg" } // 千本桜
+    , 18: { rate_base: {          3: 11.4 }, image: "img/3c2606abe4dded71.jpg" } // 千本桜
     , 19: { rate_base: { 2: 11.0, 3: 13.2 }, image: "img/0b98b8b4e7cfd997.jpg" } // DRAGONLADY
     , 21: { rate_base: {          3: 11.9 }, image: "img/4f69fb126f579c2f.jpg" } // ナイト・オブ・ナイツ
     , 23: { rate_base: {          3: 12.1 }, image: "img/b8ab9573859ebe4f.jpg" } // 一触即発☆禅ガール
