@@ -167,7 +167,7 @@ var DIFFICULTY = {
     ,201: { rate_base: { 2: 12.4, 3: 13.9 }, image: "img/a251c24a3cc4dbf7.jpg" } // Contrapasso -inferno-
     ,202: { rate_base: { 2: 11.2, 3: 13.1 }, image: "img/45112e2818cf80a2.jpg" } // GEMINI -C-
     ,203: { rate_base: {          3: 12.0 }, image: "img/101d4e7b03a5a89e.jpg" } // FLOWER
-    ,204: { rate_base: {          3: 11.0 }, image: "img/1ea73ffbba6d7ead.jpg" } // ちくわパフェだよ☆CKP
+    ,204: { rate_base: {          3: 11.2 }, image: "img/1ea73ffbba6d7ead.jpg" } // ちくわパフェだよ☆CKP
     ,205: { rate_base: {          3: 12.7 }, image: "img/3d7803669dd3fcb9.jpg" } // SNIPE WHOLE
     ,206: { rate_base: {          3: 11.4 }, image: "img/e10bbd173df15772.jpg" } // Signs Of Love (“Never More” ver.)
     ,207: { rate_base: {          3: 11.7 }, image: "img/5151993f923b06a5.jpg" } // Your Affection (Daisuke Asakura Remix)
