@@ -153,7 +153,7 @@ var DIFFICULTY = {
     ,176: { rate_base: {          3: 11.3 }, image: "img/aa0cefb5a0f00457.jpg" } // Dance!
     ,177: { rate_base: {          3: 12.7 }, image: "img/6e7843f9d831b0ac.jpg" } // Jimang Shot
     ,178: { rate_base: {          3: 12.7 }, image: "img/9f281db3bcc9353b.jpg" } // stella=steLLa
-    ,179: { rate_base: {          3: 11.1 }, image: "img/0e73189a7083e4f4.jpg" } // すろぉもぉしょん
+    ,179: { rate_base: {          3: 11.3 }, image: "img/0e73189a7083e4f4.jpg" } // すろぉもぉしょん
     ,180: { rate_base: { 2: 12.4, 3: 13.9 }, image: "img/a732d43fd2a11e8f.jpg" } // 怒槌
     ,185: { rate_base: {          3: 11.2 }, image: "img/520c1fef62954ca6.jpg" } // 楽園の翼
     ,186: { rate_base: {          3: 11.9 }, image: "img/e26ef92a66d5d07f.jpg" } // ってゐ！ ～えいえんてゐVer～
