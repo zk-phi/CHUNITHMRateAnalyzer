@@ -219,6 +219,7 @@ var DIFFICULTY = {
     ,264: { rate_base: {          3: 12.2 }, image: "img/f44c6b628889f8ec.jpg" } // My Dearest Song
     ,265: { rate_base: {          3: 12.3 }, image: "img/874f9509a5e5707e.jpg" } // 猫祭り
     ,267: { rate_base: {          3: 11.5 }, image: "img/a0d03551eb3930e9.jpg" } // 心象蜃気楼
+    ,269: { rate_base: {          3: 11.1 }, image: "img/23359d965dd6eb4a.jpg" } // 僕らの翼
     ,270: { rate_base: {          3: 12.3 }, image: "img/21dfcd3ae2c5c370.jpg" } // エンヴィキャットウォーク
     ,271: { rate_base: {          3: 12.8 }, image: "img/99b79d4bd74e476c.jpg" } // 鬼KYOKAN
     ,272: { rate_base: {          3: 11.7 }, image: "img/98b02f86db4d3fe2.jpg" } // 有頂天ビバーチェ
