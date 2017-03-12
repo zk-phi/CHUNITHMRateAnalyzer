@@ -37,8 +37,8 @@ var DIFFICULTY = {
     ,  9: { rate_base: {          3: 12.0 }, image: "img/fce0bad9123dcd76.jpg" } // 情熱大陸
     , 10: { rate_base: {          3: 11.7 }, image: "img/0d7bd146ebed6fba.jpg" } // All I Want
     , 14: { rate_base: {          3: 11.0 }, image: "img/af78dd039a36a4c7.jpg" } // コネクト
-    , 17: { rate_base: {          3: 11.1 }, image: "img/696d4f956ebb4209.jpg" } // 空色デイズ
-    , 18: { rate_base: {          3: 11.2 }, image: "img/3c2606abe4dded71.jpg" } // 千本桜
+    , 17: { rate_base: {          3: 11.2 }, image: "img/696d4f956ebb4209.jpg" } // 空色デイズ
+    , 18: { rate_base: {          3: 11.4 }, image: "img/3c2606abe4dded71.jpg" } // 千本桜
     , 19: { rate_base: { 2: 11.0, 3: 13.2 }, image: "img/0b98b8b4e7cfd997.jpg" } // DRAGONLADY
     , 21: { rate_base: {          3: 11.9 }, image: "img/4f69fb126f579c2f.jpg" } // ナイト・オブ・ナイツ
     , 23: { rate_base: {          3: 12.1 }, image: "img/b8ab9573859ebe4f.jpg" } // 一触即発☆禅ガール
@@ -47,7 +47,7 @@ var DIFFICULTY = {
     , 35: { rate_base: {          3: 12.4 }, image: "img/aabf49add818546d.jpg" } // Lapis
     , 36: { rate_base: {          3: 11.0 }, image: "img/e273c9d64170b575.jpg" } // 届かない恋 '13
     , 37: { rate_base: {          3: 11.3 }, image: "img/335dbb14cedb70bf.jpg" } // 鳥の詩
-    , 38: { rate_base: {          3: 11.0 }, image: "img/529d98ad07709ae5.jpg" } // 天ノ弱
+    , 38: { rate_base: {          3: 11.1 }, image: "img/529d98ad07709ae5.jpg" } // 天ノ弱
     , 41: { rate_base: {          3: 11.6 }, image: "img/7f17441bc2582ec8.jpg" } // sweet little sister
     , 42: { rate_base: {          3: 11.6 }, image: "img/4bbc4ec5ee9aa0b6.jpg" } // oath sign
     , 45: { rate_base: {          3: 12.2 }, image: "img/90dca26c66c5d5b7.jpg" } // L9
@@ -58,7 +58,7 @@ var DIFFICULTY = {
     , 53: { rate_base: {          3: 12.3 }, image: "img/73ad66e81061bba3.jpg" } // Teriqma
     , 55: { rate_base: {          3: 11.2 }, image: "img/506f053a80e1b28e.jpg" } // 夏祭り
     , 56: { rate_base: {          3: 11.0 }, image: "img/2535487ae13b2fd8.jpg" } // そばかす
-    , 60: { rate_base: {          3: 11.3 }, image: "img/3bee1cce7d794f31.jpg" } // only my railgun
+    , 60: { rate_base: {          3: 11.4 }, image: "img/3bee1cce7d794f31.jpg" } // only my railgun
     , 61: { rate_base: { 2: 11.0, 3: 13.6 }, image: "img/2ccf97477eaf45ad.jpg" } // GOLDEN RULE
     , 62: { rate_base: {          3: 12.4 }, image: "img/9386971505bb20b0.jpg" } // 名も無い鳥
     , 63: { rate_base: { 2: 11.7, 3: 13.2 }, image: "img/2df15f390356067f.jpg" } // Gate of Fate
@@ -76,7 +76,7 @@ var DIFFICULTY = {
     , 75: { rate_base: {          3: 11.7 }, image: "img/e1454dc2eeae2030.jpg" } // Counselor
     , 76: { rate_base: { 2: 11.8, 3: 13.4 }, image: "img/93abb77776c70b47.jpg" } // luna blu
     , 77: { rate_base: {          3: 12.8 }, image: "img/01fc7f761272bfb4.jpg" } // ケモノガル
-    , 79: { rate_base: {          3: 11.0 }, image: "img/281f821a06a7da18.jpg" } // ＧＯ！ＧＯ！ラブリズム♥
+    , 79: { rate_base: {          3: 11.1 }, image: "img/281f821a06a7da18.jpg" } // ＧＯ！ＧＯ！ラブリズム♥
     , 82: { rate_base: {          3: 12.5 }, image: "img/27ef71f8a76f1e8a.jpg" } // Memories of Sun and Moon
     , 83: { rate_base: {          3: 12.2 }, image: "img/181682bf5b277726.jpg" } // ロストワンの号哭
     , 88: { rate_base: {          3: 12.1 }, image: "img/c4223e68340efa41.jpg" } // The Concept of Love
@@ -135,11 +135,11 @@ var DIFFICULTY = {
     ,151: { rate_base: {          3: 12.6 }, image: "img/7237488215dbd1d3.jpg" } // Alma
     ,152: { rate_base: { 2: 11.7, 3: 13.0 }, image: "img/f63fab30a7b6f160.jpg" } // Gustav Battle
     ,154: { rate_base: {          3: 12.8 }, image: "img/2e9fdbbc15ade5cb.jpg" } // SAVIOR OF SONG
-    ,156: { rate_base: {          3: 11.5 }, image: "img/b33923bd4e6e5609.jpg" } // FREELY TOMORROW
+    ,156: { rate_base: {          3: 11.4 }, image: "img/b33923bd4e6e5609.jpg" } // FREELY TOMORROW
     ,157: { rate_base: {          3: 12.9 }, image: "img/573109ca9050f55d.jpg" } // ギガンティック O.T.N
     ,158: { rate_base: {          3: 11.0 }, image: "img/e3ce6712e8cddf10.jpg" } // フォルテシモBELL
     ,159: { rate_base: {          3: 13.3 }, image: "img/d5a47266b4fe0bfe.jpg" } // ジングルベル
-    ,160: { rate_base: {          3: 11.5 }, image: "img/809bf2b3f8effa6f.jpg" } // 言ノ葉遊戯
+    ,160: { rate_base: {          3: 11.6 }, image: "img/809bf2b3f8effa6f.jpg" } // 言ノ葉遊戯
     ,161: { rate_base: {          3: 12.5 }, image: "img/4ceb5aed4a4a1c47.jpg" } // 私の中の幻想的世界観及びその顕現を想起させたある現実での出来事に関する一考察
     ,163: { rate_base: {          3: 11.3 }, image: "img/fd6847e3bb2e3629.jpg" } // 幾四音-Ixion-
     ,165: { rate_base: {          3: 12.8 }, image: "img/1e85c4b6775c84b0.jpg" } // ぼくらの16bit戦争
@@ -153,7 +153,7 @@ var DIFFICULTY = {
     ,176: { rate_base: {          3: 11.3 }, image: "img/aa0cefb5a0f00457.jpg" } // Dance!
     ,177: { rate_base: {          3: 12.7 }, image: "img/6e7843f9d831b0ac.jpg" } // Jimang Shot
     ,178: { rate_base: {          3: 12.7 }, image: "img/9f281db3bcc9353b.jpg" } // stella=steLLa
-    ,179: { rate_base: {          3: 11.1 }, image: "img/0e73189a7083e4f4.jpg" } // すろぉもぉしょん
+    ,179: { rate_base: {          3: 11.3 }, image: "img/0e73189a7083e4f4.jpg" } // すろぉもぉしょん
     ,180: { rate_base: { 2: 12.4, 3: 13.9 }, image: "img/a732d43fd2a11e8f.jpg" } // 怒槌
     ,185: { rate_base: {          3: 11.2 }, image: "img/520c1fef62954ca6.jpg" } // 楽園の翼
     ,186: { rate_base: {          3: 11.9 }, image: "img/e26ef92a66d5d07f.jpg" } // ってゐ！ ～えいえんてゐVer～
@@ -167,7 +167,7 @@ var DIFFICULTY = {
     ,201: { rate_base: { 2: 12.4, 3: 13.9 }, image: "img/a251c24a3cc4dbf7.jpg" } // Contrapasso -inferno-
     ,202: { rate_base: { 2: 11.2, 3: 13.1 }, image: "img/45112e2818cf80a2.jpg" } // GEMINI -C-
     ,203: { rate_base: {          3: 12.0 }, image: "img/101d4e7b03a5a89e.jpg" } // FLOWER
-    ,204: { rate_base: {          3: 11.0 }, image: "img/1ea73ffbba6d7ead.jpg" } // ちくわパフェだよ☆CKP
+    ,204: { rate_base: {          3: 11.2 }, image: "img/1ea73ffbba6d7ead.jpg" } // ちくわパフェだよ☆CKP
     ,205: { rate_base: {          3: 12.7 }, image: "img/3d7803669dd3fcb9.jpg" } // SNIPE WHOLE
     ,206: { rate_base: {          3: 11.4 }, image: "img/e10bbd173df15772.jpg" } // Signs Of Love (“Never More” ver.)
     ,207: { rate_base: {          3: 11.7 }, image: "img/5151993f923b06a5.jpg" } // Your Affection (Daisuke Asakura Remix)
@@ -219,6 +219,7 @@ var DIFFICULTY = {
     ,264: { rate_base: {          3: 12.2 }, image: "img/f44c6b628889f8ec.jpg" } // My Dearest Song
     ,265: { rate_base: {          3: 12.3 }, image: "img/874f9509a5e5707e.jpg" } // 猫祭り
     ,267: { rate_base: {          3: 11.5 }, image: "img/a0d03551eb3930e9.jpg" } // 心象蜃気楼
+    ,269: { rate_base: {          3: 11.1 }, image: "img/23359d965dd6eb4a.jpg" } // 僕らの翼
     ,270: { rate_base: {          3: 12.3 }, image: "img/21dfcd3ae2c5c370.jpg" } // エンヴィキャットウォーク
     ,271: { rate_base: {          3: 12.8 }, image: "img/99b79d4bd74e476c.jpg" } // 鬼KYOKAN
     ,272: { rate_base: {          3: 11.7 }, image: "img/98b02f86db4d3fe2.jpg" } // 有頂天ビバーチェ
@@ -228,6 +229,7 @@ var DIFFICULTY = {
     ,278: { rate_base: {          3: 11.4 }, image: "img/5f1d7a520a2735d4.jpg" } // からくりピエロ
     ,279: { rate_base: {          3: 11.7 }, image: "img/84ecaebe6bce2a58.jpg" } // 深海少女
     ,281: { rate_base: { 2: 11.1, 3: 13.4 }, image: "img/330e57eeeb0fb2cd.jpg" } // ラクガキスト
+    ,282: { rate_base: {          3: 11.7 }, image: "img/4a51a3a5dc24c579.jpg" } // アカツキアライヴァル
     ,283: { rate_base: {          3: 12.0 }, image: "img/c658788de6594b15.jpg" } // 神曲
     ,284: { rate_base: {          3: 12.7 }, image: "img/16b25dc6eb7765aa.jpg" } // 幸せになれる隠しコマンドがあるらしい
     ,286: { rate_base: {          3: 11.5 }, image: "img/afcce0c85c1f8610.jpg" } // Tell Your World
@@ -256,6 +258,7 @@ var DIFFICULTY = {
     ,312: { rate_base: { 2: 11.0, 3: 13.3 }, image: "img/81805f2ef1e58db8.jpg" } // ぶいえす!!らいばる!!
     ,313: { rate_base: {          3: 11.4 }, image: "img/5ac018495d6f01a5.jpg" } // ひだまりデイズ
     ,314: { rate_base: {          3: 11.8 }, image: "img/5fb63e847a057938.jpg" } // This game
+    ,315: { rate_base: {          3: 11.3 }, image: "img/fa70cc77f963cdba.jpg" } // オラシオン
     ,316: { rate_base: {          3: 11.5 }, image: "img/88f9536c08cb4e3f.jpg" } // みくみくにしてあげる♪【してやんよ】
     ,317: { rate_base: {          3: 13.2 }, image: "img/db15d5b7aefaa672.jpg" } // Air
     ,318: { rate_base: {          3: 13.0 }, image: "img/f803d578eb4047eb.jpg" } // DataErr0r
@@ -279,6 +282,12 @@ var DIFFICULTY = {
     ,343: { rate_base: {          3: 11.6 }, image: "img/e21129db8b503610.jpg" } // Daydream cafe
     ,344: { rate_base: {          3: 11.7 }, image: "img/fa151f477301a676.jpg" } // ノーポイッ！
     ,345: { rate_base: {          3: 11.5 }, image: "img/1c098cdf731eb671.jpg" } // ムーンライト伝説
+    ,350: { rate_base: {          3: 12.7 }, image: "img/44c1e56a88c144c3.jpg" } // FEEL×ALIVE
+    ,351: { rate_base: {          3: 12.9 }, image: "img/fb91e08c99009fd4.jpg" } // ぶぉん！ぶぉん！らいど・おん！
+    ,367: { rate_base: {          3: 11.7 }, image: "img/0c6288729e80a1df.jpg" } // いーあるふぁんくらぶ
+    ,368: { rate_base: {          3: 12.8 }, image: "img/8b14785409866748.jpg" } // おこちゃま戦争
+    ,369: { rate_base: {          3: 11.7 }, image: "img/d3a5a61b5eb2b8fb.jpg" } // エイリアンエイリアン
+    ,370: { rate_base: {          3: 12.4 }, image: "img/f93fba04ff1c0c54.jpg" } // 虎視眈々
     ,377: { rate_base: {          3: 11.5 }, image: "img/841eecc396c5059a.jpg" } // 泡沫、哀のまほろば
     ,379: { rate_base: {          3: 11.8 }, image: "img/021eef9b80989a2e.jpg" } // 愛き夜道 feat. ランコ、雨天決行
     ,380: { rate_base: {          3: 11.4 }, image: "img/f5f99bf548dab947.jpg" } // Starlight Dance Floor
@@ -289,6 +298,7 @@ var DIFFICULTY = {
     ,399: { rate_base: {          3: 12.6 }, image: "img/854cf33a2b30f004.jpg" } // 最愛テトラグラマトン
     ,409: { rate_base: {          3: 13.8 }, image: "img/19f776c8daa51095.jpg" } // Finite
     ,410: { rate_base: {          3: 12.7 }, image: "img/cbfb4c6a58342201.jpg" } // MY LIBERATION
+    ,411: { rate_base: {          3: 12.3 }, image: "img/dc09ca21d0647779.jpg" } // 地球最後の告白を
     ,414: { rate_base: { 2: 11.3, 3: 13.4 }, image: "img/cd2aebc19c4fa1cd.jpg" } // We Gonna Party -Feline Groove Mix-
     ,416: { rate_base: {          3: 12.4 }, image: "img/d13c5d162e6fa57e.jpg" } // Through The Tower
     ,417: { rate_base: {          3: 12.4 }, image: "img/b739e3b0af173789.jpg" } // Redo
