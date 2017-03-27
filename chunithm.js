@@ -229,6 +229,7 @@ var DIFFICULTY = {
     ,276: { rate_base: {          3: 12.3 }, image: "img/82105b37d18450b6.jpg" } // 後夜祭
     ,278: { rate_base: {          3: 11.4 }, image: "img/5f1d7a520a2735d4.jpg" } // からくりピエロ
     ,279: { rate_base: {          3: 11.7 }, image: "img/84ecaebe6bce2a58.jpg" } // 深海少女
+    ,280: { rate_base: {          3: 11.8 }, image: "img/f78d1487c34efa6e.jpg" } // リモコン
     ,281: { rate_base: { 2: 11.1, 3: 13.4 }, image: "img/330e57eeeb0fb2cd.jpg" } // ラクガキスト
     ,282: { rate_base: {          3: 11.7 }, image: "img/4a51a3a5dc24c579.jpg" } // アカツキアライヴァル
     ,283: { rate_base: {          3: 12.0 }, image: "img/c658788de6594b15.jpg" } // 神曲
