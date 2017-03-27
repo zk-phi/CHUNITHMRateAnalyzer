@@ -298,6 +298,7 @@ var DIFFICULTY = {
     ,385: { rate_base: {          3: 13.4 }, image: "img/82c76a871596142c.jpg" } // Evans
     ,386: { rate_base: { 2: 12.5, 3: 13.9 }, image: "img/8205ea9449f1b000.jpg" } // 神威
     ,388: { rate_base: {          3: 13.3 }, image: "img/14edd93cf813cdc2.jpg" } // GOODTEK
+    ,389: { rate_base: {          3: 13.5 }, image: "img/f7be4abcf8f3e197.jpg" } // Name of oath
     ,399: { rate_base: {          3: 12.6 }, image: "img/854cf33a2b30f004.jpg" } // 最愛テトラグラマトン
     ,409: { rate_base: {          3: 13.8 }, image: "img/19f776c8daa51095.jpg" } // Finite
     ,410: { rate_base: {          3: 12.7 }, image: "img/cbfb4c6a58342201.jpg" } // MY LIBERATION
