@@ -302,6 +302,7 @@ var DIFFICULTY = {
     ,388: { rate_base: {          3: 13.3 }, image: "img/14edd93cf813cdc2.jpg" } // GOODTEK
     ,389: { rate_base: {          3: 13.5 }, image: "img/f7be4abcf8f3e197.jpg" } // Name of oath
     ,390: { rate_base: {          3: 12.2 }, image: "img/c23488ff88a819b9.jpg" } // Bird Sprite
+    ,394: { rate_base: {          3: 11.7 }, image: "img/0a458d03f61196d3.jpg" } // 若い力 -SEGA HARD GIRLS MIX-
     ,399: { rate_base: {          3: 12.6 }, image: "img/854cf33a2b30f004.jpg" } // 最愛テトラグラマトン
     ,409: { rate_base: {          3: 13.8 }, image: "img/19f776c8daa51095.jpg" } // Finite
     ,410: { rate_base: {          3: 12.7 }, image: "img/cbfb4c6a58342201.jpg" } // MY LIBERATION
