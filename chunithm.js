@@ -288,6 +288,7 @@ var DIFFICULTY = {
     ,350: { rate_base: {          3: 12.7 }, image: "img/44c1e56a88c144c3.jpg" } // FEEL×ALIVE
     ,351: { rate_base: {          3: 12.9 }, image: "img/fb91e08c99009fd4.jpg" } // ぶぉん！ぶぉん！らいど・おん！
     ,352: { rate_base: {          3: 12.1 }, image: "img/c78c45855db15f7a.jpg" } // Star☆Glitter
+    ,354: { rate_base: {          3: 12.3 }, image: "img/81a50239781153fb.jpg" } // ラブリー☆えんじぇる!!
     ,367: { rate_base: {          3: 11.7 }, image: "img/0c6288729e80a1df.jpg" } // いーあるふぁんくらぶ
     ,368: { rate_base: {          3: 12.8 }, image: "img/8b14785409866748.jpg" } // おこちゃま戦争
     ,369: { rate_base: {          3: 11.7 }, image: "img/d3a5a61b5eb2b8fb.jpg" } // エイリアンエイリアン
