@@ -287,6 +287,8 @@ var DIFFICULTY = {
     ,348: { rate_base: {          3: 11.3 }, image: "img/357a07354e3f2187.jpg" } // Jumping!!
     ,350: { rate_base: {          3: 12.7 }, image: "img/44c1e56a88c144c3.jpg" } // FEEL×ALIVE
     ,351: { rate_base: {          3: 12.9 }, image: "img/fb91e08c99009fd4.jpg" } // ぶぉん！ぶぉん！らいど・おん！
+    ,352: { rate_base: {          3: 12.1 }, image: "img/c78c45855db15f7a.jpg" } // Star☆Glitter
+    ,354: { rate_base: {          3: 12.3 }, image: "img/81a50239781153fb.jpg" } // ラブリー☆えんじぇる!!
     ,367: { rate_base: {          3: 11.7 }, image: "img/0c6288729e80a1df.jpg" } // いーあるふぁんくらぶ
     ,368: { rate_base: {          3: 12.8 }, image: "img/8b14785409866748.jpg" } // おこちゃま戦争
     ,369: { rate_base: {          3: 11.7 }, image: "img/d3a5a61b5eb2b8fb.jpg" } // エイリアンエイリアン
@@ -300,6 +302,8 @@ var DIFFICULTY = {
     ,388: { rate_base: {          3: 13.3 }, image: "img/14edd93cf813cdc2.jpg" } // GOODTEK
     ,389: { rate_base: {          3: 13.5 }, image: "img/f7be4abcf8f3e197.jpg" } // Name of oath
     ,390: { rate_base: {          3: 12.2 }, image: "img/c23488ff88a819b9.jpg" } // Bird Sprite
+    ,394: { rate_base: {          3: 11.7 }, image: "img/0a458d03f61196d3.jpg" } // 若い力 -SEGA HARD GIRLS MIX-
+    ,395: { rate_base: {          3: 11.9 }, image: "img/90be66e64c2417cb.jpg" } // レッツゴー!陰陽師
     ,399: { rate_base: {          3: 12.6 }, image: "img/854cf33a2b30f004.jpg" } // 最愛テトラグラマトン
     ,409: { rate_base: {          3: 13.8 }, image: "img/19f776c8daa51095.jpg" } // Finite
     ,410: { rate_base: {          3: 12.7 }, image: "img/cbfb4c6a58342201.jpg" } // MY LIBERATION
