@@ -218,6 +218,7 @@ var DIFFICULTY = {
     ,263: { rate_base: {          3: 11.7 }, image: "img/015358a0c0580022.jpg" } // Hand in Hand
     ,264: { rate_base: {          3: 12.2 }, image: "img/f44c6b628889f8ec.jpg" } // My Dearest Song
     ,265: { rate_base: {          3: 12.3 }, image: "img/874f9509a5e5707e.jpg" } // 猫祭り
+    ,266: { rate_base: {          3: 12.7 }, image: "img/7e82a95c4bfa983a.jpg" } // ゲシュタルト！テスト期間！！
     ,267: { rate_base: {          3: 11.5 }, image: "img/a0d03551eb3930e9.jpg" } // 心象蜃気楼
     ,268: { rate_base: {          3: 12.8 }, image: "img/e52af2b93636ccea.jpg" } // Bang Babang Bang!!!
     ,269: { rate_base: {          3: 11.1 }, image: "img/23359d965dd6eb4a.jpg" } // 僕らの翼
