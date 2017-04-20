@@ -283,6 +283,7 @@ var DIFFICULTY = {
     ,336: { rate_base: {          3: 12.2 }, image: "img/e40fceaa1bb587b7.jpg" } // シジョウノコエ VOCALO ver.
     ,339: { rate_base: {          3: 11.7 }, image: "img/65353f99e301c521.jpg" } // Revolution Game
     ,341: { rate_base: {          3: 13.1 }, image: "img/fc1cec7d2aeb6ca1.jpg" } // おまかせ！！トラブルメイ娘☆とれびちゃん
+    ,342: { rate_base: {          3: 13.5 }, image: "img/6905b5ce0d115340.jpg" } // オススメ☆♂♀☆でぃすとぴあ
     ,343: { rate_base: {          3: 11.6 }, image: "img/e21129db8b503610.jpg" } // Daydream cafe
     ,344: { rate_base: {          3: 11.7 }, image: "img/fa151f477301a676.jpg" } // ノーポイッ！
     ,345: { rate_base: {          3: 11.5 }, image: "img/1c098cdf731eb671.jpg" } // ムーンライト伝説
