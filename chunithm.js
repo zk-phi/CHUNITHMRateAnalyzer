@@ -218,6 +218,7 @@ var DIFFICULTY = {
     ,263: { rate_base: {          3: 11.7 }, image: "img/015358a0c0580022.jpg" } // Hand in Hand
     ,264: { rate_base: {          3: 12.2 }, image: "img/f44c6b628889f8ec.jpg" } // My Dearest Song
     ,265: { rate_base: {          3: 12.3 }, image: "img/874f9509a5e5707e.jpg" } // 猫祭り
+    ,266: { rate_base: {          3: 12.7 }, image: "img/7e82a95c4bfa983a.jpg" } // ゲシュタルト！テスト期間！！
     ,267: { rate_base: {          3: 11.5 }, image: "img/a0d03551eb3930e9.jpg" } // 心象蜃気楼
     ,268: { rate_base: {          3: 12.8 }, image: "img/e52af2b93636ccea.jpg" } // Bang Babang Bang!!!
     ,269: { rate_base: {          3: 11.1 }, image: "img/23359d965dd6eb4a.jpg" } // 僕らの翼
@@ -281,6 +282,8 @@ var DIFFICULTY = {
     ,334: { rate_base: {          3: 12.4 }, image: "img/2704dddce9cd4e3c.jpg" } // FLOATED CALM
     ,336: { rate_base: {          3: 12.2 }, image: "img/e40fceaa1bb587b7.jpg" } // シジョウノコエ VOCALO ver.
     ,339: { rate_base: {          3: 11.7 }, image: "img/65353f99e301c521.jpg" } // Revolution Game
+    ,341: { rate_base: {          3: 13.1 }, image: "img/fc1cec7d2aeb6ca1.jpg" } // おまかせ！！トラブルメイ娘☆とれびちゃん
+    ,342: { rate_base: {          3: 13.5 }, image: "img/6905b5ce0d115340.jpg" } // オススメ☆♂♀☆でぃすとぴあ
     ,343: { rate_base: {          3: 11.6 }, image: "img/e21129db8b503610.jpg" } // Daydream cafe
     ,344: { rate_base: {          3: 11.7 }, image: "img/fa151f477301a676.jpg" } // ノーポイッ！
     ,345: { rate_base: {          3: 11.5 }, image: "img/1c098cdf731eb671.jpg" } // ムーンライト伝説
