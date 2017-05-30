@@ -40,6 +40,7 @@ var DIFFICULTY = {
     , 17: { rate_base: {          3: 11.2 }, image: "img/696d4f956ebb4209.jpg" } // 空色デイズ
     , 18: { rate_base: {          3: 11.4 }, image: "img/3c2606abe4dded71.jpg" } // 千本桜
     , 19: { rate_base: { 2: 11.0, 3: 13.2 }, image: "img/0b98b8b4e7cfd997.jpg" } // DRAGONLADY
+    , 20: { rate_base: {          3: 12.8 }, image: "img/e2a1c87c96de9837.jpg" } // taboo tears you up
     , 21: { rate_base: {          3: 11.9 }, image: "img/4f69fb126f579c2f.jpg" } // ナイト・オブ・ナイツ
     , 23: { rate_base: {          3: 12.1 }, image: "img/b8ab9573859ebe4f.jpg" } // 一触即発☆禅ガール
     , 27: { rate_base: {          3: 12.5 }, image: "img/fdc3bb451f6403d2.jpg" } // タイガーランペイジ
@@ -160,6 +161,11 @@ var DIFFICULTY = {
     ,187: { rate_base: { 2: 11.2, 3: 13.1 }, image: "img/e6642a96885723c1.jpg" } // 患部で止まってすぐ溶ける～狂気の優曇華院
     ,189: { rate_base: {          3: 12.7 }, image: "img/9310d07b7e02e73a.jpg" } // ひれ伏せ愚民どもっ！
     ,190: { rate_base: {          3: 12.6 }, image: "img/bbaa464731ab96a4.jpg" } // エテルニタス・ルドロジー
+    ,191: { rate_base: {          3: 11.7 }, image: "img/53862f1d50a76902.jpg" } // 幽闇に目醒めしは
+    ,192: { rate_base: {          3: 12.6 }, image: "img/4ec159d338cfba9e.jpg" } // Starlight Vision
+    ,193: { rate_base: {          3: 12.5 }, image: "img/8d15a77198c7b841.jpg" } // Club Ibuki in Break All
+    ,194: { rate_base: {          3: 13.0 }, image: "img/d483d1ca2a5e10ff.jpg" } // Phantasm Brigade
+    ,195: { rate_base: {          3: 12.3 }, image: "img/8fae9b1861d3f9af.jpg" } // 永遠のメロディ
     ,196: { rate_base: { 2: 11.9, 3: 13.7 }, image: "img/ed40032f25177518.jpg" } // FREEDOM DiVE
     ,197: { rate_base: { 2: 11.7, 3: 13.1 }, image: "img/ae6d3a8806e09613.jpg" } // Jack-the-Ripper◆
     ,199: { rate_base: {          3: 12.1 }, image: "img/d76afb63de1417f8.jpg" } // ハート・ビート
@@ -227,7 +233,8 @@ var DIFFICULTY = {
     ,272: { rate_base: {          3: 11.7 }, image: "img/98b02f86db4d3fe2.jpg" } // 有頂天ビバーチェ
     ,273: { rate_base: {          3: 11.9 }, image: "img/604157e2c49d91d7.jpg" } // ビバハピ
     ,275: { rate_base: {          3: 11.5 }, image: "img/169a5a5ffa300cb7.jpg" } // 愛言葉
-    ,276: { rate_base: {          3: 12.3 }, image: "img/82105b37d18450b6.jpg" } // 後夜祭
+    ,276: { rate_base: {          3: 12.3 }, image: "img/82105b37d18450b6.jpg" } // 後夜祭    
+    ,277: { rate_base: {          3: 12.4 }, image: "img/23e754d62862c0c4.jpg" } // TRUST
     ,278: { rate_base: {          3: 11.4 }, image: "img/5f1d7a520a2735d4.jpg" } // からくりピエロ
     ,279: { rate_base: {          3: 11.7 }, image: "img/84ecaebe6bce2a58.jpg" } // 深海少女
     ,280: { rate_base: {          3: 11.8 }, image: "img/f78d1487c34efa6e.jpg" } // リモコン
@@ -300,6 +307,9 @@ var DIFFICULTY = {
     ,379: { rate_base: {          3: 11.8 }, image: "img/021eef9b80989a2e.jpg" } // 愛き夜道 feat. ランコ、雨天決行
     ,380: { rate_base: {          3: 11.4 }, image: "img/f5f99bf548dab947.jpg" } // Starlight Dance Floor
     ,381: { rate_base: {          3: 12.0 }, image: "img/f489240491c703a5.jpg" } // Witches night
+    ,382: { rate_base: {          3: 12.2 }, image: "img/35f4cdddf050d04c.jpg" } // Help me, ERINNNNNN!! -Cranky remix-
+    ,383: { rate_base: {          3: 12.6 }, image: "img/fbc64b4167aebad9.jpg" } // 仙酌絶唱のファンタジア
+    ,384: { rate_base: {          3: 12.4 }, image: "img/2cf12519a485d471.jpg" } // キュアリアス光吉古牌　－祭－
     ,385: { rate_base: {          3: 13.4 }, image: "img/82c76a871596142c.jpg" } // Evans
     ,386: { rate_base: { 2: 12.5, 3: 13.9 }, image: "img/8205ea9449f1b000.jpg" } // 神威
     ,388: { rate_base: {          3: 13.3 }, image: "img/14edd93cf813cdc2.jpg" } // GOODTEK
@@ -307,6 +317,7 @@ var DIFFICULTY = {
     ,390: { rate_base: {          3: 12.2 }, image: "img/c23488ff88a819b9.jpg" } // Bird Sprite
     ,394: { rate_base: {          3: 11.7 }, image: "img/0a458d03f61196d3.jpg" } // 若い力 -SEGA HARD GIRLS MIX-
     ,395: { rate_base: {          3: 11.9 }, image: "img/90be66e64c2417cb.jpg" } // レッツゴー!陰陽師
+    ,396: { rate_base: {          3: 12.1 }, image: "img/d15d3a298dac3df0.jpg" } // あねぺったん
     ,397: { rate_base: {          3: 13.5 }, image: "img/3e545c372b926197.jpg" } // Like the Wind [Reborn]
     ,399: { rate_base: {          3: 12.6 }, image: "img/854cf33a2b30f004.jpg" } // 最愛テトラグラマトン
     ,409: { rate_base: {          3: 13.8 }, image: "img/19f776c8daa51095.jpg" } // Finite
