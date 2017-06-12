@@ -299,10 +299,18 @@ var DIFFICULTY = {
     ,351: { rate_base: {          3: 12.9 }, image: "img/fb91e08c99009fd4.jpg" } // ぶぉん！ぶぉん！らいど・おん！
     ,352: { rate_base: {          3: 12.1 }, image: "img/c78c45855db15f7a.jpg" } // Star☆Glitter
     ,354: { rate_base: {          3: 12.3 }, image: "img/81a50239781153fb.jpg" } // ラブリー☆えんじぇる!!
+    ,356: { rate_base: {          3: 12.3 }, image: "img/13e6eb56943f6d00.jpg" } // クローバー♣かくめーしょん
+    ,357: { rate_base: {          3: 11.7 }, image: "img/a852ba21f22efbc1.jpg" } // ぐーちょきパレード
     ,367: { rate_base: {          3: 11.7 }, image: "img/0c6288729e80a1df.jpg" } // いーあるふぁんくらぶ
     ,368: { rate_base: {          3: 12.8 }, image: "img/8b14785409866748.jpg" } // おこちゃま戦争
     ,369: { rate_base: {          3: 11.7 }, image: "img/d3a5a61b5eb2b8fb.jpg" } // エイリアンエイリアン
     ,370: { rate_base: {          3: 12.4 }, image: "img/f93fba04ff1c0c54.jpg" } // 虎視眈々
+    ,371: { rate_base: {          3: 12.7 }, image: "img/ad2ef043b1bd490f.jpg" } // アンハッピーリフレイン
+    ,372: { rate_base: {          3: 12.2 }, image: "img/9c39b668e99ce253.jpg" } // すきなことだけでいいです
+    ,373: { rate_base: {          3: 12.4 }, image: "img/4f8e04cdc467480d.jpg" } // デリヘル呼んだら君が来た
+    ,374: { rate_base: {          3: 12.5 }, image: "img/189a65f52bd06239.jpg" } // チュルリラ・チュルリラ・ダッダッダ！
+    ,375: { rate_base: {          3: 11.5 }, image: "img/ddfafd0206d04707.jpg" } // だんだん早くなる
+    ,376: { rate_base: {          3: 12.2 }, image: "img/b1e915b646c9ba08.jpg" } // ECHO
     ,377: { rate_base: {          3: 11.5 }, image: "img/841eecc396c5059a.jpg" } // 泡沫、哀のまほろば
     ,379: { rate_base: {          3: 11.8 }, image: "img/021eef9b80989a2e.jpg" } // 愛き夜道 feat. ランコ、雨天決行
     ,380: { rate_base: {          3: 11.4 }, image: "img/f5f99bf548dab947.jpg" } // Starlight Dance Floor
