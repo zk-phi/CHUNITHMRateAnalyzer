@@ -332,6 +332,7 @@ var DIFFICULTY = {
     ,395: { rate_base: {          3: 11.9 }, image: "img/90be66e64c2417cb.jpg" } // レッツゴー!陰陽師
     ,396: { rate_base: {          3: 12.1 }, image: "img/d15d3a298dac3df0.jpg" } // あねぺったん
     ,397: { rate_base: {          3: 13.5 }, image: "img/3e545c372b926197.jpg" } // Like the Wind [Reborn]
+    ,398: { rate_base: {          3: 11.8 }, image: "img/4e7b81501ccdd198.jpg" } // 天国と地獄 -言ノ葉リンネ-
     ,399: { rate_base: {          3: 12.6 }, image: "img/854cf33a2b30f004.jpg" } // 最愛テトラグラマトン
     ,409: { rate_base: {          3: 13.8 }, image: "img/19f776c8daa51095.jpg" } // Finite
     ,410: { rate_base: {          3: 12.7 }, image: "img/cbfb4c6a58342201.jpg" } // MY LIBERATION
