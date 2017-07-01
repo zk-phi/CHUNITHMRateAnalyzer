@@ -210,9 +210,11 @@ var DIFFICULTY = {
     ,246: { rate_base: {          3: 12.8 }, image: "img/d445e4878a818d8b.jpg" } // なるとなぎのパーフェクトロックンロール教室
     ,247: { rate_base: {          3: 11.7 }, image: "img/58847f9694837c0b.jpg" } // 絶世スターゲイト
     ,248: { rate_base: { 2: 12.3, 3: 13.9 }, image: "img/a2fdef9e4b278a51.jpg" } // Schrecklicher Aufstand
+    ,249: { rate_base: {          3: 12.7 }, image: "img/1a532b709f9834b6.jpg" } // ドライヴ・オン・ザ・レインボー
     ,250: { rate_base: { 2: 11.8, 3: 13.4 }, image: "img/989f4458fb34aa9d.jpg" } // Philosopher
     ,251: { rate_base: {          3: 12.5 }, image: "img/457722c9f3ff5473.jpg" } // Crazy ∞ nighT
     ,252: { rate_base: {          3: 12.3 }, image: "img/bb221e3de960de7d.jpg" } // 愛迷エレジー
+    ,253: { rate_base: {          3: 13.3 }, image: "img/a2f5cd53acbfc981.jpg" } // Warcry
     ,254: { rate_base: {          3: 11.7 }, image: "img/2e617d713547fe84.jpg" } // その群青が愛しかったようだった
     ,255: { rate_base: {          3: 11.0 }, image: "img/429d34fef5fddb02.jpg" } // 激情！ミルキィ大作戦
     ,256: { rate_base: {          3: 12.7 }, image: "img/755fb1e2b79ba896.jpg" } // 札付きのワル 〜マイケルのうた〜
@@ -251,6 +253,7 @@ var DIFFICULTY = {
     ,292: { rate_base: {          3: 12.1 }, image: "img/b12c25f87b1d036e.jpg" } // 月に叢雲華に風
     ,293: { rate_base: {          3: 13.2 }, image: "img/c58227eb0d14938c.jpg" } // インビジブル
     ,294: { rate_base: {          3: 13.0 }, image: "img/c63005195d15922e.jpg" } // 人生リセットボタン
+    ,295: { rate_base: {          3: 12.0 }, image: "img/988d8172dbe8b42b.jpg" } // 響
     ,296: { rate_base: {          3: 12.1 }, image: "img/76535cf4c728f2af.jpg" } // かくしん的☆めたまるふぉ～ぜっ!
     ,297: { rate_base: {          3: 12.3 }, image: "img/8463cebfa120b884.jpg" } // 風仁雷仁
     ,298: { rate_base: {          3: 12.6 }, image: "img/7c649691aa0c4b3d.jpg" } // PRIVATE SERVICE
@@ -264,6 +267,7 @@ var DIFFICULTY = {
     ,307: { rate_base: {          3: 12.7 }, image: "img/ff9f70c8c0d9f24e.jpg" } // Paqqin
     ,308: { rate_base: {          3: 11.9 }, image: "img/f8d3f2e57ae2ff24.jpg" } // fake!fake!
     ,309: { rate_base: {          3: 12.5 }, image: "img/cee51d69c428f8f5.jpg" } // Rising Hope
+    ,310: { rate_base: { 2: 11.2, 3: 13.3 }, image: "img/ae93bd84b68781f6.jpg" } // 覚醒楽奏メタフィクション
     ,311: { rate_base: {          3: 11.8 }, image: "img/8f359edeac59a511.jpg" } // Be My Friend
     ,312: { rate_base: { 2: 11.0, 3: 13.3 }, image: "img/81805f2ef1e58db8.jpg" } // ぶいえす!!らいばる!!
     ,313: { rate_base: {          3: 11.4 }, image: "img/5ac018495d6f01a5.jpg" } // ひだまりデイズ
@@ -288,6 +292,7 @@ var DIFFICULTY = {
     ,332: { rate_base: {          3: 12.3 }, image: "img/41001ddd4214d6b6.jpg" } // 空威張りビヘイビア
     ,334: { rate_base: {          3: 12.4 }, image: "img/2704dddce9cd4e3c.jpg" } // FLOATED CALM
     ,336: { rate_base: {          3: 12.2 }, image: "img/e40fceaa1bb587b7.jpg" } // シジョウノコエ VOCALO ver.
+    ,338: { rate_base: {          3: 12.3 }, image: "img/379072a1ddcf1fe2.jpg" } // SPICY SWINGY STYLE
     ,339: { rate_base: {          3: 11.7 }, image: "img/65353f99e301c521.jpg" } // Revolution Game
     ,341: { rate_base: {          3: 13.1 }, image: "img/fc1cec7d2aeb6ca1.jpg" } // おまかせ！！トラブルメイ娘☆とれびちゃん
     ,342: { rate_base: {          3: 13.5 }, image: "img/6905b5ce0d115340.jpg" } // オススメ☆♂♀☆でぃすとぴあ
@@ -327,6 +332,7 @@ var DIFFICULTY = {
     ,395: { rate_base: {          3: 11.9 }, image: "img/90be66e64c2417cb.jpg" } // レッツゴー!陰陽師
     ,396: { rate_base: {          3: 12.1 }, image: "img/d15d3a298dac3df0.jpg" } // あねぺったん
     ,397: { rate_base: {          3: 13.5 }, image: "img/3e545c372b926197.jpg" } // Like the Wind [Reborn]
+    ,398: { rate_base: {          3: 11.8 }, image: "img/4e7b81501ccdd198.jpg" } // 天国と地獄 -言ノ葉リンネ-
     ,399: { rate_base: {          3: 12.6 }, image: "img/854cf33a2b30f004.jpg" } // 最愛テトラグラマトン
     ,409: { rate_base: {          3: 13.8 }, image: "img/19f776c8daa51095.jpg" } // Finite
     ,410: { rate_base: {          3: 12.7 }, image: "img/cbfb4c6a58342201.jpg" } // MY LIBERATION
