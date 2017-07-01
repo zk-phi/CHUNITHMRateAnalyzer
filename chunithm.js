@@ -214,7 +214,7 @@ var DIFFICULTY = {
     ,250: { rate_base: { 2: 11.8, 3: 13.4 }, image: "img/989f4458fb34aa9d.jpg" } // Philosopher
     ,251: { rate_base: {          3: 12.5 }, image: "img/457722c9f3ff5473.jpg" } // Crazy ∞ nighT
     ,252: { rate_base: {          3: 12.3 }, image: "img/bb221e3de960de7d.jpg" } // 愛迷エレジー
-    ,253: { rate_base: {          3: 13.3 }, image: "img/a2f5cd53acbfc981.jpg" } // Warcry
+    ,253: { rate_base: {          3: 13.1 }, image: "img/a2f5cd53acbfc981.jpg" } // Warcry
     ,254: { rate_base: {          3: 11.7 }, image: "img/2e617d713547fe84.jpg" } // その群青が愛しかったようだった
     ,255: { rate_base: {          3: 11.0 }, image: "img/429d34fef5fddb02.jpg" } // 激情！ミルキィ大作戦
     ,256: { rate_base: {          3: 12.7 }, image: "img/755fb1e2b79ba896.jpg" } // 札付きのワル 〜マイケルのうた〜
