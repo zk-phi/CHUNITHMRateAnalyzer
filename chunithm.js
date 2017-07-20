@@ -522,6 +522,12 @@ var best_rate_diff;
 var recent_rate_diff;
 var opt_rate_diff;
 
+// debug
+var all_chart_list;
+function set_render_all_chart_lsit(flag) {
+    all_chart_list = flag;
+}
+
 // -----------------------------------------------------------------------------
 // UI
 // -----------------------------------------------------------------------------
@@ -1383,7 +1389,7 @@ function render_chart_list(list, msgs)
 
         // 満点出しても BEST 枠を改善できない譜面を出さない（Recent 枠
         // の場合は req_diff = undefined なので影響しない）
-        if (list[i].req_diff != undefined && isNaN(list[i].req_diff)) continue;
+        if (!all_chart_list && list[i].req_diff != undefined && isNaN(list[i].req_diff)) continue;
 
         var difficulty_icon = list[i].level == 2 ? "common/images/icon_expert.png"
             : "common/images/icon_master.png";
