@@ -201,6 +201,7 @@ var DIFFICULTY = {
     ,230: { rate_base: {          3: 12.5 }, image: "img/b59d2b2ab877a77d.jpg" } // Hyperion
     ,232: { rate_base: { 2: 11.3, 3: 13.4 }, image: "img/a2069fdb9d860d36.jpg" } // Elemental Creation
     ,233: { rate_base: {          3: 12.2 }, image: "img/5fe5db1d2e40ee7a.jpg" } // アルストロメリア
+    ,234: { rate_base: { 2: 12.2, 3: 13.9 }, image: "img/9af4b336821cdcc9.jpg" } // Devastating Blaster
     ,235: { rate_base: {          3: 12.5 }, image: "img/8b84b06033585428.jpg" } // ファッとして桃源郷
     ,238: { rate_base: {          3: 11.9 }, image: "img/4c769ae611f83d21.jpg" } // フレンズ
     ,240: { rate_base: {          3: 12.6 }, image: "img/47397105bad447fb.jpg" } // 夜咄ディセイブ
