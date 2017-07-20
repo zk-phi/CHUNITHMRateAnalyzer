@@ -220,6 +220,7 @@ var DIFFICULTY = {
     ,255: { rate_base: {          3: 11.0 }, image: "img/429d34fef5fddb02.jpg" } // 激情！ミルキィ大作戦
     ,256: { rate_base: {          3: 12.7 }, image: "img/755fb1e2b79ba896.jpg" } // 札付きのワル 〜マイケルのうた〜
     ,257: { rate_base: {          3: 13.0 }, image: "img/bef9b79c637bf4c9.jpg" } // BOKUTO
+    ,258: { rate_base: { 2: 12.8, 3: 14.0 }, image: "img/f04c37ecd99f1d8c.jpg" } // TiamaT:F minor
     ,259: { rate_base: { 2: 11.3, 3: 13.0 }, image: "img/4d66e5d1669d79a2.jpg" } // Oshama Scramble! (Cranky Remix)
     ,260: { rate_base: {          3: 12.4 }, image: "img/03f1dafe3b08607e.jpg" } // D.E.A.D.L.Y.
     ,261: { rate_base: {          3: 12.3 }, image: "img/6e917606db3c5a0e.jpg" } // ロボットプラネットユートピア
