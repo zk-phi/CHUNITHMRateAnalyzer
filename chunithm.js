@@ -294,6 +294,7 @@ var DIFFICULTY = {
     ,336: { rate_base: {          3: 12.2 }, image: "img/e40fceaa1bb587b7.jpg" } // シジョウノコエ VOCALO ver.
     ,338: { rate_base: {          3: 12.3 }, image: "img/379072a1ddcf1fe2.jpg" } // SPICY SWINGY STYLE
     ,339: { rate_base: {          3: 11.7 }, image: "img/65353f99e301c521.jpg" } // Revolution Game
+    ,340: { rate_base: {          3: 12.5 }, image: "img/de62556bd83dd21d.jpg" } // Still
     ,341: { rate_base: {          3: 13.1 }, image: "img/fc1cec7d2aeb6ca1.jpg" } // おまかせ！！トラブルメイ娘☆とれびちゃん
     ,342: { rate_base: {          3: 13.5 }, image: "img/6905b5ce0d115340.jpg" } // オススメ☆♂♀☆でぃすとぴあ
     ,343: { rate_base: {          3: 11.6 }, image: "img/e21129db8b503610.jpg" } // Daydream cafe
@@ -306,6 +307,11 @@ var DIFFICULTY = {
     ,354: { rate_base: {          3: 12.3 }, image: "img/81a50239781153fb.jpg" } // ラブリー☆えんじぇる!!
     ,356: { rate_base: {          3: 12.3 }, image: "img/13e6eb56943f6d00.jpg" } // クローバー♣かくめーしょん
     ,357: { rate_base: {          3: 11.7 }, image: "img/a852ba21f22efbc1.jpg" } // ぐーちょきパレード
+    ,358: { rate_base: {          3: 11.7 }, image: "img/c12cb5d8f49e8d2b.jpg" } // My Soul,Your Beats!
+    ,359: { rate_base: {          3: 11.8 }, image: "img/8b7fcdd825264797.jpg" } // Thuousand Enemies
+    ,360: { rate_base: {          3: 11.3 }, image: "img/8ecf57e4db2f6d94.jpg" } // 夢想歌
+    ,362: { rate_base: {          3: 12.1 }, image: "img/13f02068575a1ef9.jpg" } // Face of Fact
+    ,363: { rate_base: {          3: 11.6 }, image: "img/15625838f8f00963.jpg" } // true my heart -Lovable mix-
     ,367: { rate_base: {          3: 11.7 }, image: "img/0c6288729e80a1df.jpg" } // いーあるふぁんくらぶ
     ,368: { rate_base: {          3: 12.8 }, image: "img/8b14785409866748.jpg" } // おこちゃま戦争
     ,369: { rate_base: {          3: 11.7 }, image: "img/d3a5a61b5eb2b8fb.jpg" } // エイリアンエイリアン
@@ -340,12 +346,6 @@ var DIFFICULTY = {
     ,414: { rate_base: { 2: 11.3, 3: 13.4 }, image: "img/cd2aebc19c4fa1cd.jpg" } // We Gonna Party -Feline Groove Mix-
     ,416: { rate_base: {          3: 12.4 }, image: "img/d13c5d162e6fa57e.jpg" } // Through The Tower
     ,417: { rate_base: {          3: 12.4 }, image: "img/b739e3b0af173789.jpg" } // Redo
-    ,340: { rate_base: {          3: 12.5 }, image: "img/de62556bd83dd21d.jpg" } // Still
-    ,358: { rate_base: {          3: 11.7 }, image: "img/c12cb5d8f49e8d2b.jpg" } // My Soul,Your Beats!
-    ,359: { rate_base: {          3: 11.8 }, image: "img/8b7fcdd825264797.jpg" } // Thuousand Enemies
-    ,362: { rate_base: {          3: 12.1 }, image: "img/13f02068575a1ef9.jpg" } // Face of Fact
-    ,363: { rate_base: {          3: 11.6 }, image: "img/15625838f8f00963.jpg" } // true my heart -Lovable mix-
-    ,360: { rate_base: {          3: 11.3 }, image: "img/8ecf57e4db2f6d94.jpg" } // 夢想歌
 
 };
 
