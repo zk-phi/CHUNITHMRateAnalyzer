@@ -291,6 +291,7 @@ var DIFFICULTY = {
     ,331: { rate_base: {          3: 12.2 }, image: "img/ec37e447b91995dd.jpg" } // 猛進ソリストライフ！
     ,332: { rate_base: {          3: 12.3 }, image: "img/41001ddd4214d6b6.jpg" } // 空威張りビヘイビア
     ,334: { rate_base: {          3: 12.4 }, image: "img/2704dddce9cd4e3c.jpg" } // FLOATED CALM
+    ,335: { rate_base: {          3: 13.4 }, image: "img/3c61434b8cb2aadf.jpg" } // Supersonic Generation
     ,336: { rate_base: {          3: 12.2 }, image: "img/e40fceaa1bb587b7.jpg" } // シジョウノコエ VOCALO ver.
     ,338: { rate_base: {          3: 12.3 }, image: "img/379072a1ddcf1fe2.jpg" } // SPICY SWINGY STYLE
     ,339: { rate_base: {          3: 11.7 }, image: "img/65353f99e301c521.jpg" } // Revolution Game
