@@ -201,6 +201,7 @@ var DIFFICULTY = {
     ,230: { rate_base: {          3: 12.5 }, image: "img/b59d2b2ab877a77d.jpg" } // Hyperion
     ,232: { rate_base: { 2: 11.3, 3: 13.4 }, image: "img/a2069fdb9d860d36.jpg" } // Elemental Creation
     ,233: { rate_base: {          3: 12.2 }, image: "img/5fe5db1d2e40ee7a.jpg" } // アルストロメリア
+    ,234: { rate_base: { 2: 12.2, 3: 13.9 }, image: "img/9af4b336821cdcc9.jpg" } // Devastating Blaster
     ,235: { rate_base: {          3: 12.5 }, image: "img/8b84b06033585428.jpg" } // ファッとして桃源郷
     ,238: { rate_base: {          3: 11.9 }, image: "img/4c769ae611f83d21.jpg" } // フレンズ
     ,240: { rate_base: {          3: 12.6 }, image: "img/47397105bad447fb.jpg" } // 夜咄ディセイブ
@@ -219,6 +220,7 @@ var DIFFICULTY = {
     ,255: { rate_base: {          3: 11.0 }, image: "img/429d34fef5fddb02.jpg" } // 激情！ミルキィ大作戦
     ,256: { rate_base: {          3: 12.7 }, image: "img/755fb1e2b79ba896.jpg" } // 札付きのワル 〜マイケルのうた〜
     ,257: { rate_base: {          3: 13.0 }, image: "img/bef9b79c637bf4c9.jpg" } // BOKUTO
+    ,258: { rate_base: { 2: 12.8, 3: 14.0 }, image: "img/f04c37ecd99f1d8c.jpg" } // TiamaT:F minor
     ,259: { rate_base: { 2: 11.3, 3: 13.0 }, image: "img/4d66e5d1669d79a2.jpg" } // Oshama Scramble! (Cranky Remix)
     ,260: { rate_base: {          3: 12.4 }, image: "img/03f1dafe3b08607e.jpg" } // D.E.A.D.L.Y.
     ,261: { rate_base: {          3: 12.3 }, image: "img/6e917606db3c5a0e.jpg" } // ロボットプラネットユートピア
@@ -291,9 +293,11 @@ var DIFFICULTY = {
     ,331: { rate_base: {          3: 12.2 }, image: "img/ec37e447b91995dd.jpg" } // 猛進ソリストライフ！
     ,332: { rate_base: {          3: 12.3 }, image: "img/41001ddd4214d6b6.jpg" } // 空威張りビヘイビア
     ,334: { rate_base: {          3: 12.4 }, image: "img/2704dddce9cd4e3c.jpg" } // FLOATED CALM
+    ,335: { rate_base: {          3: 13.4 }, image: "img/3c61434b8cb2aadf.jpg" } // Supersonic Generation
     ,336: { rate_base: {          3: 12.2 }, image: "img/e40fceaa1bb587b7.jpg" } // シジョウノコエ VOCALO ver.
     ,338: { rate_base: {          3: 12.3 }, image: "img/379072a1ddcf1fe2.jpg" } // SPICY SWINGY STYLE
     ,339: { rate_base: {          3: 11.7 }, image: "img/65353f99e301c521.jpg" } // Revolution Game
+    ,340: { rate_base: {          3: 12.5 }, image: "img/de62556bd83dd21d.jpg" } // Still
     ,341: { rate_base: {          3: 13.1 }, image: "img/fc1cec7d2aeb6ca1.jpg" } // おまかせ！！トラブルメイ娘☆とれびちゃん
     ,342: { rate_base: {          3: 13.5 }, image: "img/6905b5ce0d115340.jpg" } // オススメ☆♂♀☆でぃすとぴあ
     ,343: { rate_base: {          3: 11.6 }, image: "img/e21129db8b503610.jpg" } // Daydream cafe
@@ -306,6 +310,11 @@ var DIFFICULTY = {
     ,354: { rate_base: {          3: 12.3 }, image: "img/81a50239781153fb.jpg" } // ラブリー☆えんじぇる!!
     ,356: { rate_base: {          3: 12.3 }, image: "img/13e6eb56943f6d00.jpg" } // クローバー♣かくめーしょん
     ,357: { rate_base: {          3: 11.7 }, image: "img/a852ba21f22efbc1.jpg" } // ぐーちょきパレード
+    ,358: { rate_base: {          3: 11.7 }, image: "img/c12cb5d8f49e8d2b.jpg" } // My Soul,Your Beats!
+    ,359: { rate_base: {          3: 11.8 }, image: "img/8b7fcdd825264797.jpg" } // Thuousand Enemies
+    ,360: { rate_base: {          3: 11.3 }, image: "img/8ecf57e4db2f6d94.jpg" } // 夢想歌
+    ,362: { rate_base: {          3: 12.1 }, image: "img/13f02068575a1ef9.jpg" } // Face of Fact
+    ,363: { rate_base: {          3: 11.6 }, image: "img/15625838f8f00963.jpg" } // true my heart -Lovable mix-
     ,367: { rate_base: {          3: 11.7 }, image: "img/0c6288729e80a1df.jpg" } // いーあるふぁんくらぶ
     ,368: { rate_base: {          3: 12.8 }, image: "img/8b14785409866748.jpg" } // おこちゃま戦争
     ,369: { rate_base: {          3: 11.7 }, image: "img/d3a5a61b5eb2b8fb.jpg" } // エイリアンエイリアン
@@ -328,24 +337,20 @@ var DIFFICULTY = {
     ,388: { rate_base: {          3: 13.3 }, image: "img/14edd93cf813cdc2.jpg" } // GOODTEK
     ,389: { rate_base: {          3: 13.5 }, image: "img/f7be4abcf8f3e197.jpg" } // Name of oath
     ,390: { rate_base: {          3: 12.2 }, image: "img/c23488ff88a819b9.jpg" } // Bird Sprite
+    ,393: { rate_base: {          3: 13.8 }, image: "img/de02f8c0217d9baa.jpg" } // Dengeki Tube
     ,394: { rate_base: {          3: 11.7 }, image: "img/0a458d03f61196d3.jpg" } // 若い力 -SEGA HARD GIRLS MIX-
     ,395: { rate_base: {          3: 11.9 }, image: "img/90be66e64c2417cb.jpg" } // レッツゴー!陰陽師
     ,396: { rate_base: {          3: 12.1 }, image: "img/d15d3a298dac3df0.jpg" } // あねぺったん
     ,397: { rate_base: {          3: 13.5 }, image: "img/3e545c372b926197.jpg" } // Like the Wind [Reborn]
     ,398: { rate_base: {          3: 11.8 }, image: "img/4e7b81501ccdd198.jpg" } // 天国と地獄 -言ノ葉リンネ-
     ,399: { rate_base: {          3: 12.6 }, image: "img/854cf33a2b30f004.jpg" } // 最愛テトラグラマトン
+    ,407: { rate_base: { 2: 13.0, 3: 14.0 }, image: "img/a9b25545cd935cc9.jpg" } // 混沌を越えし我らが神聖なる調律主を讃えよ
     ,409: { rate_base: {          3: 13.8 }, image: "img/19f776c8daa51095.jpg" } // Finite
     ,410: { rate_base: {          3: 12.7 }, image: "img/cbfb4c6a58342201.jpg" } // MY LIBERATION
     ,411: { rate_base: {          3: 12.3 }, image: "img/dc09ca21d0647779.jpg" } // 地球最後の告白を
     ,414: { rate_base: { 2: 11.3, 3: 13.4 }, image: "img/cd2aebc19c4fa1cd.jpg" } // We Gonna Party -Feline Groove Mix-
     ,416: { rate_base: {          3: 12.4 }, image: "img/d13c5d162e6fa57e.jpg" } // Through The Tower
     ,417: { rate_base: {          3: 12.4 }, image: "img/b739e3b0af173789.jpg" } // Redo
-    ,340: { rate_base: {          3: 12.5 }, image: "img/de62556bd83dd21d.jpg" } // Still
-    ,358: { rate_base: {          3: 11.7 }, image: "img/c12cb5d8f49e8d2b.jpg" } // My Soul,Your Beats!
-    ,359: { rate_base: {          3: 11.8 }, image: "img/8b7fcdd825264797.jpg" } // Thuousand Enemies
-    ,362: { rate_base: {          3: 12.1 }, image: "img/13f02068575a1ef9.jpg" } // Face of Fact
-    ,363: { rate_base: {          3: 11.6 }, image: "img/15625838f8f00963.jpg" } // true my heart -Lovable mix-
-    ,360: { rate_base: {          3: 11.3 }, image: "img/8ecf57e4db2f6d94.jpg" } // 夢想歌
 
 };
 
