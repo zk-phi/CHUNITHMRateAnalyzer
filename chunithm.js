@@ -522,12 +522,6 @@ var best_rate_diff;
 var recent_rate_diff;
 var opt_rate_diff;
 
-// debug
-var all_chart_list;
-function set_render_all_chart_lsit(flag) {
-    all_chart_list = flag;
-}
-
 // -----------------------------------------------------------------------------
 // UI
 // -----------------------------------------------------------------------------
@@ -1374,7 +1368,7 @@ function rate_display()
 }
 
 // refresh the chart list display
-function render_chart_list(list, msgs)
+function render_chart_list(list, msgs, show_all)
 {
     // hide old items
     $("#cra_chart_list *").remove();
@@ -1389,7 +1383,7 @@ function render_chart_list(list, msgs)
 
         // 満点出しても BEST 枠を改善できない譜面を出さない（Recent 枠
         // の場合は req_diff = undefined なので影響しない）
-        if (!all_chart_list && list[i].req_diff != undefined && isNaN(list[i].req_diff)) continue;
+        if (!show_all && list[i].req_diff != undefined && isNaN(list[i].req_diff)) continue;
 
         var difficulty_icon = list[i].level == 2 ? "common/images/icon_expert.png"
             : "common/images/icon_master.png";
@@ -1453,3 +1447,9 @@ function render_chart_list(list, msgs)
     // $("#cra_chart_list").show(400);
     $("#cra_chart_list").show();
 }
+
+// debug
+function render_all_chart_list () {
+    best_list.sort(comp_id);
+    render_chart_list(best_list, { 0: "全曲リスト (ID順)" }, true);
+}  
