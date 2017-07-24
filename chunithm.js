@@ -1450,6 +1450,5 @@ function render_chart_list(list, msgs, show_all)
 
 // debug
 function render_all_chart_list () {
-    best_list.sort(comp_id);
-    render_chart_list(best_list, { 0: "全曲リスト (ID順)" }, true);
+    render_chart_list(best_list, { 0: "全曲リスト" }, true);
 }  
