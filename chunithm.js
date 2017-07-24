@@ -1300,7 +1300,9 @@ function rate_display()
 
         $("#cra_sort_base").click(function() {
             best_list.sort(function(a, b) { return - (a.rate_base - b.rate_base); });
-            var indices = { 0 : "LEVEL 13+" };
+            var indices = { 0 : "LEVEL 14" };
+            for (i = 0; best_list[i].rate_base >= 14; i++) ;
+            indices[i] = "LEVEL 13+";
             for (i = 0; best_list[i].rate_base >= 13.7; i++) ;
             indices[i] = "LEVEL 13";
             for (i = 0; best_list[i].rate_base >= 13; i++) ;
