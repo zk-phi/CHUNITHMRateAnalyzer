@@ -1317,17 +1317,17 @@ function rate_display()
         $("#cra_sort_score").click(function() {
             best_list.sort(function(a, b) { return - (a.score - b.score) });
             var indices = { 0 : "SSS" };
-            for (i = 0; best_list[i].score >= 1007500; i++) ;
+            for (i = 0; i < best_list.length && best_list[i].score >= 1007500; i++) ;
             indices[i] = "SS";
-            for (i = 0; best_list[i].score >= 1000000; i++) ;
+            for (i = 0; i < best_list.length && best_list[i].score >= 1000000; i++) ;
             indices[i] = "S";
-            for (i = 0; best_list[i].score >=  975000; i++) ;
+            for (i = 0; i < best_list.length && best_list[i].score >=  975000; i++) ;
             indices[i] = "AAA";
-            for (i = 0; best_list[i].score >=  950000; i++) ;
+            for (i = 0; i < best_list.length && best_list[i].score >=  950000; i++) ;
             indices[i] = "AA";
-            for (i = 0; best_list[i].score >=  925000; i++) ;
+            for (i = 0; i < best_list.length && best_list[i].score >=  925000; i++) ;
             indices[i] = "A";
-            for (i = 0; best_list[i].score >=  900000; i++) ;
+            for (i = 0; i < best_list.length && best_list[i].score >=  900000; i++) ;
             indices[i] = "A未満"
             render_chart_list(best_list, indices);
         });
