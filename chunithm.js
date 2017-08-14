@@ -346,6 +346,7 @@ var DIFFICULTY = {
     ,399: { rate_base: {          3: 12.6 }, image: "img/854cf33a2b30f004.jpg" } // 最愛テトラグラマトン
     ,402: { rate_base: {          3: 12.2 }, image: "img/2b40dbdabb958a34.jpg" } // 悪戯
     ,403: { rate_base: {          3: 11.2 }, image: "img/2c9749de2183879c.jpg" } // りばーぶ
+    ,404: { rate_base: {          3: 12.0 }, image: "img/dc67a58e35e06b96.jpg" } // Barbed Eye
     ,407: { rate_base: { 2: 13.0, 3: 14.0 }, image: "img/a9b25545cd935cc9.jpg" } // 混沌を越えし我らが神聖なる調律主を讃えよ
     ,409: { rate_base: {          3: 13.8 }, image: "img/19f776c8daa51095.jpg" } // Finite
     ,410: { rate_base: {          3: 12.7 }, image: "img/cbfb4c6a58342201.jpg" } // MY LIBERATION
