@@ -237,7 +237,7 @@ var DIFFICULTY = {
     ,272: { rate_base: {          3: 11.7 }, image: "img/98b02f86db4d3fe2.jpg" } // 有頂天ビバーチェ
     ,273: { rate_base: {          3: 11.9 }, image: "img/604157e2c49d91d7.jpg" } // ビバハピ
     ,275: { rate_base: {          3: 11.5 }, image: "img/169a5a5ffa300cb7.jpg" } // 愛言葉
-    ,276: { rate_base: {          3: 12.3 }, image: "img/82105b37d18450b6.jpg" } // 後夜祭    
+    ,276: { rate_base: {          3: 12.3 }, image: "img/82105b37d18450b6.jpg" } // 後夜祭
     ,277: { rate_base: {          3: 12.4 }, image: "img/23e754d62862c0c4.jpg" } // TRUST
     ,278: { rate_base: {          3: 11.4 }, image: "img/5f1d7a520a2735d4.jpg" } // からくりピエロ
     ,279: { rate_base: {          3: 11.7 }, image: "img/84ecaebe6bce2a58.jpg" } // 深海少女
@@ -355,7 +355,6 @@ var DIFFICULTY = {
     ,414: { rate_base: { 2: 11.3, 3: 13.4 }, image: "img/cd2aebc19c4fa1cd.jpg" } // We Gonna Party -Feline Groove Mix-
     ,416: { rate_base: {          3: 12.4 }, image: "img/d13c5d162e6fa57e.jpg" } // Through The Tower
     ,417: { rate_base: {          3: 12.4 }, image: "img/b739e3b0af173789.jpg" } // Redo
-
 };
 
 // ---- API wrappers
@@ -1462,4 +1461,4 @@ function render_chart_list(list, msgs, show_all)
 // debug
 function render_all_chart_list () {
     render_chart_list(best_list, { 0: "全曲リスト" }, true);
-}  
+}
