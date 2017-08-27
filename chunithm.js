@@ -687,12 +687,8 @@ $("#cra_window_outer")
     .html("<div id='cra_window_inner' class='frame01_inside w450'></div>");
 $("#cra_window_inner")
     .html("<p class='cra_caution'>CAUTION</p>" +
-          "<p>1/13- Recent枠表示機能(β)・データ提供機能の追加。</p>" +
-          "<p>バグなど気づいた方は @zk_phi までお願いします。</p>" +
-          "<p></p>" +
-          "<p>譜面定数の判明したものから更新しています (譜面定数の調査方法は<a href='http://d.hatena.ne.jp/risette14/20150924/1443064402'>こちら</a>)。</p>" +
-          "<p>ツールの性質を理解したうえで、各自の判断でご利用ください。</p>" +
-          "<p>ツールを閉じるには、右上の×ボタンをクリックしてください。</p>");
+          "<p>CHUNITHM Net 仕様変更のため一時的に使えません。</p>" +
+          "<p>スコア取得の方法を変えて対応の予定です。</p>");
 
 // close button
 $("#cra_close_button")
@@ -702,22 +698,24 @@ $("#cra_close_button")
         $chunithm_net.delay(400).fadeTo(400, 1);
     });
 
-// fetch button
-$("#cra_window_inner")
-    .append($("<h2 id='page_title' class='cra_button cra_fetch_score'>スコアを解析する</h2>")
-            .click(function() {
-                $("#cra_close_button").hide(400);
-                fetch_user_data(function() {
-                    fetch_score_data(2, function() {
-                        fetch_score_data(3, function() {
-                            fetch_playlog(function () {
-                                $("#cra_close_button").show(400);
-                                rate_display();
-                            });
-                        });
-                    });
-               });
-           }));
+/*
+ * // fetch button
+ * $("#cra_window_inner")
+ *     .append($("<h2 id='page_title' class='cra_button cra_fetch_score'>スコアを解析する</h2>")
+ *             .click(function() {
+ *                 $("#cra_close_button").hide(400);
+ *                 fetch_user_data(function() {
+ *                     fetch_score_data(2, function() {
+ *                         fetch_score_data(3, function() {
+ *                             fetch_playlog(function () {
+ *                                 $("#cra_close_button").show(400);
+ *                                 rate_display();
+ *                             });
+ *                         });
+ *                     });
+ *                });
+ *            }));
+ * */
 
 // view button
 if(CRA_VERSION == last_cra_version) {
