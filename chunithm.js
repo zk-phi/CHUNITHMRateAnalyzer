@@ -704,17 +704,15 @@ $("#cra_close_button")
  *     .append($("<h2 id='page_title' class='cra_button cra_fetch_score'>スコアを解析する</h2>")
  *             .click(function() {
  *                 $("#cra_close_button").hide(400);
- *                 fetch_user_data(function() {
- *                     fetch_score_data(2, function() {
- *                         fetch_score_data(3, function() {
- *                             fetch_playlog(function () {
- *                                 $("#cra_close_button").show(400);
- *                                 rate_display();
- *                             });
+ *                 fetch_score_data(2, function() {
+ *                     fetch_score_data(3, function() {
+ *                         fetch_playlog(function () {
+ *                             $("#cra_close_button").show(400);
+ *                             rate_display();
  *                         });
  *                     });
- *                });
- *            }));
+ *                 });
+ *             }));
  * */
 
 // view button
@@ -853,24 +851,6 @@ function fetch_score_data(level, callback)
     });
 }
 
-// fetch user data and update `disp_rate`
-function fetch_user_data(callback)
-{
-    $("#cra_window_inner").html("<p>loading user data ...</p>");
-    request_api("GetUserInfoApi", {
-        friendCode: 0, fileLevel: 1
-    }, function(d) {
-        disp_rate = d.userInfo.playerRating / 100.0;
-        callback();
-    }, function() {
-        $("#cra_window_inner")
-            .html("<p>ユーザー情報が取得できませんでした</p>" +
-                  "<h2 id='page_title' class='cra_button'>再読み込み</h2>");
-        $("#page_title")
-            .click(function() { fetch_user_data(callback); });
-    });
-}
-
 // -----------------------------------------------------------------------------
 // calculate rate and render
 // -----------------------------------------------------------------------------
@@ -905,11 +885,16 @@ function rate_display()
     }
 
     // calculate rate and their diff
+    var recent_list = [].concat(recent_candidates).sort(comp_rate).slice(0, 10);
     best_list.sort(function(a, b) { return - (a.rate - b.rate); });
-    for (i = 0; i < 30 && i < best_list.length; i++) best_rate += best_list[i].rate;
+    for (var i = 0, best_rate = 0; i < 30 && i < best_list.length; i++)
+        best_rate += best_list[i].rate;
+    for (var i = 0, recent_rate = 0; i < 10 && i < recent_list.length; i++)
+        recent_rate += recent_list[i].rate;
     opt_rate = best_list[0] ? ((best_rate + best_list[0].rate * 10) / 40) : 0;
     best_rate = (best_rate / 30);
-    recent_rate = disp_rate * 4 - best_rate * 3;
+    recent_rate = (recent_rate / 10);
+    disp_rate = (best_rate * 3 + recent_rate) / 4;
     best_rate_diff = last_best_rate ? best_rate - last_best_rate : 0;
     opt_rate_diff = last_opt_rate ? opt_rate - last_opt_rate : 0;
     disp_rate_diff = last_disp_rate ? disp_rate - last_disp_rate : 0;
