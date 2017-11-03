@@ -687,8 +687,8 @@ $("#cra_window_outer")
     .html("<div id='cra_window_inner' class='frame01_inside w450'></div>");
 $("#cra_window_inner")
     .html("<p class='cra_caution'>CAUTION</p>" +
-          "<p>CHUNITHM Net 仕様変更のため一時的に使えません。</p>" +
-          "<p>スコア取得の方法を変えて対応の予定です。</p>");
+          "<p>CHUNITHM STAR 対応の最新版ができました🎉</p>" +
+          "<p>作者 Twitter などで確認して、最新版に更新してください。</p>");
 
 // close button
 $("#cra_close_button")
