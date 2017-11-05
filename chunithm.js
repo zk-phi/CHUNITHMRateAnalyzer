@@ -355,6 +355,7 @@ var DIFFICULTY = {
     ,414: { rate_base: { 2: 11.3, 3: 13.4 }, image: "img/cd2aebc19c4fa1cd.jpg" } // We Gonna Party -Feline Groove Mix-
     ,416: { rate_base: {          3: 12.4 }, image: "img/d13c5d162e6fa57e.jpg" } // Through The Tower
     ,417: { rate_base: {          3: 12.4 }, image: "img/b739e3b0af173789.jpg" } // Redo
+    ,470: { rate_base: {          3: 13.5 }, image: "img/b739e3b0af173789.jpg" } // セイクリッドルイン
 };
 
 // ---- API wrappers
